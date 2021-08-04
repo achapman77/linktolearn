@@ -1,16 +1,15 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, lang, meta, title }) {
+// References
+//Images from blogs
+// https://www.gatsbyjs.com/tutorial/seo-and-social-sharing-cards-tutorial/
+//Site image
+// https://www.digitalocean.com/community/tutorials/how-to-boost-seo-using-gatsby-s-seo-component-and-gatsby-react-helmet
+
+function Seo({ description, lang, meta, image: metaImage, title, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +18,9 @@ function Seo({ description, lang, meta, title }) {
             title
             description
             author
+            keywords
+            siteUrl
+            image
           }
         }
       }
@@ -27,7 +29,19 @@ function Seo({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  //Images from blogs
+  // https://www.gatsbyjs.com/tutorial/seo-and-social-sharing-cards-tutorial/
+  // const image =
+  //     metaImage && metaImage.description
+  //       ? `${site.siteMetadata.siteURL}${metaImage.src}`
+  //       : null
 
+  //Site image
+  // https://www.digitalocean.com/community/tutorials/how-to-boost-seo-using-gatsby-s-seo-component-and-gatsby-react-helmet
+  const image = site.siteMetadata.image
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null 
+  const keywords = site.siteMetadata.keywords
+  console.info(site.siteMetadata)
   return (
     <Helmet
       htmlAttributes={{
@@ -35,10 +49,24 @@ function Seo({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      link={
+        canonical
+          ? [
+              {
+                rel: "canonical",
+                href: canonical,
+              },
+            ]
+          : []
+      }
       meta={[
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name:"kewords",
+          content: keywords
         },
         {
           property: `og:title`,
@@ -53,8 +81,16 @@ function Seo({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: image,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
+        },
+        {
+          name: `twitter:image`,
+          content: image,
         },
         {
           name: `twitter:creator`,
@@ -68,7 +104,35 @@ function Seo({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]
+      // .concat(
+      //   metaImage
+      //     ? [
+      //         {
+      //           property: "og:image",
+      //           content: image,
+      //         },
+      //         {
+      //           property: "og:image:width",
+      //           content: metaImage.width,
+      //         },
+      //         {
+      //           property: "og:image:height",
+      //           content: metaImage.height,
+      //         },
+      //         {
+      //           name: "twitter:card",
+      //           content: "summary_large_image",
+      //         },
+      //       ]
+      //     : [
+      //         {
+      //           name: "twitter:card",
+      //           content: "summary",
+      //         },
+      //     ]
+      // )
+      .concat(meta)}
     />
   )
 }
@@ -84,6 +148,13 @@ Seo.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  // image: PropTypes.shape({
+  //   src: PropTypes.string.isRequired,
+  //   height: PropTypes.number.isRequired,
+  //   width: PropTypes.number.isRequired,
+  // }),
+  image: PropTypes.string,
+  pathname: PropTypes.string,
 }
 
 export default Seo

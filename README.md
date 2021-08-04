@@ -103,3 +103,16 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+Tutorial
+https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s
+
+Hero @ 45:00 
+
+Progress:
+1:05
+1:48
+
+
+Shortcuts:
+rafce + tab = react arrow function
