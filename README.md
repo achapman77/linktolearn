@@ -1,9 +1,10 @@
-Base Tutorial
-https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s
+## Base Tutorial: 
+# [Build a Responsive Website using React, Gatsby, and GraphQL by Brian Design](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
 
-Added: 
-Theming capability
-SEO enhancement
-Sticky/Color changing header
+## Added: 
+..* Theming capability
+..* SEO enhancement
+..*Sticky/Color changing header
 
-To be used as base for integration with Netlify CMS
+## Uses:
+Base template for integration with Netlify CMS
