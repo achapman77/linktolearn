@@ -8,7 +8,7 @@ It uses using styled-components and accesses data in different ways through Grap
   * GraphQL
   * Styled-Components/SCSS
 
-## [Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
+## [TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
 by Brian Design
 
 ### Timeline
