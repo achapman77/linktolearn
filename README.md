@@ -30,8 +30,7 @@ by Brian Design
   * Sticky/Color changing header
 
 ## Helpful References:
-SEO & Meta Images from blogs
-
+SEO & Meta Images from blogs  
 https://www.gatsbyjs.com/tutorial/seo-and-social-sharing-cards-tutorial/
 
 
