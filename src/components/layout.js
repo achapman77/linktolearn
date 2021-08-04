@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import Theme from "../components/styles/Theme"
+import Theme from "./styles/Theme"
 import Dropdown from "./Dropdown"
 import Footer from "./Footer"
 import Header from "./Header"

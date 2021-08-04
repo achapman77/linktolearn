@@ -32,8 +32,9 @@ by Brian Design
   * Sticky/Color changing header
 
 ## Netlify CMS Setup
-https://www.gatsbyjs.com/tutorial/blog-netlify-cms-tutorial/
-  * Rename repo in static->admin->config.yml
+  * Create new git repo
+  * Rename to new repo in static->admin->config.yml
+  * Follow steps 3+ here: https://www.gatsbyjs.com/tutorial/blog-netlify-cms-tutorial/
 
 
 ## Helpful References:

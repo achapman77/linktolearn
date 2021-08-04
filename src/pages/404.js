@@ -1,7 +1,7 @@
 import React from "react"
 import { Button } from '../components/Button'
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 import styled from "styled-components"
 
 const NotFoundPage = () => (
