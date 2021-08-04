@@ -7,6 +7,7 @@ It uses using styled-components and accesses data in different ways through Grap
   * Gatsby
   * GraphQL
   * Styled-Components/SCSS
+  * Netlify CMS
 
 ## [TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
 by Brian Design
@@ -24,10 +25,16 @@ by Brian Design
 
 
 ## Additions to Tutorial: 
+  * Netlify CMS
   * Theming / Mixins 
   * MediaQuery Shortcut
   * SEO enhancement
   * Sticky/Color changing header
+
+## Netlify CMS Setup
+https://www.gatsbyjs.com/tutorial/blog-netlify-cms-tutorial/
+  * Rename repo in static->admin->config.yml
+
 
 ## Helpful References:
 SEO & Meta Images from blogs  
