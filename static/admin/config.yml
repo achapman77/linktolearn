@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: achapman77/gatsby-starter-template-plus
+  branch: main
 
 media_folder: content/assets
 public_folder: ../assets

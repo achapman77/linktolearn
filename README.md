@@ -1,6 +1,5 @@
 ## Summary
-This tutorial offers a simple and clean Gatsby starter template.  
-It uses using styled-components and accesses data in different ways through GraphQL.  
+A simple and clean Gatsby/NetflifyCMS starter template.  
 
 ## [Live Demo](https://gatsby-netlify-cms-starter-template-plus.netlify.app/)
 
