@@ -8,7 +8,15 @@ import { Button } from "./Button"
 const Header = ({toggle}) => {
   const [navbar, setNavbar] = useState(false)
   const [navbarBackground, setNavbarBackground] = useState(false)
-  
+  const [offset, setOffset] = useState(0)
+
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      window.onscroll = () => {
+        setOffset(window.pageYOffset)
+      }
+    }
+  }, []) 
   
   useEffect( () => {
     if(window.location.pathname === "/") {
@@ -23,8 +31,9 @@ const Header = ({toggle}) => {
   }, [])
 
   const changeNavBackground = () => {
-    console.info(window.scrollY)
-    if (window.scrollY >= 80) {
+    // console.info(window.scrollY)
+    console.info(offset)
+    if (offset >= 80) {
       setNavbarBackground(true)
     } else {
       console.info(false)
