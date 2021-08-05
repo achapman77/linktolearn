@@ -40,7 +40,7 @@ const Header = ({toggle}) => {
       setNavbarBackground(false)
     }
   }
-  window.addEventListener('scroll', changeNavBackground)
+  // window.addEventListener('scroll', changeNavBackground)
 
   return (
     <Nav navbar={navbar} className={navbarBackground ? 'active' : ''}>
