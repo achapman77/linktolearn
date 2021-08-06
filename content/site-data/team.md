@@ -1,6 +1,6 @@
 ---
 team_members:
-  - first_name: Adam
+  - first_name: Adamzzz
     last_name: Chapman
     position_title: cpo
     description: |-
