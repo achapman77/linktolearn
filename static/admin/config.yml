@@ -76,7 +76,7 @@ collections:
               - {label: "Logo", name: "logo", widget: "image"}
       - label: "Team Members"
         name: "team_members"
-        file: content/site-data/team.json
+        file: content/site-data/team.md
         fields:
           - label: Team Members
             name: team_members

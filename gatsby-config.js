@@ -49,6 +49,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
