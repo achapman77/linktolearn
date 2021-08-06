@@ -1,4 +1,5 @@
-[
+{
+  "faq": [
     {
       "question": "q1",
       "answer": "a1"
@@ -10,5 +11,10 @@
     {
       "question": "q3",
       "answer": "a3"
+    },
+    {
+      "question": "q4",
+      "answer": "a4"
     }
   ]
+}
