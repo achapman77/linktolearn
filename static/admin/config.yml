@@ -62,7 +62,7 @@ collections:
             fields: 
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "text"}
-              - {label: "Link to Video Answer", name: "answer", widget: "string"}
+              - {label: "Link to Video Answer", name: "video_link", widget: "string"}
       - label: "Media Articles"
         name: "media_articles"
         file: content/site-data/media_articles.md
