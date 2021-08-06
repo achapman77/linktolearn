@@ -27,11 +27,12 @@ by Brian Design
 
 
 ## Additions to Tutorial: 
-  * Netlify CMS
   * Theming / Mixins 
   * MediaQuery Shortcut
   * SEO enhancement
   * Sticky/Color changing header
+  * Netlify CMS - Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery
+  * Contact Form w/ Netlify
 
 ## Netlify CMS Setup
   * Create new git repo
