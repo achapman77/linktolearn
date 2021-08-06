@@ -1,12 +1,12 @@
 {
   "faq": [
     {
-      "question": "asdfasdf",
-      "answer": "asdfasdf"
+      "question": "Question 1",
+      "answer": "Answer 1"
     },
     {
-      "question": "qqqqqqqqqqq",
-      "answer": "qqqqqqqqqqqqq"
+      "question": "Question 2",
+      "answer": "Answer 2"
     }
   ]
 }
