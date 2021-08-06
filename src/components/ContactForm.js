@@ -6,14 +6,19 @@ const ContactForm = () => {
     return (
         <ContactSection>
             <ContactWrapper>
-                <form 
-                    name="contact" 
-                    method="POST"
-                    data-netlify="true"
-                    data-netlify-honepot="bot-field"
-                >
-                    <input name="name" placeholder="Your Name" type="text" />
-                    <button>Send</button>
+                <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                    <p className="hidden">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                    </p>
+                    <p>
+                        <label>Email: <input type="text" name="email" /></label>
+                    </p>
+                    {/* <p>
+                        <label>Message: <textarea name="message"></textarea></label>
+                    </p> */}
+                    <p>
+                        <button type="submit">Send</button>
+                    </p>
                 </form>
             </ContactWrapper>
         </ContactSection>
@@ -23,5 +28,29 @@ const ContactForm = () => {
 
 export default ContactForm
 
-const ContactSection = styled.div``
-const ContactWrapper = styled.div``
+const ContactSection = styled.div`
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+`
+const ContactWrapper = styled.div`
+    background: white;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    form {
+        input {
+            height: 40px;
+            margin: 5px;
+            border-radius: 4px;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+    }
+`
