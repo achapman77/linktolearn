@@ -7,9 +7,20 @@ import { Button } from "./Button"
 
 const Header = ({toggle}) => {
   const [navbar, setNavbar] = useState(false)
-  const [navbarBackground, setNavbarBackground] = useState(false)
   const [offset, setOffset] = useState(0)
 
+  
+  //Pages other than index, header is solid
+  useEffect( () => {
+    if(window.location.pathname === "/") {
+      setNavbar(false)
+    } else {
+      setNavbar(true)
+    }
+  }, [])
+  
+  //When user scrolls on index header turns from transparent to solid
+  // https://vidler.app/blog/javascript/gatsby-scroll-position/
   useEffect(() => {
     if (typeof window !== `undefined`) {
       window.onscroll = () => {
@@ -17,33 +28,10 @@ const Header = ({toggle}) => {
       }
     }
   }, []) 
-  
-  useEffect( () => {
-    if(window.location.pathname === "/") {
-      setNavbar(false)
-    } else {
-      setNavbar(true)
-    }
-
-    
-
-    // console.log(window.location.pathname)
-  }, [])
-
-  const changeNavBackground = () => {
-    // console.info(window.scrollY)
-    console.info(offset)
-    if (offset >= 80) {
-      setNavbarBackground(true)
-    } else {
-      console.info(false)
-      setNavbarBackground(false)
-    }
-  }
-  // window.addEventListener('scroll', changeNavBackground)
+  // console.info(offset)
 
   return (
-    <Nav navbar={navbar} className={navbarBackground ? 'active' : ''}>
+    <Nav navbar={navbar} className={offset >= 80 ? 'active' : ''}>
       <NavLink to="/">EXPLORIX</NavLink>
       <NavMenu>
         {menuData.map((v,i)=>{

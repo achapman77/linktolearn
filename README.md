@@ -35,11 +35,20 @@ by Brian Design
 
 ## Netlify CMS Setup
   * Create new git repo
-  * Rename to new repo in static->admin->config.yml
+  * Rename repo, site, logo in static->admin->config.yml
   * Follow steps 3+ here: https://www.gatsbyjs.com/tutorial/blog-netlify-cms-tutorial/
+  * Follow [Gatsby With NetlifyCMS Tutorial](https://www.youtube.com/watch?v=IWmVSm2KevY)
+  * Be sure to query and render images uploaded through the CMS through allFile->childImageSharp->gatsbyImageData
+
+### Netlify CMS Useful Resources
+  * [Netlify CMS Demo](https://cms-demo.netlify.com/#/collections/settings/entries/authors)
+  * [Netlify CMS Demo Config.yml](https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml)
+  * [Netlify CMS Widgets](]https://www.netlifycms.org/docs/widgets/)
+  * [Modular Content Widgets](https://www.youtube.com/watch?v=R4rLx6wTqMw)
+  * [Using Gatsby Image with Netlify CMS](https://www.frontendstumbles.com/using-gatsby-image-with-netlify-cms/)
 
 
-## Helpful References:
+## Gatsby & Other Useful Resources:
 SEO & Meta Images from blogs  
 https://www.gatsbyjs.com/tutorial/seo-and-social-sharing-cards-tutorial/
 

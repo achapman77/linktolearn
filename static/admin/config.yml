@@ -3,17 +3,90 @@ backend:
   repo: achapman77/gatsby-starter-template-plus
   branch: main
 
-media_folder: content/assets
-public_folder: ../assets
+site_url: https://gatsby-netlify-cms-starter-template-plus.netlify.app/
+display_url: https://gatsby-netlify-cms-starter-template-plus.netlify.app/
+logo_url: src/assets/gatsby-atronaut.png
+
+media_folder: content/images/uploads
+public_folder: ../images/uploads
 
 collections:
-  - name: blog
-    label: Blog
+  - name: blogs
+    label: Blogs
     folder: content/blog
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "SEO Title", name: "title", widget: "string", pattern: ['.{20,}', "Must have at least 20-65 characters"]}
+      - {label: "SEO Description", name: "description", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"} 
+      - {label: "Image", name: "image", widget: "image", required: false} 
+      
+  - name: "site_content"
+    label: "Site Content"
+    files:
+      - label: "Contact Info"
+        name: contact_info
+        file: content/site-data/contact_info.json
+        fields:
+          - {label: "Phone", name: "phone", widget: "string", required: false}
+          - {label: "Email", name: "layout", widget: "string", required: false}
+          - label: "Business Address" 
+            name: "business_address"
+            widget: "object" 
+            fields:
+              - {label: "Street", name: "street", widget: "string", required: false}
+              - {label: "Street2", name: "street2", widget: "string", required: false}
+              - {label: "City ", name: "city", widget: "string", required: false}
+              - {label: "State", name: "state", widget: "string", required: false}
+              - {label: "Zipcode", name: "zipcode", widget: "string", required: false}
+      - label: "Social Media"
+        name: social_media
+        file: content/site-data/social_media.json
+        fields:
+          - label: Social Media
+            name: social_media
+            widget: list
+            fields: 
+              - {label: "Select", name: "select", widget: "select", options: ["LinkedIn", "Facebook", "Instagram", "Twitter"]}
+              - {label: "Profile Link", name: "profile_link", widget: "string"}
+      - label: "FAQ"
+        name: "faq"
+        file: content/site-data/faq.json
+        fields:
+          - label: FAQ
+            name: faq
+            widget: list
+            fields: 
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "text"}
+      - label: "Media Articles"
+        name: "media_articles"
+        file: content/site-data/media_articles.json
+        fields:
+          - label: Media Articles
+            name: media_articles
+            widget: list
+            fields: 
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Excerpt", name: "excerpt", widget: "text"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Logo", name: "logo", widget: "image"}
+      - label: "Team Members"
+        name: "team_members"
+        file: content/site-data/team.json
+        fields:
+          - label: Team Members
+            name: team_members
+            widget: list
+            fields: 
+              - {label: "First Name", name: "first_name", widget: "string"}
+              - {label: "Last Name", name: "last_name", widget: "string"}
+              - {label: "Position Title", name: "position_title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Headshot", name: "headshot", widget: "image", media_folder:'team'}
+              - {label: "LinkedIn Profile", name: "profile_url", widget: "string"}
+
+            

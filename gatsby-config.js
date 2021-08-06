@@ -8,6 +8,7 @@ module.exports = {
     image: `src/assets/images/travel-1.jpg`
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
@@ -21,10 +22,18 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `video`,
+        name: `uploads`,
+        path: `${__dirname}/content/images/uploads`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `videos`,
         path: `${__dirname}/src/assets/videos`,
       },
     },
+    
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -44,8 +53,17 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data/`,
+        name: `data`,
+        path: `${__dirname}/src/data/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `site-data`,
+        path: `${__dirname}/content/site-data/`,
+      },
+    },
+    
   ],
 }

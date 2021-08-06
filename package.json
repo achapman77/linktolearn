@@ -19,12 +19,14 @@
     "gatsby-source-filesystem": "^3.10.0",
     "gatsby-transformer-json": "^3.10.0",
     "gatsby-transformer-sharp": "^3.10.0",
+    "netlify-cms": "^2.10.153",
     "netlify-cms-app": "^2.15.33",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
+    "simplebar-react": "^2.3.5",
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
