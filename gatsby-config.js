@@ -65,6 +65,5 @@ module.exports = {
         path: `${__dirname}/content/site-data/`,
       },
     },
-    
   ],
 }

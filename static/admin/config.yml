@@ -29,7 +29,7 @@ collections:
     files:
       - label: "Contact Info"
         name: contact_info
-        file: content/site-data/contact_info.json
+        file: content/site-data/contact_info.md
         fields:
           - {label: "Phone", name: "phone", widget: "string", required: false}
           - {label: "Email", name: "layout", widget: "string", required: false}
@@ -44,13 +44,13 @@ collections:
               - {label: "Zipcode", name: "zipcode", widget: "string", required: false}
       - label: "Social Media"
         name: social_media
-        file: content/site-data/social_media.json
+        file: content/site-data/social_media.md
         fields:
           - label: Social Media
             name: social_media
             widget: list
             fields: 
-              - {label: "Select", name: "select", widget: "select", options: ["LinkedIn", "Facebook", "Instagram", "Twitter"]}
+              - {label: "Select Social Media", name: "select_social_media", widget: "select", options: ["LinkedIn", "Facebook", "Instagram", "Twitter"]}
               - {label: "Profile Link", name: "profile_link", widget: "string"}
       - label: "FAQ"
         name: "faq"
@@ -62,9 +62,26 @@ collections:
             fields: 
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "text"}
+              - {label: "Link to Video Answer", name: "answer", widget: "string"}
       - label: "Media Articles"
         name: "media_articles"
-        file: content/site-data/media_articles.json
+        file: content/site-data/media_articles.md
+        fields:
+          - label: Media Articles
+            name: media_articles
+            widget: list
+            fields: 
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Publish Date", name: "publish_date", widget: "string"}
+              - {label: "Author", name: "author", widget: "string"}
+              - {label: "Publisher", name: "publisher", widget: "string"}
+              - {label: "Publisher Logo", name: "publisher_logo", widget: "image"}
+              - {label: "Article Excerpt", name: "article_excerpt", widget: "text"}
+              - {label: "Article Link", name: "article_link", widget: "text"}
+              
+      - label: "Videos"
+        name: "videos"
+        file: content/site-data/videos.md
         fields:
           - label: Media Articles
             name: media_articles
@@ -73,7 +90,7 @@ collections:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Excerpt", name: "excerpt", widget: "text"}
               - {label: "Description", name: "description", widget: "text"}
-              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "Publisher Logo", name: "publisher_logo", widget: "image"}
       - label: "Team Members"
         name: "team_members"
         file: content/site-data/team.md
