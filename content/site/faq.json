@@ -12,7 +12,8 @@
     },
     {
       "question": "Question 3",
-      "body": "**This is Important**\n\n## **Heading**\n\ngoogle<https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml>"
+      "body": "**This is Important**\n\n## **Heading**\n\ngoogle<https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml>",
+      "answer": "Answer 3"
     }
   ]
 }
