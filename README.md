@@ -32,7 +32,7 @@ by Brian Design
   * SEO enhancement
   * Sticky/Color changing header
   * Netlify CMS - Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery
-  * Contact Form w/ Netlify
+  * [Formik Contact Form + Netlify](https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/)
 
 ## Netlify CMS Setup
   * Create new git repo
