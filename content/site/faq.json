@@ -2,11 +2,17 @@
   "faq": [
     {
       "question": "Question 1",
-      "answer": "Answer 1"
+      "answer": "Answer 1",
+      "body": "adsasdfasdfasdf"
     },
     {
       "question": "Question 2",
-      "answer": "Answer 2"
+      "answer": "Answer 2",
+      "body": "asdfadfadf"
+    },
+    {
+      "question": "Question 3",
+      "body": "**This is Important**\n\n## **Heading**\n\ngoogle<https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml>"
     }
   ]
 }
