@@ -8,7 +8,7 @@ const ContactForm = () => {
             <ContactWrapper>
                 <form 
                     name="contact" 
-                    method="post"
+                    method="POST"
                     data-netlify="true"
                     data-netlify-honepot="bot-field"
                 >
