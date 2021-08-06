@@ -3,12 +3,12 @@
   "answer": "adfasdadf",
   "faq": [
     {
-      "question": "Who Dis?",
-      "answer": "Yo Mamma"
-    },
-    {
       "question": "Who dat?",
       "answer": "Yo Pappa"
+    },
+    {
+      "question": "Who Dis?",
+      "answer": "Yo Mamma"
     }
   ]
 }
