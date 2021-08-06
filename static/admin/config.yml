@@ -54,7 +54,7 @@ collections:
               - {label: "Profile Link", name: "profile_link", widget: "string"}
       - label: "FAQ"
         name: "faq"
-        file: content/site-data/faq.json
+        file: content/site-data/faq.md
         fields:
           - label: FAQ
             name: faq
