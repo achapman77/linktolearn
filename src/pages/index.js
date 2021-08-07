@@ -1,5 +1,5 @@
 import React from "react"
-import ContactForm from "../components/ContactForm"
+import ContactFormSection from "../components/ContactForm"
 
 import Email from "../components/Email"
 import Hero from "../components/Hero"
@@ -17,7 +17,7 @@ const IndexPage = () => (
     <Testimonials/>
     <Stats/>
     <Email/>
-    <ContactForm/>
+    <ContactFormSection/>
   </Layout>
 )
 

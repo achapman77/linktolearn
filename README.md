@@ -33,6 +33,7 @@ by Brian Design
   * Sticky/Color changing header
   * Netlify CMS - Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery
   * [Formik Contact Form + Netlify](https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/)
+  * [Complete Guide to Netlify Forms](https://www.stackbit.com/blog/complete-guide-netlify-forms/)
 
 ## Netlify CMS Setup
   * Create new git repo
@@ -49,7 +50,7 @@ by Brian Design
   * [Using Gatsby Image with Netlify CMS](https://www.frontendstumbles.com/using-gatsby-image-with-netlify-cms/)
 
 
-## Gatsby & Other Useful Resources:
+## Other Useful Resources:
 SEO & Meta Images from blogs  
 https://www.gatsbyjs.com/tutorial/seo-and-social-sharing-cards-tutorial/
 

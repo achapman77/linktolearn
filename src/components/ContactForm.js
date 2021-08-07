@@ -1,9 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 // import { Button } from './Button'
 
-const ContactForm = () => {
+// Resources
+// https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/
+// https://codepen.io/dannibla/pen/amgRNR
+//https://medium.com/@matt.readout/adding-css-animations-with-styled-components-6c191c23b6ba
+
+const ContactFormSection = () => {
     const encode = (data) => {
         return Object.keys(data)
             .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -26,7 +31,7 @@ const ContactForm = () => {
                             body: encode({ "form-name": "contact-demo", ...values })
                             })
                             .then(() => {
-                            alert('Success');
+                            alert('Success Foobar');
                             actions.resetForm()
                             })
                             .catch(() => {
@@ -51,21 +56,39 @@ const ContactForm = () => {
                     }}
                 >
                 {() => (
-                    <Form name="contact-demo" data-netlify={true}>
-                        <label htmlFor="name">Name: </label>
-                        <Field name="name" />
-                        <ErrorMessage name="name"/>
+                    <ContactForm name="contact-demo" data-netlify={true} data-netlify-honeypot="bot-field">
+                        <FloatingLabel>
+                            <FormInput name="name" placeholder=" "/>
+                            <span className="highlight"></span>
+                            <label htmlFor="name">Name</label>
+                            <span className="errorMessage">
+                                <ErrorMessage name="name"/>
+                            </span>
+                        </FloatingLabel>
+                        
 
-                        <label htmlFor="email">Email: </label>
-                        <Field name="email" />
-                        <ErrorMessage name="email"/>
+                        <FloatingLabel>
+                            <FormInput name="email" placeholder=" " />
+                            <span className="highlight"></span>
+                            <label htmlFor="email">Email</label>
+                            <span className="errorMessage">
+                                <ErrorMessage name="email"/>
+                            </span>
+                        </FloatingLabel>
+                        
 
-                        <label htmlFor="message">Message: </label>
-                        <Field name="message" component="textarea"/>
-                        <ErrorMessage name="message"/>
+                        <FloatingLabel>
+                            <FormInput name="message" component="textarea" placeholder=" "/>
+                            <span className="highlight"></span>
+                            <label htmlFor="message">Message</label>
+                            <span className="errorMessage">
+                                <ErrorMessage name="message"/>
+                            </span>
 
+                        </FloatingLabel>
+                        
                         <button type="submit">Send</button>
-                    </Form>
+                    </ContactForm>
                 )}
                 </Formik>
             </ContactWrapper>
@@ -74,14 +97,19 @@ const ContactForm = () => {
     )
 }
 
-export default ContactForm
+export default ContactFormSection
+
+const inputHighlighter = keyframes`
+    from { background:#5264AE; }
+    to { width:0; background:transparent; }
+`
 
 const ContactSection = styled.div`
     background: red;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 20vh; */
+
 `
 const ContactWrapper = styled.div`
     background: white;
@@ -89,18 +117,72 @@ const ContactWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 90%; */
-    form {
-        display: flex;
-        flex-flow: column;
-        input {
-            height: 40px;
-            margin: 5px;
-            border-radius: 4px;
-        }
+`
+const ContactForm = styled(Form)`
+    display: flex;
+    flex-flow: column;
+    /* background: lightblue; */
+    width: 75%;
+    padding: 5rem 0;
+`
 
-        .hidden {
-            opacity: 0;
-        }
+const FormInput = styled(Field)`
+    font-size:14px;
+    padding:4px 4px;
+    display:block;
+    width:100%;
+    height:30px;
+    background-color: transparent;
+    border:none;
+    border-bottom:1px solid #757575;
+    
+    &:focus{
+        outline:none;
+        border-bottom:2px solid #5264AE; 
+    }
+
+    &:focus ~ label,  &:not(:placeholder-shown) ~ label {
+        top:-18px;
+        font-size:14px;
+        color:#5264AE;
+    }
+
+    &:focus ~ .highlight {
+        animation:${inputHighlighter} 0.5s ease;
     }
 `
+
+const FloatingLabel = styled.div`
+    position:relative; 
+    margin-bottom:20px;
+    height: 50px;
+
+    label {
+        color:#999; 
+        font-size:14px;
+        font-weight:normal;
+        position:absolute;
+        pointer-events:none;
+        left:5px;
+        top:5px;
+        transition:0.2s ease all; 
+        -moz-transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+    }
+
+    .highlight {
+        position:absolute;
+        height:57%; 
+        width:100%; 
+        top:0; 
+        left:0;
+        pointer-events:none;
+        opacity:0.5;
+    }
+
+    .errorMessage {
+        color: red;
+        font-size: 14px;
+    }
+`
+
