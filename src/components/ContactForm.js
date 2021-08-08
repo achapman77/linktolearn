@@ -1,14 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled, { keyframes } from 'styled-components'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-// import { Button } from './Button'
+import { Button } from './Button'
 
 // Resources
 // https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/
 // https://codepen.io/dannibla/pen/amgRNR
 //https://medium.com/@matt.readout/adding-css-animations-with-styled-components-6c191c23b6ba
+//https://formik.org/docs/api/field
 
 const ContactFormSection = () => {
+    const [floatSelect, setFloatSelect] = useState(false)
+
+    function handleSelectClick(e) {
+        e.preventDefault()
+        console.log(e.target.value)
+        let val = e.target.value
+        if (val === "") {
+            console.info("do not float label")
+            setFloatSelect(false)
+        } else {
+            console.info('float label')
+            setFloatSelect(true)
+        }
+    }
+
     const encode = (data) => {
         return Object.keys(data)
             .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -68,7 +84,7 @@ const ContactFormSection = () => {
                         
 
                         <FloatingLabel>
-                            <FormInput name="email" placeholder=" " />
+                            <FormInput name="email" placeholder=" " onClick={handleSelectClick}/>
                             <span className="highlight"></span>
                             <label htmlFor="email">Email</label>
                             <span className="errorMessage">
@@ -76,6 +92,15 @@ const ContactFormSection = () => {
                             </span>
                         </FloatingLabel>
                         
+                        <FloatingLabel>
+                            <FormSelect className={floatSelect ? 'active' : ''} as="select" name="help" defaultValue="" onChange={handleSelectClick}  >
+                                <option value=""></option>
+                                <option value="1">Question 1</option>
+                                <option value="2">Question 2</option>
+                            </FormSelect>
+                            <span className="highlight"></span>
+                            <label htmlFor="help">How Can We Help?</label>
+                        </FloatingLabel>
 
                         <FloatingLabel>
                             <FormInput name="message" component="textarea" placeholder=" "/>
@@ -86,8 +111,7 @@ const ContactFormSection = () => {
                             </span>
 
                         </FloatingLabel>
-                        
-                        <button type="submit">Send</button>
+                        <ContactFormButton as="button" type="submit" primary="true" round="true">Send</ContactFormButton>
                     </ContactForm>
                 )}
                 </Formik>
@@ -151,6 +175,33 @@ const FormInput = styled(Field)`
         animation:${inputHighlighter} 0.5s ease;
     }
 `
+const FormSelect = styled(Field)`
+    font-size:14px;
+    padding:4px 4px;
+    display:block;
+    width:100%;
+    height:30px;
+    background-color: transparent;
+    border:none;
+    border-bottom:1px solid #757575;
+    
+
+    &:focus{
+        outline:none;
+        border-bottom:2px solid #5264AE; 
+    }
+
+    &:focus ~ label, &.active ~ label {
+        top:-18px;
+        font-size:14px;
+        color:#5264AE;
+    }
+
+
+    &:focus ~ .highlight {
+        animation:${inputHighlighter} 0.5s ease;
+    }
+`
 
 const FloatingLabel = styled.div`
     position:relative; 
@@ -184,5 +235,8 @@ const FloatingLabel = styled.div`
         color: red;
         font-size: 14px;
     }
+`
+
+const ContactFormButton = styled(Button)`
 `
 
