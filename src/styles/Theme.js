@@ -19,9 +19,28 @@ const theme = {
     ...respondTo,
     colors: {
         white: '#fff',
-        darkGray: "#0d0d0d",
         orange: '#F26A2E',
         blue: '#077BF1',
+        primary: {
+            light:'',
+            main:'#F26A2E',
+            dark:''
+        },
+        secondary: {
+            light:'',
+            main:'#077BF1',
+            dark:''
+        },
+        gray:{
+            light:'#999',
+            main:'',
+            dark:"#0d0d0d"
+        },
+        error:{
+            light:'#e57373',
+            main:'#f44336',
+            dark:"#d32f2f"
+        }
     },
     fontSizes: {
         small: "1em",

@@ -26,4 +26,19 @@ export const GlobalStyle = createGlobalStyle`
 									   to(#19911D),
 									   color-stop(.6,#54DE5D)) */
     }
+    h2 {
+        font-size: clamp(1.2rem, 5vw, 3rem);
+        color: #000;
+    }
+    p, input, label, select, textarea {
+        font-size: clamp(1rem, 0.8125rem + 0.8333vw, 1.25rem);
+    }
+    .sectionHeader {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        h2 {
+            margin-bottom: 1rem;
+        }
+    }
 `

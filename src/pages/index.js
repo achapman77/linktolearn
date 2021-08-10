@@ -1,7 +1,7 @@
 import React from "react"
 import ContactFormSection from "../components/ContactForm"
 
-import Email from "../components/Email"
+// import Email from "../components/Email"
 import Hero from "../components/Hero"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
@@ -16,7 +16,7 @@ const IndexPage = () => (
     <Trips heading="Our Favourite Destinations"/>
     <Testimonials/>
     <Stats/>
-    <Email/>
+    {/* <Email/> */}
     <ContactFormSection/>
   </Layout>
 )
