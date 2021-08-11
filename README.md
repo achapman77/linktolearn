@@ -11,17 +11,12 @@ A simple and clean Gatsby/NetflifyCMS starter template.
   * Styled-Components/SCSS
   * Netlify CMS
 
-## [TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
-by Brian Design
-
-## Additional Features: 
+## Features: 
   * Site Theming: colors, mixins, media queries 
   * Improved Navigation: Sticky, Color Change Bar on scroll, Active Nav Btns on Scroll/New Page
   * Netlify CMS - Dynamic Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery
   * Contact Form: Validation, Auto Formating, Floating Labels
   * SEO enhancement
-  * [Formik Contact Form + Netlify](https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/)
-  * [Complete Guide to Netlify Forms](https://www.stackbit.com/blog/complete-guide-netlify-forms/)
 
 ## Netlify CMS Setup
   * Create new git repo
@@ -30,15 +25,11 @@ by Brian Design
   * Follow [Gatsby With NetlifyCMS Tutorial](https://www.youtube.com/watch?v=IWmVSm2KevY)
   * Be sure to query and render images uploaded through the CMS through allFile->childImageSharp->gatsbyImageData
 
-### Netlify CMS Useful Resources
-  * [Netlify CMS Demo](https://cms-demo.netlify.com/#/collections/settings/entries/authors)
-  * [Netlify CMS Demo Config.yml](https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml)
-  * [Netlify CMS Widgets](]https://www.netlifycms.org/docs/widgets/)
-  * [Modular Content Widgets](https://www.youtube.com/watch?v=R4rLx6wTqMw)
-  * [Using Gatsby Image with Netlify CMS](https://www.frontendstumbles.com/using-gatsby-image-with-netlify-cms/)
 
+## Useful Resources:
+## [TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
+by Brian Design
 
-## Other Useful Resources:
 SEO & Meta Images from blogs  
 https://www.gatsbyjs.com/tutorial/seo-and-social-sharing-cards-tutorial/
 
@@ -74,6 +65,18 @@ https://blog.bitsrc.io/css-clamp-the-responsive-combination-weve-all-been-waitin
 Clamp Calculator  
 https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/#for-those-who-dont-mind-that-edge-case
 
+
+Gatsby/Formik/Netlify Forms
+[Formik Contact Form + Netlify](https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/)
+[Complete Guide to Netlify Forms](https://www.stackbit.com/blog/complete-guide-netlify-forms/)
+
+
+### Netlify CMS Useful Resources
+  * [Netlify CMS Demo](https://cms-demo.netlify.com/#/collections/settings/entries/authors)
+  * [Netlify CMS Demo Config.yml](https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml)
+  * [Netlify CMS Widgets](]https://www.netlifycms.org/docs/widgets/)
+  * [Modular Content Widgets](https://www.youtube.com/watch?v=R4rLx6wTqMw)
+  * [Using Gatsby Image with Netlify CMS](https://www.frontendstumbles.com/using-gatsby-image-with-netlify-cms/)
 
 ## Screenshots
 ![hero](https://user-images.githubusercontent.com/5178260/128258326-22152245-613f-46c2-adc5-d77275482036.png)
