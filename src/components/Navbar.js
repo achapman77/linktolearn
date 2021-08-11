@@ -5,44 +5,43 @@ import { animateScroll as scroll } from "react-scroll"
 // import { map } from 'lodash';
 // import { AnchorLink } from "gatsby-plugin-anchor-links"
 import styled from 'styled-components'
-import { FaBars } from 'react-icons/fa'
+// import { FaBars } from 'react-icons/fa'
+// import { FaTimes } from 'react-icons/fa'
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { menuData } from "../data/MenuData"
 import { renderNavItems } from './NavItems'
 import { Button } from "./Button"
 
-const Navbar = ({toggle, logo}) => {
+const Navbar = ({isOpen, toggle, logo}) => {
   const [navbar, setNavbar] = useState(false)
   const [offset, setOffset] = useState(0)
   const [navItems, setNavItems] = useState(menuData)
-
-  //Pages other than index, header is solid
-  useEffect( () => {
+  
+  // Resource
+  // https://vidler.app/blog/javascript/gatsby-scroll-position/
+  var observer
+  useEffect(() => {
+    //Pages other than index, header is solid
     if(window.location.pathname === "/") {
       setNavbar(false)
     } else {
       setNavbar(true)
     }
-  }, [])
-  
-  //When user scrolls on index header turns from transparent to solid
-  // https://vidler.app/blog/javascript/gatsby-scroll-position/
-  var observer
-  useEffect(() => {
+    
+    //When user scrolls on index header turns from transparent to solid
     if (typeof window !== `undefined`) {
       window.onscroll = () => {
         setOffset(window.pageYOffset)
       }
     }
 
+    //Registers #on_page_sections and watches for page scroll to set active state of nav button
     observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            
             if (entry.intersectionRatio >= 0.5) {
               let elem = entry.target
-              console.info(elem)
               let sectionID = elem.id
-              console.info({sectionID})
               updateNavState(sectionID)
             }
           }
@@ -50,12 +49,15 @@ const Navbar = ({toggle, logo}) => {
 
       }, { threshold: [0.5], delay: 1000 });
 
-      // first target
-      // observer.observe(document.querySelector("#trips"));
+
       navItems.forEach((item) => {
-        let section = item.link.replace("/","")
+        //currently only registers sections on index page.  
+        //Need to make it so it registers sections on any current page
+        //Using window.location.pathname === path to set current page observers results in weird behavior
         
-        // console.info(document.querySelector(section))
+        let section = item.link.replace("/","")
+        // let path = item.link.split("#")
+        // console.info({path})
         if (window.location.pathname === "/" && section.includes("#") ) {
           console.info(section)
            observer.observe(document.querySelector(section));
@@ -65,22 +67,16 @@ const Navbar = ({toggle, logo}) => {
   }, []) 
 
   const updateNavState = (sectionID) => {
-    console.info('updateNaveState()')
     const newNavList = navItems.map( (item) => {
-      // item.isActive = false
-      console.info({link:item.link, linkMatch:`/#${sectionID}`})
       if (item.link === `/#${sectionID}`) {
-        console.info('updateItem')
         const updatedItem = {
           ...item,
           isActive: !item.isActive,
         }
-        console.info({xx:updatedItem})
         return updatedItem
       }
       return item
     })
-    console.info(newNavList)
     setNavItems(newNavList)
   }
 
@@ -91,7 +87,7 @@ const Navbar = ({toggle, logo}) => {
 
 
   return (
-    <Nav navbar={navbar} className={offset >= 80 ? 'active' : ''}>
+    <Nav isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
       <LogoContainer to="/" onClick={toggleHome}>{logo}</LogoContainer>
       <NavMenu>
         { renderNavItems(navItems)}
@@ -99,7 +95,15 @@ const Navbar = ({toggle, logo}) => {
       <NavBtn>
         <Button primary="true" round="true" to="/trips">Call to Action</Button>
       </NavBtn>
-      <Bars onClick={toggle}/>
+      <MobileMenuIcon onClick={toggle}>
+        {!isOpen &&
+          <AiOutlineMenu />
+        }
+        {isOpen && 
+          <AiOutlineClose />
+        }
+      </MobileMenuIcon>
+      
     </Nav>
   )
 }
@@ -107,7 +111,7 @@ const Navbar = ({toggle, logo}) => {
 export default Navbar
 
 const Nav = styled.nav`
-  background: ${ ({ navbar }) => (navbar ? "#141414" : "transparent")};
+  background: ${ ({ navbar, isOpen }) => (navbar || isOpen ? props => props.theme.colors.gray.dark : "transparent")};
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -117,7 +121,7 @@ const Nav = styled.nav`
   top:0;
 
   &.active {
-    background: #141414;
+    background: ${props => props.theme.colors.gray.dark};
   }
 `
 const NavMenu = styled.ul`
@@ -129,30 +133,6 @@ const NavMenu = styled.ul`
     display: none;
   }
 `
-// const NavItem = styled.li`
-//     height: 100%;
-//     width: 4vw;
-//     display: flex;
-//     justify-content: center;
-    
-//     a {
-//       color: white;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       text-decoration: none;
-//       padding: 0 1rem;
-//       height: -webkit-fill-available;
-//       width: -webkit-fill-available;
-//       cursor: pointer;
-//       border-bottom: 4px solid transparent;
-
-//       &.active {
-//         border-bottom: 4px solid ${props => props.theme.colors.primary.main};
-//       }
-//     }
-    
-// `
 
 const LogoContainer = styled(Link)`
   color: white;
@@ -167,16 +147,15 @@ const LogoContainer = styled(Link)`
   width: fit-content;
 `
 
-const Bars = styled(FaBars)`
+const MobileMenuIcon = styled.div`
   display: none;
   color:#ffff;
 
   @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
     font-size: 1.8rem;
     cursor: pointer;
   }

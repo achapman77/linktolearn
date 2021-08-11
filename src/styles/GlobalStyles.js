@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     ::-webkit-scrollbar {
         width: 6px;
-	    background-color: #F5F5F5;
+	    background-color: ${props => props.theme.colors.gray.dark};
     }
     ::-webkit-scrollbar-thumb {
         background-color: #0d0d0d;

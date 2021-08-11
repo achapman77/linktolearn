@@ -53,7 +53,7 @@ const NavLink = styled(Link)`
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 4vw;
+    width: clamp(80px, 5vw, 5vw);
     text-decoration: none;
     padding: 0 1rem;
     cursor: pointer;
