@@ -4,7 +4,7 @@ A simple and clean Gatsby/NetflifyCMS starter template.
 ## [Live Demo](https://gatsby-netlify-cms-starter-template-plus.netlify.app/)
 
 
-## Technologies: 
+## Base Technologies/Plugins: 
   * React
   * Gatsby
   * GraphQL
@@ -14,24 +14,12 @@ A simple and clean Gatsby/NetflifyCMS starter template.
 ## [TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
 by Brian Design
 
-### Timeline
-  * 0:00 What we are building
-  * 3:33 Creating Gatsby Site
-  * 20:08 Creating Navbar Section
-  * 45:46 Creating Hero Section
-  * 1:08:30 Trips Section 
-  * 1:48:37 Testimonials Section
-  * 2:14:45 Stats Section
-  * 2:30:50 Email Section
-  * 2:43:15 Footer Section
-
-
-## Additions to Tutorial: 
-  * Theming / Mixins 
-  * MediaQuery Shortcut
+## Additional Features: 
+  * Site Theming: colors, mixins, media queries 
+  * Improved Navigation: Sticky, Color Change Bar on scroll, Active Nav Btns on Scroll/Click/New Page
+  * Netlify CMS - Dynamic Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery
+  * Contact Form: Validation, Auto Formating, Floating Labels
   * SEO enhancement
-  * Sticky/Color changing header
-  * Netlify CMS - Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery
   * [Formik Contact Form + Netlify](https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/)
   * [Complete Guide to Netlify Forms](https://www.stackbit.com/blog/complete-guide-netlify-forms/)
 

@@ -22,14 +22,14 @@ const theme = {
         orange: '#F26A2E',
         blue: '#077BF1',
         primary: {
-            light:'',
+            light:'#F49D78',
             main:'#F26A2E',
-            dark:''
+            dark:'#BF5324'
         },
         secondary: {
-            light:'',
+            light:'#51A3F4',
             main:'#077BF1',
-            dark:''
+            dark:'#264C73'
         },
         gray:{
             light:'#999',

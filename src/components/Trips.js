@@ -58,7 +58,7 @@ const Trips = ({heading}) => {
     }
     
     return (
-        <ProductsContainer>
+        <ProductsContainer id='trips'>
             <ProductsHeading>{heading}</ProductsHeading>
             <ProductWrapper>{getTrips(data)}</ProductWrapper>
         </ProductsContainer>
@@ -67,7 +67,7 @@ const Trips = ({heading}) => {
 
 export default Trips
 
-const ProductsContainer = styled.div`
+const ProductsContainer = styled.section`
     min-height: 100vh;
     padding: 5rem calc((100vw-1300px) /2 );
     color: #fff;
