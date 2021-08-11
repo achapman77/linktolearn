@@ -62,9 +62,9 @@ const NavLink = styled(Link)`
     &.active {
     border-bottom: 4px solid ${props => props.theme.colors.primary.main};
     }
-    /* &:hover {
-      border-right: 1px solid white;
-      border-left: 1px solid white;
-      background: rgba(255,255,255, 0.125);
-    } */
+    &:hover {
+      border-right: 1px solid rgba(255,255,255, 0.125);
+      border-left: 1px solid rgba(255,255,255, 0.125);
+      background: rgba(255,255,255, 0.05);
+    }
 `

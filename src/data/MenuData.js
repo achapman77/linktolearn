@@ -11,7 +11,7 @@ export const menuData = [
     },
     {
         title: "Contact", 
-        link: "/#foobar",
+        link: "/#contact",
         isActive: false
     },
     {

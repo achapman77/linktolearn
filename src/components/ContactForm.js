@@ -61,7 +61,7 @@ const ContactFormSection = () => {
             .join("&");
     }
     return (
-        <Section id="foobar">
+        <Section id="contact">
             <SectionHeader>
                 <h2>Get in touch</h2>
                 <p>Lets Talk about your project</p>
