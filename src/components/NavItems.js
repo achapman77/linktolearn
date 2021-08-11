@@ -5,6 +5,8 @@ import { map } from 'lodash';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
+// Resources
+// https://chaseohlson.com/gatsby-link-anchor-navigation
 export function scroller(target, offset) {
   scrollToElement(target, {
     offset,

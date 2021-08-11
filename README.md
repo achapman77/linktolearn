@@ -16,7 +16,7 @@ by Brian Design
 
 ## Additional Features: 
   * Site Theming: colors, mixins, media queries 
-  * Improved Navigation: Sticky, Color Change Bar on scroll, Active Nav Btns on Scroll/Click/New Page
+  * Improved Navigation: Sticky, Color Change Bar on scroll, Active Nav Btns on Scroll/New Page
   * Netlify CMS - Dynamic Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery
   * Contact Form: Validation, Auto Formating, Floating Labels
   * SEO enhancement
@@ -49,6 +49,9 @@ https://www.digitalocean.com/community/tutorials/how-to-boost-seo-using-gatsby-s
 
 Sticky Navbar w/ Color Change on Scroll  
 https://www.youtube.com/watch?v=JMsNslI8KoY&t=166s
+
+Page Scroll and Page Navigation Combined in Nav Menu
+https://chaseohlson.com/gatsby-link-anchor-navigation
 
 
 Styled-Components Theming &  Media Queries  
