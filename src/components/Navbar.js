@@ -17,21 +17,32 @@ const Navbar = ({isOpen, toggle, logo}) => {
   const [navItems, setNavItems] = useState(menuData)
   const data = useStaticQuery(graphql`
         query {
-            allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {in: ["logo_"]}}) 
-            {
-                edges {
-                    node {
-                        childImageSharp {
-                            gatsbyImageData
-                            id
-                        }
-                        name
+          markdownRemark {
+            frontmatter {
+              logos {
+                dark_logo {
+                  alt
+                  img {
+                    childImageSharp {
+                      gatsbyImageData
                     }
+                  }
                 }
+                light_logo {
+                  alt
+                  img {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
+                }
+              }
             }
+          }
         }
     `)
-  // let image = getImage(data.allFile.edges[0].node)
+  let logoDarkonLight = getImage(data.markdownRemark.frontmatter.logos.dark_logo.img)
+
 
   console.info({data})
 
