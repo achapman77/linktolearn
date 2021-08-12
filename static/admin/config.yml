@@ -29,7 +29,7 @@ collections:
     files:
       - label: "Site Logos"
         name: site_logos
-        file: content/site-data/contact_info.md
+        file: content/site-data/site-logos.md
         fields:
           - label: "Dark on Light Logo"
             name: "dark_logo"
