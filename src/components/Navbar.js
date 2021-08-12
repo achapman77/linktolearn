@@ -15,36 +15,37 @@ const Navbar = ({isOpen, toggle, logo}) => {
   const [navbar, setNavbar] = useState(false)
   const [offset, setOffset] = useState(0)
   const [navItems, setNavItems] = useState(menuData)
-  const data = useStaticQuery(graphql`
-        query {
-          markdownRemark {
-            frontmatter {
-              logos {
-                dark_logo {
-                  alt
-                  img {
-                    childImageSharp {
-                      gatsbyImageData
-                    }
-                  }
-                }
-                light_logo {
-                  alt
-                  img {
-                    childImageSharp {
-                      gatsbyImageData
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-    `)
-  let logoDarkonLight = getImage(data.markdownRemark.frontmatter.logos.dark_logo.img)
+  // const data = useStaticQuery(graphql`
+  //       query {
+  //         markdownRemark {
+  //           frontmatter {
+  //             logos {
+  //               dark_logo {
+  //                 alt
+  //                 img {
+  //                   childImageSharp {
+  //                     gatsbyImageData
+  //                   }
+  //                 }
+  //               }
+  //               light_logo {
+  //                 alt
+  //                 img {
+  //                   childImageSharp {
+  //                     gatsbyImageData
+  //                   }
+  //                 }
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //   `)
+  // let logoDark = getImage(data.markdownRemark.frontmatter.logos.dark_logo.img)
+  // let logoLight = getImage(data.markdownRemark.frontmatter.logos.light_logo.img)
 
 
-  console.info({data})
+  // console.info({data})
 
 
   // Resource

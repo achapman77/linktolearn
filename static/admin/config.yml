@@ -35,31 +35,11 @@ collections:
             name: "logos"
             widget: object
             fields:
-            - label: "Dark on Light Logo"
-              name: "dark_logo"
-              widget: object
-              fields:
-                - {label: "Upload Logo", name: "img", widget: "image", required: false}
-                - {label: "Alt Text", name: "alt", widget: "string", required: false}
-            - label: "Light on Dark Logo"
-              name: "light_logo"
-              widget: object
-              fields:
-                - {label: "Upload Logo", name: "img", widget: "image", required: false}
-                - {label: "Alt Text", name: "alt", widget: "string", required: false}
-            - label: "Icon (No Text)"
-              name: "icon"
-              widget: object
-              fields:
-                - {label: "Upload Icon", name: "img", widget: "image", required: false}
-                - {label: "Alt Text", name: "alt", widget: "string", required: false}
-            - label: "Favicon"
-              name: "favicon"
-              widget: object
-              fields:
-                - {label: "Upload Favicon", name: "img", widget: "image", required: false}
-                - {label: "Alt Text", name: "alt", widget: "string", required: false}
-
+              - {label: "Alt Text", name: "alt", widget: "string", required: false}
+              - {label: "Upload Dark on Light Logo", name: "logo_dark", widget: "image", required: false}
+              - {label: "Upload Light on Dark Logo", name: "logo_light", widget: "image", required: false}
+              - {label: "Upload Icon", name: "icon", widget: "image", required: false}
+              - {label: "Upload Favicon", name: "favicon", widget: "image", required: false}
       - label: "Contact Info"
         name: contact_info
         file: content/site-data/contact_info.md
