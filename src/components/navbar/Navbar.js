@@ -1,53 +1,23 @@
 import React, {useState, useEffect} from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { animateScroll as scroll } from "react-scroll"
+// import { Link, useStaticQuery, graphql } from "gatsby"
+// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+// import { animateScroll as scroll } from "react-scroll"
 import styled from 'styled-components'
 //data
-import { menuData } from "../data/MenuData"
+import { menuData } from "../../data/MenuData"
 //components
+import NavLogo from "./NavLogo"
 import { renderNavItems } from './NavItems'
-import { Button } from "./Button"
+import { Button } from "../Button"
 //icons
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+
 
 const Navbar = ({isOpen, toggle, logo}) => {
   const [navbar, setNavbar] = useState(false)
   const [offset, setOffset] = useState(0)
   const [navItems, setNavItems] = useState(menuData)
-  // const data = useStaticQuery(graphql`
-  //       query {
-  //         markdownRemark {
-  //           frontmatter {
-  //             logos {
-  //               dark_logo {
-  //                 alt
-  //                 img {
-  //                   childImageSharp {
-  //                     gatsbyImageData
-  //                   }
-  //                 }
-  //               }
-  //               light_logo {
-  //                 alt
-  //                 img {
-  //                   childImageSharp {
-  //                     gatsbyImageData
-  //                   }
-  //                 }
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //   `)
-  // let logoDark = getImage(data.markdownRemark.frontmatter.logos.dark_logo.img)
-  // let logoLight = getImage(data.markdownRemark.frontmatter.logos.light_logo.img)
-
-
-  // console.info({data})
-
-
+ 
   // Resource
   // https://vidler.app/blog/javascript/gatsby-scroll-position/
   var observer
@@ -55,8 +25,10 @@ const Navbar = ({isOpen, toggle, logo}) => {
     //Pages other than index, header is solid
     if(window.location.pathname === "/") {
       setNavbar(false)
+      console.info({yy:navbar})
     } else {
       setNavbar(true)
+      console.info({zz:navbar})
     }
     
     //When user scrolls on index header turns from transparent to solid
@@ -111,22 +83,17 @@ const Navbar = ({isOpen, toggle, logo}) => {
     setNavItems(newNavList)
   }
 
-  const toggleHome = () => {
-    scroll.scrollToTop()
-  }
+  // const toggleHome = () => {
+  //   scroll.scrollToTop()
+  // }
 
 
 
   return (
     <Nav isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
-      {/* <LogoContainer to="/" onClick={toggleHome}>
-        {!isOpen &&
-          <LogoImage image={image} alt={data.allFile.edges[0].node.name}/>
-        }
-        
-      </LogoContainer> */}
+      <NavLogo/>
       <NavMenu>
-        { renderNavItems(navItems)}
+        { renderNavItems(navItems, updateNavState)}
       </NavMenu>
       <NavBtn>
         <Button primary="true" round="true" to="/">Call to Action</Button>
@@ -168,22 +135,6 @@ const NavMenu = styled.ul`
   @media screen and (max-width: 768px) {
     display: none;
   }
-`
-
-const LogoContainer = styled(Link)`
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: -webkit-fill-available;
-  width: -webkit-fill-available;
-  cursor: pointer;
-  width: fit-content;
-`
-const LogoImage = styled(GatsbyImage)`
-  max-width: 300px;
 `
 
 const MobileMenuIcon = styled.div`

@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Theme from "../styles/Theme"
+import Theme from "../../styles/Theme"
 
 const NavbarWrapper = ({children}) => {
     return (

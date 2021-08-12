@@ -1,8 +1,8 @@
 import React, {useState} from "react"
 import Theme from "../styles/Theme"
-import NavMobile from "./NavMobile"
+import NavMobile from "./navbar/NavMobile"
 import Footer from "./Footer"
-import Navbar from "./Navbar"
+import Navbar from "./navbar/Navbar"
 import { GlobalStyle } from "../styles/GlobalStyles"
 
 const Layout = ({ children }) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from "./Button"
-import { menuData } from '../data/MenuData'
+import { Button } from "../Button"
+import { menuData } from '../../data/MenuData'
 import { Link } from 'gatsby'
 
 const NavMobile = ({isOpen, toggle}) => {
