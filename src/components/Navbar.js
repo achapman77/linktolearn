@@ -1,22 +1,41 @@
 import React, {useState, useEffect} from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { animateScroll as scroll } from "react-scroll"
-// import scrollToElement from 'scroll-to-element';
-// import { map } from 'lodash';
-// import { AnchorLink } from "gatsby-plugin-anchor-links"
 import styled from 'styled-components'
-// import { FaBars } from 'react-icons/fa'
-// import { FaTimes } from 'react-icons/fa'
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+//data
 import { menuData } from "../data/MenuData"
+//components
 import { renderNavItems } from './NavItems'
 import { Button } from "./Button"
+//icons
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
 const Navbar = ({isOpen, toggle, logo}) => {
   const [navbar, setNavbar] = useState(false)
   const [offset, setOffset] = useState(0)
   const [navItems, setNavItems] = useState(menuData)
-  
+  const data = useStaticQuery(graphql`
+        query {
+            allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {in: ["logo_"]}}) 
+            {
+                edges {
+                    node {
+                        childImageSharp {
+                            gatsbyImageData
+                            id
+                        }
+                        name
+                    }
+                }
+            }
+        }
+    `)
+  // let image = getImage(data.allFile.edges[0].node)
+
+  console.info({data})
+
+
   // Resource
   // https://vidler.app/blog/javascript/gatsby-scroll-position/
   var observer
@@ -88,12 +107,17 @@ const Navbar = ({isOpen, toggle, logo}) => {
 
   return (
     <Nav isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
-      <LogoContainer to="/" onClick={toggleHome}>{logo}</LogoContainer>
+      {/* <LogoContainer to="/" onClick={toggleHome}>
+        {!isOpen &&
+          <LogoImage image={image} alt={data.allFile.edges[0].node.name}/>
+        }
+        
+      </LogoContainer> */}
       <NavMenu>
         { renderNavItems(navItems)}
       </NavMenu>
       <NavBtn>
-        <Button primary="true" round="true" to="/trips">Call to Action</Button>
+        <Button primary="true" round="true" to="/">Call to Action</Button>
       </NavBtn>
       <MobileMenuIcon onClick={toggle}>
         {!isOpen &&
@@ -145,6 +169,9 @@ const LogoContainer = styled(Link)`
   width: -webkit-fill-available;
   cursor: pointer;
   width: fit-content;
+`
+const LogoImage = styled(GatsbyImage)`
+  max-width: 300px;
 `
 
 const MobileMenuIcon = styled.div`

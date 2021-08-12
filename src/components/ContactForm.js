@@ -166,7 +166,7 @@ export default ContactFormSection
 const ContactForm = styled(Form)`
     display: flex;
     flex-flow: column;
-    width: 20vw;
+    width: clamp(260px, 40vw, 40vw);
     padding: 5rem 0;
 `
 

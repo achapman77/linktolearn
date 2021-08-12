@@ -16,7 +16,8 @@ export const SectionHeader = styled.div`
     }
 `
 export const Container = styled.div`
-    width: 50vw;
+    width: -webkit-fill-available;
+    padding: 0rem calc((100vw - 2000px) / 2 );
     display: flex;
     justify-content: center;
     align-items: center;

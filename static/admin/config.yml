@@ -27,6 +27,35 @@ collections:
   - name: "site_content"
     label: "Site Content"
     files:
+      - label: "Site Logos"
+        name: site_logos
+        file: content/site-data/contact_info.md
+        fields:
+          - label: "Dark on Light Logo"
+            name: "dark_logo"
+            widget: object
+            fields:
+              - {label: "Upload Logo", name: "dark_logo", widget: "image", required: false}
+              - {label: "Alt Text", name: "alt_text", widget: "string", required: false}
+          - label: "Light on Dark Logo"
+            name: "light_logo"
+            widget: object
+            fields:
+              - {label: "Upload Logo", name: "light_logo", widget: "image", required: false}
+              - {label: "Alt Text", name: "alt_text", widget: "string", required: false}
+          - label: "Icon (No Text)"
+            name: "icon"
+            widget: object
+            fields:
+              - {label: "Upload Icon", name: "icon", widget: "image", required: false}
+              - {label: "Alt Text", name: "alt_text", widget: "string", required: false}
+          - label: "Favicon"
+            name: "favicon"
+            widget: object
+            fields:
+              - {label: "Upload Favicon", name: "favicon", widget: "image", required: false}
+              - {label: "Alt Text", name: "alt_text", widget: "string", required: false}
+
       - label: "Contact Info"
         name: contact_info
         file: content/site-data/contact_info.md

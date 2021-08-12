@@ -23,7 +23,7 @@ const NavMobile = ({isOpen, toggle}) => {
                     })}
                 </Menu>
                 <BtnWrap>
-                    <Button primary="true" round="true" to="/trips">
+                    <Button primary="true" round="true" to="/">
                         Call to Action
                     </Button>
                 </BtnWrap>
