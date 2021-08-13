@@ -2,12 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-const Footer = () => {
+
+const Footer = ({logo, logoAltText}) => {
     return (
         <FooterContainer>
             <FooterLinksWrapper>
                 <FooterDesc>
-                    <h1>Explorix</h1>
+                    <LogoContainer>
+                        <img src={logo} alt={logoAltText} />
+                    </LogoContainer>
                     <p>We strive to create the best experiences for our customers</p>
                 </FooterDesc>
                 <FooterLinkItems>
@@ -46,6 +49,10 @@ const FooterContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
     color: #000;
     background: #fafafb;
+
+    @media screen and (max-width: 400px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 const FooterDesc = styled.div`
@@ -100,3 +107,11 @@ const FooterLink = styled(Link)`
    }
 `
 
+const LogoContainer = styled.div`
+    width: clamp(150px, 15vw, 200px);
+    margin-bottom: 1rem;
+    img {
+        max-width: -webkit-fill-available;
+        max-height: -webkit-fill-available;
+    }
+`

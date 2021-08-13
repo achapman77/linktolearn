@@ -45,6 +45,7 @@ collections:
         file: content/site-data/contact_info.md
         fields:
           - {label: "Phone", name: "phone", widget: "string", required: false}
+          - {label: "Fax", name: "fax", widget: "string", required: false}
           - {label: "Email", name: "layout", widget: "string", required: false}
           - label: "Business Address" 
             name: "business_address"

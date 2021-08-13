@@ -30,6 +30,14 @@ export const GlobalStyle = createGlobalStyle`
         font-size: clamp(1.2rem, 5vw, 3rem);
         color: #000;
     }
+    h3 {
+        font-size: clamp(1rem, 5vw, 2.25rem);
+        color: #000;
+    }
+    h4 {
+        font-size: clamp(1rem, 5vw, 1.75rem);
+        color: #000;
+    }
     p, input, label, select, textarea {
         font-size: clamp(1rem, 0.8125rem + 0.8333vw, 1.25rem);
     }

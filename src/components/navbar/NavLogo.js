@@ -1,43 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { Link } from "gatsby"
 import { animateScroll as scroll } from "react-scroll"
+// import LogoMain from '../../assets/images/logos/logo_main.png'
 
 
-const NavLogo = () => {
-    const data = useStaticQuery(graphql`
-        query {
-          markdownRemark {
-            frontmatter {
-              logos {
-                alt
-                logo_dark {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                }
-                logo_light {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                }
-              }
-            }
-          }
-        }
-    `)
-  // let logoDark = getImage(data.markdownRemark.frontmatter.logos.logo_dark)
-  let logoLight = getImage(data.markdownRemark.frontmatter.logos.logo_light)
-  let logoAltText = data.markdownRemark.frontmatter.logos.alt
+const NavLogo = ({logo, logoAltText}) => {
 
   const toggleHome = () => {
     scroll.scrollToTop()
   }
+
     return (
         <LogoContainer to="/" onClick={toggleHome}>
-          {/* <LogoImage image={logoDark} alt={logoAltText} loading="eager"/> */}
-          <LogoImage image={logoLight} alt={logoAltText} loading="eager"/>
+          <img src={logo} alt={logoAltText} />
         </LogoContainer>
     )
 }
@@ -56,7 +32,8 @@ const LogoContainer = styled(Link)`
   width: -webkit-fill-available;
   cursor: pointer;
   width: fit-content;
-`
-const LogoImage = styled(GatsbyImage)`
-  max-width: 300px;
+
+  img {
+    width: clamp(150px, 15vw, 300px);
+  }
 `

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+
 export const FloatingLabel = styled.div`
     position:relative; 
     margin:1.5rem 0;
@@ -7,18 +9,24 @@ export const FloatingLabel = styled.div`
 
     input, select, textarea {
         padding:7px 4px;
+        padding-left: 35px;
         display:block;
         width:100%;
         height:auto;
         background-color: transparent;
         border:none;
         border-bottom:1px solid ${props => props.theme.colors.gray.dark};
+        color: ${props => props.theme.colors.gray.dark};
         margin-bottom: 5px;
         
         &:focus{
             outline:none;
             border-bottom:2px solid ${props => props.theme.colors.primary.main}; 
         }
+        &:focus ~ svg{
+            color: ${props => props.theme.colors.primary.main}; 
+        }
+        
     }
 
     textarea {
@@ -35,6 +43,9 @@ export const FloatingLabel = styled.div`
             font-size:14px;
             color:${props => props.theme.colors.primary.main};
         }
+        &:not(:focus) ~ label {
+            color:${props => props.theme.colors.gray.light};
+        }
     }
 
     select {
@@ -43,6 +54,9 @@ export const FloatingLabel = styled.div`
             font-size:14px;
             color:${props => props.theme.colors.primary.main};
         }
+        &:not(:focus) ~ label {
+            color:${props => props.theme.colors.gray.light};
+        }
     }
 
     label {
@@ -50,7 +64,7 @@ export const FloatingLabel = styled.div`
         font-weight:normal;
         position:absolute;
         pointer-events:none;
-        left:5px;
+        left:35px;
         top:5px;
         transition:0.2s ease all; 
         -moz-transition:0.2s ease all; 
@@ -60,6 +74,14 @@ export const FloatingLabel = styled.div`
         svg {
             margin-right: 5px;
         }
+    }
+    svg {
+        position:absolute;
+        pointer-events:none;
+        left:5px;
+        top: 5px;  
+        color:${props => props.theme.colors.gray.light};
+        font-size: clamp(1rem, 5vw, 1.5rem);
     }
 
     .errorMessage {

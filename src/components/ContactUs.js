@@ -6,10 +6,12 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { Section, SectionHeader, Container } from './layout/Section'
 import { Button } from './Button'
 import { FloatingLabel } from './inputs/FloatingLabel'
+import ContactInfo from './ContactInfo'
 //icons
 import { AiOutlineMail, AiOutlinePhone, AiOutlineQuestionCircle  } from 'react-icons/ai'
 import { RiMessage2Line  } from 'react-icons/ri'
 import { IoPersonOutline  } from 'react-icons/io5'
+
 
 
 // Resources
@@ -18,7 +20,7 @@ import { IoPersonOutline  } from 'react-icons/io5'
 // https://medium.com/@matt.readout/adding-css-animations-with-styled-components-6c191c23b6ba
 // https://formik.org/docs/api/field
 
-const ContactFormSection = () => {
+const ContactUs = () => {
     const [floatSelect, setFloatSelect] = useState(false)
     const [previousValue, setPreviousValue] = useState("")
 
@@ -63,11 +65,12 @@ const ContactFormSection = () => {
     return (
         <Section id="contact">
             <SectionHeader>
-                <h2>Get in touch</h2>
-                <p>Lets Talk about your project</p>
+                <h2>We’d love to hear from you</h2>
+                <p>Whether you have a question about features, trials, pricing, need a demo, or anything else, our team is ready to answer all your questions</p>
             </SectionHeader>
            
-            <Container>
+            <ContactContainer>
+                <ContactInfo />
                 <Formik
                     initialValues={{
                         name: '',
@@ -107,7 +110,7 @@ const ContactFormSection = () => {
                             errors.email = 'Invalid Email Address'
                         }
                         normalizePhoneInput()
-                        if(!phoneRegex.test(values.phone)) {
+                        if(!phoneRegex.test(values.phone) && values.phone !=="") {
                             errors.phone = 'Invalid Phone Number'
                         }
                         // if(!values.message) {
@@ -118,21 +121,27 @@ const ContactFormSection = () => {
                 >
                 {() => (
                     <ContactForm name="contact-demo" data-netlify={true} data-netlify-honeypot="bot-field">
+                        <FormTitle>
+                            <h4>Fill out this short form and a member of our team will get back to you within 24 hours</h4>
+                        </FormTitle>
                         <FloatingLabel>
                             <Field name="name" placeholder=" " data-lpignore="true"></Field>
-                            <label htmlFor="name"><IoPersonOutline/>Name</label>
+                            <IoPersonOutline/>
+                            <label htmlFor="name">Name*</label>
                             <span className="errorMessage"><ErrorMessage name="name"/></span>
                         </FloatingLabel>
                         
                         <FloatingLabel>
                             <Field name="email" placeholder=" " data-lpignore="true"></Field>
-                            <label htmlFor="email"><AiOutlineMail/>Email</label>
+                            <AiOutlineMail/>
+                            <label htmlFor="email">Email*</label>
                             <span className="errorMessage"><ErrorMessage name="email"/></span>
                         </FloatingLabel>
                         
                         <FloatingLabel>
                             <Field id="contact_phone" name="phone" placeholder=" " value={previousValue} data-lpignore="true"></Field>
-                            <label htmlFor="phone"><AiOutlinePhone/>Phone</label>
+                            <AiOutlinePhone/>
+                            <label htmlFor="phone">Phone</label>
                             <span className="errorMessage"><ErrorMessage name="phone"/></span>
                         </FloatingLabel>
                         
@@ -142,32 +151,45 @@ const ContactFormSection = () => {
                                 <option value="1">Question 1</option>
                                 <option value="2">Question 2</option>
                             </Field>
-                            <label htmlFor="help"><AiOutlineQuestionCircle/>How Can We Help?</label>
+                            <AiOutlineQuestionCircle/>
+                            <label htmlFor="help">How Can We Help?</label>
                         </FloatingLabel>
 
                         <FloatingLabel>
                             <Field name="message" as="textarea" placeholder=" "></Field>
-                            <label htmlFor="message"><RiMessage2Line/>Your Message</label>
+                            <RiMessage2Line/>
+                            <label htmlFor="message">Your Message</label>
                             <span className="errorMessage"><ErrorMessage name="message"/></span>
                         </FloatingLabel>
 
-                        <ContactFormButton as="button" type="submit" primary="true" round="true">Send</ContactFormButton>
+                        <ContactFormButton as="button" type="submit" primary="true" round="true">Send It</ContactFormButton>
                     </ContactForm>
                 )}
                 </Formik>
-            </Container>
+            </ContactContainer>
         </Section>
         
     )
 }
 
-export default ContactFormSection
+export default ContactUs
+
 
 const ContactForm = styled(Form)`
     display: flex;
     flex-flow: column;
-    width: clamp(260px, 40vw, 40vw);
+    width: clamp(260px, 90vw, 600px);
     padding: 5rem 0;
+    flex-basis: 50%;
+`
+
+const ContactContainer = styled(Container)`
+    flex-flow: wrap-reverse;
+`
+
+const FormTitle = styled.div`
+    max-width: 700px;
+    margin-bottom: 2rem
 `
 
 const ContactFormButton = styled(Button)`
@@ -175,4 +197,6 @@ const ContactFormButton = styled(Button)`
     margin-left: auto;
     padding: 0.75rem;
 `
+
+
 

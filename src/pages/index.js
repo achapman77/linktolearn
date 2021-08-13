@@ -1,13 +1,12 @@
 import React from "react"
-import ContactFormSection from "../components/ContactForm"
-
-// import Email from "../components/Email"
-import Hero from "../components/Hero"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-import Stats from "../components/Stats"
-import Testimonials from "../components/Testimonials"
+import Hero from "../components/Hero"
 import Trips from "../components/Trips"
+import Testimonials from "../components/Testimonials"
+import Stats from "../components/Stats"
+// import Email from "../components/Email"
+import ContactUS from "../components/ContactUs"
 
 const IndexPage = () => (
   <Layout>
@@ -17,7 +16,7 @@ const IndexPage = () => (
     <Testimonials/>
     <Stats/>
     {/* <Email/> */}
-    <ContactFormSection/>
+    <ContactUS/>
   </Layout>
 )
 

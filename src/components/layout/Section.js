@@ -5,6 +5,7 @@ export const Section = styled.section`
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 `
 
 export const SectionHeader = styled.div`

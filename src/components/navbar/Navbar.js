@@ -1,7 +1,4 @@
 import React, {useState, useEffect} from "react"
-// import { Link, useStaticQuery, graphql } from "gatsby"
-// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-// import { animateScroll as scroll } from "react-scroll"
 import styled from 'styled-components'
 //data
 import { menuData } from "../../data/MenuData"
@@ -13,7 +10,7 @@ import { Button } from "../Button"
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
 
-const Navbar = ({isOpen, toggle, logo}) => {
+const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   const [navbar, setNavbar] = useState(false)
   const [offset, setOffset] = useState(0)
   const [navItems, setNavItems] = useState(menuData)
@@ -50,7 +47,7 @@ const Navbar = ({isOpen, toggle, logo}) => {
           }
         })
 
-      }, { threshold: [0.5], delay: 1000 });
+      }, { threshold: [0.5] });
 
 
       navItems.forEach((item) => {
@@ -83,15 +80,9 @@ const Navbar = ({isOpen, toggle, logo}) => {
     setNavItems(newNavList)
   }
 
-  // const toggleHome = () => {
-  //   scroll.scrollToTop()
-  // }
-
-
-
   return (
     <Nav isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
-      <NavLogo/>
+      <NavLogo logo={logo} logoAltText={logoAltText}/>
       <NavMenu>
         { renderNavItems(navItems, updateNavState)}
       </NavMenu>
