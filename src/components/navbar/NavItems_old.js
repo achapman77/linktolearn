@@ -1,5 +1,6 @@
 import React from 'react';
 import scrollToElement from 'scroll-to-element';
+// import { animateScroll as scroll } from "react-scroll"
 import { map } from 'lodash';
 import { Link } from 'gatsby';
 import styled from 'styled-components';

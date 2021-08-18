@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "animated-scroll-to": "^2.2.0",
     "aos": "^2.3.4",
     "babel-plugin-styled-components": "^1.13.2",
     "formik": "^2.2.9",
