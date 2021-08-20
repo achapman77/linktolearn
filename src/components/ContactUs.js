@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
 //form validation
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 //layout

@@ -13,6 +13,9 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 // import scrollToElement from 'scroll-to-element';
 import animateScrollTo from 'animated-scroll-to';
 
+
+
+
 const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   const [navbar, setNavbar] = useState(false)
   const [offset, setOffset] = useState(0)
@@ -135,7 +138,9 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
 
         //animate scroll
         let options = {
-          verticalOffset: -80
+          verticalOffset: -80,
+          speed: 500,
+          easing: (t) => { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t },
         }
         animateScrollTo(document.querySelector(`#${anchor}`, {options}))
         .then(hasScrolledToPosition => {
