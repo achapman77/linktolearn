@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { useStaticQuery, graphql } from 'gatsby'
 
 //icons
 import { AiOutlineMail, AiFillLinkedin, AiFillFacebook, AiFillInstagram, AiFillTwitterSquare} from 'react-icons/ai'
@@ -8,6 +8,29 @@ import { RiRoadMapLine, RiTwitterLine } from 'react-icons/ri'
 import { Button } from './Button'
 
 const ContactInfo = () => {
+
+    const data1 = useStaticQuery(graphql`
+        query {
+            markdownRemark {
+                frontmatter {
+                    business_address {
+                        street
+                        street2
+                        city
+                        state
+                        zipcode
+                    }
+                    business_name
+                    email
+                    fax
+                    phone
+                }
+            }
+        }
+    `)
+
+    const contactInfo = data1.markdownRemark.frontmatter
+
     return (
         <Container>
             <Title>Others Ways to Connect</Title>
@@ -20,18 +43,18 @@ const ContactInfo = () => {
                 <Row>
                     <a href="" title="Click to Call">
                         <Label>Call:</Label>
-                        <p>(555) 555-5555</p>
+                        <p>{contactInfo.phone}</p>
                     </a>
                 </Row>
                 <Row>
                     <Label>Fax:</Label>
-                    <p>(555) 555-5555</p>
+                    <p>{contactInfo.fax}</p>
                 </Row>
                 <Row title="Click to View on Google Maps">
                     <a href="">
                         <Label>Address: <RiRoadMapLine/></Label>
-                        <p>123 Anywhere, Unit 123</p>
-                        <p>Denver, CO 80202  </p>
+                        <p>{contactInfo.business_address.street}, {contactInfo.business_address.street2}</p>
+                        <p>{contactInfo.business_address.city}, {contactInfo.business_address.state} {contactInfo.business_address.zipcode}  </p>
                     </a>
                 </Row>
                 <Row>

@@ -44,9 +44,10 @@ collections:
         name: contact_info
         file: content/site-data/contact_info.md
         fields:
+          - {label: "Business Name", name: "business_name", widget: "string", required: false}
           - {label: "Phone", name: "phone", widget: "string", required: false}
           - {label: "Fax", name: "fax", widget: "string", required: false}
-          - {label: "Email", name: "layout", widget: "string", required: false}
+          - {label: "Email", name: "email", widget: "string", required: false}
           - label: "Business Address" 
             name: "business_address"
             widget: "object" 

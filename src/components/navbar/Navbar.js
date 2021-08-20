@@ -29,7 +29,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
 
   //Pages other than index, header is solid
   useEffect(() => {
-    console.info('setNavbar')
+    // console.info('setNavbar')
     if(window.location.pathname === "/") {
       setNavbar(false)
     } else {
@@ -48,7 +48,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   }
 
   useEffect(() => {
-    console.info('setOffset')
+    // console.info('setOffset')
     if (typeof window !== `undefined`) {
       window.addEventListener('scroll', handleNavbarOnScroll)
     }
@@ -89,7 +89,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
       })
       
       return () => {
-        console.info('clean up')
+        // console.info('clean up')
         navItems.forEach((item) => {
           let pathArr = item.link.split("#")
           let page = pathArr[0]
@@ -106,8 +106,8 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   }, [observerState]) 
 
   const updateNavState = (sectionID) => {
-    console.info('updateNaveState()')
-    console.info(sectionID)
+    // console.info('updateNaveState()')
+    // console.info(sectionID)
     const newNavList = navItems.map( (item) => {
       item.isActive = false
       if (item.link === `/#${sectionID}`) {
@@ -115,12 +115,12 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
           ...item,
           isActive: !item.isActive,
         }
-        console.info({updatedItem})
+        // console.info({updatedItem})
         return updatedItem
       }
       return item
     })
-    console.info(newNavList)
+    // console.info(newNavList)
     setNavItems(newNavList)
   }
 

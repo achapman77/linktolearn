@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+
 //form validation
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 //layout
@@ -20,6 +20,7 @@ import { IoPersonOutline  } from 'react-icons/io5'
 // https://codepen.io/dannibla/pen/amgRNR
 // https://medium.com/@matt.readout/adding-css-animations-with-styled-components-6c191c23b6ba
 // https://formik.org/docs/api/field
+
 
 const ContactUs = () => {
     const [floatSelect, setFloatSelect] = useState(false)
