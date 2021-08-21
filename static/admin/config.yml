@@ -62,11 +62,11 @@ collections:
             name: "contact_section_content"
             widget: "object" 
             fields:
-              - {label: "Header", name: "street", widget: "string", required: false}
-              - {label: "Sub Header", name: "street2", widget: "string", required: false}
-              - {label: "Header Image", name: "zipcode", widget: "string", required: false}
-              - {label: "Sidebar Title ", name: "city", widget: "string", required: false}
-              - {label: "Form Title", name: "state", widget: "string", required: false}
+              - {label: "Header", name: "header", widget: "string", required: false}
+              - {label: "Sub Header", name: "sub_header", widget: "string", required: false}
+              - {label: "Header Image", name: "header_image", widget: "image", required: false}
+              - {label: "Sidebar Title ", name: "sidebar_title", widget: "string", required: false}
+              - {label: "Form Title", name: "form_title", widget: "string", required: false}
       - label: "Social Media"
         name: social_media
         file: content/site-data/social_media.md

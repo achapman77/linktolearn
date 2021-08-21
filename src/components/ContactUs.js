@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
 
 //form validation
 import { Formik, Form, Field, ErrorMessage } from 'formik'
@@ -23,12 +24,31 @@ import { IoPersonOutline  } from 'react-icons/io5'
 
 
 const ContactUs = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            content: markdownRemark(fileAbsolutePath: {regex: "/contact_info/"}) {
+                id
+                frontmatter {
+                    contact_section_content {
+                        header
+                        sub_header
+                        sidebar_title
+                        form_title
+                    }
+                }
+            }
+            
+        }
+    `)
+    const content = data.content.frontmatter.contact_section_content
+    
+
     const [floatSelect, setFloatSelect] = useState(false)
     const [previousValue, setPreviousValue] = useState("")
 
     const handleSelectClick = (e) => {
         e.preventDefault()
-        console.log(e.target.value)
+        // console.log(e.target.value)
         let val = e.target.value
         if (val === "") {
             setFloatSelect(false)
@@ -67,8 +87,8 @@ const ContactUs = () => {
     return (
         <Section id="contact">
             <ContactSectionHeader>
-                <h2>We’d love to hear from you</h2>
-                <p>Whether you have a question about features, trials, pricing, need a demo, or anything else, our team is ready to answer all your questions</p>
+                <h2>{content.header}</h2>
+                <p>{content.sub_header}</p>
             </ContactSectionHeader>
            
             <ContactContainer>
@@ -124,7 +144,7 @@ const ContactUs = () => {
                 {() => (
                     <ContactForm name="contact-demo" data-netlify={true} data-netlify-honeypot="bot-field">
                         <FormTitle>
-                            <h4>Fill out this short form and a member of our team will get back to you within 24 hours</h4>
+                            <h4>{content.form_title}</h4>
                         </FormTitle>
                         <FloatingLabel>
                             <Field name="name" placeholder=" " data-lpignore="true"></Field>

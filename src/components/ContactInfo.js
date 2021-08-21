@@ -26,6 +26,9 @@ const ContactInfo = () => {
                     email
                     fax
                     phone
+                    contact_section_content {
+                        sidebar_title
+                    }
                 }
             }
             social_media: markdownRemark(fileAbsolutePath: {regex: "/social_media/"}) {
@@ -52,7 +55,7 @@ const ContactInfo = () => {
     console.info({data})
     return (
         <Container>
-            <Title>Others Ways to Connect</Title>
+            <Title>{contactInfo.contact_section_content.sidebar_title}</Title>
             <List>
                 {/* <Row>
                     <a href="mailto:info@companyxyz.com?subject=Company XYZ Website Inquiry">
