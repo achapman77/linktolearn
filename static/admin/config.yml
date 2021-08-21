@@ -57,6 +57,16 @@ collections:
               - {label: "City ", name: "city", widget: "string", required: false}
               - {label: "State", name: "state", widget: "string", required: false}
               - {label: "Zipcode", name: "zipcode", widget: "string", required: false}
+              - {label: "Google Map Link", name: "map_link", widget: "string", required: false}
+          - label: "Contact Section Content" 
+            name: "contact_section_content"
+            widget: "object" 
+            fields:
+              - {label: "Header", name: "street", widget: "string", required: false}
+              - {label: "Sub Header", name: "street2", widget: "string", required: false}
+              - {label: "Header Image", name: "zipcode", widget: "string", required: false}
+              - {label: "Sidebar Title ", name: "city", widget: "string", required: false}
+              - {label: "Form Title", name: "state", widget: "string", required: false}
       - label: "Social Media"
         name: social_media
         file: content/site-data/social_media.md

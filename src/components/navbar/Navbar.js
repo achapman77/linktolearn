@@ -175,7 +175,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
               <span>{v.title}</span>
               </NavLink>
             </NavItem>
-        ))
+          ))
 
         }
       </NavMenu>

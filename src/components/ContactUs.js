@@ -66,10 +66,10 @@ const ContactUs = () => {
     }
     return (
         <Section id="contact">
-            <SectionHeader>
+            <ContactSectionHeader>
                 <h2>We’d love to hear from you</h2>
                 <p>Whether you have a question about features, trials, pricing, need a demo, or anything else, our team is ready to answer all your questions</p>
-            </SectionHeader>
+            </ContactSectionHeader>
            
             <ContactContainer>
                 <ContactInfo />
@@ -176,6 +176,10 @@ const ContactUs = () => {
 
 export default ContactUs
 
+const ContactSectionHeader = styled(SectionHeader)`
+    background: blue;
+    filter: brightness(70%);
+`
 
 const ContactForm = styled(Form)`
     display: flex;

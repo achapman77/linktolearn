@@ -9,28 +9,47 @@ import { Button } from './Button'
 
 const ContactInfo = () => {
 
-    const data1 = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
         query {
-            markdownRemark {
+            contact_info: markdownRemark(fileAbsolutePath: {regex: "/contact_info/"}) {
+                id
                 frontmatter {
+                    business_name
                     business_address {
                         street
                         street2
                         city
                         state
                         zipcode
+                        map_link
                     }
-                    business_name
                     email
                     fax
                     phone
                 }
             }
+            social_media: markdownRemark(fileAbsolutePath: {regex: "/social_media/"}) {
+                id
+                frontmatter {
+                    social_media {
+                        select_social_media
+                        profile_link
+                    }
+                }
+            }
         }
     `)
+    
+    
+    
 
-    const contactInfo = data1.markdownRemark.frontmatter
+    const contactInfo = data.contact_info.frontmatter
+    const bizAddress = contactInfo.business_address
 
+    
+    const socialMedia = data.social_media.frontmatter.social_media
+
+    console.info({data})
     return (
         <Container>
             <Title>Others Ways to Connect</Title>
@@ -40,32 +59,58 @@ const ContactInfo = () => {
                         <MailButton primary="true" round="true" as="button"><AiOutlineMail/>Email Us</MailButton>
                     </a>
                 </Row> */}
-                <Row>
-                    <a href="" title="Click to Call">
-                        <Label>Call:</Label>
-                        <p>{contactInfo.phone}</p>
-                    </a>
-                </Row>
-                <Row>
-                    <Label>Fax:</Label>
-                    <p>{contactInfo.fax}</p>
-                </Row>
-                <Row title="Click to View on Google Maps">
-                    <a href="">
-                        <Label>Address: <RiRoadMapLine/></Label>
-                        <p>{contactInfo.business_address.street}, {contactInfo.business_address.street2}</p>
-                        <p>{contactInfo.business_address.city}, {contactInfo.business_address.state} {contactInfo.business_address.zipcode}  </p>
-                    </a>
-                </Row>
-                <Row>
-                    <Label>Follow Us:</Label>
-                    <SocialList>
-                        <li><a href="" target="_blank" title="LinkedIn"><AiFillLinkedin/></a></li>
-                        <li><a href="" target="_blank" title="Facebook"><AiFillFacebook/></a></li>
-                        <li><a href="" target="_blank" title="Instagram"><AiFillInstagram/></a></li>
-                        <li><a href="" target="_blank" title="Twitter"><AiFillTwitterSquare/></a></li>
-                    </SocialList>
-                </Row>
+                {contactInfo.phone &&
+                    <Row>
+                        <a href="" title="Click to Call">
+                            <Label>Call:</Label>
+                            <p>{contactInfo.phone}</p>
+                        </a>
+                    </Row>
+                }
+                {contactInfo.fax && 
+                    <Row>
+                        <Label>Fax:</Label>
+                        <p>{contactInfo.fax}</p>
+                    </Row>
+                }
+                { bizAddress.street2 &&
+                    <Row title="Click to View on Google Maps">
+                        <a href={bizAddress.map_link} target="_blank">
+                            <Label>Address:</Label>
+                            <p>{bizAddress.street}, {bizAddress.street2}</p>
+                            <p>{bizAddress.city}, {bizAddress.state} {bizAddress.zipcode}</p>
+                        </a>
+                    </Row>
+                }
+                
+                {socialMedia.length && 
+                    <Row>
+                        <Label>Follow Us:</Label>
+                        <SocialList>
+                            {
+                                socialMedia.map( (v,i) => {
+                                    let icon
+                                    if (v.select_social_media === 'LinkedIn') {
+                                        icon = <AiFillLinkedin/>
+                                    }
+                                    else if (v.select_social_media === 'Facebook') {
+                                        icon = <AiFillFacebook/>
+                                    }
+                                    else if (v.select_social_media === 'Instagram') {
+                                        icon = <AiFillInstagram/>
+                                    }
+                                    else if (v.select_social_media === 'Twitter') {
+                                        icon = <AiFillTwitterSquare/>
+                                    }
+                                    return(
+                                        <li><a href={v.profile_link} target="_blank" title={v.select_social_media}>{icon}</a></li>
+                                    )
+                                })
+                            }
+                        </SocialList>
+                    </Row>
+                }
+                
             </List>
             
                 
@@ -103,6 +148,9 @@ const Row = styled.li`
     a {
         text-decoration: none;
         color: ${props => props.theme.colors.gray.dark};
+        &:hover p {
+            color: ${props => props.theme.colors.primary.main};
+        }
     }
     p {
       font-size: clamp(0.8rem, 0.8125rem + 0.8333vw, 1.2rem);  
@@ -118,6 +166,9 @@ const SocialList = styled.div`
     display: flex;
     li {
         padding-right: 1rem;
+        &:hover svg{
+           color: ${props => props.theme.colors.primary.main}; 
+        }
     }
     svg {
         font-size: 2rem;

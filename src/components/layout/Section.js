@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Section = styled.section`
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     height: 100vh;
 `
@@ -12,6 +12,8 @@ export const SectionHeader = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
+    width: 100%;
+    padding: 5rem 0;
     h2 {
         margin-bottom: 1rem;
     }

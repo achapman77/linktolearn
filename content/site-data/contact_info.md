@@ -9,4 +9,5 @@ business_address:
   city: Denver
   state: CO
   zipcode: "80224"
+  map_link: "https://goo.gl/maps/GPhviCHw59tp7qTP7"
 ---
