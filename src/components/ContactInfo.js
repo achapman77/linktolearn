@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
 //icons
-import { AiOutlineMail, AiFillLinkedin, AiFillFacebook, AiFillInstagram, AiFillTwitterSquare} from 'react-icons/ai'
-import { RiRoadMapLine, RiTwitterLine } from 'react-icons/ri'
+import { AiFillLinkedin, AiFillFacebook, AiFillInstagram, AiFillTwitterSquare} from 'react-icons/ai'
+// import { RiRoadMapLine, RiTwitterLine } from 'react-icons/ri'
 import { Button } from './Button'
 
 const ContactInfo = () => {
@@ -64,7 +64,7 @@ const ContactInfo = () => {
                 </Row> */}
                 {contactInfo.phone &&
                     <Row>
-                        <a href="" title="Click to Call">
+                        <a href={`tel:${contactInfo.phone}`} title="Click to Call" rel="noreferrer">
                             <Label>Call:</Label>
                             <p>{contactInfo.phone}</p>
                         </a>
@@ -78,7 +78,7 @@ const ContactInfo = () => {
                 }
                 { bizAddress.street2 &&
                     <Row title="Click to View on Google Maps">
-                        <a href={bizAddress.map_link} target="_blank">
+                        <a href={bizAddress.map_link} target="_blank" rel="noreferrer">
                             <Label>Address:</Label>
                             <p>{bizAddress.street}, {bizAddress.street2}</p>
                             <p>{bizAddress.city}, {bizAddress.state} {bizAddress.zipcode}</p>
@@ -106,7 +106,7 @@ const ContactInfo = () => {
                                         icon = <AiFillTwitterSquare/>
                                     }
                                     return(
-                                        <li><a href={v.profile_link} target="_blank" title={v.select_social_media}>{icon}</a></li>
+                                        <li><a href={v.profile_link} target="_blank" rel="noreferrer" title={v.select_social_media}>{icon}</a></li>
                                     )
                                 })
                             }

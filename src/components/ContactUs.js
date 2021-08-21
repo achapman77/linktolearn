@@ -32,7 +32,7 @@ const ContactUs = () => {
                     contact_section_content {
                         header
                         sub_header
-                        sidebar_title
+
                         form_title
                     }
                 }

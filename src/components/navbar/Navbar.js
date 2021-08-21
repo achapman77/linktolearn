@@ -22,14 +22,25 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   const [navItems, setNavItems] = useState(menuData)
   const [observerState, setObserverState] = useState(true)
   const [anchor, setAnchor] = useState(false)
- 
-  // Resource
-  // https://vidler.app/blog/javascript/gatsby-scroll-position/
   
+
+  const updateNavState = (sectionID) => {
+    const newNavList = navItems.map( (item) => {
+      item.isActive = false
+      if (item.link === `/#${sectionID}`) {
+        const updatedItem = {
+          ...item,
+          isActive: !item.isActive,
+        }
+        return updatedItem
+      }
+      return item
+    })
+    setNavItems(newNavList)
+  }
 
   //Pages other than index, header is solid
   useEffect(() => {
-    // console.info('setNavbar')
     if(window.location.pathname === "/") {
       setNavbar(false)
     } else {
@@ -48,7 +59,6 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   }
 
   useEffect(() => {
-    // console.info('setOffset')
     if (typeof window !== `undefined`) {
       window.addEventListener('scroll', handleNavbarOnScroll)
     }
@@ -60,8 +70,6 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
 
   //Registers #on_page_sections and watches for page scroll to set active state of nav button
   var observer
-
-
 
   useEffect(() => {
     if (observerState) {
@@ -104,26 +112,6 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
       
 
   }, [observerState]) 
-
-  const updateNavState = (sectionID) => {
-    // console.info('updateNaveState()')
-    // console.info(sectionID)
-    const newNavList = navItems.map( (item) => {
-      item.isActive = false
-      if (item.link === `/#${sectionID}`) {
-        const updatedItem = {
-          ...item,
-          isActive: !item.isActive,
-        }
-        // console.info({updatedItem})
-        return updatedItem
-      }
-      return item
-    })
-    // console.info(newNavList)
-    setNavItems(newNavList)
-  }
-
 
 
   const handleMenuLinkClick = (navItem, e) => {
@@ -183,12 +171,8 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
         <Button primary="true" round="true" to="/">Call to Action</Button>
       </NavBtn>
       <MobileMenuIcon onClick={toggle}>
-        {!isOpen &&
-          <AiOutlineMenu />
-        }
-        {isOpen && 
-          <AiOutlineClose />
-        }
+        {!isOpen && <AiOutlineMenu />}
+        {isOpen && <AiOutlineClose />}
       </MobileMenuIcon>
       
     </Nav>
