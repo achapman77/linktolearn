@@ -14,6 +14,9 @@ export const SectionHeader = styled.div`
     align-items: center;
     width: 100%;
     padding: 5rem 0;
+    ${props => props.theme.lg`
+        padding: 1rem 0;
+    `}
     h2 {
         margin-bottom: 1rem;
     }

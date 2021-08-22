@@ -15,7 +15,7 @@ const ContactInfo = ({data}) => {
 
     return (
         <Container>
-            <Title>{content.sidebar_title}</Title>
+            <Title>{content.contact_info_title}</Title>
             <List>
                 {/* <Row>
                     <a href="mailto:info@companyxyz.com?subject=Company XYZ Website Inquiry">
@@ -24,9 +24,12 @@ const ContactInfo = ({data}) => {
                 </Row> */}
                 {contactInfo.phone &&
                     <Row>
-                        <a href={`tel:${contactInfo.phone}`} title="Click to Call" rel="noreferrer">
+                        <a className="notMobileBtn"href={`tel:${contactInfo.phone}`} title="Click to Call" rel="noreferrer">
                             <Label>Call:</Label>
                             <p>{contactInfo.phone}</p>
+                        </a>
+                        <a className="mobileBtn" href={`tel:${contactInfo.phone}`} title={contactInfo.phone} rel="noreferrer">
+                            <Button as="button" primary="true" round="true">Click to Call Us</Button>
                         </a>
                     </Row>
                 }
@@ -88,12 +91,20 @@ export default ContactInfo
 const Container = styled.div`
     align-self: end;
     margin-top: 4.5rem;
-    width: clamp(300px, 20vw, 20vw);
+    width: clamp(500px, 20vw, 20vw);
     height: auto;
     padding: 2rem;
     background: #f2efef;
     border-radius: 10px;
     margin-right: 4rem;
+    ${props => props.theme.lg`
+        margin: 4rem 5rem;
+        min-width: 70vw;
+    `}
+    ${props => props.theme.sm`
+        margin: 4rem 1rem;
+        min-width: 85vw;
+    `}
 `
 const Title = styled.h3`
  margin-bottom: 1.25rem;
@@ -114,13 +125,25 @@ const Row = styled.li`
         &:hover p {
             color: ${props => props.theme.colors.primary.main};
         }
+        &.notMobileBtn {
+            display: block;
+            ${props => props.theme.xs`
+                display:none;
+            `}
+        }
+        &.mobileBtn {
+            display:none;
+            ${props => props.theme.xs`
+                display:block;
+            `}
+        }
     }
     p {
       font-size: clamp(0.8rem, 0.8125rem + 0.8333vw, 1.2rem);  
     }
 `
 
-const Label = styled.div`
+const Label = styled.p`
     font-weight: bold;
     margin-bottom: 0.25rem;
 `
@@ -139,11 +162,11 @@ const SocialList = styled.div`
 
 `
 
-const MailButton = styled(Button)`
-    display:flex;
-    align-items: center;
-    svg {
-        margin-right: 0.5rem;
-        font-size: 1.25rem;
-    }
-`
+// const MailButton = styled(Button)`
+//     display:flex;
+//     align-items: center;
+//     svg {
+//         margin-right: 0.5rem;
+//         font-size: 1.25rem;
+//     }
+// `

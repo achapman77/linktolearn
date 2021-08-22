@@ -65,7 +65,7 @@ collections:
               - {label: "Header", name: "header", widget: "string", required: false}
               - {label: "Sub Header", name: "sub_header", widget: "string", required: false}
               - {label: "Header Image", name: "header_image", widget: "image", required: false}
-              - {label: "Sidebar Title ", name: "sidebar_title", widget: "string", required: false}
+              - {label: "Contact Info Title ", name: "contact_info_title", widget: "string", required: false}
               - {label: "Form Title", name: "form_title", widget: "string", required: false}
       - label: "Social Media"
         name: social_media

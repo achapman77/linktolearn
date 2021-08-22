@@ -13,8 +13,8 @@ const ContactSectionHeader = ({content}) => {
                     <GatsbyImage image={image}/>
                 </Background>
                 <div className="headerContent">
-                    <h2>{content.header}</h2>
-                    <p>{content.sub_header}</p>
+                    <h2 className="headerTitle">{content.header}</h2>
+                    <p className="subTitle">{content.sub_header}</p>
                 </div>
             </Parallax>
         </ParallaxSectionHeader>
@@ -26,6 +26,9 @@ const ParallaxSectionHeader = styled(SectionHeader)`
         width: -webkit-fill-available;
         .react-parallax-background-children {
             width: -webkit-fill-available;
+            ${props => props.theme.sm`
+                display: none;
+            `}
             .gatsby-image-wrapper {
                 width: -webkit-fill-available;
             }
@@ -39,11 +42,21 @@ const ParallaxSectionHeader = styled(SectionHeader)`
             display: flex;
             justify-content: center;
             .headerContent {
-                padding: 9rem;
+                padding: clamp(1rem, 5vw, 9rem);
                 display: flex;
                 justify-content: center;
                 flex-flow: column;
                 align-items: center;
+                ${props => props.theme.sm`
+                    padding: 1rem;
+                `}
+                .headerTitle {
+                    text-align: center;
+                }
+                .subTitle {
+                    max-width: 50rem;
+                    text-align: center;
+                }
             }
         }
     }
