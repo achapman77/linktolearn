@@ -5,14 +5,15 @@ import { useStaticQuery, graphql } from 'gatsby'
 //form validation
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 //layout
-import { Section, SectionHeader, Container } from './layout/Section'
-import { Button } from './Button'
-import { FloatingLabel } from './inputs/FloatingLabel'
+import { Section, Container } from '../layout/Section'
+import { Button } from '../Button'
+import { FloatingLabel } from '../inputs/FloatingLabel'
 import ContactInfo from './ContactInfo'
 //icons
 import { AiOutlineMail, AiOutlinePhone, AiOutlineQuestionCircle  } from 'react-icons/ai'
 import { RiMessage2Line  } from 'react-icons/ri'
 import { IoPersonOutline  } from 'react-icons/io5'
+import ContactSectionHeader from './ContactSectionHeader'
 
 
 
@@ -32,8 +33,40 @@ const ContactUs = () => {
                     contact_section_content {
                         header
                         sub_header
-
                         form_title
+                        sidebar_title
+                        header_image {
+                            id
+                            childImageSharp {
+                                gatsbyImageData
+                            } 
+                        }
+                    }
+                }
+            }
+            contact_info: markdownRemark(fileAbsolutePath: {regex: "/contact_info/"}) {
+                id
+                frontmatter {
+                    business_name
+                    business_address {
+                        street
+                        street2
+                        city
+                        state
+                        zipcode
+                        map_link
+                    }
+                    email
+                    fax
+                    phone
+                }
+            }
+            social_media: markdownRemark(fileAbsolutePath: {regex: "/social_media/"}) {
+                id
+                frontmatter {
+                    social_media {
+                        select_social_media
+                        profile_link
                     }
                 }
             }
@@ -41,7 +74,6 @@ const ContactUs = () => {
         }
     `)
     const content = data.content.frontmatter.contact_section_content
-    
 
     const [floatSelect, setFloatSelect] = useState(false)
     const [previousValue, setPreviousValue] = useState("")
@@ -86,13 +118,9 @@ const ContactUs = () => {
     }
     return (
         <Section id="contact">
-            <ContactSectionHeader>
-                <h2>{content.header}</h2>
-                <p>{content.sub_header}</p>
-            </ContactSectionHeader>
-           
+            <ContactSectionHeader content={content}/>
             <ContactContainer>
-                <ContactInfo />
+                <ContactInfo data={data}/>
                 <Formik
                     initialValues={{
                         name: '',
@@ -196,10 +224,6 @@ const ContactUs = () => {
 
 export default ContactUs
 
-const ContactSectionHeader = styled(SectionHeader)`
-    background: blue;
-    filter: brightness(70%);
-`
 
 const ContactForm = styled(Form)`
     display: flex;

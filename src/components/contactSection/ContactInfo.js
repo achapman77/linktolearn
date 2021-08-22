@@ -5,57 +5,17 @@ import { useStaticQuery, graphql } from 'gatsby'
 //icons
 import { AiFillLinkedin, AiFillFacebook, AiFillInstagram, AiFillTwitterSquare} from 'react-icons/ai'
 // import { RiRoadMapLine, RiTwitterLine } from 'react-icons/ri'
-import { Button } from './Button'
+import { Button } from '../Button'
 
-const ContactInfo = () => {
-
-    const data = useStaticQuery(graphql`
-        query {
-            contact_info: markdownRemark(fileAbsolutePath: {regex: "/contact_info/"}) {
-                id
-                frontmatter {
-                    business_name
-                    business_address {
-                        street
-                        street2
-                        city
-                        state
-                        zipcode
-                        map_link
-                    }
-                    email
-                    fax
-                    phone
-                    contact_section_content {
-                        sidebar_title
-                    }
-                }
-            }
-            social_media: markdownRemark(fileAbsolutePath: {regex: "/social_media/"}) {
-                id
-                frontmatter {
-                    social_media {
-                        select_social_media
-                        profile_link
-                    }
-                }
-            }
-        }
-    `)
-    
-    
-    
-
+const ContactInfo = ({data}) => {
     const contactInfo = data.contact_info.frontmatter
     const bizAddress = contactInfo.business_address
-
-    
     const socialMedia = data.social_media.frontmatter.social_media
+    const content = data.content.frontmatter.contact_section_content
 
-    console.info({data})
     return (
         <Container>
-            <Title>{contactInfo.contact_section_content.sidebar_title}</Title>
+            <Title>{content.sidebar_title}</Title>
             <List>
                 {/* <Row>
                     <a href="mailto:info@companyxyz.com?subject=Company XYZ Website Inquiry">
