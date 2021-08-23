@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
 import { FloatingLabel } from '../inputs/FloatingLabel'
@@ -12,6 +12,10 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { AiOutlineMail, AiOutlinePhone, AiOutlineQuestionCircle  } from 'react-icons/ai'
 import { RiMessage2Line  } from 'react-icons/ri'
 import { IoPersonOutline  } from 'react-icons/io5'
+
+//animation
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 const ContactForm = ({content}) => {
     const [floatSelect, setFloatSelect] = useState(false)
@@ -55,6 +59,9 @@ const ContactForm = ({content}) => {
             .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
             .join("&");
     }
+    useEffect( () => {
+        Aos.init({})
+    }, [])
     return (
         <Formik
                     initialValues={{
@@ -105,7 +112,14 @@ const ContactForm = ({content}) => {
                     }}
                 >
                 {() => (
-                    <StyledForm name="contact-demo" data-netlify={true} data-netlify-honeypot="bot-field">
+                    <StyledForm 
+                        name="contact-demo" 
+                        data-netlify={true} 
+                        data-netlify-honeypot="bot-field"
+                        data-aos="fade-left"
+                        data-aos-delay="150"
+                        data-aos-duration="1000"
+                    >
                         <FormTitle>
                             <h4>{content.form_title}</h4>
                         </FormTitle>
@@ -159,16 +173,23 @@ export default ContactForm
 const StyledForm = styled(Form)`
     display: flex;
     flex-flow: column;
-    width: clamp(260px, 90vw, 600px);
+    width: clamp(500px, 90vw, 600px);
     padding: 5rem 0;
     flex-basis: 50%;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     ${props => props.theme.lg`
+        margin: 2rem 2rem;
         min-width: 70vw;
-        padding: 1rem 0;
     `}
     ${props => props.theme.sm`
+        margin: 1rem 1rem;
         min-width: 85vw;
+        padding: 1rem;
     `}
+
 `
 
 const FormTitle = styled.div`

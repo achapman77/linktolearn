@@ -8,6 +8,8 @@ import ContactSectionHeader from './ContactSectionHeader'
 import ContactInfo from './ContactInfo'
 import ContactForm from './ContactForm'
 
+
+
 // Resources
 // https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/
 // https://codepen.io/dannibla/pen/amgRNR
@@ -65,6 +67,7 @@ const ContactUs = () => {
         }
     `)
     const content = data.content.frontmatter.contact_section_content
+    
 
     return (
         <Section id="contact">

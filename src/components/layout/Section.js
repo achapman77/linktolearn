@@ -15,7 +15,7 @@ export const SectionHeader = styled.div`
     width: 100%;
     padding: 5rem 0;
     ${props => props.theme.lg`
-        padding: 1rem 0;
+        padding-bottom: 2rem;
     `}
     h2 {
         margin-bottom: 1rem;

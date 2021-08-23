@@ -26,6 +26,9 @@ const ParallaxSectionHeader = styled(SectionHeader)`
         width: -webkit-fill-available;
         .react-parallax-background-children {
             width: -webkit-fill-available;
+            ${props => props.theme.md`
+                top:20%;
+            `}
             ${props => props.theme.sm`
                 display: none;
             `}

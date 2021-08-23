@@ -1,20 +1,30 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+
 
 //icons
 import { AiFillLinkedin, AiFillFacebook, AiFillInstagram, AiFillTwitterSquare} from 'react-icons/ai'
 // import { RiRoadMapLine, RiTwitterLine } from 'react-icons/ri'
 import { Button } from '../Button'
 
+//animation
+import Aos from 'aos'
+import "aos/dist/aos.css"
+
 const ContactInfo = ({data}) => {
     const contactInfo = data.contact_info.frontmatter
     const bizAddress = contactInfo.business_address
     const socialMedia = data.social_media.frontmatter.social_media
     const content = data.content.frontmatter.contact_section_content
-
+    useEffect( () => {
+        Aos.init({})
+    }, [])
     return (
-        <Container>
+        <Container
+            data-aos="fade-right"
+            data-aos-delay="150"
+            data-aos-duration="1000"
+        >
             <Title>{content.contact_info_title}</Title>
             <List>
                 {/* <Row>
@@ -23,7 +33,11 @@ const ContactInfo = ({data}) => {
                     </a>
                 </Row> */}
                 {contactInfo.phone &&
-                    <Row>
+                    <Row
+                        data-aos="zoom-in-right"
+                        data-aos-delay="250"
+                        data-aos-duration="1000"
+                    >
                         <a className="notMobileBtn"href={`tel:${contactInfo.phone}`} title="Click to Call" rel="noreferrer">
                             <Label>Call:</Label>
                             <p>{contactInfo.phone}</p>
@@ -34,13 +48,22 @@ const ContactInfo = ({data}) => {
                     </Row>
                 }
                 {contactInfo.fax && 
-                    <Row>
+                    <Row
+                        data-aos="zoom-in-right"
+                        data-aos-delay="350"
+                        data-aos-duration="1000"
+                    >
                         <Label>Fax:</Label>
                         <p>{contactInfo.fax}</p>
                     </Row>
                 }
                 { bizAddress.street2 &&
-                    <Row title="Click to View on Google Maps">
+                    <Row 
+                        title="Click to View on Google Maps"
+                        data-aos="zoom-in-right"
+                        data-aos-delay="450"
+                        data-aos-duration="1000"
+                    >
                         <a href={bizAddress.map_link} target="_blank" rel="noreferrer">
                             <Label>Address:</Label>
                             <p>{bizAddress.street}, {bizAddress.street2}</p>
@@ -56,6 +79,7 @@ const ContactInfo = ({data}) => {
                             {
                                 socialMedia.map( (v,i) => {
                                     let icon
+                                    console.info({i})
                                     if (v.select_social_media === 'LinkedIn') {
                                         icon = <AiFillLinkedin/>
                                     }
@@ -69,7 +93,13 @@ const ContactInfo = ({data}) => {
                                         icon = <AiFillTwitterSquare/>
                                     }
                                     return(
-                                        <li><a href={v.profile_link} target="_blank" rel="noreferrer" title={v.select_social_media}>{icon}</a></li>
+                                        <li
+                                            data-aos="flip-down"
+                                            data-aos-delay={450 + (i * 100)}
+                                            data-aos-duration="1000"
+                                        >
+                                            <a href={v.profile_link} target="_blank" rel="noreferrer" title={v.select_social_media}>{icon}</a>
+                                        </li>
                                     )
                                 })
                             }
@@ -90,20 +120,23 @@ export default ContactInfo
 
 const Container = styled.div`
     align-self: end;
-    margin-top: 4.5rem;
+    margin-top: 0;
     width: clamp(500px, 20vw, 20vw);
     height: auto;
     padding: 2rem;
-    background: #f2efef;
+    /* background: #f2efef; */
     border-radius: 10px;
     margin-right: 4rem;
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     ${props => props.theme.lg`
-        margin: 4rem 5rem;
+        margin: 2rem 2rem;
         min-width: 70vw;
     `}
     ${props => props.theme.sm`
-        margin: 4rem 1rem;
+        margin: 1rem 1rem;
         min-width: 85vw;
+        width: clamp(250px, 20vw, 20vw);
     `}
 `
 const Title = styled.h3`
