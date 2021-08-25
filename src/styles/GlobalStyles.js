@@ -1,6 +1,9 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+    html {
+        overflow-x: hidden;
+    }
     * {
         font-family: 'Roboto', sans-serif;
         margin: 0%;

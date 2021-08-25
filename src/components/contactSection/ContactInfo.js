@@ -1,15 +1,13 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
-
-
-//icons
-import { AiFillLinkedin, AiFillFacebook, AiFillInstagram, AiFillTwitterSquare} from 'react-icons/ai'
-// import { RiRoadMapLine, RiTwitterLine } from 'react-icons/ri'
+//components'
 import { Button } from '../Button'
+import SocialMedia from '../layout/SocialMedia'
 
 //animation
 import Aos from 'aos'
 import "aos/dist/aos.css"
+
 
 const ContactInfo = ({data}) => {
     const contactInfo = data.contact_info.frontmatter
@@ -75,35 +73,7 @@ const ContactInfo = ({data}) => {
                 {socialMedia.length && 
                     <Row>
                         <Label>Follow Us:</Label>
-                        <SocialList>
-                            {
-                                socialMedia.map( (v,i) => {
-                                    let icon
-                                    console.info({i})
-                                    if (v.select_social_media === 'LinkedIn') {
-                                        icon = <AiFillLinkedin/>
-                                    }
-                                    else if (v.select_social_media === 'Facebook') {
-                                        icon = <AiFillFacebook/>
-                                    }
-                                    else if (v.select_social_media === 'Instagram') {
-                                        icon = <AiFillInstagram/>
-                                    }
-                                    else if (v.select_social_media === 'Twitter') {
-                                        icon = <AiFillTwitterSquare/>
-                                    }
-                                    return(
-                                        <li
-                                            data-aos="flip-down"
-                                            data-aos-delay={450 + (i * 100)}
-                                            data-aos-duration="1000"
-                                        >
-                                            <a href={v.profile_link} target="_blank" rel="noreferrer" title={v.select_social_media}>{icon}</a>
-                                        </li>
-                                    )
-                                })
-                            }
-                        </SocialList>
+                        <SocialMedia variant="contactInfo" animate={true} delay={450}/>
                     </Row>
                 }
                 
@@ -181,25 +151,3 @@ const Label = styled.p`
     margin-bottom: 0.25rem;
 `
 
-const SocialList = styled.div`
-    display: flex;
-    li {
-        padding-right: 1rem;
-        &:hover svg{
-           color: ${props => props.theme.colors.primary.main}; 
-        }
-    }
-    svg {
-        font-size: 2rem;
-    }
-
-`
-
-// const MailButton = styled(Button)`
-//     display:flex;
-//     align-items: center;
-//     svg {
-//         margin-right: 0.5rem;
-//         font-size: 1.25rem;
-//     }
-// `

@@ -3,9 +3,12 @@ import styled from 'styled-components'
 import { Link } from 'gatsby';
 //data
 import { menuData } from "../../data/MenuData"
+
 //components
 import NavLogo from "./NavLogo"
 import { Button } from "../Button"
+import NavTopper from "./NavTopper";
+
 //icons
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
@@ -146,6 +149,8 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
 
 
   return (
+    <>
+    <NavTopper/>
     <Nav isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
       <NavLogo logo={logo} logoAltText={logoAltText}/>
       <NavMenu>
@@ -176,6 +181,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
       </MobileMenuIcon>
       
     </Nav>
+    </>
   )
 }
 
