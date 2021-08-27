@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
 //components'
-import { Button } from '../Button'
-import SocialMedia from '../layout/SocialMedia'
+import { Button } from '../buttons/Button'
+import SocialMedia from '../buttons/SocialMedia'
 
 //animation
 import Aos from 'aos'
@@ -91,17 +91,16 @@ export default ContactInfo
 const Container = styled.div`
     align-self: end;
     margin-top: 0;
-    width: clamp(500px, 20vw, 20vw);
+    /* width: clamp(500px, 20vw, 20vw); */
     height: auto;
     padding: 2rem;
-    /* background: #f2efef; */
     border-radius: 10px;
-    margin-right: 4rem;
-    
+    /* margin: 0 2rem; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* width: fit-content; */
     ${props => props.theme.lg`
-        margin: 2rem 2rem;
         min-width: 70vw;
+        margin-bottom: 2rem;
     `}
     ${props => props.theme.sm`
         margin: 1rem 1rem;
@@ -111,6 +110,7 @@ const Container = styled.div`
 `
 const Title = styled.h3`
  margin-bottom: 1.25rem;
+ font-size: clamp(1rem, 2vw, 2.25rem);
 `
 const List = styled.ul`
     list-style: none;

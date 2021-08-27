@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
-import { Button } from './Button'
+import { Button } from './buttons/Button'
 import Video from '../assets/videos/travel.mp4'
 import Aos from 'aos'
 import "aos/dist/aos.css"

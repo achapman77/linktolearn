@@ -35,6 +35,13 @@ const QuickConnectBtns = ({className}) => {
     }
     return (
         <Wrapper className={ className }>
+            <QuickConnectButton href={`tel:${data.contact_info.frontmatter.phone}`} rel="noreferrer" className={ className } id="navMobilePhone">
+                <AiOutlinePhone/>
+                <TextWrapper>
+                    <span>|</span>
+                    <span>{className === 'navMobile' ? 'Call Us' : data.contact_info.frontmatter.phone}</span>
+                </TextWrapper>
+            </QuickConnectButton>
             <QuickConnectButton 
                 to="/#contact"
                 onClick={e => handleMenuLinkClick(e)}
@@ -47,13 +54,7 @@ const QuickConnectBtns = ({className}) => {
                 </TextWrapper>                   
                 
             </QuickConnectButton>
-            <QuickConnectButton href={`tel:${data.contact_info.frontmatter.phone}`} rel="noreferrer" className={ className }>
-                <AiOutlinePhone/>
-                <TextWrapper className={ className }>
-                    <span>|</span>
-                    <span>{data.contact_info.frontmatter.phone}</span>
-                </TextWrapper>
-            </QuickConnectButton>
+            
         </Wrapper>
     )
 }
@@ -94,6 +95,9 @@ const QuickConnectButton = styled(Link)`
         padding: 0 1rem;
         height: 3rem;
         border-right: 1px solid ${props => props.theme.colors.gray.light};
+        &#navMobilePhone {
+            background: green;
+        }
     }
 `
 const TextWrapper = styled.div`

@@ -10,6 +10,11 @@ export const menuData = [
         isActive: false
     },
     {
+        title: "Team", 
+        link: "/#team",
+        isActive: false
+    },
+    {
         title: "Contact", 
         link: "/#contact",
         isActive: false

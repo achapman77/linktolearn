@@ -70,22 +70,25 @@ const ContactUs = () => {
     
 
     return (
-        <Section id="contact">
+        <StyledSection id="contact">
             <ContactSectionHeader content={content}/>
-            <ContactContainer>
+            <StyledContainer>
                 <ContactInfo data={data}/>
                 <ContactForm content={content}/>
-            </ContactContainer>
-        </Section>
+            </StyledContainer>
+        </StyledSection>
         
     )
 }
 
 export default ContactUs
 
-
-const ContactContainer = styled(Container)`
+const StyledSection = styled(Section)`
+    padding: 0;
+`
+const StyledContainer = styled(Container)`
     flex-flow: wrap-reverse;
+    gap: 2rem;
 `
 
 

@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
-import { FloatingLabel } from '../inputs/FloatingLabel'
-import { Button } from '../Button'
+import { FloatingLabel } from '../form/FloatingLabel'
+import { Button } from '../buttons/Button'
 
 //form validation
 import { Formik, Form, Field, ErrorMessage } from 'formik'
@@ -181,7 +181,7 @@ const StyledForm = styled(Form)`
     margin-bottom: 5rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     ${props => props.theme.lg`
-        margin: 2rem 2rem;
+        margin: 0;
         min-width: 70vw;
     `}
     ${props => props.theme.sm`

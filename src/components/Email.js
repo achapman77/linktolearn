@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import EmailBg from '../assets/images/email-1.jpg'
-import { Button } from './Button'
+import { Button } from './buttons/Button'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 

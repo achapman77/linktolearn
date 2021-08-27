@@ -31,6 +31,8 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
+    "react-parallax": "^3.3.0",
+    "react-responsive-carousel": "^3.2.21",
     "react-scroll": "^1.8.3",
     "react-scroll-parallax": "^2.4.0",
     "scroll-to-element": "^2.0.3",

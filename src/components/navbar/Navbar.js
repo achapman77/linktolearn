@@ -2,11 +2,11 @@ import React, {useState, useEffect} from "react"
 import styled from 'styled-components'
 import { Link } from 'gatsby';
 //data
-import { menuData } from "../../data/MenuData"
+import { menuData } from "../../../content/site-data/MenuData"
 
 //components
 import NavLogo from "./NavLogo"
-import { Button } from "../Button"
+import { Button } from "../buttons/Button"
 import NavTopper from "./NavTopper";
 
 //icons

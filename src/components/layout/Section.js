@@ -6,6 +6,7 @@ export const Section = styled.section`
     /* justify-content: center; */
     align-items: center;
     min-height: 100vh;
+    padding: 5rem calc((100vw - 2000px) / 2 );
 `
 
 export const SectionHeader = styled.div`

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Button } from './Button'
+import { Button } from './buttons/Button'
 import { ImLocation } from 'react-icons/im'
 import Aos from 'aos'
 import "aos/dist/aos.css"

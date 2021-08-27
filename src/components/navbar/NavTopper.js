@@ -3,7 +3,7 @@ import styled from 'styled-components'
 // import { useStaticQuery, graphql } from 'gatsby'
 
 //components
-import SocialMedia from '../layout/SocialMedia';
+import SocialMedia from '../buttons/SocialMedia';
 import QuickConnectBtns from '../buttons/QuickConnectBtns';
 
 

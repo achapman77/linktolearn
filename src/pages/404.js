@@ -1,5 +1,5 @@
 import React from "react"
-import { Button } from '../components/Button'
+import { Button } from '../components/buttons/Button'
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import styled from "styled-components"

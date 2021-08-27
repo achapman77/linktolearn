@@ -24,7 +24,7 @@ const SocialMedia = ({variant, animate, delay}) => {
         }
     `)
     const socialMedia = data.social_media.frontmatter.social_media
-    console.info({variant, animate})
+    // console.info({variant, animate})
     useEffect( () => {
         Aos.init({})
     }, [])

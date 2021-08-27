@@ -5,11 +5,11 @@ import styled from 'styled-components'
 import animateScrollTo from 'animated-scroll-to';
 
 //components
-import { Button } from "../Button"
-import SocialMedia from '../layout/SocialMedia'
+import { Button } from "../buttons/Button"
+import SocialMedia from '../buttons/SocialMedia'
 
 //data
-import { menuData } from '../../data/MenuData'
+import { menuData } from '../../../content/site-data/MenuData'
 
 //icons
 import { AiOutlinePhone } from 'react-icons/ai'

@@ -6,7 +6,9 @@ import Trips from "../components/Trips"
 import Testimonials from "../components/Testimonials"
 import Stats from "../components/Stats"
 // import Email from "../components/Email"
-import ContactUS from "../components/contactSection/ContactUs"
+import ContactUS from "../components/contact/ContactUs"
+import TeamSection from "../components/team/Team"
+import TestimonialCarousel from "../components/testimonials/TestimonialCarousel"
 
 const IndexPage = () => (
   <Layout>
@@ -16,6 +18,8 @@ const IndexPage = () => (
     <Testimonials/>
     <Stats/>
     {/* <Email/> */}
+    <TestimonialCarousel/>
+    <TeamSection />
     <ContactUS/>
   </Layout>
 )
