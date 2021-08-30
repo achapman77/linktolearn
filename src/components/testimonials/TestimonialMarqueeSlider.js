@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Marquee from "react-marquee-slider";
-import times from "lodash/times";
+import {times} from "lodash/times";
 
 const TestimonialMarqueeSlider = () => {
     const data = useStaticQuery(graphql`

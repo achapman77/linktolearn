@@ -35,7 +35,7 @@ const QuickConnectBtns = ({className}) => {
     }
     return (
         <Wrapper className={ className }>
-            <a href={`tel:${data.contact_info.frontmatter.phone}`} rel="noreferrer">
+            <a href={`tel:${data.contact_info.frontmatter.phone}`} rel="noreferrer" aria-label={`Click to Call: ${data.contact_info.frontmatter.phone}`}>
                 <QuickConnectButton className={ className } id="navMobilePhone">
                 <AiOutlinePhone/>
                 <TextWrapper>
@@ -48,6 +48,7 @@ const QuickConnectBtns = ({className}) => {
             <Link
                 to="/#contact"
                 onClick={e => handleMenuLinkClick(e)}
+                aria-label="Go to Contact Us"
             >
                 <QuickConnectButton className={ className }>
                     <GrChatOption/>

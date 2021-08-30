@@ -66,5 +66,11 @@ module.exports = {
         path: `${__dirname}/content/site-data/`,
       },
     },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
   ],
 }

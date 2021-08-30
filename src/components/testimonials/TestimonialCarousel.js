@@ -102,6 +102,7 @@ const StyledCarousel = styled(Carousel)`
         align-items: center;
         .dot {
             background: ${props => props.theme.colors.primary.main};
+            padding: 0.5rem;
             &.selected {
                 background: transparent;
                 border: 2px solid ${props => props.theme.colors.primary.main};

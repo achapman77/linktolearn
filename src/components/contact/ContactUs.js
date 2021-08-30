@@ -1,12 +1,15 @@
-import React from 'react'
+import React, {Suspense, lazy} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
 //components
 import { Section, Container } from '../layout/Section'
-import ContactSectionHeader from './ContactSectionHeader'
-import ContactInfo from './ContactInfo'
-import ContactForm from './ContactForm'
+// import ContactSectionHeader from './ContactSectionHeader'
+// import ContactInfo from './ContactInfo'
+// import ContactForm from './ContactForm'
+const ContactSectionHeader = lazy(()=>import('./ContactSectionHeader'))
+const ContactInfo = lazy(()=>import('./ContactInfo'))
+const ContactForm = lazy(()=>import('./ContactForm'))
 
 
 
@@ -71,10 +74,17 @@ const ContactUs = () => {
 
     return (
         <StyledSection id="contact">
-            <ContactSectionHeader content={content}/>
+            <Suspense fallback={<div>Loading...</div>}>
+                <ContactSectionHeader content={content}/>
+            </Suspense> 
             <StyledContainer>
-                <ContactInfo data={data}/>
-                <ContactForm content={content}/>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <ContactInfo data={data}/>
+                </Suspense>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <ContactForm content={content}/>
+                </Suspense>
+                
             </StyledContainer>
         </StyledSection>
         
