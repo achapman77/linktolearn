@@ -2,18 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"
-import { Carousel } from 'react-responsive-carousel'
-
-import Marquee, { Motion, randomIntFromInterval } from "react-marquee-slider";
+import Marquee from "react-marquee-slider";
 import times from "lodash/times";
-
-//components
-
-
-//icons
-// import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
-
 
 const TestimonialMarqueeSlider = () => {
     const data = useStaticQuery(graphql`
@@ -42,8 +32,8 @@ const TestimonialMarqueeSlider = () => {
                     scatterRandomly
                 >
                     {times(testimonials.length, Number).map((id) => {
-                        console.info({id})
-                        console.info(testimonials[id])
+                        // console.info({id})
+                        // console.info(testimonials[id])
                         return (
                             <Testimonial key={`testimonial-${id}`}>
                                 <p>{testimonials[id].testimonial}</p>

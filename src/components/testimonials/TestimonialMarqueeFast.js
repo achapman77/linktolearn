@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Marquee from "react-fast-marquee";
-import { Section, SectionHeader } from '../layout/Section';
+import { SectionHeader } from '../layout/Section';
 //https://www.react-fast-marquee.com/documentation
 
 const TestimonialMarqueeFast = () => {

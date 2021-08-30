@@ -35,25 +35,30 @@ const QuickConnectBtns = ({className}) => {
     }
     return (
         <Wrapper className={ className }>
-            <QuickConnectButton to={`tel:${data.contact_info.frontmatter.phone}`} rel="noreferrer" className={ className } id="navMobilePhone">
+            <a href={`tel:${data.contact_info.frontmatter.phone}`} rel="noreferrer">
+                <QuickConnectButton className={ className } id="navMobilePhone">
                 <AiOutlinePhone/>
                 <TextWrapper>
                     <span>|</span>
                     <span>{className === 'navMobile' ? 'Call Us' : data.contact_info.frontmatter.phone}</span>
                 </TextWrapper>
-            </QuickConnectButton>
-            <QuickConnectButton 
+                </QuickConnectButton>
+            </a>
+            
+            <Link
                 to="/#contact"
                 onClick={e => handleMenuLinkClick(e)}
-                className={ className }
             >
-                <GrChatOption/>
-                <TextWrapper className={ className }>
-                    <span>|</span>
-                    <span>Contact</span>
-                </TextWrapper>                   
-                
-            </QuickConnectButton>
+                <QuickConnectButton className={ className }>
+                    <GrChatOption/>
+                    <TextWrapper className={ className }>
+                        <span>|</span>
+                        <span>Contact</span>
+                    </TextWrapper>                   
+                    
+                </QuickConnectButton>
+            </Link>
+            
             
         </Wrapper>
     )
@@ -68,7 +73,7 @@ const Wrapper = styled.div`
     height: -webkit-fill-available;
 `
 
-const QuickConnectButton = styled(Link)`
+const QuickConnectButton = styled.div`
     display: flex;
     gap: 0.75rem;
     align-items: center;

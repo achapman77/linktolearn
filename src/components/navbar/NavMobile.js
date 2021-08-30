@@ -1,51 +1,22 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
-
-import animateScrollTo from 'animated-scroll-to';
 
 //components
 import { Button } from "../buttons/Button"
 import SocialMedia from '../buttons/SocialMedia'
+import QuickConnectBtns from '../buttons/QuickConnectBtns';
 
 //data
 import { menuData } from '../../../content/site-data/MenuData'
 
-//icons
-import { AiOutlinePhone } from 'react-icons/ai'
-import { GrChatOption } from 'react-icons/gr'
-import QuickConnectBtns from '../buttons/QuickConnectBtns';
+
+
 
 const NavMobile = ({isOpen, toggle}) => {
-    const data = useStaticQuery(graphql`
-        query {
-            contact_info: markdownRemark(fileAbsolutePath: {regex: "/contact_info/"}) {
-                id
-                frontmatter {
-                    phone
-                }
-            }
-        }
-    `)
-
-    const handleMenuLinkClick = (e) => {
-        console.info('handleMenuLinkClick()')
-        if (typeof window !== 'undefined' ) {
-                e.preventDefault();
-                let options = {
-                verticalOffset: -80,
-                speed: 500,
-                easing: (t) => { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t },
-                }
-                animateScrollTo(document.querySelector(`#contact`, {options}))
-        }
-    }
 
     return (
         <NavMobileContainer isOpen={isOpen} onClick={toggle}>
-            {/* <Icon onClick={toggle}>
-                <CloseIcon />
-            </Icon> */}
             <Wrapper>
                 <Menu>
                     {menuData.map((v,i) =>{
