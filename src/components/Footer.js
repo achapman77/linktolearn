@@ -106,6 +106,8 @@ const FooterLink = styled(Link)`
    margin-bottom: 0.5rem;
    font-size: 14px;
    color: #3d3d4e;
+   padding: 1rem 0;
+width: -webkit-fill-available;
 
    &:hover {
        color: #f26a2e;

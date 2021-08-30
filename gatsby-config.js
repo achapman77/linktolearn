@@ -48,6 +48,7 @@ module.exports = {
         icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    'gatsby-plugin-offline',
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-json`,

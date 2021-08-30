@@ -119,43 +119,44 @@ const ContactForm = ({content}) => {
                         data-aos="fade-left"
                         data-aos-delay="150"
                         data-aos-duration="1000"
+                        aria-label="Send Us a Contact Request"
                     >
                         <FormTitle>
                             <h4>{content.form_title}</h4>
                         </FormTitle>
                         <FloatingLabel>
-                            <Field name="name" placeholder=" " data-lpignore="true"></Field>
+                            <Field id="name" name="name" placeholder=" " data-lpignore="true"></Field>
                             <IoPersonOutline/>
                             <label htmlFor="name">Name*</label>
                             <span className="errorMessage"><ErrorMessage name="name"/></span>
                         </FloatingLabel>
                         
                         <FloatingLabel>
-                            <Field name="email" placeholder=" " data-lpignore="true"></Field>
+                            <Field id="email" name="email" placeholder=" " data-lpignore="true"></Field>
                             <AiOutlineMail/>
                             <label htmlFor="email">Email*</label>
                             <span className="errorMessage"><ErrorMessage name="email"/></span>
                         </FloatingLabel>
                         
                         <FloatingLabel>
-                            <Field id="contact_phone" name="phone" placeholder=" " value={previousValue} data-lpignore="true"></Field>
+                            <Field id="contact_phone" name="contact_phone" placeholder=" " value={previousValue} data-lpignore="true"></Field>
                             <AiOutlinePhone/>
-                            <label htmlFor="phone">Phone</label>
+                            <label htmlFor="contact_phone">Phone</label>
                             <span className="errorMessage"><ErrorMessage name="phone"/></span>
                         </FloatingLabel>
                         
                         <FloatingLabel>
-                            <Field className={floatSelect ? 'active' : ''} as="select" name="help" defaultValue="" onChange={handleSelectClick}>
+                            <Field className={floatSelect ? 'active' : ''} as="select" id="quick_help_select" name="quick_help_select" defaultValue="" onChange={handleSelectClick}>
                                 <option value=""></option>
                                 <option value="1">Question 1</option>
                                 <option value="2">Question 2</option>
                             </Field>
                             <AiOutlineQuestionCircle/>
-                            <label htmlFor="help">How Can We Help?</label>
+                            <label htmlFor="quick_help_select">How Can We Help?</label>
                         </FloatingLabel>
 
                         <FloatingLabel>
-                            <Field name="message" as="textarea" placeholder=" "></Field>
+                            <Field id="message" name="message" as="textarea" placeholder=" "></Field>
                             <RiMessage2Line/>
                             <label htmlFor="message">Your Message</label>
                             <span className="errorMessage"><ErrorMessage name="message"/></span>

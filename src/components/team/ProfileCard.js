@@ -11,13 +11,13 @@ const ProfileCard = ({data}) => {
     const image = getImage(data.headshot)
     return (
         <Card>
-            <StyledGatsbyImage image={image} alt={`${data.first_name} ${data.last_name}`} className='foobar'/>
+            <StyledGatsbyImage image={image} alt={`${data.first_name} ${data.last_name}`} />
             <Wrapper>
                 <div>
                     <Name>{data.first_name} {data.last_name}</Name>
                     <Title>{data.position_title}</Title>
                 </div>
-                <StyledLink href={data.profile_url}>
+                <StyledLink href={data.profile_url} aria-label="View our LinkedIn Profile">
                     <StyledIcon/>
                 </StyledLink>
             </Wrapper>
