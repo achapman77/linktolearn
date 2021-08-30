@@ -48,7 +48,7 @@ const SocialMedia = ({variant, animate, delay}) => {
                     if (animate) {
                         return(
                             <SocialIcon 
-                                to={v.profile_link} 
+                                href={v.profile_link} 
                                 target="_blank" 
                                 rel="noreferrer" 
                                 title={v.select_social_media}
@@ -56,6 +56,7 @@ const SocialMedia = ({variant, animate, delay}) => {
                                 data-aos-delay={delay + (i * 100)}
                                 data-aos-duration="1000"
                                 className={variant}
+                                key={i}
                             >
                                 {icon}
                             </SocialIcon>
@@ -63,7 +64,7 @@ const SocialMedia = ({variant, animate, delay}) => {
 
                     } else {
                         return(
-                            <SocialIcon to={v.profile_link} target="_blank" rel="noreferrer" title={v.select_social_media} className={variant}>{icon}</SocialIcon>
+                            <SocialIcon href={v.profile_link} target="_blank" rel="noreferrer" title={v.select_social_media} className={variant}  key={i}>{icon}</SocialIcon>
                         )
                     }
                     
@@ -84,7 +85,7 @@ const SocialMediaWrapper = styled.div`
         gap: 1.25rem;
     }
 `
-const SocialIcon = styled(Link)`
+const SocialIcon = styled.a`
     color: white;
     font-size: 1.5rem;
     margin-bottom: -5px;

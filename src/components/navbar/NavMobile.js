@@ -50,8 +50,8 @@ const NavMobile = ({isOpen, toggle}) => {
                 <Menu>
                     {menuData.map((v,i) =>{
                         return (
-                            <NavItem>
-                                <NavLink to={v.link} key={i}>
+                            <NavItem key={i}>
+                                <NavLink to={v.link} >
                                     {v.title}
                                 </NavLink>
                             </NavItem> 

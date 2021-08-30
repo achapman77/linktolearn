@@ -30,7 +30,7 @@ const TeamSection = () => {
     `)
 
     let teamMembers = data.team_members.frontmatter.team_members
-    console.info(teamMembers)
+    // console.info(teamMembers)
 
     return (
         <Section id="team">
@@ -40,7 +40,7 @@ const TeamSection = () => {
             <StyledContainer>
                 {
                     teamMembers.map( (v,i) => {
-                        console.info(v)
+                        // console.info(v)
                         return (
                             <ProfileCard data={v} key={i} />
                         )

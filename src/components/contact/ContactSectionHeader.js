@@ -10,7 +10,7 @@ const ContactSectionHeader = ({content}) => {
         <ParallaxSectionHeader>
             <Parallax strength={-350}>
                 <Background>
-                    <GatsbyImage image={image}/>
+                    <GatsbyImage image={image} alt="Contact Section Background Image"/>
                 </Background>
                 <div className="headerContent">
                     <h2 className="headerTitle">{content.header}</h2>

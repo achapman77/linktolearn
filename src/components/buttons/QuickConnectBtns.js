@@ -35,7 +35,7 @@ const QuickConnectBtns = ({className}) => {
     }
     return (
         <Wrapper className={ className }>
-            <QuickConnectButton href={`tel:${data.contact_info.frontmatter.phone}`} rel="noreferrer" className={ className } id="navMobilePhone">
+            <QuickConnectButton to={`tel:${data.contact_info.frontmatter.phone}`} rel="noreferrer" className={ className } id="navMobilePhone">
                 <AiOutlinePhone/>
                 <TextWrapper>
                     <span>|</span>

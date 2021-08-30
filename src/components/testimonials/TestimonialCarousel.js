@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -13,16 +13,21 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 
 
 const TestimonialCarousel = () => {
-
-    // const arrowStyles = {
-    //     // position: 'absolute',
-    //     // zIndex: 2,
-    //     // top: 'calc(50% - 15px)',
-    //     // width: 30,
-    //     // height: 30,
-    //     // cursor: 'pointer', 
-    // }
-    
+    const data = useStaticQuery(graphql`
+        query {
+            testimonials: markdownRemark(fileAbsolutePath: {regex: "/testimonials/"}) {
+                id
+                frontmatter {
+                    testimonials {
+                        testimonial
+                    }
+                }
+            }
+            
+        }
+    `)
+    console.info({testimonials:data})
+    const testimonials = data.testimonials.frontmatter.testimonials
     return (
         <Wrapper>
             <StyledCarousel 
@@ -48,36 +53,18 @@ const TestimonialCarousel = () => {
                         </StyledButton>
                     )
                 }
-               
-                
             >
-                <div>
-                    <Testimonial>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quos sit rerum optio voluptatibus assumenda quidem illo saepe minima consequuntur dolorem quam sequi, deserunt nulla, debitis vero voluptates, incidunt libero.</p>
-                    </Testimonial>
-                </div>
-                <div>
-                    <Testimonial>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quos sit rerum optio voluptatibus assumenda quidem illo saepe minima consequuntur dolorem quam sequi, deserunt nulla, debitis vero voluptates, incidunt libero.</p>
-                    </Testimonial>
-                </div>
-                <div>
-                    <Testimonial>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quos sit rerum optio voluptatibus assumenda quidem illo saepe minima consequuntur dolorem quam sequi, deserunt nulla, debitis vero voluptates, incidunt libero.</p>
-                    </Testimonial>
-                </div>
-                <div>
-                    <Testimonial>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quos sit rerum optio voluptatibus assumenda quidem illo saepe minima consequuntur dolorem quam sequi, deserunt nulla, debitis vero voluptates, incidunt libero.</p>
-                    </Testimonial>
-                </div>
-                <div>
-                    <Testimonial>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quos sit rerum optio voluptatibus assumenda quidem illo saepe minima consequuntur dolorem quam sequi, deserunt nulla, debitis vero voluptates, incidunt libero.</p>
-                    </Testimonial>
-                </div>
-               
-                
+                {
+                    testimonials.map( (v,i) => {
+                        return (
+                            <div key={i}>
+                                <Testimonial >
+                                    <p>{v.testimonial}</p>
+                                </Testimonial>
+                            </div>
+                        )
+                    })
+                }
             </StyledCarousel>
         </Wrapper>
         
@@ -94,7 +81,7 @@ const Wrapper = styled.div`
 `
 
 const StyledCarousel = styled(Carousel)`
-    max-width: 80vw;
+    max-width: 100vw;
 
     .slider-wrapper {
         margin: 0 3rem;
@@ -103,12 +90,26 @@ const StyledCarousel = styled(Carousel)`
 
     .slide {
         //controls width of text
-        padding: 4rem 20vw;
+        padding: 4rem calc((100vw - 750px) / 2 );
+        p {
+            padding: 1rem;
+        }
     }
 
     .control-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .dot {
             background: ${props => props.theme.colors.primary.main};
+            &.selected {
+                background: transparent;
+                border: 2px solid ${props => props.theme.colors.primary.main};
+                /* transform: scale(1.5); */
+                height: 12px;
+                width: 12px;
+                box-shadow: none;
+            }
         }
 
     }

@@ -6,18 +6,18 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 //icons
 import { AiFillLinkedin } from 'react-icons/ai'
 
-const ProfileCard = ({data,key}) => {
-    console.info({data})
+const ProfileCard = ({data}) => {
+    // console.info({data})
     const image = getImage(data.headshot)
     return (
-        <Card key={key}>
+        <Card>
             <StyledGatsbyImage image={image} alt={`${data.first_name} ${data.last_name}`} className='foobar'/>
             <Wrapper>
                 <div>
                     <Name>{data.first_name} {data.last_name}</Name>
                     <Title>{data.position_title}</Title>
                 </div>
-                <StyledLink to={data.profile_url}>
+                <StyledLink href={data.profile_url}>
                     <StyledIcon/>
                 </StyledLink>
             </Wrapper>
@@ -75,7 +75,7 @@ const Title = styled.div`
     letter-spacing: 0.25em;
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
     color: ${props => props.theme.colors.gray.dark};
     &:hover {
         color: ${props => props.theme.colors.primary.main};

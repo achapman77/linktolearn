@@ -156,9 +156,9 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
       <NavMenu>
         {/* { renderNavItems(navItems, updateNavState)} */}
         {navItems.map( (v,i) => (
-            <NavItem>
+            <NavItem  key={i}>
               <NavLink
-              key={i}
+             
               data-id={`nav_${v.title.toLowerCase()}`}
               to={v.link}
               onClick={e => handleMenuLinkClick(v, e)}

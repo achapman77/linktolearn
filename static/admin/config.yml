@@ -103,19 +103,15 @@ collections:
               - {label: "Publisher Logo", name: "publisher_logo", widget: "image"}
               - {label: "Article Excerpt", name: "article_excerpt", widget: "text"}
               - {label: "Article Link", name: "article_link", widget: "text"}
-              
-      - label: "Videos"
-        name: "videos"
-        file: content/site-data/videos.md
+      - label: "Testimonials"
+        name: "testimonials"
+        file: content/site-data/testimonials.md
         fields:
-          - label: Media Articles
-            name: media_articles
+          - label: Testimonials
+            name: testimonials
             widget: list
             fields: 
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Excerpt", name: "excerpt", widget: "text"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Publisher Logo", name: "publisher_logo", widget: "image"}
+              - {label: "Testimonial", name: "testimonial", widget: "text"}
       - label: "Team Members"
         name: "team_members"
         file: content/site-data/team.md

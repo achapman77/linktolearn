@@ -9,6 +9,8 @@ import Stats from "../components/Stats"
 import ContactUS from "../components/contact/ContactUs"
 import TeamSection from "../components/team/Team"
 import TestimonialCarousel from "../components/testimonials/TestimonialCarousel"
+import TestimonialMarqueeSlider from "../components/testimonials/TestimonialMarqueeSlider"
+import TestimonialMarqueeFast from "../components/testimonials/TestimonialMarqueeFast"
 
 const IndexPage = () => (
   <Layout>
@@ -18,7 +20,9 @@ const IndexPage = () => (
     <Testimonials/>
     <Stats/>
     {/* <Email/> */}
-    <TestimonialCarousel/>
+    <TestimonialMarqueeFast/>
+    {/* <TestimonialMarqueeSlider/> */}
+    {/* <TestimonialCarousel/> */}
     <TeamSection />
     <ContactUS/>
   </Layout>
