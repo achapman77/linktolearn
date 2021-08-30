@@ -8,7 +8,7 @@ import Stats from "../components/Stats"
 // import Email from "../components/Email"
 import ContactUS from "../components/contact/ContactUs"
 import TeamSection from "../components/team/Team"
-// import TestimonialCarousel from "../components/testimonials/TestimonialCarousel"
+import TestimonialCarousel from "../components/testimonials/TestimonialCarousel"
 // import TestimonialMarqueeSlider from "../components/testimonials/TestimonialMarqueeSlider"
 import TestimonialMarqueeFast from "../components/testimonials/TestimonialMarqueeFast"
 
@@ -22,7 +22,7 @@ const IndexPage = () => (
     {/* <Email/> */}
     <TestimonialMarqueeFast/>
     {/* <TestimonialMarqueeSlider/> */}
-    {/* <TestimonialCarousel/> */}
+    <TestimonialCarousel/>
     <TeamSection />
     <ContactUS/>
   </Layout>

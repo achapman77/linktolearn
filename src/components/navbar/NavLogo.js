@@ -32,8 +32,9 @@ const LogoContainer = styled(Link)`
   width: -webkit-fill-available;
   cursor: pointer;
   width: fit-content;
-
+  //https://web.dev/optimize-cls/?utm_source=lighthouse&utm_medium=devtools#images-without-dimensions
   img {
     width: clamp(150px, 15vw, 300px);
+    height: auto;
   }
 `
