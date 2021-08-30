@@ -72,5 +72,6 @@ module.exports = {
         devMode: true,
       },
     },
+    `gatsby-plugin-sass`
   ],
 }

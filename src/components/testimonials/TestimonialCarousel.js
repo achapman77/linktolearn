@@ -5,9 +5,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 
-//components
-
-
 //icons
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 

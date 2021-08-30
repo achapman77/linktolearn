@@ -1,6 +1,7 @@
-const scrollToElement = require('scroll-to-element')
-// import { scrollToElement } from 'scroll-to-element'
-exports.onRouteUpdate = ({ location }) => {
+
+import "./src/styles/preloader.scss"
+import { scrollToElement } from 'scroll-to-element'
+const onRouteUpdate = ({ location }) => {
   checkHash(location)
 }
 
@@ -13,3 +14,5 @@ const checkHash = location => {
     })
   }
 }
+
+export default onRouteUpdate

@@ -12,11 +12,14 @@ A simple and clean Gatsby/NetflifyCMS starter template.
   * Netlify CMS
 
 ## Features: 
-  * Site Theming: colors, mixins, media queries 
-  * Improved Navigation: Sticky, Color Change Bar on scroll, Active Nav Btns on Scroll/New Page
-  * Netlify CMS - Dynamic Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery
-  * Contact Form: Validation, Auto Formating, Floating Labels
-  * SEO enhancement
+  * Netlify CMS - Dynamic Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery, Testimonials, Partners and other Site Content
+  * Contact Form: Floating Labels, Auto Phone Number Formating, Formik Validation 
+  * Styled-Component Site Theming: color pallette, mixins, media queries 
+  * Navigation: Sticky Header, Color Change Bar on scroll, Active Nav Btns on Scroll/New Page
+  * SEO enhancement with social share meta
+  * [React Responsive Carousel](https://www.npmjs.com/package/react-responsive-carousel) - for Image & Video Galleries
+  * [React Fast Marquee](https://www.npmjs.com/package/react-fast-marquee) - for Testimonials, Partners
+  * [Web page preloader](https://dev.to/bartosjiri/creating-a-preloader-for-gatsby-site-3kh1) 
 
 ## Netlify CMS Setup
   * Create new git repo
