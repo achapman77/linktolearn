@@ -85,9 +85,13 @@ collections:
             name: faq
             widget: list
             fields: 
+              - {label: "Select FAQ Category", name: "select_category", widget: "select", options: ["Category 1", "Category 2", "Category 3", "Category 4"]}
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "text"}
-              - {label: "Link to Video Answer", name: "video_link", widget: "string"}
+              - {label: "Link to Blog Article", name: "blog_link", widget: "string", default: "", required: false}
+              - {label: "Blog Article Title", name: "blog_title", widget: "string", default: "", required: false}
+              - {label: "Link to Video Answer", name: "video_link", widget: "string", default: "", required: false}
+              - {label: "Video Title", name: "video_title", widget: "string", default: "", required: false}
       - label: "Media Articles"
         name: "media_articles"
         file: content/site-data/media_articles.md

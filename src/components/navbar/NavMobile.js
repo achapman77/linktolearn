@@ -8,7 +8,7 @@ import SocialMedia from '../buttons/SocialMedia'
 import QuickConnectBtns from '../buttons/QuickConnectBtns';
 
 //data
-import { menuData } from '../../../content/site-data/MenuData'
+import { menuData } from './MenuData'
 
 
 

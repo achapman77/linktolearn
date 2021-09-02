@@ -10,7 +10,7 @@ const Footer = ({logo, logoAltText}) => {
     }
 
     return (
-        <FooterContainer>
+        <FooterContainer id="footer">
             <FooterLinksWrapper>
                 <FooterDesc>
                     <LogoContainer to="/" onClick={toggleHome}>

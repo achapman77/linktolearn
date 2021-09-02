@@ -1,6 +1,6 @@
-
 import "./src/styles/preloader.scss"
 import { scrollToElement } from 'scroll-to-element'
+
 const onRouteUpdate = ({ location }) => {
   checkHash(location)
 }

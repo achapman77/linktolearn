@@ -20,8 +20,8 @@ export const menuData = [
         isActive: false
     },
     {
-        title: "Careers", 
-        link: "/careers",
+        title: "FAQ", 
+        link: "/faq",
         isActive: false
     },
     

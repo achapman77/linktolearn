@@ -23,7 +23,7 @@ const TestimonialCarousel = () => {
             
         }
     `)
-    console.info({testimonials:data})
+    // console.info({testimonials:data})
     const testimonials = data.testimonials.frontmatter.testimonials
     return (
         <Wrapper>

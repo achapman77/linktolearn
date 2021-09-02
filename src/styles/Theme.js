@@ -18,28 +18,25 @@ import { respondTo } from './_respondTo'
 const theme = {
     ...respondTo,
     colors: {
-        white: '#fff',
-        orange: '#F26A2E',
-        blue: '#077BF1',
         primary: {
-            light:'#F49D78',
-            main:'#F26A2E',
-            dark:'#BF5324'
+            light:'rgb(244, 157, 120)',
+            main:'rgb(242, 106, 46)',
+            dark:'rgb(191, 83, 36)'
         },
         secondary: {
-            light:'#51A3F4',
-            main:'#077BF1',
-            dark:'#264C73'
+            light:'rgb(81, 163, 244)',
+            main:'rgb(7, 123, 241)',
+            dark:'rgb(38, 76, 115)'
         },
         gray:{
-            light:'#999',
-            main:'',
-            dark:"#0d0d0d"
+            light:'rgb(247, 247, 247)',
+            main:'rgb(113, 113, 113)',
+            dark:"rgb(65, 65, 65)"
         },
         error:{
-            light:'#e57373',
-            main:'#f44336',
-            dark:"#d32f2f"
+            light:'rgb(229, 115, 115)',
+            main:'rgb(244, 67, 54)',
+            dark:"rgb(211, 47, 47)"
         }
     },
     fontSizes: {

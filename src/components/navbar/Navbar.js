@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import styled from 'styled-components'
 import { Link } from 'gatsby';
 //data
-import { menuData } from "../../../content/site-data/MenuData"
+import { menuData } from "./MenuData"
 
 //components
 import NavLogo from "./NavLogo"
@@ -151,7 +151,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   return (
     <>
     <NavTopper/>
-    <Nav isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
+    <Nav id="navbar" isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
       <NavLogo logo={logo} logoAltText={logoAltText}/>
       <NavMenu>
         {/* { renderNavItems(navItems, updateNavState)} */}

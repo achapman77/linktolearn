@@ -1,6 +1,10 @@
-import React from 'react'
+import React from "react"
+import Layout from "./src/components/layout"
+// import styled from "styled-components"
+import logo from './src/assets/images/logos/logo_main.png'
 
-export default onRenderBody = ({
+
+const onRenderBody = ({
   setPreBodyComponents,
   setBodyAttributes,
   setHeadComponents,
@@ -15,8 +19,9 @@ export default onRenderBody = ({
   setPreBodyComponents([
     <div id="preloader">
       {/* Optional: */}
-      <img src="/assets/images/logos/logo_main.png" alt="logo" style={{"height": "calc(3.23625vw + 77.86408px)"}} />
-      <div className="preloader_animation"></div>
+      <img src={logo} alt="logo" />
+      {/* <div className="preloader_animation"></div> */}
+      <div data-loader='500px-spinner'></div>
     </div>
   ])
   setBodyAttributes({
@@ -26,3 +31,10 @@ export default onRenderBody = ({
     <script src="/scripts/preloader.js" />
   ])
 }
+
+// Wraps every page in a component
+const wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>
+}
+
+export {onRenderBody, wrapPageElement }

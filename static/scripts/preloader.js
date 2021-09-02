@@ -1,3 +1,5 @@
+// https://dev.to/bartosjiri/creating-a-preloader-for-gatsby-site-3kh1
+
 var body = document.querySelector("body");
 document.onreadystatechange = function () {
   if (document.readyState === "complete") {
