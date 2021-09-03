@@ -21,6 +21,11 @@ export const SectionHeader = styled.div`
     h2 {
         margin-bottom: 1rem;
     }
+    p {
+        margin: 0 1rem;
+        text-align: center;
+        /* max-width: 80vw; */
+    }
 `
 export const Container = styled.div`
     width: -webkit-fill-available;

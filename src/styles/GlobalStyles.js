@@ -52,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
             margin-bottom: 1rem;
         }
     }
-    a {
+    /* a {
         text-decoration: none;
-    }
+    } */
 `

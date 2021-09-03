@@ -30,13 +30,16 @@ const Container = styled.div`
     color: white;
     font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: bold;
-    background: ${props => props.theme.colors.secondary.dark};
+    background: ${props => props.theme.colors.secondary.main};
     height: fit-content;
     position: sticky;
     justify-content: space-between;
     ${props => props.theme.sm`
         display:none;
     `}
+    a {
+        text-decoration: none;
+    }
 `
 
 const MessageWrapper = styled.div`
