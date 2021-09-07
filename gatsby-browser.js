@@ -1,7 +1,7 @@
 import "./src/styles/preloader.scss"
 import { scrollToElement } from 'scroll-to-element'
 
-const onRouteUpdate = ({ location }) => {
+export const onRouteUpdate = ({ location }) => {
   checkHash(location)
 }
 
@@ -15,4 +15,4 @@ const checkHash = location => {
   }
 }
 
-export default onRouteUpdate
+// export default onRouteUpdate

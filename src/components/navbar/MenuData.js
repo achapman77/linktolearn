@@ -24,5 +24,10 @@ export const menuData = [
         link: "/faq",
         isActive: false
     },
+    {
+        title: "Blog", 
+        link: "/blog",
+        isActive: false
+    },
     
 ]

@@ -5,25 +5,26 @@ backend:
 
 site_url: https://gatsby-netlify-cms-starter-template-plus.netlify.app/
 display_url: https://gatsby-netlify-cms-starter-template-plus.netlify.app/
-logo_url: src/assets/gatsby-atronaut.png
+logo_url: src/assets/images/logos/logo_main.png
 
 media_folder: content/images/uploads
 public_folder: ../images/uploads
 
 collections:
-  - name: blogs
-    label: Blogs
+  - name: blog
+    label: Blog
     folder: content/blog
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}-{{year}}-{{month}}-{{day}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
-      - {label: "SEO Title", name: "title", widget: "string", pattern: ['.{20,}', "Must have at least 20-65 characters"]}
-      - {label: "SEO Description", name: "description", widget: "string"}
+      # - {label: "SEO Title", name: "title", widget: "string", pattern: ['.{50}', "Must have 50 - 60 characters"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "SEO Description", name: "description", widget: "string", required: false, default:""}
       - {label: "Body", name: "body", widget: "markdown"} 
-      - {label: "Image", name: "image", widget: "image", required: false} 
-      
+      - {label: "Primary Image", name: "primary_image", widget: "image"} 
+      - {label: "Set Blog to Featured", name: "featured_blog", widget: "boolean", default: false}
   - name: "site_content"
     label: "Site Content"
     files:

@@ -82,7 +82,7 @@ const FAQs = () => {
         <StyledSection>
             <StyledHeader>
                 <h2>How Can We Help You?</h2>
-                <p>Below you'll find answers to the questions we get asked the most.  If you don't find the answer you need please call or leave a comment below.</p>
+                <p>Below you'll find answers to the questions we get asked the most.  If you don't find the answer you need please Call Us.</p>
             </StyledHeader>
             <CategoryBtnWrapper id="categoryBtnWrapper">
                 { categoryArr.map( (v,i) => {
@@ -131,11 +131,16 @@ const FAQs = () => {
                                                     <div className="details">
                                                         <div className="info">
                                                             <p className='answer'>{v2.answer}</p>
-                                                            <Button primary="true" round="true" to={v2.blog_link}><AiFillInfoCircle/> Learn More</Button>
+                                                            {v2.blog_link &&
+                                                                <Button primary="true" round="true" to={v2.blog_link}><AiFillInfoCircle/> Learn More</Button>
+                                                            }
                                                         </div>
-                                                        <VideoContainer>
-                                                            <VideoYoutube videoSrcURL={v2.video_link} videoTitle={v2.video_title}/>
-                                                        </VideoContainer>
+                                                        {v2.video_link && 
+                                                            <VideoContainer>
+                                                                <VideoYoutube videoSrcURL={v2.video_link} videoTitle={v2.video_title}/>
+                                                            </VideoContainer>
+                                                        }
+                                                        
                                                     </div>
                                                 </li>
                                             )
@@ -191,6 +196,7 @@ const CategoryBtnWrapper = styled.div`
     justify-content: center;
     gap: clamp(0.5rem, 2vw, 2rem);
     padding: 1.5rem;
+    z-index: 50;
     ${props => props.theme.sm`
         flex-wrap:wrap;
     `}
