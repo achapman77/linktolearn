@@ -18,4 +18,10 @@ team_members:
     first_name: Jane
     last_name: Smith
     headshot: ../images/uploads/portrait-1.jpg
+  - first_name: zxcvxzcv
+    last_name: zxcvxczv
+    position_title: zxcvzxcv
+    description: zxcvxzcv
+    headshot: ../images/uploads/portrait-1.jpg
+    profile_url: https://medium.com/atheros/graphql-quick-tip-how-to-pass-variables-into-a-mutation-in-graphiql-23ecff4add57
 ---
