@@ -2,7 +2,7 @@
 layout: blog
 date: 2021-09-07
 title: snafu for you
-description: asdfghjklqasdfghjklqasdfghjklqasdfghjklqasdfghjklqasdfghjklq
+description: "asdfghjkl asdfghjkl asdfghjkl asdfghjkl asdfghjkl asdfghjkl "
 primary_image: ../images/uploads/contact_background.jpg
 featured_blog: false
 ---
