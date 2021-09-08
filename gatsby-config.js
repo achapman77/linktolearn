@@ -36,6 +36,11 @@ module.exports = {
                   title
                   description
                   date(formatString: "MMMM DD, YYYY")
+                  primary_image {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
                 }
               }
             }
@@ -43,7 +48,7 @@ module.exports = {
         `,
         ref: "id",
         index: ["title", "rawBody"],
-        store: ["id", "slug", "date", "title", "excerpt", "description"],
+        store: ["id", "slug", "date", "title", "excerpt", "description", "primary_image"],
         normalizer: ({ data }) =>
           data.allMdx.nodes.map(node => ({
             id: node.id,
@@ -53,6 +58,7 @@ module.exports = {
             title: node.frontmatter.title,
             description: node.frontmatter.description,
             date: node.frontmatter.date,
+            primary_image: node.frontmatter.primary_image
           })),
       },
     },

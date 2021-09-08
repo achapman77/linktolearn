@@ -1,12 +1,14 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/Seo"
 
-import SearchPosts from "../components/form/SearchPosts"
+import SearchPosts from "../components/blog/SearchPosts"
 import { Button } from "../components/buttons/Button"
+import { Container, Section, SectionHeader } from "../components/layout/Section"
 
 class Blog extends React.Component {
   render() {
@@ -15,7 +17,7 @@ class Blog extends React.Component {
     const posts = data.allMdx.edges
     const localSearchBlog = data.localSearchBlog
 
-    // console.info({data, navigate, location, siteTitle, posts, localSearchBlog})
+    console.info({posts})
 
     return (
       <Layout 
@@ -23,18 +25,20 @@ class Blog extends React.Component {
         title={siteTitle}
       >
         <Seo title="All posts" />
-        <h1>Hello</h1>
-        {/* <Bio /> */}
-        
-        <SearchPosts
-          posts={posts}
-          localSearchBlog={localSearchBlog}
-          navigate={navigate}
-          location={location}
-        />
-       
-         <Button to="/">Home</Button>
-        
+        <Section>
+          <SectionHeader>
+            <h1>{siteTitle} Articles</h1>
+            <p>Frequently Asked Questions, Updates, and Events</p>
+          </SectionHeader>
+          <StyledContainer>
+            <SearchPosts
+              posts={posts}
+              localSearchBlog={localSearchBlog}
+              navigate={navigate}
+              location={location}
+            />
+          </StyledContainer>
+        </Section>
       </Layout>
     )
   }
@@ -76,4 +80,7 @@ export const pageQuery = graphql`
       }
     }
   }
+`
+const StyledContainer = styled(Container)`
+  flex-flow: column;
 `
