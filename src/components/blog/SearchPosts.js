@@ -1,23 +1,13 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
 import PostCard from "./PostCard"
-import { FloatingLabel } from "../form/FloatingLabel"
-
-// import { rhythm } from "../utils/typography"
-
-
 
 const SearchedPosts = ({ results }) =>
   results.length > 0 ? (
     results.map(node => {
-      const date = node.date
       const title = node.title || node.slug
-      const description = node.description
-      const excerpt = node.excerpt
-      const slug = node.slug
 
       return (
         <PostCard node={node} title={title} className="searchResultPost" />
