@@ -19,20 +19,14 @@ export const menuData = [
         link: "/#contact",
         isActive: false
     },
-    // {
-    //     title: "FAQ", 
-    //     link: "/faq",
-    //     isActive: false
-    // },
-    // {
-    //     title: "Blog", 
-    //     link: "/blog",
-    //     isActive: false
-    // },
     {
-        title: "Careers", 
-        link: "/careers",
+        title: "FAQ", 
+        link: "/faq",
         isActive: false
     },
-    
+    {
+        title: "Blog", 
+        link: "/blog",
+        isActive: false
+    },
 ]

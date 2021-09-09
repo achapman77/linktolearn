@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import {Link as ScrollLink} from 'react-scroll'
@@ -43,7 +43,7 @@ const FAQs = () => {
 
     const toggleAllAnswers = (id,e) => {
         //toggle .active on btn
-        let btn = e.target.closest('span')
+        let btn = e.target.closest('button')
         btn.classList.contains('active') ? btn.classList.remove('active') : btn.classList.add('active')
 
         //Find all category li and toggle .active
@@ -122,28 +122,34 @@ const FAQs = () => {
                                             return (
                                                 <li key={i2}
                                                     id={id}
-                                                    onClick={e => toggleAnswer(e)}
+                                                    
                                                 >
-                                                    <p className='question'>
-                                                        <AiOutlineDoubleRight className='caretRight'/>
-                                                        {v2.question}
-                                                    </p>
-                                                    <div className="details">
-                                                        <div className="info">
-                                                            <p className='answer'>{v2.answer}</p>
-                                                            {v2.blog_link &&
-                                                                <Button primary="true" round="true" to={v2.blog_link}><AiFillInfoCircle/> Learn More</Button>
+                                                    <button
+                                                        onClick={e => toggleAnswer(e)}
+                                                    >
+                                                        <p className='question'>
+                                                            <AiOutlineDoubleRight className='caretRight'/>
+                                                            {v2.question}
+                                                        </p>
+                                                        <div className="details">
+                                                            <div className="info">
+                                                                <p className='answer'>{v2.answer}</p>
+                                                                {v2.blog_link &&
+                                                                    <Button primary="true" round="true" to={v2.blog_link}><AiFillInfoCircle/> Learn More</Button>
+                                                                }
+                                                            </div>
+                                                            {v2.video_link && 
+                                                                <VideoContainer>
+                                                                    <VideoYoutube videoSrcURL={v2.video_link} videoTitle={v2.video_title}/>
+                                                                </VideoContainer>
                                                             }
+                                                            
                                                         </div>
-                                                        {v2.video_link && 
-                                                            <VideoContainer>
-                                                                <VideoYoutube videoSrcURL={v2.video_link} videoTitle={v2.video_title}/>
-                                                            </VideoContainer>
-                                                        }
-                                                        
-                                                    </div>
+                                                    </button>
                                                 </li>
                                             )
+                                        } else {
+                                            return(<></>)
                                         }
                                     })}
                                 </FAQList>
@@ -244,8 +250,9 @@ const Title = styled.p`
     align-items: center;
     justify-content: left;
 `
-const ToggleAllBtn = styled.span`
+const ToggleAllBtn = styled.button`
     background: ${props => props.theme.colors.secondary.main};
+    border: none;
     color: white;
     display: flex;
     align-items: center;
@@ -269,6 +276,11 @@ const FAQList = styled.ul`
         /* padding-bottom: 1rem; */
         margin: 0;
         border-bottom: 1px solid lightgray;
+        button {
+            border: none;
+            background: transparent;
+            width: -webkit-fill-available;
+        }
         .question {
             font-weight: bold;
             border-left: 7px solid transparent;

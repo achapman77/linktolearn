@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 
 // import Bio from "../components/bio"
@@ -7,7 +7,6 @@ import Layout from "../components/layout"
 import Seo from "../components/Seo"
 
 import SearchPosts from "../components/blog/SearchPosts"
-import { Button } from "../components/buttons/Button"
 import { Container, Section, SectionHeader } from "../components/layout/Section"
 
 class Blog extends React.Component {
