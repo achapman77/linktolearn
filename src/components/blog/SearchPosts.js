@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
 import PostCard from "./PostCard"
+import { FloatingLabel } from "../form/FloatingLabel"
 
 // import { rhythm } from "../utils/typography"
 
@@ -100,7 +101,7 @@ const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
         <input
           id="search"
           type="search"
-          placeholder="Search all posts"
+          placeholder="Search All Posts"
           value={query}
           onChange={e => {
             navigate(
@@ -119,34 +120,39 @@ export default SearchPosts
 
 const SearchBar = styled.div`
   display: flex;
-  border: 1px solid #dfe1e5;
-  border-radius: 10px;
+  border: none;
+  border-bottom: 3px solid ${props => props.theme.colors.gray.main};;
+  border-radius: 0px;
   margin: 0 auto;
   width: 100%;
   height: 3rem;
-  background: #fdfdfd;
+  background: transparent;
+  color: ${props => props.theme.colors.gray.main};
 
   svg {
     margin: auto 1rem;
-    height: 20px;
-    width: 20px;
-    color: #9aa0a6;
-    fill: #9aa0a6;
+    height: clamp(1rem,5vw,1.5rem);;
+    width: clamp(1rem,5vw,1.5rem);;
+    color:${props => props.theme.colors.gray.main};;
+    fill: ${props => props.theme.colors.gray.main};;
   }
 
   input {
     display: flex;
     flex: 100%;
     height: 100%;
-    font-size: 16px;
+    font-size: clamp(1rem,5vw,1.5rem);;
     background-color: transparent;
     border: none;
     margin: 0;
-    padding: 0;
+    padding: 1rem 0;
     padding-right: 0.5rem;
-    color: rgb(55, 53, 47);
+    color: ${props => props.theme.colors.gray.main};;
     word-wrap: break-word;
     outline: none;
+    &::placeholder {
+      color: ${props => props.theme.colors.gray.main};
+    }
   }
 `
 
@@ -172,7 +178,16 @@ const Header = styled.div`
 `
 
 const Wrapper = styled.div`
-  display: flex;
+  /* display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  ${props => props.theme.lg`
+      grid-template-columns: repeat(2, 1fr);
+  `}
+  ${props => props.theme.sm`
+      grid-template-columns: repeat(1, 1fr);
+  `}
 `

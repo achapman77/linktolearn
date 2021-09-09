@@ -20,8 +20,8 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
       # - {label: "SEO Title", name: "title", widget: "string", pattern: ['.{50}', "Must have 50 - 60 characters"]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "SEO Description", name: "description", widget: "string", required: false, default:""}
+      - {label: "Title", name: "title", widget: "string", placeholder: "Must have 50 - 60 characters"}
+      - {label: "SEO Description", name: "description", widget: "text", required: false, default:""}
       - {label: "Body", name: "body", widget: "markdown"} 
       - {label: "Primary Image", name: "primary_image", widget: "image"} 
       - {label: "Set Blog to Featured", name: "featured_blog", widget: "boolean", default: false}

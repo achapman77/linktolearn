@@ -4,6 +4,9 @@ export const GlobalStyle = createGlobalStyle`
     html {
         overflow-x: hidden;
     }
+    /* body {
+        overflow: visible !important;
+    } */
     * {
         font-family: 'Roboto', sans-serif;
         margin: 0%;

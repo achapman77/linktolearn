@@ -23,8 +23,9 @@ const PostCard = ({node, title, className}) => {
                     __html: node.description || node.frontmatter?.description || node.excerpt,
                     }}
                 />
-                <Button to={`/blog/${node.slug}`} className="readMoreBtn">Read More <AiOutlineArrowRight/></Button>
+                <Button to={`/blog/${node.slug}`} className="readMoreBtn featuredBtn">Read More <AiOutlineArrowRight/></Button>
             </div>
+            <Button to={`/blog/${node.slug}`} className="readMoreBtn listBtn">Read More <AiOutlineArrowRight/></Button>
         </Card>
     )
 }
@@ -54,8 +55,10 @@ const Card = styled(Link)`
     }
     .excerpt {
         margin-bottom: 2rem;
+        min-height: 4.5rem;
     }
     .readMoreBtn {
+        display:none;
         svg {
             margin: 0;
             margin-left: 0.5rem;
@@ -76,28 +79,90 @@ const Card = styled(Link)`
             }
         }
     }
+    .wrapper {
+        display: flex;
+        flex-flow: column;
+    }
 
     //specialized
     &.featuredPost {
         display: flex;
+        
         .wrapper {
             padding: 0 1rem;
-            width: clamp(200px, 20vw, 600px);
+            width: clamp(35rem, 50rem, 50rem);
         }
+        .featuredBtn{
+            display: block;
+        }
+        //responsive
+        ${props => props.theme.md`
+            flex-flow: column;
+            .wrapper {
+                padding: 0;
+                width: -webkit-fill-available;
+            }
+            h3 {
+                margin-top:1rem;
+            }
+        `}
 
     }
     &.listPost {
-        width: clamp(200px, 20vw, 31.5%);
         padding: 0.75rem;
         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        display: flex;
+        flex-flow: column;
         &:hover {
             box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         }
         .wrapper {
             margin-top: 1rem;
         }
+        .readMoreBtn {
+            margin-top: auto;
+        }
+        .listBtn {
+            display: block;
+        }
     }
     &.searchResultPost {
-        color: orange;
+        display: flex;
+        min-height: 23vh;
+        margin: 1rem 0;
+        padding: 0.75rem;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        width: -webkit-fill-available;
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        
+
+        .wrapper {
+            padding: 0 1rem;
+        }
+        .readMoreBtn {
+            margin-top: auto;
+        }
+        .featuredBtn {
+            display: block;
+        }
+        .gatsby-image-wrapper {
+            max-width: clamp(15rem, 30vw, 20rem);
+        }
+
+        //responsive
+        ${props => props.theme.xs`
+            flex-flow:column;
+            .wrapper {
+                padding: 0rem;
+            }
+            h3 {
+                margin-top:1rem;
+            }
+            .gatsby-image-wrapper {
+                max-width: -webkit-fill-available;
+            }
+        `}
     }
 `

@@ -30,7 +30,7 @@ module.exports = {
               nodes {
                 id
                 slug  
-                excerpt
+                excerpt(pruneLength: 160)
                 rawBody
                 frontmatter {
                   title

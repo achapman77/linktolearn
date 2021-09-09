@@ -27,7 +27,7 @@ class Blog extends React.Component {
         <Seo title="All posts" />
         <Section>
           <SectionHeader>
-            <h1>{siteTitle} Articles</h1>
+            <h2>{siteTitle} Posts</h2>
             <p>Frequently Asked Questions, Updates, and Events</p>
           </SectionHeader>
           <StyledContainer>
@@ -63,7 +63,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 160)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
@@ -83,4 +83,8 @@ export const pageQuery = graphql`
 `
 const StyledContainer = styled(Container)`
   flex-flow: column;
+  max-width: 80vw;
+  ${props => props.theme.lg`
+      max-width: 95vw;
+  `}
 `

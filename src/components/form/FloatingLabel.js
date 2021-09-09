@@ -44,7 +44,7 @@ export const FloatingLabel = styled.div`
             color:${props => props.theme.colors.primary.main};
         }
         &:not(:focus) ~ label {
-            color:${props => props.theme.colors.gray.light};
+            color:${props => props.theme.colors.gray.main};
         }
     }
 
@@ -55,12 +55,12 @@ export const FloatingLabel = styled.div`
             color:${props => props.theme.colors.primary.main};
         }
         &:not(:focus) ~ label {
-            color:${props => props.theme.colors.gray.light};
+            color:${props => props.theme.colors.gray.main};
         }
     }
 
     label {
-        color:${props => props.theme.colors.gray.light}; 
+        color:${props => props.theme.colors.gray.main}; 
         font-weight:normal;
         position:absolute;
         pointer-events:none;
@@ -80,7 +80,7 @@ export const FloatingLabel = styled.div`
         pointer-events:none;
         left:5px;
         top: 5px;  
-        color:${props => props.theme.colors.gray.light};
+        color:${props => props.theme.colors.gray.main};
         font-size: clamp(1rem, 5vw, 1.5rem);
     }
 
