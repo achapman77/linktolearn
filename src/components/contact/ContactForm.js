@@ -147,7 +147,7 @@ const ContactForm = ({content}) => {
                         
                         <FloatingLabel>
                             <Field className={floatSelect ? 'active' : ''} as="select" id="quick_help_select" name="quick_help_select" defaultValue="" onChange={handleSelectClick}>
-                                <option value=""></option>
+                                <option value="" aria-label="blank"></option>
                                 <option value="1">Question 1</option>
                                 <option value="2">Question 2</option>
                             </Field>

@@ -21,20 +21,20 @@ const Hero = () => {
                         data-aos="fade-up"
                         data-aos-delay="50"
                         data-aos-duration="1000"
-                    >Unreal Destinations</HeroH1>
+                    >This is a Template</HeroH1>
                     <HeroP
                         data-aos="fade-up"
                         data-aos-delay="100"
                         data-aos-duration="1000"
-                    >Out of this world</HeroP>
+                    >Customize at Will</HeroP>
                     <Button 
-                        to="/trips" 
+                        to="/" 
                         primary="true" 
                         round="true"
                         data-aos="fade-up"
                         data-aos-delay="350"
                         data-aos-duration="1000"
-                    >Travel Now</Button>
+                    >Call to Action</Button>
                 </HeroItems>
             </HeroContent>
         </HeroContainer>
@@ -118,6 +118,7 @@ const HeroH1 = styled.h1`
     letter-spacing: 3px;
     font-weight: bold;
     padding: 0 1rem;
+    color: white;
 `
 
 const HeroP = styled.p`

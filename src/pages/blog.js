@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 
 // import Bio from "../components/bio"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 
 import SearchPosts from "../components/blog/SearchPosts"
@@ -26,7 +26,7 @@ class Blog extends React.Component {
         <Seo title="All posts" />
         <Section>
           <SectionHeader>
-            <h2>{siteTitle} Posts</h2>
+            <h2>{siteTitle} Articles</h2>
             <p>Frequently Asked Questions, Updates, and Events</p>
           </SectionHeader>
           <StyledContainer>

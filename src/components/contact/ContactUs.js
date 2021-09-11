@@ -72,7 +72,10 @@ const ContactUs = () => {
         <StyledSection id="contact">
                 <ContactSectionHeader content={content}/>
             <StyledContainer>
-                    <ContactInfo data={data}/>
+                
+                <ContactInfo data={data}/>
+               
+                    
                     <ContactForm content={content}/>
             </StyledContainer>
         </StyledSection>

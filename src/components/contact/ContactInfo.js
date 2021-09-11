@@ -89,7 +89,7 @@ const ContactInfo = ({data}) => {
 export default ContactInfo
 
 const Container = styled.div`
-    align-self: end;
+    align-self: flex-end;
     margin-top: 0;
     /* width: clamp(500px, 20vw, 20vw); */
     height: auto;

@@ -4,11 +4,11 @@ export const menuData = [
         link: "/#hero",
         isActive: false
     },
-    {
-        title: "Trips", 
-        link: "/#trips",
-        isActive: false
-    },
+    // {
+    //     title: "Trips", 
+    //     link: "/#trips",
+    //     isActive: false
+    // },
     {
         title: "Team", 
         link: "/#team",
@@ -25,7 +25,7 @@ export const menuData = [
         isActive: false
     },
     {
-        title: "Blog", 
+        title: "Articles", 
         link: "/blog",
         isActive: false
     },

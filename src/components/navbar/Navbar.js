@@ -16,9 +16,6 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 // import scrollToElement from 'scroll-to-element';
 import animateScrollTo from 'animated-scroll-to';
 
-
-
-
 const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   const [navbar, setNavbar] = useState(false)
   const [offset, setOffset] = useState(0)
@@ -27,20 +24,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   const [anchor, setAnchor] = useState(false)
   
 
-  const updateNavState = (sectionID) => {
-    const newNavList = navItems.map( (item) => {
-      item.isActive = false
-      if (item.link === `/#${sectionID}`) {
-        const updatedItem = {
-          ...item,
-          isActive: !item.isActive,
-        }
-        return updatedItem
-      }
-      return item
-    })
-    setNavItems(newNavList)
-  }
+  
 
   //Pages other than index, header is solid
   useEffect(() => {
@@ -52,9 +36,22 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
   }, [])
 
   useEffect(() => {
+    const updateNavState = (anchor) => {
+      const newNavList = navItems.map( (item) => {
+        item.isActive = false
+        if (item.link === `/#${anchor}`) {
+          const updatedItem = {
+            ...item,
+            isActive: !item.isActive,
+          }
+          return updatedItem
+        }
+        return item
+      })
+      setNavItems(newNavList)
+    }
     updateNavState(anchor)
-
-  }, [anchor])
+  },[anchor])
   
   //When user scrolls on index header turns from transparent to solid
   const handleNavbarOnScroll = () => {
@@ -72,9 +69,10 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
 
 
   //Registers #on_page_sections and watches for page scroll to set active state of nav button
-  var observer
+  
 
   useEffect(() => {
+    var observer
     if (observerState) {
       observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -82,7 +80,6 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
             if (entry.intersectionRatio >= 0.5) {
               let elem = entry.target
               let sectionID = elem.id
-              // updateNavState(sectionID)
               setAnchor(sectionID)
             }
           }
@@ -114,7 +111,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
     } 
       
 
-  }, [observerState]) 
+  }, [observerState, navItems]) 
 
 
   const handleMenuLinkClick = (navItem, e) => {
@@ -154,7 +151,6 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
     <Nav id="navbar" isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
       <NavLogo logo={logo} logoAltText={logoAltText}/>
       <NavMenu>
-        {/* { renderNavItems(navItems, updateNavState)} */}
         {navItems.map( (v,i) => (
             <NavItem  key={i}>
               <NavLink

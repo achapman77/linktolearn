@@ -32,17 +32,29 @@ export const GlobalStyle = createGlobalStyle`
 									   to(#19911D),
 									   color-stop(.6,#54DE5D)) */
     }
-    h2 {
+    hr {
+        border: none;
+        width: -webkit-fill-available;
+        background: ${props => props.theme.colors.gray.dark};
+        height: 1px;
+
+    }
+    /* h1 {
         font-size: clamp(1.2rem, 5vw, 3rem);
         color: #000;
+    } */
+    h1, h2 {
+        font-size: clamp(1.2rem, 5vw, 3rem);
+        color: ${props => props.theme.colors.gray.dark};
+        text-transform: capitalize;
     }
     h3 {
         font-size: clamp(1rem, 5vw, 2.25rem);
-        color: #000;
+        color: ${props => props.theme.colors.gray.dark};
     }
     h4 {
         font-size: clamp(1rem, 5vw, 1.75rem);
-        color: #000;
+        color: ${props => props.theme.colors.gray.dark};
     }
     p, input, label, select, textarea {
         font-size: clamp(1rem, 0.8125rem + 0.8333vw, 1.25rem);

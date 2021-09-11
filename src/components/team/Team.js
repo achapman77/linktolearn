@@ -57,4 +57,5 @@ const StyledContainer = styled(Container)`
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
+    align-items: baseline;
 `
