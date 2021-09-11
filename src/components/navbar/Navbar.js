@@ -154,12 +154,11 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
         {navItems.map( (v,i) => (
             <NavItem  key={i}>
               <NavLink
-             
-              data-id={`nav_${v.title.toLowerCase()}`}
-              to={v.link}
-              onClick={e => handleMenuLinkClick(v, e)}
-              activeClassName='active'
-              className={v.isActive ? 'active' : ''}
+                data-id={`nav_${v.title.toLowerCase()}`}
+                to={v.link}
+                onClick={e => handleMenuLinkClick(v, e)}
+                activeClassName='active'
+                className={v.isActive ? 'active' : ''}
               >
               <span>{v.title}</span>
               </NavLink>
