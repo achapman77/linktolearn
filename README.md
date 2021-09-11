@@ -1,5 +1,5 @@
 ## Summary
-A simple and clean Gatsby/NetflifyCMS starter template.  
+A Gatsby/NetflifyCMS starter template.  
 
 ## [Live Demo](https://gatsby-netlify-cms-starter-template-plus.netlify.app/)
 
@@ -12,10 +12,10 @@ A simple and clean Gatsby/NetflifyCMS starter template.
   * Netlify CMS
 
 ## Features: 
-  * Netlify CMS - Dynamic Blogs, Contact Info, FAQ, Social Media, Team Bio, Media Articles, Video Gallery, Testimonials, Partners and other Site Content
+  * Netlify CMS - Dynamic Blogs & Site Content
   * Contact Form: Floating Labels, Auto Phone Number Formating, Formik Validation 
   * Styled-Component Site Theming: color pallette, mixins, media queries 
-  * Navigation: Sticky Header, Color Change Bar on scroll, Active Nav Btns on Scroll/New Page
+  * Navigation: Sticky Header w/ Color Change on scroll, Active Nav Btns on Scroll/New Page
   * SEO enhancement with social share meta
   * [React Responsive Carousel](https://www.npmjs.com/package/react-responsive-carousel) - for Image & Video Galleries
   * [React Fast Marquee](https://www.npmjs.com/package/react-fast-marquee) - for Testimonials, Partners
@@ -80,10 +80,3 @@ Gatsby/Formik/Netlify Forms
   * [Netlify CMS Widgets](]https://www.netlifycms.org/docs/widgets/)
   * [Modular Content Widgets](https://www.youtube.com/watch?v=R4rLx6wTqMw)
   * [Using Gatsby Image with Netlify CMS](https://www.frontendstumbles.com/using-gatsby-image-with-netlify-cms/)
-
-## Screenshots
-![hero](https://user-images.githubusercontent.com/5178260/128258326-22152245-613f-46c2-adc5-d77275482036.png)
-![about](https://user-images.githubusercontent.com/5178260/128258383-0eb805a6-b6ac-402a-95e4-70bb8c664303.png)
-![testimonials](https://user-images.githubusercontent.com/5178260/128258401-70a6292d-e4c4-4559-adeb-8c892398309c.png)
-![stats](https://user-images.githubusercontent.com/5178260/128258407-af79a961-bce9-4163-a2e9-605aeb08abb2.png)
-![email](https://user-images.githubusercontent.com/5178260/128258414-633b1551-f4b0-4d06-8cc1-96949e36d80b.png)

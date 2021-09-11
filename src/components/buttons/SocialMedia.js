@@ -83,6 +83,9 @@ const SocialMediaWrapper = styled.div`
     &.contactInfo {
         gap: 1.25rem;
     }
+    &.navTopper {
+        margin-left: auto;
+    }
 `
 const SocialIcon = styled.a`
     color: white;

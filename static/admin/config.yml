@@ -19,9 +19,9 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
-      # - {label: "SEO Title", name: "title", widget: "string", pattern: ['.{50}', "Must have 50 - 60 characters"]}
-      - {label: "Title", name: "title", widget: "string", placeholder: "Must have 50 - 60 characters"}
-      - {label: "SEO Description", name: "description", widget: "text", required: false, default:""}
+      - {label: "Title", name: "title", widget: "string", pattern: ['.{50,60}', "Must have 50 - 60 characters for SEO"]}
+      # - {label: "Title", name: "title", widget: "string", placeholder: "Must have 50 - 60 characters"}
+      - {label: "SEO Description", name: "description", widget: "text", required: false, default:"", pattern: ['.{150,160}', "Must have 150 - 160 characters for SEO"]}
       - {label: "Body", name: "body", widget: "markdown"} 
       - {label: "Primary Image", name: "primary_image", widget: "image"} 
       - {label: "Set Blog to Featured", name: "featured_blog", widget: "boolean", default: false}
@@ -131,5 +131,13 @@ collections:
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Headshot", name: "headshot", widget: "image", media_folder:'team'}
               - {label: "LinkedIn Profile", name: "profile_url", widget: "string"}
-
+      - label: "Page Top Messages"
+        name: "page_top_messages"
+        file: content/site-data/page_top_messages.md
+        fields:
+          - label: Page Top Messages
+            name: page_top_messages
+            widget: list
+            fields: 
+              - {label: "Message", name: "message", widget: "string", pattern: ['.{0,50}', "Must be less than 50 characters"]}
             
