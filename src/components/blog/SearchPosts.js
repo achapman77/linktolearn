@@ -6,11 +6,11 @@ import PostCard from "./PostCard"
 
 const SearchedPosts = ({ results }) =>
   results.length > 0 ? (
-    results.map(node => {
+    results.map((node,i) => {
       const title = node.title || node.slug
 
       return (
-        <PostCard node={node} title={title} className="searchResultPost" />
+        <PostCard key={i} node={node} title={title} className="searchResultPost" />
       )
     })
   ) : (
@@ -27,13 +27,13 @@ const AllPosts = ({ posts }) => (
         <hr/>
       </Header>
       
-      {posts.map( ( {node} ) => {
+      {posts.map( ( {node},i ) => {
         const title = node.frontmatter.title || node.slug
-        console.info({node})
+        // console.info({node})
         return (
           <>
           {node.frontmatter.featured_blog &&
-            <PostCard node={node} title={title} className="featuredPost"/>
+            <PostCard key={i} node={node} title={title} className="featuredPost"/>
           }
           </>
         )
@@ -45,12 +45,12 @@ const AllPosts = ({ posts }) => (
         <hr/>
       </Header>
       <Wrapper>
-        {posts.map( ({node}) => {
+        {posts.map( ({node}, i) => {
           const title = node.frontmatter.title || node.slug
           return (
             <>
             {node.frontmatter.featured_blog === false &&
-              <PostCard node={node} title={title} className="listPost" />
+              <PostCard key={i} node={node} title={title} className="listPost" />
             }
             </>
           )
@@ -76,7 +76,7 @@ const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
     localSearchBlog.store
   )
   
-  console.info({results})
+  // console.info({results})
 
   return (
     <>
