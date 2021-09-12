@@ -7,7 +7,7 @@ team_members:
       repellendus incidunt sapiente adipisci nihil odio, similique iusto vitae
       expedita dolore, asperiores accusantium ab! Dignissimos libero doloremque
       cum praesentium quas neque!
-    headshot: ../images/uploads/portrait-1.jpg
+    headshot: ../images/uploads/profile.jpg
     profile_url: http://google.com/
   - description: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
       repellendus incidunt sapiente adipisci nihil odio, similique iusto vitae
@@ -17,11 +17,11 @@ team_members:
     position_title: CFO
     first_name: Jane
     last_name: Smith
-    headshot: ../images/uploads/portrait-1.jpg
+    headshot: ../images/uploads/profile.jpg
   - first_name: gggg
     last_name: zxcvxczv
     position_title: zxcvzxcv
     description: zxcvxzcv
-    headshot: ../images/uploads/portrait-1.jpg
+    headshot: ../images/uploads/profile.jpg
     profile_url: https://medium.com/atheros/graphql-quick-tip-how-to-pass-variables-into-a-mutation-in-graphiql-23ecff4add57
 ---
