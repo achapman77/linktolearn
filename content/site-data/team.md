@@ -18,7 +18,7 @@ team_members:
     first_name: Jane
     last_name: Smith
     headshot: ../images/uploads/portrait-1.jpg
-  - first_name: zxcvxzcv
+  - first_name: gggg
     last_name: zxcvxczv
     position_title: zxcvzxcv
     description: zxcvxzcv
