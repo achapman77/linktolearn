@@ -23,14 +23,14 @@ const QuickConnectBtns = ({className}) => {
 
     const handleMenuLinkClick = (e) => {
         console.info('handleMenuLinkClick()')
-        if (typeof window !== 'undefined' ) {
+        if (typeof window !== 'undefined' && window.location.pathname === "/" ) {
                 e.preventDefault();
                 let options = {
                 verticalOffset: -80,
                 speed: 500,
                 easing: (t) => { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t },
                 }
-                animateScrollTo(document.querySelector(`#contact`, {options}))
+                animateScrollTo(document.querySelector(`#contact`, options))
         }
     }
     return (
