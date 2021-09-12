@@ -16,7 +16,7 @@ class Blog extends React.Component {
     const posts = data.allMdx.edges
     const localSearchBlog = data.localSearchBlog
 
-    console.info({posts})
+    // console.info({posts})
 
     return (
       <Layout 

@@ -9,7 +9,7 @@ export const onRouteUpdate = ({ location }) => {
 }
 
 const checkHash = location => {
-  console.info('checkHash =>')
+  // console.info('checkHash =>')
   let { hash } = location
   // console.info({location, hash, scrollToElement})
   // var element = document.getElementById('sample_id');

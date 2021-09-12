@@ -74,7 +74,7 @@ const FAQs = () => {
         if (spacerHeight >=0 ) {
            setSpacerHeight(spacerHeight + 100) 
         }
-        console.info({screenHeight, navHeight, categoryBtnNavHeight, lastCategoryHeight, footerHeight, spacerHeight})
+        // console.info({screenHeight, navHeight, categoryBtnNavHeight, lastCategoryHeight, footerHeight, spacerHeight})
     }
   }, [])
 

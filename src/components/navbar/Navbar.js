@@ -115,7 +115,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
 
 
   const handleMenuLinkClick = (navItem, e) => {
-    console.info('handleMenuLinkClick()')
+    // console.info('handleMenuLinkClick()')
     if (typeof window !== 'undefined' && navItem.link.includes('#')) {
       const [anchorPath, anchor] = navItem.link.split('#');
       if (window.location.pathname === anchorPath) {

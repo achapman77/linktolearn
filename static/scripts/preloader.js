@@ -2,7 +2,7 @@
 
 var body = document.querySelector("body");
 document.onreadystatechange = function () {
-  console.info('FOOOOBAAAAR')
+  // console.info('FOOOOBAAAAR')
   if (document.readyState === "complete") {
     body.classList.add("preloader_ready");
     setTimeout(function () {

@@ -184,5 +184,6 @@ module.exports = {
     //     precachePages: [`/blog/`, `/faq/*`],
     //   }
     // },
+    `gatsby-plugin-remove-serviceworker`
   ],
 }
