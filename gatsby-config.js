@@ -143,18 +143,6 @@ module.exports = {
     //     // trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-json`,
@@ -167,9 +155,25 @@ module.exports = {
     `gatsby-plugin-sass`,
     // `gatsby-plugin-offline`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        cache_busting_mode: 'none'
+      },
+    },
+    {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/blog/`, `/faq/*`],
+        workboxConfig: {
+          globPatterns: ['**/icon-path*']
+        }
       }
     },
   ],
