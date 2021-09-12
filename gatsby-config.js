@@ -143,6 +143,17 @@ module.exports = {
     //     // trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
+    `gatsby-plugin-gatsby-cloud`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-json`,
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: false,
+      },
+    },
+    `gatsby-plugin-sass`,
+    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -153,6 +164,7 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        cache_busting_mode: 'none'
       },
     },
     `gatsby-plugin-gatsby-cloud`,
