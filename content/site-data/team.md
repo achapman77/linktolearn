@@ -17,11 +17,11 @@ team_members:
     position_title: CFO
     first_name: Jane
     last_name: Smith
-    headshot: ../images/uploads/portrait-2.jpg
+    headshot: ../images/uploads/pexels-nothing-ahead-3571551.jpg
   - first_name: gggg
     last_name: zxcvxczv
     position_title: zxcvzxcv
     description: zxcvxzcv
-    headshot: ../images/uploads/portrait-2.jpg
+    headshot: ../images/uploads/pexels-nothing-ahead-3571551.jpg
     profile_url: https://medium.com/atheros/graphql-quick-tip-how-to-pass-variables-into-a-mutation-in-graphiql-23ecff4add57
 ---
