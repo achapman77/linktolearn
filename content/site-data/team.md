@@ -7,7 +7,7 @@ team_members:
       repellendus incidunt sapiente adipisci nihil odio, similique iusto vitae
       expedita dolore, asperiores accusantium ab! Dignissimos libero doloremque
       cum praesentium quas neque!
-    headshot: ../images/uploads/portrait-2.jpg
+    headshot: ../images/uploads/pexels-nothing-ahead-3571551.jpg
     profile_url: http://google.com/
   - description: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
       repellendus incidunt sapiente adipisci nihil odio, similique iusto vitae
