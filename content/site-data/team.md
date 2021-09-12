@@ -17,7 +17,7 @@ team_members:
     position_title: CFO
     first_name: Jane
     last_name: Smith
-    headshot: ../images/uploads/logo_main.png
+    headshot: ../images/uploads/portrait-1.jpg
   - first_name: gggg
     last_name: zxcvxczv
     position_title: zxcvzxcv
