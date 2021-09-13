@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Parallax, Background } from 'react-parallax'
 const ContactSectionHeader = ({content}) => {
     // const content = data.content.frontmatter.contact_section_content
-    console.info({content})
+    // console.info({content})
     const image = getImage(content.header_image)
     return (
         <ParallaxSectionHeader>

@@ -7,7 +7,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { AiFillLinkedin } from 'react-icons/ai'
 
 const ProfileCard = ({data}) => {
-    console.info({data})
+    // console.info({data})
     const image = getImage(data.headshot)
     return (
         <Card>
