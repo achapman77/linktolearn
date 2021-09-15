@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        icon: `src/assets/favicons/maskable-icon.png`,//check favicon updated in browser
+        icon: `src/assets/favicons/maskable_icon.png`,//check favicon updated in browser
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -170,43 +170,43 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         cache_busting_mode: 'none',
-        icon: `src/assets/favicons/maskable-icon.png`, 
+        icon: `src/assets/favicons/maskable_icon.png`, 
         icon_options: {
           purpose: `any maskable`,
         },
         icons: [
           {
-            src: `/assets/favicons/maskable-icon_x48.png`,
+            src: `/assets/favicons/maskable_icon_x48.png`,
             sizes: `48x48`,
             type: `image/png`,
           },
           {
-            src: `/assets/favicons/maskable-icon_x72.png`,
+            src: `/assets/favicons/maskable_icon_x72.png`,
             sizes: `72x72`,
             type: `image/png`,
           },
           {
-            src: `/assets/favicons/maskable-icon_x96.png`,
+            src: `/assets/favicons/maskable_icon_x96.png`,
             sizes: `96x96`,
             type: `image/png`,
           },
           {
-            src: `/assets/favicons/maskable-icon_x128.png`,
+            src: `/assets/favicons/maskable_icon_x128.png`,
             sizes: `128x128`,
             type: `image/png`,
           },
           {
-            src: `/assets/favicons/maskable-icon_x192.png`,
+            src: `/assets/favicons/maskable_icon_x192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `/assets/favicons/maskable-icon_x384.png`,
+            src: `/assets/favicons/maskable_icon_x384.png`,
             sizes: `384x384`,
             type: `image/png`,
           },
           {
-            src: `/assets/favicons/maskable-icon_x512.png`,
+            src: `/assets/favicons/maskable_icon_x512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
