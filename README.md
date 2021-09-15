@@ -46,7 +46,14 @@ A Gatsby/NetflifyCMS starter template.
 >  * Remove images from /assets & /content/uploads
   
 
-## <details><summary><span><h1>Resources I Found Useful:</h1></span></summary><br/>
+## Useful Resources:
+
+### Netlify CMS Useful Resources
+  * [Netlify CMS Demo](https://cms-demo.netlify.com/#/collections/settings/entries/authors)
+  * [Netlify CMS Demo Config.yml](https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml)
+  * [Netlify CMS Widgets](]https://www.netlifycms.org/docs/widgets/)
+  * [Modular Content Widgets](https://www.youtube.com/watch?v=R4rLx6wTqMw)
+  * [Using Gatsby Image with Netlify CMS](https://www.frontendstumbles.com/using-gatsby-image-with-netlify-cms/)
 
 Getting Started --> 
 [TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
@@ -93,10 +100,4 @@ Gatsby/Formik/Netlify Forms
 [Complete Guide to Netlify Forms](https://www.stackbit.com/blog/complete-guide-netlify-forms/)
 
 
-### Netlify CMS Useful Resources
-  * [Netlify CMS Demo](https://cms-demo.netlify.com/#/collections/settings/entries/authors)
-  * [Netlify CMS Demo Config.yml](https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml)
-  * [Netlify CMS Widgets](]https://www.netlifycms.org/docs/widgets/)
-  * [Modular Content Widgets](https://www.youtube.com/watch?v=R4rLx6wTqMw)
-  * [Using Gatsby Image with Netlify CMS](https://www.frontendstumbles.com/using-gatsby-image-with-netlify-cms/)
-</details>
+
