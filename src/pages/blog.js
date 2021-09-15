@@ -24,7 +24,7 @@ class Blog extends React.Component {
         title={siteTitle}
       >
         <Seo title="All posts" />
-        <Section>
+        <StyledSection>
           <SectionHeader>
             <h2>{siteTitle} Articles</h2>
             <p>Frequently Asked Questions, Updates, and Events</p>
@@ -37,7 +37,7 @@ class Blog extends React.Component {
               location={location}
             />
           </StyledContainer>
-        </Section>
+        </StyledSection>
       </Layout>
     )
   }
@@ -80,10 +80,14 @@ export const pageQuery = graphql`
     }
   }
 `
+const StyledSection = styled(Section)` 
+ padding-top: 0;
+`
+
 const StyledContainer = styled(Container)`
   flex-flow: column;
   max-width: 80vw;
-  ${props => props.theme.lg`
+  ${props => props.theme.xl`
       max-width: 95vw;
   `}
 `

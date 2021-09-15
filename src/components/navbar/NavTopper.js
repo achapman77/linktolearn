@@ -67,7 +67,16 @@ const Container = styled.div`
     position: sticky;
     justify-content: space-between;
     display: grid;
-    grid-template-columns: 15% 1fr 15%;
+    grid-template-columns: 25rem 1fr 25rem;
+    ${props => props.theme.xxl`
+        grid-template-columns: 22rem 1fr 22rem;
+    `}
+    ${props => props.theme.xl`
+        grid-template-columns: 20rem 1fr 20rem;
+    `}
+    ${props => props.theme.lg`
+        grid-template-columns: 19rem 1fr 10rem;
+    `}
     ${props => props.theme.sm`
         display:none;
     `}
@@ -76,10 +85,11 @@ const Container = styled.div`
     }
 `
 
+const gradientColor1 = props => props.theme.colors.secondary.main.replace(/[^\d,]/g, '')
 const MessageWrapper = styled.div`
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 1vw, 2rem);
+    /* gap: clamp(1rem, 1vw, 2rem); */
     height: -webkit-fill-available;
     /* background: red; */
     position: relative;
@@ -90,14 +100,21 @@ const MessageWrapper = styled.div`
         left:0;
         width:100%;
         height:100%;
-        background: linear-gradient(90deg, rgba(7, 123, 241,1) 0%, rgba(7, 123, 241,0) 35%, rgba(7, 123, 241,0) 65%, rgba(7, 123, 241,1) 100%);;
+        background: linear-gradient(90deg, rgba(${gradientColor1}, 1) 0%, rgba(${gradientColor1},0) 35%, rgba(${gradientColor1},0) 65%, rgba(${gradientColor1},1) 100%);
         z-index: 10;
+        ${props => props.theme.md`
+            background: linear-gradient(90deg, rgba(${gradientColor1}, 1) 0%, rgba(${gradientColor1},0) 10%, rgba(${gradientColor1},0) 90%, rgba(${gradientColor1},1) 100%);;
+        `}
     }
 `
 
 const StyledCarousel = styled(Carousel)`
     /* max-width: 20vw; */
     width: -webkit-fill-available;
+    
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
     .slider-wrapper {
         /* margin: 0 3rem; */
         width: -webkit-fill-available; 

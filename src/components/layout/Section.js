@@ -20,6 +20,7 @@ export const SectionHeader = styled.div`
     `}
     h2 {
         margin-bottom: 1rem;
+        text-align: center;
     }
     p {
         margin: 0 1rem;

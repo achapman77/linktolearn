@@ -86,24 +86,32 @@ const Card = styled(Link)`
 
     //specialized
     &.featuredPost {
-        display: flex;
-        
+        display: grid;
+        grid-template-columns: 45% 1fr;
+        gap: 2rem;
+        padding: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        margin-bottom: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         .wrapper {
             padding: 0 1rem;
-            width: clamp(35rem, 50rem, 50rem);
+            width: -webkit-fill-available;
         }
         .featuredBtn{
             display: block;
         }
+        
         //responsive
         ${props => props.theme.md`
+            display: flex;
             flex-flow: column;
+            .gatsby-image-wrapper {
+                margin: 0 auto;
+                max-height: 30vh;
+            }
             .wrapper {
                 padding: 0;
                 width: -webkit-fill-available;
-            }
-            h3 {
-                margin-top:1rem;
             }
         `}
 

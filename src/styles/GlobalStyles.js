@@ -49,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
         text-transform: capitalize;
     }
     h3 {
-        font-size: clamp(1rem, 5vw, 2.25rem);
+        font-size: clamp(1rem, 3vw, 2rem);
         color: ${props => props.theme.colors.gray.dark};
     }
     h4 {

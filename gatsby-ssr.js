@@ -17,7 +17,7 @@
 //     </noscript>
 //   ])
 //   setPreBodyComponents([
-//     <div id="preloader">
+//     <div key="preloader" id="preloader">
 //       {/* Optional: */}
 //       <img src={logo} alt="logo" />
 //       {/* <div className="preloader_animation"></div> */}

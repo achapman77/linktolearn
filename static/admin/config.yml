@@ -19,9 +19,9 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
-      - {label: "Title", name: "title", widget: "string", pattern: ['.{50,60}', "Must have 50 - 60 characters for SEO"]}
+      - {label: "Title", name: "title", widget: "string", pattern: ['^.{50,65}$', "Must have min 50 - max 65 characters to display in SEO"]}
       # - {label: "Title", name: "title", widget: "string", placeholder: "Must have 50 - 60 characters"}
-      - {label: "SEO Description", name: "description", widget: "text", required: false, default:"", pattern: ['.{150,160}', "Must have 150 - 160 characters for SEO"]}
+      - {label: "Description", name: "description", widget: "text", required: false, default:"", pattern: ['^.{150,160}$', "Must have min 150 - max 160 characters to display in SEO"]}
       - {label: "Body", name: "body", widget: "markdown"} 
       - {label: "Primary Image", name: "primary_image", widget: "image"} 
       - {label: "Set Blog to Featured", name: "featured_blog", widget: "boolean", default: false}
@@ -139,5 +139,5 @@ collections:
             name: page_top_messages
             widget: list
             fields: 
-              - {label: "Message", name: "message", widget: "string", pattern: ['.{0,50}', "Must be less than 50 characters"]}
+              - {label: "Message", name: "message", widget: "string", pattern: ['^.{10,40}$', "Must be min 10 - max 40 characters"]}
             

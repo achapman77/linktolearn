@@ -19,50 +19,57 @@ const SearchedPosts = ({ results }) =>
     </p>
   )
 
-const AllPosts = ({ posts }) => (
-  <>
-    <BlogSection>
-      <Header>
-        <span>Featured Story</span>
-        <hr/>
-      </Header>
-      
-      {posts.map( ( {node},i ) => {
-        const title = node.frontmatter.title || node.slug
-        // console.info({node})
-        return (
-          <>
-          {node.frontmatter.featured_blog &&
-            <PostCard key={i} node={node} title={title} className="featuredPost"/>
-          }
-          </>
-        )
-      })}
-    </BlogSection>
-    <BlogSection>
-      <Header>
-        <span>Recent Articles</span>
-        <hr/>
-      </Header>
-      <Wrapper>
-        {posts.map( ({node}, i) => {
-          const title = node.frontmatter.title || node.slug
-          return (
-            <>
-            {node.frontmatter.featured_blog === false &&
-              <PostCard key={i} node={node} title={title} className="listPost" />
-            }
-            </>
-          )
-        })}
-      </Wrapper>
-      
-    </BlogSection>
+const AllPosts = ({ posts }) => {
+  const featured = posts.filter( ({node}) => node.frontmatter.featured_blog === true ).length
+  const recent = posts.filter( ({node}) => node.frontmatter.featured_blog === false ).length
+  console.info({featured, recent})
 
-      
-    
-  </>
-)
+  return (
+    <>
+      {featured !== 0 &&
+        <BlogSection>
+          <Header>
+            <span>Featured {featured === 1 ? 'Article' : 'Articles' }</span>
+            <hr/>
+          </Header>
+          
+          {posts.map( ( {node},i ) => {
+            const title = node.frontmatter.title || node.slug
+            // console.info({node})
+            return (
+              <>
+              {node.frontmatter.featured_blog &&
+                <PostCard key={i} node={node} title={title} className="featuredPost"/>
+              }
+              </>
+            )
+          })}
+        </BlogSection>
+      }
+      {recent !== 0 &&
+        <BlogSection>
+          <Header>
+            <span>Recent {recent === 1 ? 'Article' : 'Articles' }</span>
+            <hr/>
+          </Header>
+          <Wrapper>
+            {posts.map( ({node}, i) => {
+              const title = node.frontmatter.title || node.slug
+              return (
+                <>
+                {node.frontmatter.featured_blog === false &&
+                  <PostCard key={i} node={node} title={title} className="listPost" />
+                }
+                </>
+              )
+            })}
+          </Wrapper>
+          
+        </BlogSection>
+      }
+    </>
+  )
+}
 
 const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
   const { search } = queryString.parse(location.search)

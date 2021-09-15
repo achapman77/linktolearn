@@ -17,6 +17,7 @@ export const Button = styled(Link)`
     border-radius: ${( {round} ) => (round ? '50px' : 'none')};
     display: flex;
     align-items: center;
+    justify-content: center;
     svg {
         margin-right: 0.75rem;
     }

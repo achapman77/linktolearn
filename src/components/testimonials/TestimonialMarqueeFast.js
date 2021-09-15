@@ -21,6 +21,8 @@ const TestimonialMarqueeFast = () => {
     `)
     // console.info({testimonials:data})
     const testimonials = data.testimonials.frontmatter.testimonials
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) 
+    console.info({vw})
     return (
         <>
             <SectionHeader>
@@ -31,6 +33,7 @@ const TestimonialMarqueeFast = () => {
                     pauseOnHover={true}
                     speed={30}
                     direction='left'
+                    gradientWidth={vw < 400 ? 20 : 200}
                 >
                     {
                         testimonials.map( (v,i) => {
@@ -65,5 +68,8 @@ const Testimonial = styled.div`
     /* text-align: center; */
     padding: 2rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    .overlay {
+        --gradient-width: 20px !important;
+    }
 `
 

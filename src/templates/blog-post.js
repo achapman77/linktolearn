@@ -101,8 +101,13 @@ const StyledSection = styled(Section)`
 
 const StyledSectionHeader = styled(SectionHeader)`
   padding-top: 0rem;
+  padding-bottom: 2rem;
+  
   h1 {
-    margin-top: 4rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    max-width: 65rem;
   }
 `
 const StyledContainer = styled(Container)`
@@ -112,8 +117,11 @@ const StyledContainer = styled(Container)`
   padding-bottom: 4rem;
   p {
     width: -webkit-fill-available;
+    padding: 1rem;
   }
 `
 const PrimaryImage = styled(GatsbyImage)`
+ max-width: 65rem;
+ margin: 0 1rem;
 `
 
