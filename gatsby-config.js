@@ -12,12 +12,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        icon: `src/assets/favicons/maskable_icon.png`,//check favicon updated in browser
-      },
-    },
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
