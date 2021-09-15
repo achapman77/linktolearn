@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
-import PostCard from "./PostCard"
+// import PostCard from "./PostCard"
+import loadable from "@loadable/component"
+const PostCard = loadable( () => import("./PostCard"))
 
 const SearchedPosts = ({ results }) =>
   results.length > 0 ? (

@@ -2,12 +2,12 @@ import React, {useEffect} from 'react'
 import styled from 'styled-components'
 //components'
 import { Button } from '../buttons/Button'
-import SocialMedia from '../buttons/SocialMedia'
 
 //animation
 import Aos from 'aos'
 import "aos/dist/aos.css"
-
+import loadable from "@loadable/component"
+const SocialMedia = loadable( () => import("../buttons/SocialMedia"))
 
 const ContactInfo = ({data}) => {
     const contactInfo = data.contact_info.frontmatter
