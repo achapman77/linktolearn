@@ -3,34 +3,52 @@ A Gatsby/NetflifyCMS starter template.
 
 ## [Live Demo](https://gatsby-netlify-cms-starter-template-plus.netlify.app/)
 
-
-## Base Technologies/Plugins: 
+<details><summary>## Tech Stack:</summary><br/>
   * React
   * Gatsby
   * GraphQL
-  * Styled-Components/SCSS
   * Netlify CMS
+  * Netlify Hosted
+</details>
 
-## Features: 
-  * Netlify CMS - Dynamic Blogs & Site Content
+<details><summary>## Feature Overview:</summary><br/>
+  * Dynamic Site Content via Netlify CMS
+  * Dynamic/Searchable blogs
+  * Interactive FAQ
   * Contact Form: Floating Labels, Auto Phone Number Formating, Formik Validation 
   * Styled-Component Site Theming: color pallette, mixins, media queries 
   * Navigation: Sticky Header w/ Color Change on scroll, Active Nav Btns on Scroll/New Page
-  * SEO enhancement with social share meta
+  * SEO/Social Share Enhancement
   * [React Responsive Carousel](https://www.npmjs.com/package/react-responsive-carousel) - for Image & Video Galleries
-  * [React Fast Marquee](https://www.npmjs.com/package/react-fast-marquee) - for Testimonials, Partners
-  * [Web page preloader](https://dev.to/bartosjiri/creating-a-preloader-for-gatsby-site-3kh1) 
+  * [React Fast Marquee](https://www.npmjs.com/package/react-fast-marquee) - for Testimonials, Partner Logos
+</details>
 
-## Netlify CMS Setup
+<details><summary>## Initial Setup</summary><br/>
+
+### Netlify CMS Setup
   * Create new git repo
   * Rename repo, site, logo in static->admin->config.yml
   * Follow steps 3+ here: https://www.gatsbyjs.com/tutorial/blog-netlify-cms-tutorial/
   * Follow [Gatsby With NetlifyCMS Tutorial](https://www.youtube.com/watch?v=IWmVSm2KevY)
   * Be sure to query and render images uploaded through the CMS through allFile->childImageSharp->gatsbyImageData
 
+### App siteMeta, Logos, Icons, Content
+  * Create array of [Maskable Icons](https://maskable.app/editor)
+  * Edit gatsby-config.js
+      * --> siteMetadata
+      * --> gatsby-plugin-manifest
+      * --> gatsby-plugin-google-analytics
+  * Remove all .md/.mdx files from content folder
+  * Replace logo_main.png / logo_alternative.png with optimized logos
+  * Remove images from /assets & /content/uploads
+  * [Edit content & create blogs](http://localhost:8000/admin/)
+  * [Query Data](http://localhost:8000/___graphql)
+</details>
 
-## Useful Resources:
-## [TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
+<details><summary>## Resources I Found Useful:</summary><br/>
+
+Getting Started --> 
+[TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
 by Brian Design
 
 SEO & Meta Images from blogs  
@@ -80,3 +98,4 @@ Gatsby/Formik/Netlify Forms
   * [Netlify CMS Widgets](]https://www.netlifycms.org/docs/widgets/)
   * [Modular Content Widgets](https://www.youtube.com/watch?v=R4rLx6wTqMw)
   * [Using Gatsby Image with Netlify CMS](https://www.frontendstumbles.com/using-gatsby-image-with-netlify-cms/)
+</details>

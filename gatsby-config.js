@@ -1,9 +1,10 @@
 module.exports = {
+  //Change Site Metadata
   siteMetadata: {
-    title: `Gatsby Template +++`,
-    description: `Gatsby Template that improves on Brian Design's tutorial with Netlify CMS, Theme Variables, Media Query Mixins, Sticky color-changing header`,
-    author: `@biz_social_media_handle`,
-    siteUrl: `https://www.gatsbyjs.com/tutorial/seo-and-social-sharing-cards-tutorial/`,
+    title: `Gatsby Netlify CMS Template`,
+    description: `Gatsby Template integrated with Netlify CMS for dynamic site content and blogs`,
+    author: `Steep Line Design`,
+    siteUrl: `https://www.steeplinedesign.com/`,
     keywords: `keyword_1, keyword_2, keyword_3`,
     image: `src/assets/images/travel-1.jpg`
   },
@@ -11,9 +12,14 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        icon: `src/assets/favicons/maskable-icon.png`,//check favicon updated in browser
+      },
+    },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: "gatsby-plugin-local-search",
       options: {
@@ -136,6 +142,16 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       },
     },
+    `gatsby-plugin-gatsby-cloud`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: {
+        devMode: false,
+      },
+    },
+    // Update Google Analytics
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
@@ -143,45 +159,64 @@ module.exports = {
     //     // trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
-    `gatsby-plugin-gatsby-cloud`,
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-json`,
-    {
-      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-      options: {
-        devMode: false,
-      },
-    },
-    `gatsby-plugin-sass`,
-    // `gatsby-plugin-offline`,
+    // Update Manifest name, short_name, colors.  Make sure icons match exported.
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `Gatsby Netlify CMS Starter`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
-        cache_busting_mode: 'none'
+        cache_busting_mode: 'none',
+        icon: `src/assets/favicons/maskable-icon.png`, 
+        icon_options: {
+          purpose: `any maskable`,
+        },
+        icons: [
+          {
+            src: `/assets/favicons/maskable-icon_x48.png`,
+            sizes: `48x48`,
+            type: `image/png`,
+          },
+          {
+            src: `/assets/favicons/maskable-icon_x72.png`,
+            sizes: `72x72`,
+            type: `image/png`,
+          },
+          {
+            src: `/assets/favicons/maskable-icon_x96.png`,
+            sizes: `96x96`,
+            type: `image/png`,
+          },
+          {
+            src: `/assets/favicons/maskable-icon_x128.png`,
+            sizes: `128x128`,
+            type: `image/png`,
+          },
+          {
+            src: `/assets/favicons/maskable-icon_x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/assets/favicons/maskable-icon_x384.png`,
+            sizes: `384x384`,
+            type: `image/png`,
+          },
+          {
+            src: `/assets/favicons/maskable-icon_x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-json`,
-    {
-      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-      options: {
-        devMode: false,
-      },
-    },
-    `gatsby-plugin-sass`,
-    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/blog/`, `/faq/*`],
+        precachePages: [`/blog/*`, `/faq/`],
       }
     },
     // `gatsby-plugin-remove-serviceworker`

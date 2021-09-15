@@ -1,4 +1,4 @@
-import "./src/styles/preloader.scss"
+// import "./src/styles/preloader.scss"
 // // import { scrollToElement } from 'scroll-to-element'
 
 
