@@ -3,7 +3,7 @@ A Gatsby/NetflifyCMS starter template.
 
 ## [Live Demo](https://gatsby-netlify-cms-starter-template-plus.netlify.app/)
 
-<details><summary>Tech Stack:</summary><br/>
+## <details><summary>Tech Stack:</summary><br/>
 
   * React
   * Gatsby
@@ -25,7 +25,7 @@ A Gatsby/NetflifyCMS starter template.
   * [React Fast Marquee](https://www.npmjs.com/package/react-fast-marquee) - for Testimonials, Partner Logos
 </details>
 
-<details><summary>Initial Setup</summary><br/>
+## <details><summary>Initial Setup</summary><br/>
 
 ### Netlify CMS Setup
   * Create new git repo
@@ -47,7 +47,7 @@ A Gatsby/NetflifyCMS starter template.
   * [Query Data](http://localhost:8000/___graphql)
 </details>
 
-<details><summary>Resources I Found Useful:</summary><br/>
+## <details><summary>Resources I Found Useful:</summary><br/>
 
 Getting Started --> 
 [TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
