@@ -35,6 +35,7 @@ A Gatsby/NetflifyCMS starter template.
 >  * [Content Admin](http://localhost:8000/admin/)
 >  * [GraphQL Data](http://localhost:8000/___graphql)
 
+
 > ### Application Customization
 >  * Create array of [Maskable Icons](https://maskable.app/editor)
 >  * Edit gatsby-config.js
@@ -45,6 +46,7 @@ A Gatsby/NetflifyCMS starter template.
 >  * Replace logo_main.png / logo_alternative.png with optimized logos
 >  * Remove images from /assets & /content/uploads
   
+
 
 ## Useful Resources:
 
