@@ -11,7 +11,7 @@ A Gatsby/NetflifyCMS starter template.
   * Netlify Hosted
 
 
-## <details><summary>Feature Overview:</summary><br/>
+## Feature Overview:
 
   * Dynamic Site Content via Netlify CMS
   * Dynamic/Searchable blogs
@@ -22,16 +22,16 @@ A Gatsby/NetflifyCMS starter template.
   * SEO/Social Share Enhancement
   * [React Responsive Carousel](https://www.npmjs.com/package/react-responsive-carousel) - for Image & Video Galleries
   * [React Fast Marquee](https://www.npmjs.com/package/react-fast-marquee) - for Testimonials, Partner Logos
-</details>
 
-## <details><summary>Initial Setup</summary><br/>
 
-### Netlify CMS Setup
-  * Create new git repo
-  * Rename repo, site, logo in static->admin->config.yml
-  * Follow steps 3+ here: https://www.gatsbyjs.com/tutorial/blog-netlify-cms-tutorial/
-  * Follow [Gatsby With NetlifyCMS Tutorial](https://www.youtube.com/watch?v=IWmVSm2KevY)
-  * Be sure to query and render images uploaded through the CMS through allFile->childImageSharp->gatsbyImageData
+## Initial Setup
+
+> ### Netlify CMS Setup
+>  * Create new git repo
+>  * Rename repo, site, logo in static->admin->config.yml
+>  * Follow steps 3+ here: https://www.gatsbyjs.com/tutorial/blog-netlify-cms-tutorial/
+>  * Follow [Gatsby With NetlifyCMS Tutorial](https://www.youtube.com/watch?v=IWmVSm2KevY)
+>  * Be sure to query and render images uploaded through the CMS through allFile->childImageSharp->gatsbyImageData
 
 ### App siteMeta, Logos, Icons, Content
   * Create array of [Maskable Icons](https://maskable.app/editor)
