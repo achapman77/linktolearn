@@ -4,7 +4,7 @@ A Gatsby/NetflifyCMS starter template.
 ## [Live Demo](https://gatsby-netlify-cms-starter-template-plus.netlify.app/)
 
 <details open>
- <summary>Tech Stack:</summary>
+ ## <summary>Tech Stack:</summary>
  <br/>
 
   * React
