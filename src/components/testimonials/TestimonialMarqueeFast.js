@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Marquee from "react-fast-marquee";
@@ -21,8 +21,17 @@ const TestimonialMarqueeFast = () => {
     `)
     // console.info({testimonials:data})
     const testimonials = data.testimonials.frontmatter.testimonials
-    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) 
-    console.info({vw})
+
+    const [viewWidth, setViewWidth] = useState(2000)
+    useEffect(() => {
+        if (typeof window !== `undefined`) {
+            window.addEventListener('resize', () => {
+                setViewWidth(Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0))
+            });
+        }
+    }, [])
+    // const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) 
+    console.info({viewWidth})
     return (
         <>
             <SectionHeader>
@@ -33,7 +42,7 @@ const TestimonialMarqueeFast = () => {
                     pauseOnHover={true}
                     speed={30}
                     direction='left'
-                    gradientWidth={vw < 400 ? 20 : 200}
+                    gradientWidth={viewWidth < 400 ? 0 : viewWidth < 600 ? 75 : 200}
                 >
                     {
                         testimonials.map( (v,i) => {
