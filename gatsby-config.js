@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    'gatsby-plugin-loadable-components-ssr',
     {
       resolve: "gatsby-plugin-local-search",
       options: {

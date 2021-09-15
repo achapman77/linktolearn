@@ -5,9 +5,10 @@ import { useStaticQuery, graphql } from 'gatsby'
 //components
 import { Section, Container } from '../layout/Section'
 import ContactSectionHeader from './ContactSectionHeader'
-import ContactInfo from './ContactInfo'
-import ContactForm from './ContactForm'
 
+import loadable from "@loadable/component"
+const ContactInfo = loadable( () => import("./ContactInfo"))
+const ContactForm = loadable( () => import("./ContactForm"))
 
 // Resources
 // https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/

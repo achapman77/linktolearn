@@ -1,16 +1,20 @@
 import React from "react"
+import loadable from "@loadable/component"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Hero from "../components/Hero"
+
 // import Trips from "../components/Trips"
 // import Testimonials from "../components/Testimonials"
 // import Stats from "../components/Stats"
 // import Email from "../components/Email"
 import ContactUS from "../components/contact/ContactUs"
 import TeamSection from "../components/team/Team"
-import TestimonialCarousel from "../components/testimonials/TestimonialCarousel"
-// import TestimonialMarqueeSlider from "../components/testimonials/TestimonialMarqueeSlider"
-import TestimonialMarqueeFast from "../components/testimonials/TestimonialMarqueeFast"
+
+//loadable components
+const TestimonialMarqueeFast = loadable( () => import("../components/testimonials/TestimonialMarqueeFast"))
+const TestimonialCarousel = loadable( () => import("../components/testimonials/TestimonialCarousel"))
+// const TestimonialMarqueeSlider = loadable( () => import("../components/testimonials/TestimonialMarqueeSlider"))
 
 const IndexPage = () => (
   <Layout>
@@ -20,9 +24,10 @@ const IndexPage = () => (
     {/* <Testimonials/> */}
     {/* <Stats/> */}
     {/* <Email/> */}
+    
     <TestimonialMarqueeFast/>
-    {/* <TestimonialMarqueeSlider/> */}
     <TestimonialCarousel/>
+    {/* <TestimonialMarqueeSlider/> */}
     <TeamSection />
     <ContactUS/>
   </Layout>

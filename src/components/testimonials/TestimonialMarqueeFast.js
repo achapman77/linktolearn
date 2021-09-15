@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import Marquee from "react-fast-marquee";
+import loadable from "@loadable/component"
 import { SectionHeader } from '../layout/Section';
+
+const Marquee = loadable( () => import("react-fast-marquee"))
+
 //https://www.react-fast-marquee.com/documentation
 
 const TestimonialMarqueeFast = () => {
