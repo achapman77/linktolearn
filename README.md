@@ -4,7 +4,7 @@ A Gatsby/NetflifyCMS starter template.
 ## [Live Demo](https://gatsby-netlify-cms-starter-template-plus.netlify.app/)
 
 <details open>
- <summary><h1>Tech Stack:</h1></summary>
+ <summary><span style="font-family:Papyrus; font-size:4em;">LOVE!</span></summary>
  <br/>
 
   * React
