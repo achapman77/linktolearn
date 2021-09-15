@@ -32,21 +32,21 @@ A Gatsby/NetflifyCMS starter template.
 >  * Follow steps 3+ here: https://www.gatsbyjs.com/tutorial/blog-netlify-cms-tutorial/
 >  * Follow [Gatsby With NetlifyCMS Tutorial](https://www.youtube.com/watch?v=IWmVSm2KevY)
 >  * Be sure to query and render images uploaded through the CMS through allFile->childImageSharp->gatsbyImageData
+>  * [Content Admin](http://localhost:8000/admin/)
+>  * [GraphQL Data](http://localhost:8000/___graphql)
 
-### App siteMeta, Logos, Icons, Content
-  * Create array of [Maskable Icons](https://maskable.app/editor)
-  * Edit gatsby-config.js
-      * --> siteMetadata
-      * --> gatsby-plugin-manifest
-      * --> gatsby-plugin-google-analytics
-  * Remove all .md/.mdx files from content folder
-  * Replace logo_main.png / logo_alternative.png with optimized logos
-  * Remove images from /assets & /content/uploads
-  * [Edit content & create blogs](http://localhost:8000/admin/)
-  * [Query Data](http://localhost:8000/___graphql)
-</details>
+> ### Application Customization
+>  * Create array of [Maskable Icons](https://maskable.app/editor)
+>  * Edit gatsby-config.js
+>      * --> siteMetadata
+>      * --> gatsby-plugin-manifest
+>      * --> gatsby-plugin-google-analytics
+>  * Remove all .md/.mdx files from content folder
+>  * Replace logo_main.png / logo_alternative.png with optimized logos
+>  * Remove images from /assets & /content/uploads
+  
 
-## <details><summary>Resources I Found Useful:</summary><br/>
+## <details><summary><span><h1>Resources I Found Useful:</h1></span></summary><br/>
 
 Getting Started --> 
 [TUTORIAL: Build a Responsive Website using React, Gatsby, and GraphQL](https://www.youtube.com/watch?v=smHhNzM5Uo4&t=270s)
