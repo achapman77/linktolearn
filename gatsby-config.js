@@ -178,12 +178,12 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     // `gatsby-plugin-offline`,
-    // {
-    //   resolve: `gatsby-plugin-offline`,
-    //   options: {
-    //     precachePages: [`/blog/`, `/faq/*`],
-    //   }
-    // },
-    `gatsby-plugin-remove-serviceworker`
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/blog/`, `/faq/*`],
+      }
+    },
+    // `gatsby-plugin-remove-serviceworker`
   ],
 }
