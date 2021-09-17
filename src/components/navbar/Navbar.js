@@ -16,7 +16,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 // import scrollToElement from 'scroll-to-element';
 import animateScrollTo from 'animated-scroll-to';
 
-const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
+const Navbar = ({isOpen, toggle, logo}) => {
   const [navbar, setNavbar] = useState(false)
   const [offset, setOffset] = useState(0)
   const [navItems, setNavItems] = useState(menuData)
@@ -149,7 +149,7 @@ const Navbar = ({isOpen, toggle, logo, logoAltText}) => {
     <>
     <NavTopper/>
     <Nav id="navbar" isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
-      <NavLogo logo={logo} logoAltText={logoAltText}/>
+      <NavLogo logo={logo}/>
       <NavMenu>
         {navItems.map( (v,i) => (
             <NavItem  key={i}>

@@ -15,15 +15,32 @@ const Layout = ({ children }) => {
     setIsOpen(!isOpen)
   }
 
-  const logoAltText = 'Company XYZ'
+  //Upate These
+  const altText = 'Company Logo'
+  const logoWidth = '300'
+  const logoHeight = '62'
+
+  const logoMain = {
+    img: LogoMain,
+    altText: altText,
+    width: logoWidth,
+    height: logoHeight
+  }
+
+  const logoAlt = {
+    img: LogoAlternate,
+    altText: altText,
+    width: logoWidth,
+    height: logoHeight
+  }
 
   return (
     <Theme style={{ maxHeight: 300 }}>
         <GlobalStyle/>
         <NavMobile isOpen={isOpen} toggle={toggle}/>
-        <Navbar isOpen={isOpen} toggle={toggle} logo={LogoMain} logoAltText={logoAltText}/>
+        <Navbar isOpen={isOpen} toggle={toggle} logo={logoMain} />
           <main>{children}</main>
-        <Footer logo={LogoAlternate} logoAltText={logoAltText}/>
+        <Footer logo={logoAlt}/>
     </Theme>
   )
 }

@@ -5,15 +5,15 @@ import { animateScroll as scroll } from "react-scroll"
 // import LogoMain from '../../assets/images/logos/logo_main.png'
 
 
-const NavLogo = ({logo, logoAltText}) => {
+const NavLogo = ({logo}) => {
 
   const toggleHome = () => {
     scroll.scrollToTop()
   }
-
+  
     return (
         <LogoContainer to="/" onClick={toggleHome}>
-          <img src={logo} alt={logoAltText} />
+          <img src={logo.img} alt={logo.altText} width={logo.width} height={logo.height}/>
         </LogoContainer>
     )
 }

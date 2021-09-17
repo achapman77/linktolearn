@@ -7,7 +7,7 @@ import { animateScroll as scroll } from "react-scroll"
 import loadable from "@loadable/component"
 const SocialMedia = loadable( () => import("./buttons/SocialMedia"))
 
-const Footer = ({logo, logoAltText}) => {
+const Footer = ({logo}) => {
     const toggleHome = () => {
         scroll.scrollToTop()
     }
@@ -17,7 +17,7 @@ const Footer = ({logo, logoAltText}) => {
             <FooterLinksWrapper>
                 <FooterDesc>
                     <LogoContainer to="/" onClick={toggleHome}>
-                        <img src={logo} alt={logoAltText} />
+                        <img src={logo.img} alt={logo.altText} width={logo.width} height={logo.height}/>
                     </LogoContainer>
                     <p>We strive to create the best experiences for our customers</p>
                 </FooterDesc>
