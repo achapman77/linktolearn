@@ -1,16 +1,15 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
-
-//components
-import { Button } from "../buttons/Button"
-import SocialMedia from '../buttons/SocialMedia'
-import QuickConnectBtns from '../buttons/QuickConnectBtns';
 
 //data
 import { menuData } from './MenuData'
 
-
+//components
+import { Link } from 'gatsby'
+import { Button } from "../buttons/Button"
+import loadable from "@loadable/component"
+const SocialMedia = loadable( () => import("../buttons/SocialMedia"))
+const QuickConnectBtns = loadable( () => import("../buttons/QuickConnectBtns"))
 
 
 const NavMobile = ({isOpen, toggle}) => {

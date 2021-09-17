@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
-//components'
-import { Button } from '../buttons/Button'
 
 //animation
 import Aos from 'aos'
 import "aos/dist/aos.css"
+
+//components'
+import { Button } from '../buttons/Button'
 import loadable from "@loadable/component"
 const SocialMedia = loadable( () => import("../buttons/SocialMedia"))
 

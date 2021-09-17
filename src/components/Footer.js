@@ -2,7 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { animateScroll as scroll } from "react-scroll"
-import SocialMedia from './buttons/SocialMedia'
+
+//components
+import loadable from "@loadable/component"
+const SocialMedia = loadable( () => import("./buttons/SocialMedia"))
 
 const Footer = ({logo, logoAltText}) => {
     const toggleHome = () => {

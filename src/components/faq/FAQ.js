@@ -2,13 +2,16 @@ import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import {Link as ScrollLink} from 'react-scroll'
-//components
-import { Section, SectionHeader, Container } from '../layout/Section'
-import { Button } from '../buttons/Button'
 
 //icons
 import { AiOutlineDoubleRight, AiFillInfoCircle } from 'react-icons/ai'
-import VideoYoutube from '../videos/VideoYoutube'
+
+//components
+import { Section, SectionHeader, Container } from '../layout/Section'
+import { Button } from '../buttons/Button'
+import loadable from "@loadable/component"
+const VideoYoutube = loadable( () => import("../videos/VideoYoutube"))
+
 
 const FAQs = () => {
     

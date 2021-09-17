@@ -7,7 +7,6 @@ import { Button } from '../buttons/Button'
 //form validation
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
-
 //icons
 import { AiOutlineMail, AiOutlinePhone, AiOutlineQuestionCircle  } from 'react-icons/ai'
 import { RiMessage2Line  } from 'react-icons/ri'

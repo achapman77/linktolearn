@@ -4,9 +4,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 //components
-import SocialMedia from '../buttons/SocialMedia';
-import QuickConnectBtns from '../buttons/QuickConnectBtns';
-
+import loadable from "@loadable/component"
+const SocialMedia = loadable( () => import("../buttons/SocialMedia"))
+const QuickConnectBtns = loadable( () => import("../buttons/QuickConnectBtns"))
 
 const NavTopper = () => {
     const data = useStaticQuery(graphql`

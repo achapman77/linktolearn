@@ -72,6 +72,9 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     height: -webkit-fill-available;
+    a {
+        text-decoration: none;
+    }
 `
 
 const QuickConnectButton = styled.div`
@@ -112,4 +115,7 @@ const TextWrapper = styled.div`
     &.navMobile {
         display: none;
     }
+    ${props => props.theme.xxs`
+          display: none; 
+    `}
 `

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { Link, useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 //icons

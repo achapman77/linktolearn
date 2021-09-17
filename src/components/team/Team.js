@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 //components
 import { Section, SectionHeader, Container } from '../layout/Section'
-// import ProfileCard from './ProfileCard'
 import loadable from "@loadable/component"
 const ProfileCard = loadable( () => import("./ProfileCard"))
 
