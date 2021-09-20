@@ -34,7 +34,7 @@ const TestimonialMarqueeFast = () => {
         }
     }, [])
     // const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) 
-    console.info({viewWidth})
+    // console.info({viewWidth})
     return (
         <>
             <SectionHeader>
