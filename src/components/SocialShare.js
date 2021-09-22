@@ -18,8 +18,14 @@ import {
 const SocialShare = ({post}) => {
     
     const [size, setSize] = useState(40)
+    const [url, setUrl] = useState(undefined)
+    useEffect(()=>{
+        const urlObj = new URL(window.location.href)
+        const origin = urlObj.origin === 'http://localhost:8000' ? 'https://gatsby-netlify-cms-starter-template-plus.netlify.app' : urlObj.origin
+        const pathname = urlObj.pathname
+        setUrl(origin + pathname)
+    },[])
     
-
     useEffect(() => {
         // Handler to call on window resize
         function handleResize() {           
@@ -41,24 +47,16 @@ const SocialShare = ({post}) => {
     const btnClass = 'round'
     const title = post.frontmatter.title
     const description = post.frontmatter.description ? post.frontmatter.description : post.excerpt
-    const urlObj = new URL(window.location.href)
-    const origin = urlObj.origin === 'http://localhost:8000' ? 'https://gatsby-netlify-cms-starter-template-plus.netlify.app' : urlObj.origin
-    const pathname = urlObj.pathname
-    const url = origin + pathname
     const keywords = post.frontmatter.keywords.split(',')
     let hashtags = []
     keywords.forEach( (v,i) => {
         v = v.replace(' ', '')
         v = v.replace(/ /g,"_")
-        // v = `#${v}`
-        // console.info(v)
         hashtags.push(v)
     })
 
     const hashtag =`#${hashtags[0]}` 
 
-    // console.info({hashtags, hashtag})
-        // console.info({post, urlObj, origin, pathname, url})
     return (
         <SocialBtnContainer>
             <EmailShareButton

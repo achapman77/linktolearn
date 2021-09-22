@@ -11,6 +11,7 @@ import SocialShare from "../components/SocialShare"
 
 
 class BlogPostTemplate extends React.Component {
+  
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -21,7 +22,9 @@ class BlogPostTemplate extends React.Component {
       src: primary_image.images.fallback.src,
       description: post.frontmatter.title
     } 
-    console.info({metaImage, primary_image, post})
+    
+    
+    
     return (
       <Layout 
         location={this.props.location} 
@@ -32,7 +35,7 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
           keywords={`${post.frontmatter.keywords}, ${siteKeyWords}`}
           image={metaImage}
-          pathname={window.location.pathname}
+          pathname={this.props.location.pathname}
         />
         <PostNav previous={previous} next={next}/>
         <StyledSection>

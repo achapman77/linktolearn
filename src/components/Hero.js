@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { Parallax, Background } from 'react-parallax'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import BackgroundImg from '../assets/images/hero-background.jpg'
-import { Button } from './buttons/Button'
-import Video from '../assets/videos/travel.mp4'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 
@@ -14,22 +12,12 @@ const Hero = () => {
         Aos.init({})
     }, [])
 
-    // let viewWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-    let yOffset = -0.12
     const [parallaxY, setParallaxY] = useState(undefined)
-    // const [windowSize, setWindowSize] = useState({
-    //     width: undefined,
-    //     height: undefined,
-    // })
 
     useEffect(() => {
+        let yOffset = -0.12
         // Handler to call on window resize
         function handleResize() {
-            // Set window width/height to state
-            // setWindowSize({
-            //     width: window.innerWidth,
-            //     height: window.innerHeight,
-            // });
             setParallaxY(window.innerWidth * yOffset)
         }
         // Add event listener
