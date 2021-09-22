@@ -25,6 +25,8 @@ Link to Learn Website
 
 
 ## Initial Setup
+  [https://deanmalone.net/post/how-to-fork-your-own-repo-on-github/] Fork Repo w/ Upstream remote
+  git remote -v to check remotes
 
 > ### Netlify CMS Setup
 >  * Create new git repo
