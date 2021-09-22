@@ -1,5 +1,5 @@
 ## Summary
-A Gatsby/NetflifyCMS starter template.  
+Link to Learn Website  
 
 ## [Live Demo](https://gatsby-netlify-cms-starter-template-plus.netlify.app/)
 
