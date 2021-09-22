@@ -6,7 +6,8 @@ description: This is a SEO description that must be 150 - 160 characters long
   for best SEO display. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod
 primary_image: ../images/uploads/email-1.jpg
-featured_blog: true
+featured_blog: false
+keywords: ''
 ---
 <!--StartFragment-->
 

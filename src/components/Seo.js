@@ -9,7 +9,7 @@ import { useStaticQuery, graphql } from "gatsby"
 //Site image
 // https://www.digitalocean.com/community/tutorials/how-to-boost-seo-using-gatsby-s-seo-component-and-gatsby-react-helmet
 
-function Seo({ description, lang, meta, image: metaImage, title, pathname }) {
+function Seo({ title, description, keywords, lang, meta, image: metaImage, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,27 +28,21 @@ function Seo({ description, lang, meta, image: metaImage, title, pathname }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
-  //Images from blogs
-  // https://www.gatsbyjs.com/tutorial/seo-and-social-sharing-cards-tutorial/
-  // const image =
-  //     metaImage && metaImage.description
-  //       ? `${site.siteMetadata.siteURL}${metaImage.src}`
-  //       : null
+  const metaTitle = title || site.siteMetadata.title
+  const metaKeywords = keywords || site.siteMetadata.keywords
 
-  //Site image
-  // https://www.digitalocean.com/community/tutorials/how-to-boost-seo-using-gatsby-s-seo-component-and-gatsby-react-helmet
-  const image = site.siteMetadata.image
+  
+  const image = metaImage && metaImage.description ? `${site.siteMetadata.siteUrl}${metaImage.src}` : site.siteMetadata.image
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null 
-  const keywords = site.siteMetadata.keywords
-  // console.info(site.siteMetadata)
+  
+  // console.info({data: site.siteMetadata, metaTitle, metaDescription, metaKeywords, image, canonical  })
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      title={metaTitle}
+      titleTemplate={metaTitle ? `%s | ${metaTitle}` : null}
       link={
         canonical
           ? [
@@ -66,11 +60,11 @@ function Seo({ description, lang, meta, image: metaImage, title, pathname }) {
         },
         {
           name:"kewords",
-          content: keywords
+          content: metaKeywords
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -98,40 +92,13 @@ function Seo({ description, lang, meta, image: metaImage, title, pathname }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
       ]
-      // .concat(
-      //   metaImage
-      //     ? [
-      //         {
-      //           property: "og:image",
-      //           content: image,
-      //         },
-      //         {
-      //           property: "og:image:width",
-      //           content: metaImage.width,
-      //         },
-      //         {
-      //           property: "og:image:height",
-      //           content: metaImage.height,
-      //         },
-      //         {
-      //           name: "twitter:card",
-      //           content: "summary_large_image",
-      //         },
-      //       ]
-      //     : [
-      //         {
-      //           name: "twitter:card",
-      //           content: "summary",
-      //         },
-      //     ]
-      // )
       .concat(meta)}
     />
   )

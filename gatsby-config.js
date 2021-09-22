@@ -4,7 +4,7 @@ module.exports = {
     title: `Gatsby Netlify CMS Template`,
     description: `Gatsby Template integrated with Netlify CMS for dynamic site content and blogs`,
     author: `Steep Line Design`,
-    siteUrl: `https://www.steeplinedesign.com/`,
+    siteUrl: `http://localhost:8000`,
     keywords: `keyword_1, keyword_2, keyword_3`,
     image: `src/assets/images/travel-1.jpg`
   },

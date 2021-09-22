@@ -24,8 +24,9 @@ const TestimonialMarqueeFast = () => {
     `)
     // console.info({testimonials:data})
     const testimonials = data.testimonials.frontmatter.testimonials
-
-    const [viewWidth, setViewWidth] = useState(2000)
+    
+    let viewWidthInit = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    const [viewWidth, setViewWidth] = useState(viewWidthInit)
     useEffect(() => {
         if (typeof window !== `undefined`) {
             window.addEventListener('resize', () => {

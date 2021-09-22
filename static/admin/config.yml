@@ -25,6 +25,7 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"} 
       - {label: "Primary Image", name: "primary_image", widget: "image"} 
       - {label: "Set Blog to Featured", name: "featured_blog", widget: "boolean", default: false}
+      - {label: 'Keywords (Seperate with ",")', name: "keywords", widget: "text", default: ''}
   - name: "site_content"
     label: "Site Content"
     files:

@@ -24,7 +24,7 @@ const SearchedPosts = ({ results }) =>
 const AllPosts = ({ posts }) => {
   const featured = posts.filter( ({node}) => node.frontmatter.featured_blog === true ).length
   const recent = posts.filter( ({node}) => node.frontmatter.featured_blog === false ).length
-  console.info({featured, recent})
+  // console.info({featured, recent})
 
   return (
     <>

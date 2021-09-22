@@ -7,14 +7,21 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PostNav from "../components/blog/PostNav"
 import { Section, SectionHeader, Container } from "../components/layout/Section"
+import SocialShare from "../components/SocialShare"
+
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
+    const siteKeyWords = this.props.data.site.siteMetadata.keywords
     const { previous, next } = this.props.pageContext
     let primary_image = getImage(post.frontmatter.primary_image)
-
+    let metaImage = {
+      src: primary_image.images.fallback.src,
+      description: post.frontmatter.title
+    } 
+    console.info({metaImage, primary_image, post})
     return (
       <Layout 
         location={this.props.location} 
@@ -23,6 +30,9 @@ class BlogPostTemplate extends React.Component {
         <Seo
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          keywords={`${post.frontmatter.keywords}, ${siteKeyWords}`}
+          image={metaImage}
+          pathname={window.location.pathname}
         />
         <PostNav previous={previous} next={next}/>
         <StyledSection>
@@ -37,6 +47,7 @@ class BlogPostTemplate extends React.Component {
             </MDXRenderer>
           </StyledContainer>
         </StyledSection>
+        <SocialShare post={post}/>
       </Layout>
     )
   }
@@ -50,6 +61,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        keywords
       }
     }
     mdx( slug: { eq: $slug } ) {
@@ -60,6 +72,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        keywords
         primary_image {
           childImageSharp {
             gatsbyImageData

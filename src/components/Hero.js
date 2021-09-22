@@ -25,7 +25,7 @@ const Hero = () => {
             window.addEventListener('resize', () => {
                 viewWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
                 setParallaxY(viewWidth * yOffset)
-                console.info({viewWidth})
+                // console.info({viewWidth})
             });
             
 
@@ -33,7 +33,7 @@ const Hero = () => {
         
     }, [])
     // const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) 
-    console.info({viewWidth, parallaxY})
+    // console.info({viewWidth, parallaxY})
     return (
         <HeroContainer id="hero">
             <div className="parallax-wrapper">
