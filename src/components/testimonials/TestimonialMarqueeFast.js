@@ -25,17 +25,25 @@ const TestimonialMarqueeFast = () => {
     // console.info({testimonials:data})
     const testimonials = data.testimonials.frontmatter.testimonials
     
-    let viewWidthInit = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-    const [viewWidth, setViewWidth] = useState(viewWidthInit)
+    
+    const [viewWidth, setViewWidth] = useState(undefined)
+
+    
+
     useEffect(() => {
-        if (typeof window !== `undefined`) {
-            window.addEventListener('resize', () => {
-                setViewWidth(Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0))
-            });
+        // Handler to call on window resize
+        function handleResize() {
+            // Set window width state
+            setViewWidth(window.innerWidth)
         }
-    }, [])
-    // const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) 
-    // console.info({viewWidth})
+        // Add event listener
+        window.addEventListener("resize", handleResize);
+        // Call handler right away so state gets updated with initial window size
+        handleResize();
+        // Remove event listener on cleanup
+        return () => window.removeEventListener("resize", handleResize);
+    },[])
+
     return (
         <>
             <SectionHeader>

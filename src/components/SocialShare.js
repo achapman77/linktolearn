@@ -16,31 +16,27 @@ import {
 } from "react-share";
 
 const SocialShare = ({post}) => {
-    let viewWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-    let sizeInit = 40
-    if (viewWidth <= 480) {
-        sizeInit = 25
-    }
-    const [size, setSize] = useState(sizeInit)
     
-    useEffect(() => {
-        if (typeof window !== `undefined`) {
-            
-            setSize(size)
-            window.addEventListener('resize', () => {
-                viewWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-                let x = 40
-                if (viewWidth <= 480) {
-                    x = 25
-                }
-                setSize(x)
-                // console.info({viewWidth})
-            });
-            
+    const [size, setSize] = useState(40)
+    
 
+    useEffect(() => {
+        // Handler to call on window resize
+        function handleResize() {           
+            if (window.innerWidth <= 480) {
+                setSize(25)
+            } else {
+                setSize(40)
+            }
         }
-        
-    }, [])
+        // Add event listener
+        window.addEventListener("resize", handleResize);
+        // Call handler right away so state gets updated with initial window size
+        handleResize();
+        // Remove event listener on cleanup
+        return () => window.removeEventListener("resize", handleResize);
+    },[])
+
     
     const btnClass = 'round'
     const title = post.frontmatter.title
@@ -55,13 +51,13 @@ const SocialShare = ({post}) => {
         v = v.replace(' ', '')
         v = v.replace(/ /g,"_")
         // v = `#${v}`
-        console.info(v)
+        // console.info(v)
         hashtags.push(v)
     })
 
     const hashtag =`#${hashtags[0]}` 
 
-    console.info({hashtags, hashtag})
+    // console.info({hashtags, hashtag})
         // console.info({post, urlObj, origin, pathname, url})
     return (
         <SocialBtnContainer>

@@ -14,26 +14,33 @@ const Hero = () => {
         Aos.init({})
     }, [])
 
-    let viewWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    // let viewWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
     let yOffset = -0.12
-    const [parallaxY, setParallaxY] = useState(viewWidth * yOffset)
-    
-    useEffect(() => {
-        if (typeof window !== `undefined`) {
-            
-            setParallaxY(viewWidth * yOffset)
-            window.addEventListener('resize', () => {
-                viewWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-                setParallaxY(viewWidth * yOffset)
-                // console.info({viewWidth})
-            });
-            
+    const [parallaxY, setParallaxY] = useState(undefined)
+    // const [windowSize, setWindowSize] = useState({
+    //     width: undefined,
+    //     height: undefined,
+    // })
 
+    useEffect(() => {
+        // Handler to call on window resize
+        function handleResize() {
+            // Set window width/height to state
+            // setWindowSize({
+            //     width: window.innerWidth,
+            //     height: window.innerHeight,
+            // });
+            setParallaxY(window.innerWidth * yOffset)
         }
-        
-    }, [])
-    // const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) 
-    // console.info({viewWidth, parallaxY})
+        // Add event listener
+        window.addEventListener("resize", handleResize);
+        // Call handler right away so state gets updated with initial window size
+        handleResize();
+        // Remove event listener on cleanup
+        return () => window.removeEventListener("resize", handleResize);
+    },[])
+    
+    
     return (
         <HeroContainer id="hero">
             <div className="parallax-wrapper">
