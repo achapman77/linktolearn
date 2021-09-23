@@ -20,9 +20,9 @@ team_members:
       cum praesentium quas neque!
     profile_url: http://google.com/
     position_title: CFO
-    first_name: Jane
-    last_name: Smith
-    headshot: ../images/uploads/pexels-nothing-ahead-3571551.jpg
+    first_name: Lauren
+    last_name: Lipchak
+    headshot: ../images/uploads/laurenlipchack-web.jpg
   - first_name: gggg
     last_name: zxcvxczv
     position_title: zxcvzxcv
