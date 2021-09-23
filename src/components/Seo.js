@@ -28,21 +28,23 @@ function Seo({ title, description, keywords, lang, meta, image: metaImage, pathn
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const metaTitle = title || site.siteMetadata.title
+  const pageTitle = title 
+  const siteTitle = site.siteMetadata.title
+  const titleTemplate = pageTitle && pageTitle !== 'Home' ? `${pageTitle} | ${siteTitle}` : `${metaDescription}} | ${siteTitle}`
   const metaKeywords = keywords || site.siteMetadata.keywords
 
   
   const image = metaImage && metaImage.description ? `${site.siteMetadata.siteUrl}${metaImage.src}` : site.siteMetadata.image
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null 
   
-  // console.info({data: site.siteMetadata, metaTitle, metaDescription, metaKeywords, image, canonical  })
+  console.info({ pageTitle, siteTitle  })
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={metaTitle}
-      titleTemplate={metaTitle ? `%s | ${metaTitle}` : null}
+      title={pageTitle}
+      titleTemplate={titleTemplate}
       link={
         canonical
           ? [
@@ -64,7 +66,7 @@ function Seo({ title, description, keywords, lang, meta, image: metaImage, pathn
         },
         {
           property: `og:title`,
-          content: metaTitle,
+          content: titleTemplate,
         },
         {
           property: `og:description`,
@@ -92,7 +94,7 @@ function Seo({ title, description, keywords, lang, meta, image: metaImage, pathn
         },
         {
           name: `twitter:title`,
-          content: metaTitle,
+          content: titleTemplate,
         },
         {
           name: `twitter:description`,
