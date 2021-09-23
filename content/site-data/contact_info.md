@@ -1,15 +1,15 @@
 ---
-business_name: Company XYZ
-phone: (333) 333-3333
-fax: (444) 444-4444
-email: info@business.com
+business_name: Link to Learn
+phone: (720) 779-8676
+fax: ""
+email: info@linktolearn.org
 business_address:
-  street: 123 Anywhere St
-  street2: Unit 555
+  street: 1982 S. Bannock St.
+  street2: ""
   city: Denver
   state: CO
-  zipcode: "80224"
-  map_link: https://goo.gl/maps/GPhviCHw59tp7qTP7
+  zipcode: "80223"
+  map_link: https://goo.gl/maps/B1x87ugo47svDxmHA
 contact_section_content:
   header: We’d love to hear from you
   sub_header: Whether you have a question about features, trials, pricing, need a
