@@ -12,7 +12,7 @@ team_members:
       wounded warriors. Providing access to quality advanced training resources
       and cadre of instructors to increase battlefield survival rates is always
       in his crosshairs.
-    headshot: ../images/uploads/johnchapman1506g.jpg
+    headshot: ../images/uploads/johnchapman-3870x3831.jpg
     profile_url: http://google.com/
   - description: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
       repellendus incidunt sapiente adipisci nihil odio, similique iusto vitae
