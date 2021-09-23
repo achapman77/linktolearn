@@ -37,7 +37,7 @@ function Seo({ title, description, keywords, lang, meta, image: metaImage, pathn
   const image = metaImage && metaImage.description ? `${site.siteMetadata.siteUrl}${metaImage.src}` : site.siteMetadata.image
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null 
   
-  console.info({ pageTitle, siteTitle  })
+  // console.info({ pageTitle, siteTitle  })
   return (
     <Helmet
       htmlAttributes={{

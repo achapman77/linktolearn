@@ -56,7 +56,7 @@ const ContactInfo = ({data}) => {
                         <p>{contactInfo.fax}</p>
                     </Row>
                 }
-                { bizAddress.street2 &&
+                { bizAddress.street &&
                     <Row 
                         title="Click to View on Google Maps"
                         data-aos="zoom-in-right"
