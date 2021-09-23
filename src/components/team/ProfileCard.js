@@ -17,7 +17,7 @@ const ProfileCard = ({data}) => {
                     <Title>{data.position_title}</Title>
                     <Title className="subTitle">{data.position_subTitle}</Title>
                 </div>
-                <StyledLink href={data.profile_url} aria-label="View our LinkedIn Profile">
+                <StyledLink href={data.profile_url} target="_blank" rel="noreferrer" aria-label={`${data.first_name} ${data.last_name}'s LinkedIn Profile`}>
                     <StyledIcon/>
                 </StyledLink>
             </Wrapper>
@@ -36,7 +36,7 @@ const StyledGatsbyImage = styled(GatsbyImage)`
 `
 
 const Card = styled.div`
-    width: clamp(260px, 15vw, 345px);
+    width: clamp(260px, 15vw, 330px);
     ${props => props.theme.lg`
         flex-basis: 35vw;
     `}

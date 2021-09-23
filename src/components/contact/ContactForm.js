@@ -147,11 +147,13 @@ const ContactForm = ({content}) => {
                         <FloatingLabel>
                             <Field className={floatSelect ? 'active' : ''} as="select" id="quick_help_select" name="quick_help_select" defaultValue="" onChange={handleSelectClick}>
                                 <option value="" aria-label="blank"></option>
-                                <option value="1">Question 1</option>
-                                <option value="2">Question 2</option>
+                                <option value="1">Denver Cadaver Lab Capabilities & Services</option>
+                                <option value="2">Mobile Cadaver Lab Capabilities & Services</option>
+                                <option value="3">REAL-X Immersive Emergency Medical Learning</option>
+                                <option value="4">BEAST Human Performance Analytics</option>
                             </Field>
                             <AiOutlineQuestionCircle/>
-                            <label htmlFor="quick_help_select">How Can We Help?</label>
+                            <label htmlFor="quick_help_select">I Would Like to Learn More About:</label>
                         </FloatingLabel>
 
                         <FloatingLabel>
@@ -199,6 +201,7 @@ const FormTitle = styled.div`
 
 const ContactFormButton = styled(Button)`
     width: clamp(160px, 25vw, 260px);
+    max-width: inherit;
     margin-left: auto;
     padding: 0.75rem;
 `
