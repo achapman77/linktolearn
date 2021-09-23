@@ -25,17 +25,18 @@ Link to Learn Website
 
 
 ## Initial Setup
-  [https://deanmalone.net/post/how-to-fork-your-own-repo-on-github/] Fork Repo w/ Upstream remote
-  git remote -v to check remotes
+  [https://deanmalone.net/post/how-to-fork-your-own-repo-on-github/] Create New Repo w/ Upstream remote as https://github.com/achapman77/gatsby-starter-template-plus.git
+  git remote -v to check remotes (origin=new repo & upstream=https://github.com/achapman77/gatsby-starter-template-plus.git)
+  npm install
+  [Content Admin](http://localhost:8000/admin/)
+> [GraphQL Data](http://localhost:8000/___graphql)
 
 > ### Netlify CMS Setup
 >  * Create new git repo
 >  * Rename repo, site, logo in static->admin->config.yml
 >  * Follow steps 3+ here: https://www.gatsbyjs.com/tutorial/blog-netlify-cms-tutorial/
 >  * Follow [Gatsby With NetlifyCMS Tutorial](https://www.youtube.com/watch?v=IWmVSm2KevY)
->  * Be sure to query and render images uploaded through the CMS through allFile->childImageSharp->gatsbyImageData
->  * [Content Admin](http://localhost:8000/admin/)
->  * [GraphQL Data](http://localhost:8000/___graphql)
+>  
 
 
 > ### Application Customization

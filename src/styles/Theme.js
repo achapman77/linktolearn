@@ -19,9 +19,9 @@ const theme = {
     ...respondTo,
     colors: {
         primary: {
-            light:'rgb(244, 157, 120)',
-            main:'rgb(242, 106, 46)',
-            dark:'rgb(191, 83, 36)'
+            light:'rgb(224, 237, 206)',
+            main:'rgb(140, 198, 63)', //lime green
+            dark:'rgb(77, 119, 17)'
         },
         secondary: {
             light:'rgb(81, 163, 244)',

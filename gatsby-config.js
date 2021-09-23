@@ -1,11 +1,11 @@
 module.exports = {
   //Change Site Metadata
   siteMetadata: {
-    title: `Gatsby Netlify CMS Template`,
-    description: `Gatsby Template integrated with Netlify CMS for dynamic site content and blogs`,
+    title: `Link to Learn`,
+    description: `Immersive Learning Solutions for Emergency Medical Professionals`,
     author: `Steep Line Design`,
     siteUrl: `http://localhost:8000`,
-    keywords: `keyword_1, keyword_2, keyword_3`,
+    keywords: `emergency medical training, tactical combat casualty care,`,
     image: `src/assets/images/travel-1.jpg`
   },
   plugins: [
@@ -159,14 +159,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Netlify CMS Starter`,
+        name: `Link to Learn`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#8cc63f`,
+        theme_color: `#8cc63f`,
         display: `minimal-ui`,
         cache_busting_mode: 'none',
-        icon: `src/assets/favicons/maskable_icon.png`, 
+        icon: `src/assets/favicons/L2L-favicon`, 
         icon_options: {
           purpose: `any maskable`,
         },

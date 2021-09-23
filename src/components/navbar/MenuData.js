@@ -24,9 +24,9 @@ export const menuData = [
         link: "/faq",
         isActive: false
     },
-    {
-        title: "Articles", 
-        link: "/blog",
-        isActive: false
-    },
+    // {
+    //     title: "Articles", 
+    //     link: "/blog",
+    //     isActive: false
+    // },
 ]
