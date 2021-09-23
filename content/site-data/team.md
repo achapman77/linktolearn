@@ -26,7 +26,7 @@ team_members:
       and execution of strategies to ensure that end user needs are met in a
       cost-effective manner.
     profile_url: https://www.linkedin.com/in/lauren-lipchak-36ab6765/
-    position_title: Vice President, CTBS
+    position_title: Vice President, Certified Tissue Bank Specialist
     first_name: Lauren
     last_name: Lipchak
     headshot: ../images/uploads/laurenlipchack-web.jpg
@@ -43,4 +43,16 @@ team_members:
       and deployment. "
     headshot: ../images/uploads/sampeterson-web.jpg
     profile_url: https://www.linkedin.com/in/sam-peterson-mba/
+  - first_name: Adam
+    last_name: Chapman
+    position_title: Chief Product Officer
+    description: Adam brings over 20 years of experience in various
+      technologies.  After graduating with a degree in Biochemistry, Adam worked
+      as a research scientist at Fred Hutchinson Cancer Research Center and
+      Molecumetics developing robotic assay analysis.  Later in his career, Adam
+      helped formulate ThyssenKrupp’s global Microsoft HoloLens partnership and
+      training initiative.  Lately Adam pursues creative technical endeavors in
+      software engineering and digital marketing for start-up companies.
+    headshot: ../images/uploads/adamchapman-web.jpg
+    profile_url: https://www.linkedin.com/in/adamachapman/
 ---
