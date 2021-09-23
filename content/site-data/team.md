@@ -14,7 +14,7 @@ team_members:
       in his crosshairs.
     headshot: ../images/uploads/johnchapman-1000x990.jpg
     profile_url: https://www.linkedin.com/in/john-chapman-us/
-    position_subTitle: Former Force Reconnaissance Marine
+    position_subTitle: Force Reconnaissance Marine
   - description: Lauren brings over 20 years of medical experience to our team. She
       began her career as a clinical provider in neurosurgery and completed her
       trauma nursing internship @ Johns Hopkins. After losing her father, who
@@ -45,7 +45,7 @@ team_members:
       and deployment. "
     headshot: ../images/uploads/sampeterson-web.jpg
     profile_url: https://www.linkedin.com/in/sam-peterson-mba/
-    position_subTitle: Former Explosive Ordnance Disposal
+    position_subTitle: Explosive Ordnance Disposal
   - first_name: Adam
     last_name: Chapman
     position_title: Chief Product Officer
