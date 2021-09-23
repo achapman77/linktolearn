@@ -58,5 +58,5 @@ team_members:
       software engineering and digital marketing for start-up companies.
     headshot: ../images/uploads/adamchapman-web.jpg
     profile_url: https://www.linkedin.com/in/adamachapman/
-    position_subTitle: adf
+    position_subTitle: ""
 ---
