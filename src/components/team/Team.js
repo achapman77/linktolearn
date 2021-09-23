@@ -18,6 +18,7 @@ const TeamSection = () => {
                         first_name
                         last_name
                         position_title
+                        position_subTitle
                         profile_url
                         headshot {
                             childImageSharp {

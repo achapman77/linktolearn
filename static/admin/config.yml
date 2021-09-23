@@ -129,6 +129,7 @@ collections:
               - {label: "First Name", name: "first_name", widget: "string"}
               - {label: "Last Name", name: "last_name", widget: "string"}
               - {label: "Position Title", name: "position_title", widget: "string"}
+              - {label: "Position sub-Title", name: "position_subTitle", widget: "string", default: "", required: false}
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Headshot", name: "headshot", widget: "image", media_folder:'team'}
               - {label: "LinkedIn Profile", name: "profile_url", widget: "string"}
