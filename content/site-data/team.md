@@ -2,7 +2,7 @@
 team_members:
   - first_name: John
     last_name: Chapman
-    position_title: President, Former Force Reconnaissance Marine Team Leader
+    position_title: President
     description: John has deployed to 7 operational theaters in support of national
       strategic objectives. Having lost friends and colleagues in the line of
       duty, John has an intimate knowledge of the impact limited access to
@@ -14,6 +14,7 @@ team_members:
       in his crosshairs.
     headshot: ../images/uploads/johnchapman-1000x990.jpg
     profile_url: https://www.linkedin.com/in/john-chapman-us/
+    position_subTitle: Former Force Reconnaissance Marine
   - description: Lauren brings over 20 years of medical experience to our team. She
       began her career as a clinical provider in neurosurgery and completed her
       trauma nursing internship @ Johns Hopkins. After losing her father, who
@@ -26,13 +27,14 @@ team_members:
       and execution of strategies to ensure that end user needs are met in a
       cost-effective manner.
     profile_url: https://www.linkedin.com/in/lauren-lipchak-36ab6765/
-    position_title: Vice President, Certified Tissue Bank Specialist
+    position_title: Vice President
     first_name: Lauren
     last_name: Lipchak
     headshot: ../images/uploads/laurenlipchack-web.jpg
+    position_subTitle: Certified Tissue Bank Specialist
   - first_name: Sam
     last_name: Peterson
-    position_title: Chief Operations Officer, Former Explosive Ordnance Disposal Team Leader
+    position_title: Chief Operations Officer
     description: "Sam has deployed to Afghanistan three times in support of national
       strategic objectives. Having received high level medical training prior to
       each of his deployments Sam is intimately familiar with the medical
@@ -43,6 +45,7 @@ team_members:
       and deployment. "
     headshot: ../images/uploads/sampeterson-web.jpg
     profile_url: https://www.linkedin.com/in/sam-peterson-mba/
+    position_subTitle: Former Explosive Ordnance Disposal
   - first_name: Adam
     last_name: Chapman
     position_title: Chief Product Officer
