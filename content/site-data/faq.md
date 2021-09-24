@@ -16,18 +16,4 @@ faq:
     select_category: AR/VR Immersive Learning
     question: foobar
     answer: foobar
-  - blog_link: ""
-    blog_title: ""
-    video_link: ""
-    video_title: ""
-    select_category: Human Performance Metrics
-    question: snafu
-    answer: snafu
-  - blog_link: ""
-    blog_title: ""
-    video_link: ""
-    video_title: ""
-    select_category: Scenario Authoring
-    question: ggg
-    answer: ggg
 ---
