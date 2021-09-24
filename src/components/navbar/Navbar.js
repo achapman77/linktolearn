@@ -158,10 +158,10 @@ const Navbar = ({isOpen, toggle, logo}) => {
       btn.classList.add('active')
     }
 
-    // if (e.type === 'mouseleave' && e.target) {
-    //   btn.classList.remove('active')
+    if (e.type === 'mouseleave') {
+      btn.classList.remove('active')
       
-    // }
+    }
     
     console.info({navItem, e:e.target})
   }
