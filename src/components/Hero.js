@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from 'gatsby';
 import styled from 'styled-components'
 import { Parallax, Background } from 'react-parallax'
 import { AiOutlineArrowDown } from 'react-icons/ai'
@@ -28,6 +29,12 @@ const Hero = () => {
         return () => window.removeEventListener("resize", handleResize);
     },[])
     
+    const heroBtns = [
+        {label:'Mobile Bio-Skills Labs', link:'/'},
+        {label:'AR/VR Immersive Training', link:'/'},
+        {label:'Human Performance Metrics', link:'/'},
+        {label:'Rapid Scenario Authoring', link:'/'},
+    ]
     
     return (
         <HeroContainer id="hero">
@@ -37,8 +44,17 @@ const Hero = () => {
                         <img src={BackgroundImg} alt="Background" />
                     </Background>
                     <div className="hero__title">
-                        <h1>Company Name</h1>
-                        <p>Something Else Awesome</p>
+                        <p>Welcome to Link to Learn</p>
+                        <h1>We provide immersive training solutions for emergency medical professionals.</h1>
+                        <HeroNav>
+                                {
+                                    heroBtns.map( (v,i) => {
+                                        return (
+                                            <Link key={i} to={v.link}>{v.label}</Link>    
+                                        )
+                                    })
+                                }
+                        </HeroNav>
                     </div>
                 </Parallax>
                 <div className="scroll-icon-container">
@@ -50,6 +66,8 @@ const Hero = () => {
 }
 
 export default Hero
+
+
 
 const HeroContainer = styled.div`
     margin-top: -80px;
@@ -143,12 +161,12 @@ const HeroContainer = styled.div`
         position: absolute;
         left: 10vw;
         top: 33%;
-        padding: 1rem;
-        height: 25vh;
-        width: 600px;
+        padding: 3rem;
+        height: fit-content;
+        max-width: clamp(30rem, 60vw, 55rem);
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: baseline;
         flex-flow: column;
         gap: 1rem;
         backdrop-filter: blur(4px);
@@ -159,8 +177,11 @@ const HeroContainer = styled.div`
         text-align: center;
         transform: translateZ(-2px) scale(1.2);
         h1, p, a { color: white;}
+        h1 {
+            text-align: left;
+            font-size: clamp(1.2rem,2vw,3rem);
+        }
         p {
-        
         font-size: calc(0.6rem + 0.75vmin);
         }
     }
@@ -182,9 +203,27 @@ const HeroContainer = styled.div`
         background: white;
         font-size: 2rem;
     }
+    
+    //xxxl: '1850px',
+    ${props => props.theme.xxxl`
+        // .react-parallax-background-children {transform: translate3d(-50%, -174px, 0px) !important;}
+        margin-bottom: -1rem;
+        .parallax-content { height: 80vh;}
+        img {
+            height: 100vh !important;
+            // width: auto !important;
+        }
+    `}
 
+    //xxl: '1550px',
     ${props => props.theme.xxl`
         // .react-parallax-background-children {transform: translate3d(-50%, -174px, 0px) !important;}
+        margin-bottom: -1rem;
+        .parallax-content { height: 80vh;}
+        img {
+            height: 100vh !important;
+            width: auto !important;
+        }
     `}
     //xl: '1400px',
     ${props => props.theme.xl`
@@ -194,19 +233,33 @@ const HeroContainer = styled.div`
     //lg: '1200px',
     ${props => props.theme.lg`
         // .react-parallax-background-children {transform: translate3d(-50%, -125px, 0px) !important;}
-        .parallax-content { height: 65vh;}
+        // .parallax-content { height: 65vh;}
+        margin-bottom: -1rem;
+        .parallax-content { height: 80vh;}
+        img {
+            height: 100vh !important;
+            width: auto !important;
+        }
         
         .hero__title {
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
             width: 80vw;
+            max-width: fit-content;
         }  
     `}
     //md: '992px',
     ${props => props.theme.md`
         // .react-parallax-background-children {transform: translate3d(-50%, -75px, 0px) !important;}  
-        .parallax-content { height: 55vh;}
+        // .parallax-content { height: 55vh;}
+        margin-bottom: -1rem;
+        .parallax-content { height: 80vh;}
+        img {
+            height: 100vh !important;
+            width: auto !important;
+        }
+        .hero__title { width: 90vw;}
         
     `}
     //sm: '768px',
@@ -218,14 +271,23 @@ const HeroContainer = styled.div`
         img {
             height: 100vh !important;
             width: auto !important;
+            transform: translateX(-200px);
         }
         .hero__title {
             padding: 1rem;
             left: 50%;
             top: 55%;
             transform: translate(-50%, -55%);
-            width: 80vw;
-            height: 35vh;
+            // width: 80vw;
+            // height: 35vh;
+            nav {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                margin: 1rem auto;
+                // margin-top: 1rem;
+                // width: -webkit-fill-available;
+                a { justify-content: center;}
+            }
         }
         
     `}
@@ -236,6 +298,7 @@ const HeroContainer = styled.div`
         img {
             height: 100vh !important;
             width: auto !important;
+            transform: translateX(-270px);
         }
         .hero__title {
             padding: 1rem;
@@ -243,7 +306,8 @@ const HeroContainer = styled.div`
             top: 100%;
             transform: translate(-50%, -100%);
             width: 100vw;
-            height: 250px;
+            height: fit-content;
+            border-radius: 0;
         }
         .scroll-icon-container {
             font-size: 1.5rem;
@@ -263,17 +327,47 @@ const HeroContainer = styled.div`
         img {
             height: 100vh !important;
             width: auto !important;
+            transform: translateX(-110px);
         }
 
         .hero__title {
             padding: 1rem;
             left: 50%;
-            top: 100%;
+            top: 93%;
             transform: translate(-50%, -90%);
             width: 100vw;
-            height: 150px;
+           height: fit-content;
+           a {
+               font-size: 0.85rem;
+                padding: 5px;
+                height: 75px;
+           }
+
         }
         
     `}
 
+`
+
+const HeroNav = styled.nav`
+    list-style: none;
+    display: flex;
+    /* grid-template-columns: repeat(4, 1fr); */
+    gap: 1rem;
+    margin-top: 2rem;
+
+    a {
+        text-decoration:none;
+        border: 1px solid white;
+        display: flex;
+        align-items: center;
+        padding: 0.85rem;
+        letter-spacing: 1px;
+        background: rgba(0,0,0,0.35);
+        &:hover {
+            background: ${props => props.theme.colors.gray.dark};
+            color: ${props => props.theme.colors.primary.main};
+            border: 1px solid ${props => props.theme.colors.primary.main};
+        }
+    }
 `

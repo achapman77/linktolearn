@@ -9,7 +9,8 @@ const breakpoints = {
   md: '992px',
   lg: '1200px',
   xl: '1400px',
-  xxl: '1550px'
+  xxl: '1550px',
+  xxxl: '1850px',
 };
 
 export const respondTo = Object.keys(breakpoints).reduce(

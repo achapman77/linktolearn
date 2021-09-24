@@ -85,6 +85,7 @@ const SocialMediaWrapper = styled.div`
     }
     &.navTopper {
         margin-left: auto;
+        
     }
 `
 const SocialIcon = styled.a`
@@ -102,9 +103,10 @@ const SocialIcon = styled.a`
         color: black;
     }
 
-    /* &.navTopper {
-        &:hover svg{
+    &.navTopper {
+        svg {font-size: 2rem;}
+        /* &:hover svg{
            color: ${props => props.theme.colors.primary.main}; 
-        }
-    } */
+        } */
+    }
 `

@@ -24,14 +24,14 @@ const theme = {
             dark:'rgb(77, 119, 17)'
         },
         secondary: {
-            light:'rgb(81, 163, 244)',
-            main:'rgb(7, 123, 241)',
-            dark:'rgb(38, 76, 115)'
+            light:'rgb(0, 211, 252)',
+            main:'rgb(0, 155, 195)',
+            dark:'rgb(0, 81, 99)'
         },
         gray:{
-            light:'rgb(247, 247, 247)',
-            main:'rgb(113, 113, 113)',
-            dark:"rgb(65, 65, 65)"
+            light:'rgb(236, 237, 234)',
+            main:'rgb(167, 174, 156)',
+            dark:"rgb(45, 45, 45)"
         },
         error:{
             light:'rgb(229, 115, 115)',

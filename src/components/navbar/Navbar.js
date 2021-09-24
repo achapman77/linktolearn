@@ -151,24 +151,26 @@ const Navbar = ({isOpen, toggle, logo}) => {
     <Nav id="navbar" isOpen={isOpen} navbar={navbar} className={offset >= 80 ? 'active' : ''}>
       <NavLogo logo={logo}/>
       <NavMenu>
-        {navItems.map( (v,i) => (
-            <NavItem  key={i}>
-              <NavLink
-                data-id={`nav_${v.title.toLowerCase()}`}
-                to={v.link}
-                onClick={e => handleMenuLinkClick(v, e)}
-                activeClassName='active'
-                className={v.isActive ? 'active' : ''}
-              >
-              <span>{v.title}</span>
-              </NavLink>
-            </NavItem>
-          ))
+        {navItems.map( (v,i) => {
+            return (
+              <NavItem  key={i}>
+                <NavLink
+                  data-id={`nav_${v.title.toLowerCase()}`}
+                  to={v.link}
+                  onClick={e => handleMenuLinkClick(v, e)}
+                  activeClassName='active'
+                  className={v.isActive ? 'active' : ''}
+                >
+                <span>{v.title}</span>
+                </NavLink>
+              </NavItem>
+            )
+        })
 
         }
       </NavMenu>
       <NavBtn>
-        <Button primary="true" round="true" to="/">Call to Action</Button>
+        <Button primary="true" round="true" to="/#contact">Contact Us</Button>
       </NavBtn>
       <MobileMenuIcon onClick={toggle}>
         {!isOpen && <AiOutlineMenu />}
@@ -183,7 +185,7 @@ const Navbar = ({isOpen, toggle, logo}) => {
 export default Navbar
 
 const Nav = styled.nav`
-  background: ${ ({ navbar, isOpen }) => (navbar || isOpen ? props => props.theme.colors.gray.dark : "transparent")};
+  background: ${ ({ navbar, isOpen }) => (navbar || isOpen ? props => props.theme.colors.gray.light : "transparent")};
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -191,9 +193,12 @@ const Nav = styled.nav`
   z-index: 100;
   position: sticky;
   top:0;
+  
 
   &.active {
-    background: ${props => props.theme.colors.gray.dark};
+    background: ${props => props.theme.colors.gray.light};
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* background: white; */
   }
 `
 const NavMenu = styled.ul`
@@ -208,7 +213,7 @@ const NavMenu = styled.ul`
 
 const MobileMenuIcon = styled.div`
   display: none;
-  color:#ffff;
+  color:${props => props.theme.colors.gray.dark};
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -236,7 +241,8 @@ const NavItem = styled.li`
 `
 
 const NavLink = styled(Link)`
-    color: white;
+    /* color: white; */
+    color: ${props => props.theme.colors.gray.dark};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,6 +252,9 @@ const NavLink = styled(Link)`
     padding: 0 1rem;
     cursor: pointer;
     border-bottom: 4px solid transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
 
     &.active {
     border-bottom: 4px solid ${props => props.theme.colors.primary.main};

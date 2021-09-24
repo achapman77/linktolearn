@@ -29,7 +29,7 @@ const NavTopper = () => {
                 <StyledCarousel 
                     autoPlay={true} 
                     // axis='vertical'
-                    interval={10000}
+                    interval={5000}
                     transitionTime={2000}
                     infiniteLoop={true}
                     emulateTouch={false}
@@ -62,7 +62,7 @@ const Container = styled.div`
     color: white;
     font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: bold;
-    background: ${props => props.theme.colors.secondary.main};
+    background: ${props => props.theme.colors.primary.main};
     height: fit-content;
     position: sticky;
     justify-content: space-between;
@@ -85,7 +85,7 @@ const Container = styled.div`
     }
 `
 
-const gradientColor1 = props => props.theme.colors.secondary.main.replace(/[^\d,]/g, '')
+const gradientColor1 = props => props.theme.colors.primary.main.replace(/[^\d,]/g, '')
 const MessageWrapper = styled.div`
     display: flex;
     align-items: center;
@@ -123,9 +123,11 @@ const StyledCarousel = styled(Carousel)`
     .slide {
         //controls width of text
         /* padding: 0rem calc((100vw - 500px) / 2 ); */
-        p {
+        letter-spacing: 3px;
+        /* p {
             padding: 1rem;
-        }
+            letter-spacing: 10px;
+        } */
     }    
 `
 
