@@ -11,7 +11,7 @@ import NavTopper from "./NavTopper";
 
 //icons
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
-
+import { GoChevronDown } from 'react-icons/go'
 
 // import scrollToElement from 'scroll-to-element';
 import animateScrollTo from 'animated-scroll-to';
@@ -143,7 +143,28 @@ const Navbar = ({isOpen, toggle, logo}) => {
     }
   }
 
+  const toggleDropdown = (navItem, e) => {
+    console.info('handleDropdownClick=>')
+    let btnID = `dropdownBtn_${navItem.title.toLowerCase()}`
+    let btn = document.getElementById(btnID)
+    // let dropdownID = `dropdownMenu_${navItem.title.toLowerCase()}`
+    // let dropdown = document.getElementById(dropdownID)
+    
+    if (btn.classList.contains('active')){
+      // dropdown.classList.remove('active')
+      btn.classList.remove('active')
+    } else {
+      // dropdown.classList.add('active')
+      btn.classList.add('active')
+    }
 
+    // if (e.type === 'mouseleave' && e.target) {
+    //   btn.classList.remove('active')
+      
+    // }
+    
+    console.info({navItem, e:e.target})
+  }
 
   return (
     <>
@@ -152,6 +173,7 @@ const Navbar = ({isOpen, toggle, logo}) => {
       <NavLogo logo={logo}/>
       <NavMenu>
         {navItems.map( (v,i) => {
+          if (!v.subItems) {
             return (
               <NavItem  key={i}>
                 <NavLink
@@ -165,6 +187,32 @@ const Navbar = ({isOpen, toggle, logo}) => {
                 </NavLink>
               </NavItem>
             )
+          } else {
+            return (
+                <NavItem 
+                  className="dropdownBtn" 
+                  key={i} 
+                  id={`dropdownBtn_${v.title.toLowerCase()}`}
+                  onClick={e => toggleDropdown( v, e)}
+                  onMouseEnter = {e => toggleDropdown(v,e)}
+                  onMouseLeave = {e => toggleDropdown(v,e)}
+                >
+                    <button className="label" >
+                      {v.title}<GoChevronDown />
+                    </button>
+                    <DropdownMenu id={`dropdownMenu_${v.title.toLowerCase()}`} className="dropdownMenu">
+                      {
+                        v.subItems.map( (v2, i2) => {
+                          return (
+                            <Link to={v2.link} key={i2}>{v2.title}</Link>
+                          )
+                        })
+                      }
+                    </DropdownMenu>
+                </NavItem>
+            )
+          }
+            
         })
 
         }
@@ -184,8 +232,10 @@ const Navbar = ({isOpen, toggle, logo}) => {
 
 export default Navbar
 
+
+
 const Nav = styled.nav`
-  background: ${ ({ navbar, isOpen }) => (navbar || isOpen ? props => props.theme.colors.gray.light : "transparent")};
+  background: ${ ({ navbar, isOpen }) => (navbar || isOpen ? "white" : "transparent")};
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -196,7 +246,7 @@ const Nav = styled.nav`
   
 
   &.active {
-    background: ${props => props.theme.colors.gray.light};
+    background: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     /* background: white; */
   }
@@ -238,11 +288,106 @@ const NavBtn = styled.div`
 
 const NavItem = styled.li`
     height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    a, .label {
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: ${props => props.theme.colors.gray.dark};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        min-width: 150px;
+        /* width: clamp(80px, 5vw, 5vw); */
+        text-decoration: none;
+        padding: 0 1rem;
+        cursor: pointer;
+        border-bottom: 4px solid transparent;
+        &.active {
+          border-bottom: 4px solid ${props => props.theme.colors.primary.main};
+        }
+        
+    }
+    button {
+      border: none;
+      font-size: inherit;
+      font-weight: bold;
+      background: inherit;
+      border-bottom: 4px solid transparent;
+    }
+    &.dropdownBtn {
+      position: relative;
+      span { 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    &.dropdownBtn.active {
+      svg {transform: rotate(-180deg);}
+      .dropdownMenu {
+        display: flex;
+        opacity: 1;
+      }
+    }
+    &:hover {
+          border-right: 1px solid rgba(0,0,0, 0.25);
+          border-left: 1px solid rgba(0,0,0, 0.25);
+          background: rgba(0,0,0, 0.05);
+        }
+    svg {
+          font-size: 1.5rem;
+          /* transition: 250ms; */
+          margin-top: -2px;
+          /* margin-right: 1rem; */
+    }
+`
+const NavDropdown = styled.li`
+
 `
 
+const DropdownMenu = styled.div`
+  /* display: flex; */
+  flex-flow: column;
+  border-top: 4px solid ${props => props.theme.colors.gray.dark};
+  position: absolute;
+  top: 76px;
+  background: white;
+  width: max-content;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  display: none;
+  opacity: 0;
+  transition: 500s all;
+  /* &.active {
+    display: flex;
+    opacity: 1;
+  } */
+  a {
+    padding: 1rem;
+    padding-right: 3rem;
+    text-decoration: none;
+    width: -webkit-fill-available;
+    white-space: nowrap;
+    justify-content: left;
+    align-items: center;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid ${props => props.theme.colors.gray.light};
+    border-left: 4px solid transparent;
+    &:hover {
+      background: ${props => props.theme.colors.gray.light};
+      border-top: 1px solid rgba(0,0,0, 0.25);
+      border-bottom: 1px solid rgba(0,0,0, 0.25);
+      border-left: 4px solid ${props => props.theme.colors.primary.main};
+    }
+  }
+`
 const NavLink = styled(Link)`
     /* color: white; */
-    color: ${props => props.theme.colors.gray.dark};
+    /* color: ${props => props.theme.colors.gray.dark};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -251,17 +396,15 @@ const NavLink = styled(Link)`
     text-decoration: none;
     padding: 0 1rem;
     cursor: pointer;
-    border-bottom: 4px solid transparent;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
+    border-bottom: 4px solid transparent; */
 
-    &.active {
+
+    /* &.active {
     border-bottom: 4px solid ${props => props.theme.colors.primary.main};
     }
     &:hover {
       border-right: 1px solid rgba(255,255,255, 0.125);
       border-left: 1px solid rgba(255,255,255, 0.125);
       background: rgba(255,255,255, 0.05);
-    }
+    } */
 `
