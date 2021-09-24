@@ -10,6 +10,7 @@ import Hero from "../components/Hero"
 // import Email from "../components/Email"
 import ContactUS from "../components/contact/ContactUs"
 import TeamSection from "../components/team/Team"
+import ServicesSection from "../components/services/ServicesSection"
 
 //loadable components
 const TestimonialMarqueeFast = loadable( () => import("../components/testimonials/TestimonialMarqueeFast"))
@@ -20,6 +21,7 @@ const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     <Hero />
+    <ServicesSection />
     {/* <Trips heading="Our Favourite Destinations"/> */}
     {/* <Testimonials/> */}
     {/* <Stats/> */}

@@ -1,7 +1,7 @@
 export const menuData = [
     {
         title: "About", 
-        link: "/#hero",
+        link: "/#about",
         isActive: false
     },
     {

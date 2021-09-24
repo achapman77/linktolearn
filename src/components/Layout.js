@@ -5,8 +5,8 @@ import NavMobile from "./navbar/NavMobile"
 import Navbar from "./navbar/Navbar"
 import LogoMain from '../assets/images/logos/logo_main.png'
 import LogoAlternate from '../assets/images/logos/logo_alternate.png'
-import loadable from "@loadable/component"
-const Footer = loadable( () => import("./Footer"))
+import Footer from "./Footer"
+
 
 const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)

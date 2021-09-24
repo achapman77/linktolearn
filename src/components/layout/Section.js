@@ -25,6 +25,7 @@ export const SectionHeader = styled.div`
     p {
         margin: 0 1rem;
         text-align: center;
+        max-width:50rem;
         /* max-width: 80vw; */
     }
 `

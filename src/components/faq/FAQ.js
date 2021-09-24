@@ -32,7 +32,7 @@ const FAQs = () => {
             }
         }
     `)
-
+    console.info({data})
     const faqArr = data.faqs.frontmatter.faq
     
     const categoryArr = [...new Set(faqArr.map( ({select_category}) => select_category))]
@@ -295,6 +295,7 @@ const FAQList = styled.ul`
             display: flex;
             align-items: center;
             user-select: none;
+            text-align: initial;
             svg {
                 margin-right: 0.75rem;
                 color: ${props => props.theme.colors.gray.dark};
@@ -316,6 +317,7 @@ const FAQList = styled.ul`
         .answer {
             margin-bottom: 1rem;
             max-width: 45rem;
+            text-align: initial;
         }
         .info {
             

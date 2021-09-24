@@ -19,26 +19,26 @@ const Footer = ({logo}) => {
                     <LogoContainer to="/" onClick={toggleHome}>
                         <img src={logo.img} alt={logo.altText} width={logo.width} height={logo.height}/>
                     </LogoContainer>
-                    <p>We strive to create the best experiences for our customers</p>
+                    <p>An Immersive Learning Ecosystem for Emergency Medical Professionals</p>
                 </FooterDesc>
                 <FooterLinkItems>
-                    <FooterLinkTitle>Contact Us</FooterLinkTitle>
-                    <FooterLink to="/about">Contact</FooterLink>
-                    <FooterLink to="/">Support</FooterLink>
-                    <FooterLink to="/">Destinations</FooterLink>
-                    <FooterLink to="/">Sponsorships</FooterLink>
+                    <FooterLinkTitle>About</FooterLinkTitle>
+                    <FooterLink to="/#about">Solutions</FooterLink>
+                    <FooterLink to="/#team">Team</FooterLink>
+                    <FooterLink to="/faq">FAQ</FooterLink>
+                    <FooterLink to="/blog">Blog</FooterLink>
                 </FooterLinkItems>
             </FooterLinksWrapper>
             <FooterLinksWrapper>
                 <FooterLinkItems>
-                    <FooterLinkTitle>Videos</FooterLinkTitle>
-                    <FooterLink to="/">Submit Videos</FooterLink>
-                    <FooterLink to="/">Ambassadors</FooterLink>
-                    <FooterLink to="/">Agency</FooterLink>
-                    <FooterLink to="/">Influencer</FooterLink>
+                    <FooterLinkTitle>Services</FooterLinkTitle>
+                    <FooterLink to="/">Mobile BioSkills Labs</FooterLink>
+                    <FooterLink to="/">AR/VR Immersive Learning</FooterLink>
+                    <FooterLink to="/">Human Performance Metrics</FooterLink>
+                    <FooterLink to="/">Rapid Scenario Authoring</FooterLink>
                 </FooterLinkItems>
                 <FooterLinkItems>
-                    <FooterLinkTitle>Social Media</FooterLinkTitle>
+                    <FooterLinkTitle>Follow Us</FooterLinkTitle>
                     <SocialMedia variant="footer"/>
                 </FooterLinkItems>
             </FooterLinksWrapper>
@@ -69,11 +69,13 @@ const FooterDesc = styled.div`
     }
 `
 const LogoContainer = styled(Link)`
-    width: clamp(150px, 15vw, 200px);
+    width: clamp(50px, 15vw, 100px);
     margin-bottom: 1rem;
     img {
         width: 100%;
         height: auto;
+        max-width: 8rem;
+        margin: 0 auto;
     }
 `
 
@@ -110,10 +112,10 @@ const FooterLink = styled(Link)`
    font-size: 14px;
    color: #3d3d4e;
    padding: 1rem 0;
-width: -webkit-fill-available;
+   width: -webkit-fill-available;
 
    &:hover {
-       color: #f26a2e;
+       color: ${props => props.theme.colors.primary.main};
        transition: 0ms.3s ease-out;
    }
 `

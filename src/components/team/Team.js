@@ -37,7 +37,8 @@ const TeamSection = () => {
     return (
         <Section id="team">
             <SectionHeader>
-                <h2>Our Team</h2>
+                <h2>Who We Are</h2>
+                <p>We are team of military, medical and engineering professionals with a passion to help save more lives through improved training access and effectiveness.</p>
             </SectionHeader>
             <StyledContainer>
                 {

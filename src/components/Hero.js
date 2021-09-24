@@ -32,7 +32,7 @@ const Hero = () => {
     const heroBtns = [
         {label:'Mobile BioSkills Labs', link:'/'},
         {label:'AR/VR Immersive Instruction', link:'/'},
-        {label:'Human Learning Performance Metrics', link:'/'},
+        {label:'Human Performance Metrics', link:'/'},
         {label:'Rapid Scenario Authoring', link:'/'},
     ]
     
