@@ -166,7 +166,7 @@ module.exports = {
         theme_color: `#8cc63f`,
         display: `minimal-ui`,
         cache_busting_mode: 'none',
-        icon: `src/assets/favicons/L2L-favicon`, 
+        icon: `src/assets/favicons/L2L-favicon.png`, 
         icon_options: {
           purpose: `any maskable`,
         },

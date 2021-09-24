@@ -30,9 +30,9 @@ const Hero = () => {
     },[])
     
     const heroBtns = [
-        {label:'Mobile Bio-Skills Labs', link:'/'},
-        {label:'AR/VR Immersive Training', link:'/'},
-        {label:'Human Performance Metrics', link:'/'},
+        {label:'Mobile BioSkills Labs', link:'/'},
+        {label:'AR/VR Immersive Instruction', link:'/'},
+        {label:'Human Learning Performance Metrics', link:'/'},
         {label:'Rapid Scenario Authoring', link:'/'},
     ]
     
@@ -171,7 +171,7 @@ const HeroContainer = styled.div`
         gap: 1rem;
         backdrop-filter: blur(4px);
         background-color: rbga(0,0,0,0);
-        background: rgba(0,0,0,0.5);
+        background: rgba(0,0,0,0.65);
         border-radius: 4px;
         z-index: 2;
         text-align: center;

@@ -37,6 +37,7 @@ const ParallaxSectionHeader = styled(SectionHeader)`
                 width: -webkit-fill-available;
             }
         }
+
         img {
            width: 100vw;
            filter: blur(5px) brightness(110%);

@@ -25,8 +25,8 @@ const IndexPage = () => (
     {/* <Stats/> */}
     {/* <Email/> */}
     
-    <TestimonialMarqueeFast/>
-    <TestimonialCarousel/>
+    {/* <TestimonialMarqueeFast/> */}
+    {/* <TestimonialCarousel/> */}
     {/* <TestimonialMarqueeSlider/> */}
     <TeamSection />
     <ContactUS/>

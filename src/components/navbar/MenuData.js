@@ -10,22 +10,22 @@ export const menuData = [
         isActive: false,
         subItems: [
             {
-                title: "BioSkills", 
+                title: "Mobile BioSkills Labs", 
                 link: "/",
                 isActive: false
             },
             {
-                title: "AR/VR", 
+                title: "AR/VR Immersive Training", 
                 link: "/",
                 isActive: false
             },
             {
-                title: "Performance Metrics", 
+                title: "Human Performance Metrics", 
                 link: "/",
                 isActive: false
             },
             {
-                title: "Scenario Authoring", 
+                title: "Rapid Scenario Authoring", 
                 link: "/",
                 isActive: false
             },
