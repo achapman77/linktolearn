@@ -25,7 +25,7 @@ partners:
     logo: ../images/uploads/bunker_labs.png
     name: Bunker Labs
     image: ../images/uploads/afwerx_image.jpg
-    category: 4_Accelerator
+    category: 1_Department of Defense
   - description: The Denver Health Paramedic Division is the sole provider of
       emergency medical services for the City and County of Denver, Colorado.
       Our mission is to provide professional, compassionate and clinically
