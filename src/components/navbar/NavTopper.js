@@ -62,7 +62,7 @@ const Container = styled.div`
     color: white;
     font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: bold;
-    background: ${props => props.theme.colors.primary.main};
+    background: ${props => props.theme.colors.gray.dark};
     height: fit-content;
     position: sticky;
     justify-content: space-between;
@@ -85,7 +85,7 @@ const Container = styled.div`
     }
 `
 
-const gradientColor1 = props => props.theme.colors.primary.main.replace(/[^\d,]/g, '')
+const gradientColor1 = props => props.theme.colors.gray.dark.replace(/[^\d,]/g, '')
 const MessageWrapper = styled.div`
     display: flex;
     align-items: center;

@@ -94,9 +94,9 @@ const QuickConnectButton = styled.div`
     }
     &:hover {
         background: white;
-        color: ${props => props.theme.colors.primary.main};
+        color: ${props => props.theme.colors.gray.dark};
         svg path {
-            stroke: ${props => props.theme.colors.primary.main};
+            stroke: ${props => props.theme.colors.gray.dark};
         }
     }
 

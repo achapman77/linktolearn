@@ -130,7 +130,7 @@ const HeroContainer = styled.div`
         transform-origin: 0 100%;
         transform: translateZ(8px);
         pointer-events: none;
-        background-image: linear-gradient(
+        /* background-image: linear-gradient(
         to bottom,
         hsla(0, 0%, 0%, 0) 0%,
         hsla(0, 0%, 0%, 0.013) 8%,
@@ -148,7 +148,7 @@ const HeroContainer = styled.div`
         hsla(0, 0%, 0%, 0.951) 77.9%,
         hsla(0, 0%, 0%, 0.987) 88.1%,
         hsl(0, 0%, 0%) 100%
-        );
+        ); */
         z-index: 3;
     }
     }

@@ -31,10 +31,10 @@ const Footer = ({logo}) => {
             </FooterLinksWrapper>
             <FooterLinksWrapper>
                 <FooterLinkItems>
-                    <FooterLinkTitle>Services</FooterLinkTitle>
+                    <FooterLinkTitle>Solutions</FooterLinkTitle>
                     <FooterLink to="/">Mobile BioSkills Labs</FooterLink>
-                    <FooterLink to="/">AR/VR Immersive Learning</FooterLink>
-                    <FooterLink to="/">Human Performance Metrics</FooterLink>
+                    <FooterLink to="/">REAL-X Immersive Training</FooterLink>
+                    <FooterLink to="/">BEAST Performance Metrics</FooterLink>
                     <FooterLink to="/">Rapid Scenario Authoring</FooterLink>
                 </FooterLinkItems>
                 <FooterLinkItems>

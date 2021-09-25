@@ -10,7 +10,9 @@ import Hero from "../components/Hero"
 // import Email from "../components/Email"
 import ContactUS from "../components/contact/ContactUs"
 import TeamSection from "../components/team/Team"
-import ServicesSection from "../components/services/ServicesSection"
+import ProductSection from "../components/products/ProductSection"
+import PartnersSection from "../components/partners/PartnersSection"
+import ClientsSection from "../components/clients/ClientsSection"
 
 //loadable components
 const TestimonialMarqueeFast = loadable( () => import("../components/testimonials/TestimonialMarqueeFast"))
@@ -21,7 +23,7 @@ const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     <Hero />
-    <ServicesSection />
+    <ProductSection />
     {/* <Trips heading="Our Favourite Destinations"/> */}
     {/* <Testimonials/> */}
     {/* <Stats/> */}
@@ -31,6 +33,8 @@ const IndexPage = () => (
     {/* <TestimonialCarousel/> */}
     {/* <TestimonialMarqueeSlider/> */}
     <TeamSection />
+    <PartnersSection />
+    <ClientsSection />
     <ContactUS/>
   </Layout>
 )

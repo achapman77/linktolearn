@@ -224,7 +224,7 @@ const CategoryBtn = styled(ScrollLink)`
     text-align: center;
     width: clamp(10rem, 20vw, 16rem);
     &.active {
-        background: ${props => props.theme.colors.secondary.light};
+        background: ${props => props.theme.colors.secondary.dark};
         color: white;
         box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     }
@@ -249,15 +249,15 @@ const CategoryListSection = styled.li`
 const Title = styled.p`
     font-weight: bold;
     text-transform: uppercase;
-    color: ${props => props.theme.colors.secondary.main};
-    border-bottom: 2px solid ${props => props.theme.colors.secondary.main};
+    color: ${props => props.theme.colors.secondary.dark};
+    border-bottom: 2px solid ${props => props.theme.colors.secondary.dark};
     padding-bottom: 0.25rem;
     display: flex;
     align-items: center;
     justify-content: left;
 `
 const ToggleAllBtn = styled.button`
-    background: ${props => props.theme.colors.secondary.main};
+    background: ${props => props.theme.colors.secondary.dark};
     border: none;
     color: white;
     display: flex;
@@ -328,9 +328,9 @@ const FAQList = styled.ul`
         &:hover, &.active {
             background: ${props => props.theme.colors.gray.light};
             .question {
-                border-left: 7px solid ${props => props.theme.colors.secondary.main};
+                border-left: 7px solid ${props => props.theme.colors.secondary.dark};
                 svg {
-                    color: ${props => props.theme.colors.secondary.main};
+                    color: ${props => props.theme.colors.secondary.dark};
                 }
             }
         }

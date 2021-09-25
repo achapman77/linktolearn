@@ -4,12 +4,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 //components
 import { Section, SectionHeader, Container } from '../layout/Section'
-import ServiceCard from './ServiceCard'
+import PartnerCard from './PartnerCard'
 
-
-
-
-const ServicesSection = () => {
+const PartnersSection = () => {
     const data = [
     {
         title:"Mobile BioSkills Labs",
@@ -37,38 +34,23 @@ const ServicesSection = () => {
     }
 ]
     return (
-        <StyledSection id="about">
-            <Header>
-                <h2>What We Do</h2>
-                <p>Our mission is to provide a comprehensive immersive learning service & technology ecosystem that enhances the effectiveness of emergency medical training for both military and civilian teams.</p>
-            </Header>
-            <StyledContainer>
+        <StyledSection>
+            <SectionHeader>
+                <h2>Our Research & Development Partners</h2>
+            </SectionHeader>
+            <Container>
                 {data.map( (v,i) => {
                     return (
-                        <ServiceCard data={v}/>
+                        <PartnerCard key={i} data={v} />
                     )
                 })}
-            </StyledContainer>
+            </Container>
         </StyledSection>
     )
 }
 
-export default ServicesSection
+export default PartnersSection
 
 const StyledSection = styled(Section)`
-    min-height: fit-content;
-`
-const Header = styled(SectionHeader)`
-    p {
-        max-width:50rem;
-    }
-`
-
-const StyledContainer = styled(Container)`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-    justify-content: center;
-    max-width: 85rem;
-    padding: 0;
+    min-height: auto;
 `

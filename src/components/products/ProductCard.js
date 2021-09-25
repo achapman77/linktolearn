@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {Link} from 'gatsby'
 import {AiOutlineArrowRight} from 'react-icons/ai'
 
-const ServiceCard = ({data}) => {
+const ProductCard = ({data}) => {
     console.info({data})
     return (
         <Card>
@@ -15,7 +15,7 @@ const ServiceCard = ({data}) => {
     )
 }
 
-export default ServiceCard
+export default ProductCard
 
 
 const Card = styled.div`

@@ -79,45 +79,28 @@ collections:
             fields: 
               - {label: "Select Social Media", name: "select_social_media", widget: "select", options: ["LinkedIn", "Facebook", "Instagram", "Twitter"]}
               - {label: "Profile Link", name: "profile_link", widget: "string"}
-      - label: "FAQ"
-        name: "faq"
-        file: content/site-data/faq.md
+      - label: "Page Top Messages"
+        name: "page_top_messages"
+        file: content/site-data/page_top_messages.md
         fields:
-          - label: FAQ
-            name: faq
+          - label: Page Top Messages
+            name: page_top_messages
             widget: list
             fields: 
-              - {label: "Select FAQ Category", name: "select_category", widget: "select", options: ["BioSkills Labs", "AR/VR Immersive Learning", "Human Performance Metrics", "Scenario Authoring"]}
-              - {label: "Question", name: "question", widget: "string"}
-              - {label: "Answer", name: "answer", widget: "text"}
-              - {label: "Link to Blog Article", name: "blog_link", widget: "string", default: "", required: false}
-              - {label: "Blog Article Title", name: "blog_title", widget: "string", default: "", required: false}
-              - {label: "Link to Video Answer", name: "video_link", widget: "string", default: "", required: false}
-              - {label: "Video Title", name: "video_title", widget: "string", default: "", required: false}
-      - label: "Media Articles"
-        name: "media_articles"
-        file: content/site-data/media_articles.md
+              - {label: "Message", name: "message", widget: "string", pattern: ['^.{10,40}$', "Must be min 10 - max 40 characters"]}
+      - label: "Products"
+        name: "products"
+        file: content/site-data/products.md
         fields:
-          - label: Media Articles
-            name: media_articles
+          - label: Products
+            name: products
             widget: list
             fields: 
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Publish Date", name: "publish_date", widget: "string"}
-              - {label: "Author", name: "author", widget: "string"}
-              - {label: "Publisher", name: "publisher", widget: "string"}
-              - {label: "Publisher Logo", name: "publisher_logo", widget: "image"}
-              - {label: "Article Excerpt", name: "article_excerpt", widget: "text"}
-              - {label: "Article Link", name: "article_link", widget: "text"}
-      - label: "Testimonials"
-        name: "testimonials"
-        file: content/site-data/testimonials.md
-        fields:
-          - label: Testimonials
-            name: testimonials
-            widget: list
-            fields: 
-              - {label: "Testimonial", name: "testimonial", widget: "text"}
+              - {label: "subTitle", name: "subTitle", widget: "string", default: "", required: false}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image/Icon", name: "image", widget: "image", default: "", required: false }
+              - {label: "Page Link", name: "page_link", widget: "string", default: "", required: false}
       - label: "Team Members"
         name: "team_members"
         file: content/site-data/team.md
@@ -133,13 +116,71 @@ collections:
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Headshot", name: "headshot", widget: "image", media_folder:'team'}
               - {label: "LinkedIn Profile", name: "profile_url", widget: "string"}
-      - label: "Page Top Messages"
-        name: "page_top_messages"
-        file: content/site-data/page_top_messages.md
+      - label: "Partners"
+        name: "partners"
+        file: content/site-data/partners.md
         fields:
-          - label: Page Top Messages
-            name: page_top_messages
+          - label: Partners
+            name: partners
             widget: list
             fields: 
-              - {label: "Message", name: "message", widget: "string", pattern: ['^.{10,40}$', "Must be min 10 - max 40 characters"]}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Description", name: "description", widget: "text", default: "", required: false}
+              - {label: "Link", name: "link", widget: "string", default: "", required: false}
+      - label: "Clients"
+        name: "clients"
+        file: content/site-data/clients.md
+        fields:
+          - label: Clients
+            name: clients
+            widget: list
+            fields: 
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "Description", name: "description", widget: "text", default: "", required: false}
+              - {label: "Link", name: "link", widget: "string", default: "", required: false}
+      - label: "Testimonials"
+        name: "testimonials"
+        file: content/site-data/testimonials.md
+        fields:
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields: 
+              - {label: "Testimonial", name: "testimonial", widget: "text"}
+      - label: "FAQ"
+        name: "faq"
+        file: content/site-data/faq.md
+        fields:
+          - label: FAQ
+            name: faq
+            widget: list
+            fields: 
+              - {label: "Select FAQ Category", name: "select_category", widget: "select", options: ["BioSkills Labs", "AR/VR Immersive Learning", "Human Performance Metrics", "Scenario Authoring"]}
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "text"}
+              - {label: "Link to Blog Article", name: "blog_link", widget: "string", default: "", required: false}
+              - {label: "Blog Article Title", name: "blog_title", widget: "string", default: "", required: false}
+              - {label: "Link to Video Answer", name: "video_link", widget: "string", default: "", required: false}
+              - {label: "Video Title", name: "video_title", widget: "string", default: "", required: false}       
+      - label: "Media Articles"
+        name: "media_articles"
+        file: content/site-data/media_articles.md
+        fields:
+          - label: Media Articles
+            name: media_articles
+            widget: list
+            fields: 
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Publish Date", name: "publish_date", widget: "string"}
+              - {label: "Author", name: "author", widget: "string"}
+              - {label: "Publisher", name: "publisher", widget: "string"}
+              - {label: "Publisher Logo", name: "publisher_logo", widget: "image"}
+              - {label: "Article Excerpt", name: "article_excerpt", widget: "text"}
+              - {label: "Article Link", name: "article_link", widget: "text"}
+      
+      
+      
             

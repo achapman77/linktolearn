@@ -5,7 +5,7 @@ export const menuData = [
         isActive: false
     },
     {
-        title: "Services", 
+        title: "Solutions", 
         link: "",
         isActive: false,
         subItems: [
@@ -15,12 +15,12 @@ export const menuData = [
                 isActive: false
             },
             {
-                title: "AR/VR Immersive Training", 
+                title: "REAL-X Immersive Training", 
                 link: "/",
                 isActive: false
             },
             {
-                title: "Human Performance Metrics", 
+                title: "BEAST Performance Metrics", 
                 link: "/",
                 isActive: false
             },
