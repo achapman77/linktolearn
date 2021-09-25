@@ -7,7 +7,7 @@ clients:
       entrepreneurs in Air Force programs.
     link: https://www.afwerx.af.mil/
     name: AFWERX
-    logo: ../images/uploads/afwerx.png
+    logo: ../images/uploads/afwerx_web.png
   - description: The Denver Health Paramedic Division is the sole provider of
       emergency medical services for the City and County of Denver, Colorado.
       Our mission is to provide professional, compassionate and clinically
