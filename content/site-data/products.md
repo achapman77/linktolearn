@@ -1,7 +1,7 @@
 ---
 products:
   - subTitle: ""
-    image: ""
+    image: ../images/uploads/afwerx_web.png
     page_link: /
     title: Mobile Bioskills Labs
     description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
