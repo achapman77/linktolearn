@@ -1,5 +1,5 @@
 ---
-section_title: Our Research & Development Partners
+section_title: Our Partners
 section_subtitle: "Link to Learn works closely with a number of DoD & Civilian
   medical teams, Universities, and start-up accelerators to rapidly design,
   develop, and iterate our solutions to fit the priority needs of front-line
