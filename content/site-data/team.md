@@ -1,4 +1,8 @@
 ---
+section_title: Who We Are
+section_subtitle: We are team of military, medical and engineering professionals
+  with a passion to help save more lives through improved training access and
+  effectiveness.
 team_members:
   - first_name: John
     last_name: Chapman
