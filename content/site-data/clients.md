@@ -1,4 +1,9 @@
 ---
+section_title: Our Clients
+section_subtitle: It has been an honor to provide training solutions for
+  hundreds of members across DoD and Civilian emergency medical teams.  We are
+  humbled to see interest in Link to Learn's solutions spread so rapidly and
+  appreciate all their collaborative support and ideas.
 clients:
   - description: AFWERX is a United States Air Force program with the goal of
       fostering a culture of innovation within the service. Encompassing a
