@@ -1,6 +1,6 @@
 ---
 section_title: Who We Are
-section_subtitle: We are team of former military, medical and engineering
+section_subtitle: We are team of medical, engineering, and former military
   professionals with a passion to help save lives through improved training
   access and effectiveness.
 team_members:
