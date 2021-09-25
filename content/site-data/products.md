@@ -1,4 +1,8 @@
 ---
+section_title: What We Do
+section_subtitle: Our mission is to provide a comprehensive immersive learning
+  service & technology ecosystem that enhances the effectiveness of emergency
+  medical training for both military and civilian teams.
 products:
   - subTitle: ""
     image: ../images/uploads/afwerx_web.png
