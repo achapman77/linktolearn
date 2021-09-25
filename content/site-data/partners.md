@@ -1,5 +1,9 @@
 ---
 section_title: Our Research & Development Partners
+section_subtitle: "Link to Learn works closely with a number of DoD & Civilian
+  medical teams, Universities, and start-up accelerators to rapidly design,
+  develop, and iterate our solutions to fit the priority needs of front-line
+  emergency medical professionals. "
 partners:
   - description: AFWERX is a United States Air Force program with the goal of
       fostering a culture of innovation within the service. Encompassing a
