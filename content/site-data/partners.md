@@ -14,7 +14,7 @@ partners:
     name: AFWERX
     logo: ../images/uploads/afwerx_web.png
     image: ../images/uploads/afwerx_image.jpg
-    category: 1_Department of Defense
+    category: 1_Research & Development
   - description: Bunker Labs’ mission is to support and convene military-connected
       entrepreneurs and small business owners. We accomplish this mission by
       facilitating an action-oriented, member-led network of entrepreneurs and
@@ -25,7 +25,7 @@ partners:
     logo: ../images/uploads/bunker_labs.png
     name: Bunker Labs
     image: ../images/uploads/afwerx_image.jpg
-    category: 1_Department of Defense
+    category: 3_Accelerator Programs
   - description: The Denver Health Paramedic Division is the sole provider of
       emergency medical services for the City and County of Denver, Colorado.
       Our mission is to provide professional, compassionate and clinically
@@ -35,5 +35,5 @@ partners:
     logo: ../images/uploads/denver-health-paramedics.png
     name: Denver Health Paramedics
     image: ../images/uploads/afwerx_image.jpg
-    category: 2_Civilian
+    category: 2_Medical Expertise
 ---
