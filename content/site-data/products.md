@@ -8,10 +8,12 @@ products:
     image: ../images/uploads/afwerx_web.png
     page_link: /
     title: Mobile Bioskills Labs
-    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-      neque aliquam possimus consequuntur voluptas rem quaerat in delectus.
-      Commodi cupiditate perferendis fugit asperiores sunt dolorem optio nulla
-      quibusdam totam doloribus.
+    description: Our mobile cadaver labs are deployable to any location in the
+      US.  This improves cost-efficiency and negates logistical constraints for
+      obtaining the best hands-on emergency medical training possible.  The
+      refrigerated transport holds up to 8 cadavers that are preserved through
+      proprietary preservation method that maintains lifelike tissue consistency
+      and color.  Expert instructors are available upon request.
   - subTitle: REAL-X (Realistic Enhanced Augmented Learning Experience)
     image: ""
     page_link: /
