@@ -256,7 +256,7 @@ const NavMenu = styled.ul`
   align-items: center;
   list-style: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     display: none;
   }
 `
@@ -265,7 +265,7 @@ const MobileMenuIcon = styled.div`
   display: none;
   color:${props => props.theme.colors.gray.dark};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -281,7 +281,7 @@ const NavBtn = styled.div`
   align-items: center;
   margin-right: 24px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     display: none;
   }
 `

@@ -37,6 +37,7 @@ const StyledGatsbyImage = styled(GatsbyImage)`
 
 const Card = styled.div`
     width: clamp(260px, 15vw, 330px);
+    /* color: white; */
     ${props => props.theme.lg`
         flex-basis: 35vw;
     `}

@@ -29,8 +29,8 @@ const theme = {
             dark:'rgb(0, 81, 99)'
         },
         gray:{
-            light:'rgb(236, 237, 234)',
-            main:'rgb(167, 174, 156)',
+            light:'rgb(237, 237, 237)',
+            main:'rgb(88, 88, 90)',
             dark:"rgb(45, 45, 45)"
         },
         error:{

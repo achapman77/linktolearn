@@ -9,7 +9,11 @@ const ProductCard = ({data}) => {
         <Card>
             <Title>{data.title}</Title>
             <Description>{data.description}</Description>
-            <StyledLink>Learn More <AiOutlineArrowRight/></StyledLink>
+            <StyledLink
+                to={data.page_link}
+            >
+                Learn More<AiOutlineArrowRight/>
+            </StyledLink>
         
         </Card>
     )
@@ -23,7 +27,16 @@ const Card = styled.div`
     margin: 0 auto;
     /* border: 1px solid gray; */
     padding: 2rem;
-
+    height: -webkit-fill-available;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    &:hover {
+        a {
+            border: 1px solid ${props => props.theme.colors.secondary.dark};
+            color: ${props => props.theme.colors.secondary.dark}; 
+        }
+    }
 `
 const Title = styled.h3`
     /* text-align: center; */
@@ -31,25 +44,32 @@ const Title = styled.h3`
 
 `
 const Description = styled.p`
-    
+    padding-bottom: 1rem;
 
 `
 const StyledLink = styled(Link)`
     display: flex;
     align-items: center;
     padding: 0.25rem 1rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     border-radius: 50px;
     width: fit-content;
-    border: 1px solid ${props => props.theme.colors.gray.dark};
+    border: 1px solid ${props => props.theme.colors.secondary.dark};
+    color: ${props => props.theme.colors.secondary.dark};
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
     
     svg {
         margin-left: 0.5rem;
     }
     &:hover {
-        background: ${props => props.theme.colors.gray.dark};
-        color: ${props => props.theme.colors.primary.main};
-        border: 1px solid ${props => props.theme.colors.primary.main};
+        background: ${props => props.theme.colors.secondary.dark};
+        color: white;
+        svg {
+            color: white;
+        }
+        /* border: 1px solid ${props => props.theme.colors.primary.main}; */
     }
 
 `

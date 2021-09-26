@@ -8,6 +8,7 @@ import Aos from 'aos'
 import "aos/dist/aos.css"
 
 
+
 const Hero = () => {
     useEffect( () => {
         Aos.init({})
@@ -30,10 +31,10 @@ const Hero = () => {
     },[])
     
     const heroBtns = [
-        {label:'Mobile BioSkills Labs', link:'/'},
-        {label:'AR/VR Immersive Instruction', link:'/'},
-        {label:'Human Performance Metrics', link:'/'},
-        {label:'Rapid Scenario Authoring', link:'/'},
+        {label:'Mobile BioSkills Labs', link:'/services/mobile_bioskills_labs'},
+        {label:'AR/VR Immersive Instruction', link:'/services/realx_mixed_reality_training'},
+        {label:'Human Performance Metrics', link:'/services/beast_human_performance_metrics'},
+        {label:'Dynamic Scenario Authoring', link:'/services/dynamic_scenario_authoring_system'},
     ]
     
     return (
@@ -45,7 +46,7 @@ const Hero = () => {
                     </Background>
                     <div className="hero__title">
                         <p>Welcome to Link to Learn</p>
-                        <h1>We provide immersive training solutions for emergency medical professionals.</h1>
+                        <h1>We engineer solutions for more effective emergency medical training.</h1>
                         <HeroNav>
                                 {
                                     heroBtns.map( (v,i) => {

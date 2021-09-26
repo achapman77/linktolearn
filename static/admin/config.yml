@@ -92,6 +92,8 @@ collections:
         name: "products"
         file: content/site-data/products.md
         fields:
+          - {label: "Section Title", name: "section_title", widget: "string"}
+          - {label: "Section subTitle", name: "section_subtitle", widget: "text", default: "", required: false}
           - label: Products
             name: products
             widget: list
@@ -105,6 +107,8 @@ collections:
         name: "team_members"
         file: content/site-data/team.md
         fields:
+          - {label: "Section Title", name: "section_title", widget: "string"}
+          - {label: "Section subTitle", name: "section_subtitle", widget: "text", default: "", required: false}
           - label: Team Members
             name: team_members
             widget: list
@@ -120,19 +124,24 @@ collections:
         name: "partners"
         file: content/site-data/partners.md
         fields:
+          - {label: "Section Title", name: "section_title", widget: "string"}
+          - {label: "Section subTitle", name: "section_subtitle", widget: "text", default: "", required: false}
           - label: Partners
             name: partners
             widget: list
             fields: 
               - {label: "Name", name: "name", widget: "string"}
+              - {label: "Category", name: "category", widget: "select", options: ["1_Research & Development", "2_Emergency Medical Expertise", "3_Accelerator Programs"]}
               - {label: "Logo", name: "logo", widget: "image"}
-              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image", name: "image", widget: "image", default: "", required: false}
               - {label: "Description", name: "description", widget: "text", default: "", required: false}
               - {label: "Link", name: "link", widget: "string", default: "", required: false}
       - label: "Clients"
         name: "clients"
         file: content/site-data/clients.md
         fields:
+          - {label: "Section Title", name: "section_title", widget: "string"}
+          - {label: "Section subTitle", name: "section_subtitle", widget: "text", default: "", required: false}
           - label: Clients
             name: clients
             widget: list
@@ -145,6 +154,8 @@ collections:
         name: "testimonials"
         file: content/site-data/testimonials.md
         fields:
+          - {label: "Section Title", name: "section_title", widget: "string"}
+          - {label: "Section subTitle", name: "section_subtitle", widget: "text", default: "", required: false}
           - label: Testimonials
             name: testimonials
             widget: list

@@ -10,40 +10,40 @@ import ProductCard from './ProductCard'
 
 
 const ServicesSection = () => {
-    const data = [
-    {
-        title:"Mobile BioSkills Labs",
-        icon:"xxx",
-        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis neque aliquam possimus consequuntur voluptas rem quaerat in delectus. Commodi cupiditate perferendis fugit asperiores sunt dolorem optio nulla quibusdam totam doloribus.",
-        link:"/"
-    },
-    {
-        title:"AR/VR Immersive Instruction",
-        icon:"xxx",
-        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis neque aliquam possimus consequuntur voluptas rem quaerat in delectus. Commodi cupiditate perferendis fugit asperiores sunt dolorem optio nulla quibusdam totam doloribus.",
-        link:"/"
-    },
-    {
-        title:"Human Performance Metrics",
-        icon:"xxx",
-        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis neque aliquam possimus consequuntur voluptas rem quaerat in delectus. Commodi cupiditate perferendis fugit asperiores sunt dolorem optio nulla quibusdam totam doloribus.",
-        link:"/"
-    },
-    {
-        title:"Rapid Scenario Authoring",
-        icon:"xxx",
-        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis neque aliquam possimus consequuntur voluptas rem quaerat in delectus. Commodi cupiditate perferendis fugit asperiores sunt dolorem optio nulla quibusdam totam doloribus.",
-        link:"/"
-    }
-]
+    const data = useStaticQuery(graphql`
+        query {
+            products: mdx(fileAbsolutePath: {regex: "/products/"}) {
+                frontmatter {
+                    section_title
+                    section_subtitle
+                    products {
+                        description
+                        title
+                        subTitle
+                        page_link
+                        image {
+                            childImageSharp {
+                                gatsbyImageData
+                                id
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
+    const sectionTitle = data.products.frontmatter.section_title
+    const sectionSubTitle = data.products.frontmatter.section_subtitle
+    const products = data.products.frontmatter.products
+    // console.info({products})
     return (
-        <StyledSection id="about">
+        <StyledSection id="services">
             <Header>
-                <h2>What We Do</h2>
-                <p>Our mission is to provide a comprehensive immersive learning service & technology ecosystem that enhances the effectiveness of emergency medical training for both military and civilian teams.</p>
+                <h2>{sectionTitle}</h2>
+                <p>{sectionSubTitle}</p>
             </Header>
             <StyledContainer>
-                {data.map( (v,i) => {
+                {products.map( (v,i) => {
                     return (
                         <ProductCard data={v}/>
                     )
@@ -57,6 +57,7 @@ export default ServicesSection
 
 const StyledSection = styled(Section)`
     min-height: fit-content;
+    /* background: ${props => props.theme.colors.secondary.dark}; */
 `
 const Header = styled(SectionHeader)`
     p {
@@ -67,8 +68,12 @@ const Header = styled(SectionHeader)`
 const StyledContainer = styled(Container)`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+    gap: clamp(1rem, 3vw, 4rem);
     justify-content: center;
     max-width: 85rem;
     padding: 0;
+    ${props => props.theme.md`
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    `}
 `

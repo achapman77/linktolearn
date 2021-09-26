@@ -17,14 +17,14 @@ const MarqueeImage = ({data, options, className}) => {
     useEffect(() => {
         // Handler to call on window resize
         function handleResize() {
-            console.info(window.innerWidth)
+            // console.info(window.innerWidth)
             setViewWidth(window.innerWidth)
         }
         // Add event listener
         window.addEventListener("resize", handleResize);
         // Call handler right away so state gets updated with initial window size
         handleResize();
-        console.info({viewWidth})
+        // console.info({viewWidth})
         // Remove event listener on cleanup
         // return () => window.removeEventListener("resize", handleResize);
     },[viewWidth])
@@ -48,10 +48,14 @@ const MarqueeImage = ({data, options, className}) => {
                             rel="noreferrer"
                             title={`Visit the ${v.name} Website`}
                         >
-                            <StyledGatsbyImage image={image} alt={v.name} />
-                            <Details className="details" >
+                            <StyledGatsbyImage 
+                                image={image} 
+                                alt={v.name} 
+                                backgroundColor={`transparent`}
+                            />
+                            <Info className="info" >
                                 <IoMdInformationCircle/>
-                            </Details>
+                            </Info>
                         </Card>
                     )
                 })
@@ -64,12 +68,15 @@ export default MarqueeImage
 
 
 const Card = styled.a`
-    margin: 0 1rem;
+    margin: 0 clamp(0.5rem, 3vw, 13rem);
     position: relative;
     padding: 1rem;
-    .details {opacity:0;}
+    .info {opacity:0;}
     &:hover {
-        .details {opacity:1;}
+        .info {opacity:1;}
+        .gatsby-image-wrapper {
+            filter: grayscale(0);
+        }
     }
     /* xxs: '360px',
     xs: '480px',
@@ -79,7 +86,7 @@ const Card = styled.a`
 
     ${props => props.theme.sm`
         padding: 0.25rem;
-        margin: 0.25rem;
+        // margin: 0.25rem;
     `}
 `
 const StyledGatsbyImage = styled(GatsbyImage)`
@@ -89,20 +96,26 @@ const StyledGatsbyImage = styled(GatsbyImage)`
         ${props => props.theme.md`
             max-height: 100px;
         `}
-        ${props => props.theme.sm`
-            max-height: 80px;
+        /* ${props => props.theme.sm`
+            // max-height: 80px;
         `}
         ${props => props.theme.xs`
-            max-height: 50px;
-        `}
+            // max-height: 50px;
+        `} */
     }
 `
-const Details = styled.div`
+const Info = styled.div`
     position: absolute;
-    right:2px;
-    top: 2px;
+    right:0px;
+    top: 0px;
     font-size: 1.5rem;
     transition: 500ms opacity;
-    color: ${props => props.theme.colors.primary.main};
+    color: ${props => props.theme.colors.secondary.dark};
+    padding: 0.5rem;
+    transition: 500ms;
+    &:hover {
+        color: ${props => props.theme.colors.primary.main};
+        transform: scale(1.15)
+    }
     
 `

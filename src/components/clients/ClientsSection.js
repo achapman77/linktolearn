@@ -11,6 +11,8 @@ const ClientsSection = () => {
         query MyQuery {
             clients: mdx(fileAbsolutePath: {regex: "/clients/"}) {
                 frontmatter {
+                    section_title
+                    section_subtitle
                     clients {
                         description
                         link
@@ -26,13 +28,15 @@ const ClientsSection = () => {
             }
         }
     `)
+    const sectionTitle = data.clients.frontmatter.section_title
+    const sectionSubTitle = data.clients.frontmatter.section_subtitle
     const clients = data.clients.frontmatter.clients
-    console.info({clients})
+    // console.info({clients})
     return (
-        <StyledSection>
+        <StyledSection id="clients">
             <SectionHeader>
-                <h2>Our Clients</h2>
-                <p>It has been an honor to provide training solutions for hundreds of members across DoD and Civilian emergency medical teams.  We are humbled to see interest in Link to Learn's solutions spread so rapidly and appreciate all their collaboritive support and ideas. </p>
+                <h2>{sectionTitle}</h2>
+                <p>{sectionSubTitle}</p>
             </SectionHeader>
             <StyledContainer>
                 <MarqueeImage data={clients} options={{speed: 100}} className="clientMarquee" />

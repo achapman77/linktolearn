@@ -23,19 +23,20 @@ const Footer = ({logo}) => {
                 </FooterDesc>
                 <FooterLinkItems>
                     <FooterLinkTitle>About</FooterLinkTitle>
-                    <FooterLink to="/#about">Solutions</FooterLink>
                     <FooterLink to="/#team">Team</FooterLink>
+                    <FooterLink to="/#partners">Partners</FooterLink>
+                    <FooterLink to="/#clients">Clients</FooterLink>
                     <FooterLink to="/faq">FAQ</FooterLink>
                     <FooterLink to="/blog">Blog</FooterLink>
                 </FooterLinkItems>
             </FooterLinksWrapper>
             <FooterLinksWrapper>
                 <FooterLinkItems>
-                    <FooterLinkTitle>Solutions</FooterLinkTitle>
-                    <FooterLink to="/">Mobile BioSkills Labs</FooterLink>
-                    <FooterLink to="/">REAL-X Immersive Training</FooterLink>
-                    <FooterLink to="/">BEAST Performance Metrics</FooterLink>
-                    <FooterLink to="/">Rapid Scenario Authoring</FooterLink>
+                    <FooterLinkTitle>Services</FooterLinkTitle>
+                    <FooterLink to="/services/mobile_bioskills_labs">Mobile BioSkills Labs</FooterLink>
+                    <FooterLink to="/services/realx_mixed_reality_training">REAL-X Immersive Training</FooterLink>
+                    <FooterLink to="/services/beast_human_performance_metrics">BEAST Performance Metrics</FooterLink>
+                    <FooterLink to="/services/dynamic_scenario_authoring_system">Rapid Scenario Authoring</FooterLink>
                 </FooterLinkItems>
                 <FooterLinkItems>
                     <FooterLinkTitle>Follow Us</FooterLinkTitle>

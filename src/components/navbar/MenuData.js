@@ -1,32 +1,32 @@
 export const menuData = [
     {
         title: "About", 
-        link: "/#about",
+        link: "/",
         isActive: false
     },
     {
-        title: "Solutions", 
+        title: "Services", 
         link: "",
         isActive: false,
         subItems: [
             {
                 title: "Mobile BioSkills Labs", 
-                link: "/",
+                link: "/services/mobile_bioskills_labs",
                 isActive: false
             },
             {
                 title: "REAL-X Immersive Training", 
-                link: "/",
+                link: "/services/realx_mixed_reality_training",
                 isActive: false
             },
             {
                 title: "BEAST Performance Metrics", 
-                link: "/",
+                link: "/services/beast_human_performance_metrics",
                 isActive: false
             },
             {
-                title: "Rapid Scenario Authoring", 
-                link: "/",
+                title: "Dynamic Scenario Authoring", 
+                link: "/services/dynamic_scenario_authoring_system",
                 isActive: false
             },
         ]

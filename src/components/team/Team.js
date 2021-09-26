@@ -13,6 +13,8 @@ const TeamSection = () => {
             team_members: markdownRemark(fileAbsolutePath: {regex: "/team/"}) {
                 id
                 frontmatter {
+                    section_title
+                    section_subtitle
                     team_members {
                         description
                         first_name
@@ -30,15 +32,17 @@ const TeamSection = () => {
             }
         }
     `)
-
-    let teamMembers = data.team_members.frontmatter.team_members
+    
+    const sectionTitle = data.team_members.frontmatter.section_title
+    const sectionSubTitle = data.team_members.frontmatter.section_subtitle
+    const teamMembers = data.team_members.frontmatter.team_members
     // console.info(teamMembers)
 
     return (
-        <Section id="team">
+        <StyledSection id="team">
             <SectionHeader>
-                <h2>Who We Are</h2>
-                <p>We are team of military, medical and engineering professionals with a passion to help save more lives through improved training access and effectiveness.</p>
+                <h2>{sectionTitle}</h2>
+                <p>{sectionSubTitle}</p>
             </SectionHeader>
             <StyledContainer>
                 {
@@ -50,15 +54,21 @@ const TeamSection = () => {
                     })
                 }
             </StyledContainer>
-        </Section>
+        </StyledSection>
     )
 }
 
 export default TeamSection
+
+const StyledSection = styled('Section')`
+    background: ${props => props.theme.colors.gray.light};;
+    padding-bottom: 10rem;
+`
 
 const StyledContainer = styled(Container)`
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
     align-items: baseline;
+    
 `
