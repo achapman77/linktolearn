@@ -35,5 +35,5 @@ partners:
     logo: ../images/uploads/denver-health-paramedics.png
     name: Denver Health Paramedics
     image: ../images/uploads/afwerx_image.jpg
-    category: 2_Medical Expertise
+    category: 2_Emergency Medical Expertise
 ---
