@@ -8,10 +8,10 @@ products:
     image: ../images/uploads/afwerx_web.png
     page_link: /
     title: Mobile Bioskills Labs
-    description: Our mobile cadaver labs are deployable to any location in the
+    description: Our mobile bioskills labs are deployable to any location in the
       US.  This improves cost-efficiency and negates logistical constraints for
-      obtaining the best hands-on emergency medical training possible.  The
-      refrigerated transport holds up to 8 cadavers that are preserved through
+      obtaining the best hands-on emergency medical training possible.  Our
+      refrigerated transports hold up to 8 cadavers that are preserved through a
       proprietary preservation method that maintains lifelike tissue consistency
       and color.  Expert instructors are available upon request.
   - subTitle: REAL-X (Realistic Enhanced Augmented Learning Experience)
@@ -28,16 +28,21 @@ products:
     image: ""
     page_link: /
     title: Human Performance Metrics
-    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-      neque aliquam possimus consequuntur voluptas rem quaerat in delectus.
-      Commodi cupiditate perferendis fugit asperiores sunt dolorem optio nulla
-      quibusdam totam doloribus.
+    description: We are developing a machine learning system to help standardize and
+      quantify both student skill mastery and instructor proficiency.  The
+      system will intake biometric, volumetric, and motion capture data to first
+      establish benchmarks of expert level performance.  Then students can be
+      evaluated against these benchmarks for near real-time feedback and
+      corrective action.
   - subTitle: ""
     image: ""
     page_link: /
     title: Rapid Scenario Authoring
-    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-      neque aliquam possimus consequuntur voluptas rem quaerat in delectus.
-      Commodi cupiditate perferendis fugit asperiores sunt dolorem optio nulla
-      quibusdam totam doloribus.
+    description: To power the VR/AR shared classroom experience, we built a Scenario
+      Authoring System (SAS).  The SAS enables instructors to build complex
+      branching scenarios complete with complications.  For practical
+      assessment, students can be dropped in any number of scenarios and the
+      system will respond dynamically to their decision making and skill.  Our
+      intent is for the SAS to be its own ecosystem that enables rapid knowledge
+      sharing across diverse teams.
 ---
