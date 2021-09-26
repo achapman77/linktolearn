@@ -17,5 +17,5 @@ contact_section_content:
   contact_info_title: Others Ways to Connect
   form_title: Fill out this short form and a member of our team will get back to
     you within 24 hours
-  header_image: ../images/uploads/pexels-pixabay-207489.jpg
+  header_image: ../images/uploads/background_1.jpg
 ---
