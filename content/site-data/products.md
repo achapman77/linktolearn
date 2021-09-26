@@ -6,7 +6,7 @@ section_subtitle: Our mission is to provide a comprehensive immersive learning
 products:
   - subTitle: ""
     image: ../images/uploads/afwerx_web.png
-    page_link: /
+    page_link: /services/mobile_bioskills_labs
     title: Mobile Bioskills Labs
     description: Our mobile bioskills labs are deployable to any location in the
       US.  This improves cost-efficiency and negates logistical constraints for
@@ -16,7 +16,7 @@ products:
       and color.  Expert instructors are available upon request.
   - subTitle: REAL-X (Realistic Enhanced Augmented Learning Experience)
     image: ""
-    page_link: /
+    page_link: /services/realx_mixed_reality_training
     title: AR/VR Immersive Instruction
     description: Instructors and students engage in a shared Augmented Reality
       training classroom.  This enhances instruction and knowledge retention
@@ -26,7 +26,7 @@ products:
       level of skill.
   - subTitle: BEAST (Benchmark Evaluated Augmented Skills Training)
     image: ""
-    page_link: /
+    page_link: /services/beast_human_performance_metrics
     title: Human Performance Metrics
     description: We are developing a machine learning system to help standardize and
       quantify both student skill mastery and instructor proficiency.  The
@@ -36,8 +36,8 @@ products:
       corrective action.
   - subTitle: ""
     image: ""
-    page_link: /
-    title: Rapid Scenario Authoring
+    page_link: /services/dynamic_scenario_authoring_system
+    title: Dynamic Scenario Authoring
     description: To power the VR/AR shared classroom experience, we built a Scenario
       Authoring System (SAS).  The SAS enables instructors to build complex
       branching scenarios complete with complications.  For practical
