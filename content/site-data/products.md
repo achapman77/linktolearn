@@ -18,10 +18,12 @@ products:
     image: ""
     page_link: /
     title: AR/VR Immersive Instruction
-    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-      neque aliquam possimus consequuntur voluptas rem quaerat in delectus.
-      Commodi cupiditate perferendis fugit asperiores sunt dolorem optio nulla
-      quibusdam totam doloribus.
+    description: Instructors and students engage in a shared Augmented Reality
+      training classroom.  This enhances instruction and knowledge retention
+      through detailed anatomical holograms and other multi-media teaching
+      resources.  Dynamic branching scenarios with realistic mechanisms of
+      injury and environmental stressors challenge students' decision making and
+      level of skill.
   - subTitle: BEAST (Benchmark Evaluated Augmented Skills Training)
     image: ""
     page_link: /
