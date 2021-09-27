@@ -76,10 +76,4 @@ partners:
     name: NVIDIA Inception
     category: 3_Accelerator Programs
     logo: ../images/uploads/nvidia-inceptionx200h.png
-  - image: ""
-    description: kjhgkjhgkjhg
-    link: kjhgkjhg
-    name: ffff
-    category: 2_Emergency Medical Expertise
-    logo: ../images/uploads/capitol-factoryx200h.png
 ---
