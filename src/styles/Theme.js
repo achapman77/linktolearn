@@ -20,7 +20,7 @@ const theme = {
     colors: {
         primary: {
             light:'rgb(224, 237, 206)',
-            main:'rgb(140, 198, 63)', //lime green
+            main:'rgb(140, 198, 63)', 
             dark:'rgb(77, 119, 17)'
         },
         secondary: {

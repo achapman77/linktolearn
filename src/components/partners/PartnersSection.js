@@ -44,7 +44,7 @@ const PartnersSection = () => {
             <StyledContainer>
                 {categoryArr.map( (v,i) => {
                     return (
-                        <CategoryWContainer>
+                        <CategoryWContainer key={i}>
                             <Label className={`color_${i}`}>
                                 <div>{v.split("_")[1]}</div>
                             </Label>
@@ -52,13 +52,11 @@ const PartnersSection = () => {
                                 {partners.map( (v2,i2) => {
                                     if (v2.category === v) {
                                         return (
-                                            <PartnerCard key={i2} data={v2} />
-                                        )
-                                    } else {
-                                        return (<></>)
-                                    }
-                                    
+                                                <PartnerCard key={i2} data={v2} />
+                                        ) 
+                                    }                                     
                                 })}
+
                             </PartnerContainer>
                         </CategoryWContainer>
                     )

@@ -60,7 +60,7 @@ const TeamSection = () => {
 
 export default TeamSection
 
-const StyledSection = styled('Section')`
+const StyledSection = styled(Section)`
     background: ${props => props.theme.colors.gray.light};;
     padding-bottom: 10rem;
 `

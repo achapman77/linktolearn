@@ -37,7 +37,9 @@ const ParallaxSectionHeader = styled(SectionHeader)`
                 width: -webkit-fill-available;
             }
         }
-
+        .gatsby-image-wrapper {
+            filter: hue-rotate(-141deg);
+        }
         img {
            width: 100vw;
            filter: blur(5px) brightness(110%);

@@ -143,27 +143,33 @@ const Navbar = ({isOpen, toggle, logo}) => {
     }
   }
 
+  const [servicesBtnState, setServicesBtnState] = useState(false)
+  // useEffect( () => {
+  //   console.info('foo')
+  // },[servicesBtnState])
   const toggleDropdown = (navItem, e) => {
-    console.info('handleDropdownClick=>')
+    console.info('toggleDropdown=>')
     let btnID = `dropdownBtn_${navItem.title.toLowerCase()}`
     let btn = document.getElementById(btnID)
     // let dropdownID = `dropdownMenu_${navItem.title.toLowerCase()}`
     // let dropdown = document.getElementById(dropdownID)
     
-    if (btn.classList.contains('active')){
-      // dropdown.classList.remove('active')
-      btn.classList.remove('active')
+    if (servicesBtnState === 'active'){
+      // console.info('remove active')
+      // btn.classList.remove('active')
+      setServicesBtnState(false)
     } else {
-      // dropdown.classList.add('active')
-      btn.classList.add('active')
+      // console.info('add active')
+      // btn.classList.add('active')
+      setServicesBtnState('active')
     }
 
     if (e.type === 'mouseleave') {
-      btn.classList.remove('active')
-      
+      setServicesBtnState(false)
     }
     
-    console.info({navItem, e:e.target})
+    console.info({btnID, btn})
+    console.info(servicesBtnState)
   }
 
   return (
@@ -190,10 +196,10 @@ const Navbar = ({isOpen, toggle, logo}) => {
           } else {
             return (
                 <NavItem 
-                  className="dropdownBtn" 
+                  className={`dropdownBtn ${servicesBtnState ? 'active' : ''}`} 
                   key={i} 
                   id={`dropdownBtn_${v.title.toLowerCase()}`}
-                  onClick={e => toggleDropdown( v, e)}
+                  onClick={e => toggleDropdown(v,e)}
                   onMouseEnter = {e => toggleDropdown(v,e)}
                   onMouseLeave = {e => toggleDropdown(v,e)}
                 >
@@ -337,35 +343,33 @@ const NavItem = styled.li`
     &:hover {
           border-right: 1px solid rgba(0,0,0, 0.25);
           border-left: 1px solid rgba(0,0,0, 0.25);
+          /* border-bottom: 4px solid ${props => props.theme.colors.secondary.dark}; */
           background: rgba(0,0,0, 0.05);
         }
     svg {
           font-size: 1.5rem;
-          /* transition: 250ms; */
+          transition: 350ms;
           margin-top: -2px;
           /* margin-right: 1rem; */
     }
 `
-const NavDropdown = styled.li`
+// const NavDropdown = styled.li`
 
-`
+// `
 
 const DropdownMenu = styled.div`
   /* display: flex; */
   flex-flow: column;
-  border-top: 4px solid ${props => props.theme.colors.gray.dark};
+  border-top: 1px solid ${props => props.theme.colors.gray.light};
   position: absolute;
   top: 76px;
+  left: --1px;
   background: white;
   width: max-content;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   display: none;
   opacity: 0;
   transition: 500s all;
-  /* &.active {
-    display: flex;
-    opacity: 1;
-  } */
   a {
     padding: 1rem;
     padding-right: 3rem;
@@ -386,25 +390,4 @@ const DropdownMenu = styled.div`
   }
 `
 const NavLink = styled(Link)`
-    /* color: white; */
-    /* color: ${props => props.theme.colors.gray.dark};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: clamp(80px, 5vw, 5vw);
-    text-decoration: none;
-    padding: 0 1rem;
-    cursor: pointer;
-    border-bottom: 4px solid transparent; */
-
-
-    /* &.active {
-    border-bottom: 4px solid ${props => props.theme.colors.primary.main};
-    }
-    &:hover {
-      border-right: 1px solid rgba(255,255,255, 0.125);
-      border-left: 1px solid rgba(255,255,255, 0.125);
-      background: rgba(255,255,255, 0.05);
-    } */
 `

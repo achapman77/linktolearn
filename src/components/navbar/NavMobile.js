@@ -8,24 +8,77 @@ import { menuData } from './MenuData'
 import { Link } from 'gatsby'
 import { Button } from "../buttons/Button"
 import loadable from "@loadable/component"
+import { GoChevronDown } from 'react-icons/go'
 const SocialMedia = loadable( () => import("../buttons/SocialMedia"))
 const QuickConnectBtns = loadable( () => import("../buttons/QuickConnectBtns"))
 
 
 const NavMobile = ({isOpen, toggle}) => {
+    const toggleDropdown = (navItem, e) => {
+        console.info('toggleDropdown=>')
+        e.preventDefault()
+        let btnID = `dropdownBtn_${navItem.title.toLowerCase()}`
+        let btn = document.getElementById(btnID)
+        // let dropdownID = `dropdownMenu_${navItem.title.toLowerCase()}`
+        // let dropdown = document.getElementById(dropdownID)
+        
+        if (btn.classList.contains('active')){
+        // dropdown.classList.remove('active')
+        btn.classList.remove('active')
+        } else {
+        // dropdown.classList.add('active')
+        btn.classList.add('active')
+        }
 
+        // if (e.type === 'mouseleave') {
+        // btn.classList.remove('active')
+        
+        // }
+        
+        console.info({navItem, e:e.target})
+    }
     return (
-        <NavMobileContainer isOpen={isOpen} onClick={toggle}>
+        <NavMobileContainer 
+            isOpen={isOpen} 
+            onClick={e => toggle(e)}
+        >
             <Wrapper>
                 <Menu>
                     {menuData.map((v,i) =>{
+                        if (!v.subItems) {
                         return (
                             <NavItem key={i}>
-                                <NavLink to={v.link} >
+                                <NavLink to={v.link} className="pageLink">
                                     {v.title}
                                 </NavLink>
                             </NavItem> 
                         )
+                        } 
+                        else {
+                            return (
+                                <NavItem 
+                                    className="dropdownBtn" 
+                                    key={i} 
+                                    id={`dropdownBtn_${v.title.toLowerCase()}`}
+                                    onClick={e => toggleDropdown( v, e)}
+                                    // onMouseEnter = {e => toggleDropdown(v,e)}
+                                    // onMouseLeave = {e => toggleDropdown(v,e)}
+                                >
+                                    <button className="label" >
+                                    {v.title}<GoChevronDown />
+                                    </button>
+                                    <DropdownMenu id={`dropdownMenu_${v.title.toLowerCase()}`} className="dropdownMenu">
+                                    {
+                                        v.subItems.map( (v2, i2) => {
+                                        return (
+                                            <Link to={v2.link} key={i2}>{v2.title}</Link>
+                                        )
+                                        })
+                                    }
+                                    </DropdownMenu>
+                                </NavItem>
+                            )
+                        }
                     })}
                 </Menu>
                 <BtnWrap>
@@ -65,9 +118,10 @@ const Wrapper = styled.div`
 `
 
 const Menu = styled.ul`
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 80px);
+    display: flex;
+    flex-flow: column;
+    /* grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 80px); */
     text-align: center;
     margin-bottom: 4rem;
     margin-top: 5rem;
@@ -81,34 +135,55 @@ const Menu = styled.ul`
 
 `
 const NavItem = styled.li`
-    height: -webkit-fill-available;
+    height: auto;
     display: flex;
-    border-bottom: 0.5px solid ${props => props.theme.colors.gray.light};
-    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
-    padding: 0 2rem;
-    &:hover {
-         a {color: ${props => props.theme.colors.orange};}
-         /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
-         /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
-         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    
+    a, button {
+        font-size: clamp(1rem, 5vw, 1.25rem);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: ${props => props.theme.colors.gray.dark};
+        text-decoration: none;
+        cursor: pointer;
+        padding: 1rem clamp(1rem, 5vw, 2rem);
+        width: -webkit-fill-available;
+        text-align: left;
+        border: none;
+        border-bottom: 0.5px solid ${props => props.theme.colors.gray.light};
+        border-left: 5px solid transparent;
+    }
+    button {
+      background: inherit;
+      display: flex;
+      align-items: center;
+    }
+    &.dropdownBtn {
+        display: flex;
+        flex-flow: column;
+        height: auto;
+        padding: 0;
+    }
+    &.dropdownBtn.active {
+      svg {transform: rotate(-180deg);}
+      .dropdownMenu {
+        display: flex;
+        opacity: 1;
+      }
+    }
+    &:hover .pageLink, &:hover button {
+        background: ${props => props.theme.colors.gray.light};
+        border-left: 5px solid ${props => props.theme.colors.primary.main};
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+    svg {
+          font-size: 1.5rem;
+          margin-top: -2px;
+          transition: 350ms
     }
 `
 
 const NavLink = styled(Link)`
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    ${props => props.theme.flexCenter}
-    height: -webkit-fill-available;
-    font-size: 1.25rem;
-    text-decoration: none;
-    list-style: none;
-    color: ${props => props.theme.colors.gray.dark};
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    
 
-    
 `
 
 const BtnWrap = styled.div`
@@ -125,4 +200,33 @@ const Rudder = styled.div`
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 `
 
-
+const DropdownMenu = styled.div`
+    display: flex;
+    flex-flow: column;
+    display: none;
+    opacity: 0;
+    transition: 500s all;
+    a {
+        font-size: clamp(0.75rem, 4vw, 1.25rem);
+        padding: 1rem clamp(1rem, 10vw, 4rem);
+        text-decoration: none;
+        width: -webkit-fill-available;
+        white-space: nowrap;
+        text-align: left;
+        background: rgba(0,0,0, 0.03);
+        border-top: 1px solid transparent;
+        border-left: 5px solid transparent;
+        border-bottom: 1px solid ${props => props.theme.colors.gray.light};
+        &:last-child {
+            border-bottom: none;
+        }
+        &:hover {
+            background: ${props => props.theme.colors.gray.light};
+            border-left: 5px solid ${props => props.theme.colors.primary.main};
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        }
+        ${props => props.theme.xxs`
+            padding: 1rem;
+        `}
+    }
+`

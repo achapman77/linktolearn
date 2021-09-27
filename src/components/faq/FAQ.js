@@ -32,7 +32,7 @@ const FAQs = () => {
             }
         }
     `)
-    console.info({data})
+    // console.info({data})
     const faqArr = data.faqs.frontmatter.faq
     
     const categoryArr = [...new Set(faqArr.map( ({select_category}) => select_category))]
@@ -151,9 +151,7 @@ const FAQs = () => {
                                                     </button>
                                                 </li>
                                             )
-                                        } else {
-                                            return(<></>)
-                                        }
+                                        } 
                                     })}
                                 </FAQList>
                             </CategoryListSection>

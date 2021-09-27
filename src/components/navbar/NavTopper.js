@@ -77,7 +77,7 @@ const Container = styled.div`
     ${props => props.theme.lg`
         grid-template-columns: 19rem 1fr 10rem;
     `}
-    ${props => props.theme.sm`
+    ${props => props.theme.md`
         display:none;
     `}
     a {

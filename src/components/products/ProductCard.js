@@ -4,7 +4,7 @@ import {Link} from 'gatsby'
 import {AiOutlineArrowRight} from 'react-icons/ai'
 
 const ProductCard = ({data}) => {
-    console.info({data})
+    // console.info({data})
     return (
         <Card>
             <Title>{data.title}</Title>

@@ -45,7 +45,7 @@ const ServicesSection = () => {
             <StyledContainer>
                 {products.map( (v,i) => {
                     return (
-                        <ProductCard data={v}/>
+                        <ProductCard data={v} key={i}/>
                     )
                 })}
             </StyledContainer>

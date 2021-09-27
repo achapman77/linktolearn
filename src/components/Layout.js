@@ -11,8 +11,12 @@ import Footer from "./Footer"
 const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggle = () => {
-    setIsOpen(!isOpen)
+  const toggle = (e) => {
+    console.info('toggle=>')
+    if (!e.target.closest('.dropdownBtn')) {
+      setIsOpen(!isOpen)
+    }
+    
   }
 
   //Upate These
@@ -37,7 +41,7 @@ const Layout = ({ children }) => {
   return (
     <Theme style={{ maxHeight: 300 }}>
         <GlobalStyle/>
-        <NavMobile isOpen={isOpen} toggle={toggle}/>
+        <NavMobile isOpen={isOpen} toggle={e => toggle(e)}/>
         <Navbar isOpen={isOpen} toggle={toggle} logo={logoMain} />
           <main>{children}</main>
         <Footer logo={logoAlt}/>

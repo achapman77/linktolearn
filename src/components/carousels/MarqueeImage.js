@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+// import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import loadable from "@loadable/component"
-import { SectionHeader } from '../layout/Section';
+// import { SectionHeader } from '../layout/Section';
 import {IoMdInformationCircle} from 'react-icons/io'
 const Marquee = loadable( () => import("react-fast-marquee"))
 

@@ -1,5 +1,4 @@
 import React from "react"
-import FAQs from "../../components/faq/FAQ"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 import { Section, SectionHeader, Container } from '../../components/layout/Section'
