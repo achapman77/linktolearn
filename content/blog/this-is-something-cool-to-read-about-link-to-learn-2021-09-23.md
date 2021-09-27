@@ -3,7 +3,7 @@ layout: blog
 date: 2021-09-22
 title: This is something cool to read about Link to Learn
 description: ""
-primary_image: ../images/uploads/img_2066.png
+primary_image: ../images/uploads/background_1.jpg
 featured_blog: true
 keywords: emergency medical training
 ---
