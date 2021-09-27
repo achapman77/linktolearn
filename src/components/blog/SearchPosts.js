@@ -39,11 +39,11 @@ const AllPosts = ({ posts }) => {
             const title = node.frontmatter.title || node.slug
             // console.info({node})
             return (
-              <>
+              <div key={i}>
               {node.frontmatter.featured_blog &&
                 <PostCard key={i} node={node} title={title} className="featuredPost"/>
               }
-              </>
+              </div>
             )
           })}
         </BlogSection>

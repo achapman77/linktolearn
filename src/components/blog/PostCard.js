@@ -8,8 +8,11 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 const PostCard = ({node, title, className}) => {
     let image = getImage(node.frontmatter?.primary_image || node.primary_image)
     return (
-        <Card to={`/blog/${node.slug}`} key={node.slug} className={ className }>
-            <GatsbyImage image={image}/>
+        <Card key={node.slug} className={ className }>
+            <GatsbyImage 
+                image={image}
+                alt={title}
+            />
             <div className="wrapper">
                 <h3>
                     {/* <Link to={`/blog/${node.slug}`}> */}
@@ -32,7 +35,7 @@ const PostCard = ({node, title, className}) => {
 
 export default PostCard
 
-const Card = styled(Link)`
+const Card = styled.div`
     //common
     text-decoration: none;  
     color: ${props => props.theme.colors.gray.dark};
