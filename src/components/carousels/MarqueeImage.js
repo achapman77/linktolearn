@@ -26,7 +26,7 @@ const MarqueeImage = ({data, options, className}) => {
         handleResize();
         // console.info({viewWidth})
         // Remove event listener on cleanup
-        // return () => window.removeEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     },[viewWidth])
     
     return (
@@ -68,7 +68,7 @@ export default MarqueeImage
 
 
 const Card = styled.a`
-    margin: 0 clamp(0.5rem, 3vw, 13rem);
+    margin: 0 clamp(0.5rem, 8vw, 13rem);
     position: relative;
     padding: 1rem;
     .info {opacity:0;}

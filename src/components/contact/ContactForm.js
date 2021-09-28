@@ -77,7 +77,7 @@ const ContactForm = ({content}) => {
                             body: encode({ "form-name": "contact-demo", ...values })
                             })
                             .then(() => {
-                                alert('Success Foobar');
+                                alert('Thank you for contacting Link to Learn');
                                 actions.resetForm()
                             })
                             .catch(() => {
