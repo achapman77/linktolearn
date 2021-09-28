@@ -70,11 +70,12 @@ const ContactForm = ({content}) => {
                         message: '',
                     }}
                     onSubmit={
-                        (values, actions) => {
+                        (values, actions,e) => {
+                            console.info({e, actions})
                             fetch("/", {
                             method: "POST",
                             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                            body: encode({ "form-name": "contact-demo", ...values })
+                            body: encode({ "form-name": "contact-L2L", ...values })
                             })
                             .then(() => {
                                 alert('Thank you for contacting Link to Learn');
@@ -91,7 +92,7 @@ const ContactForm = ({content}) => {
                         // const phoneRegex = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i;
                         const phoneRegex = /^\([0-9]{3}\)\s[0-9]{3}\s-\s[0-9]{4}$/i;
                         const errors = {};
-                        console.info(values)
+                        // console.info(values)
                         if(!values.name) {
                             errors.name = 'Name Required'
                         }
@@ -112,7 +113,8 @@ const ContactForm = ({content}) => {
                 >
                 {() => (
                     <StyledForm 
-                        name="contact-link-to-learn" 
+                        //Also change name in onSubmit -> body: encode({ "form-name": "contact-L2L", ...values }) above
+                        name="contact-L2L" 
                         data-netlify={true} 
                         data-netlify-honeypot="bot-field"
                         data-aos="fade-left"
