@@ -112,7 +112,7 @@ const ContactForm = ({content}) => {
                 >
                 {() => (
                     <StyledForm 
-                        name="contact-demo" 
+                        name="contact-link-to-learn" 
                         data-netlify={true} 
                         data-netlify-honeypot="bot-field"
                         data-aos="fade-left"
