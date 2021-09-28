@@ -193,7 +193,7 @@ const BtnWrap = styled.div`
 
 const Rudder = styled.div`
     display: flex;
-    max-height: fit-content;
+    height: 48px;
     margin-top: auto;
     padding-right: 1rem;
     background: ${props => props.theme.colors.gray.dark};
