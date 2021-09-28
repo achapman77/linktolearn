@@ -105,7 +105,7 @@ const QuickConnectButton = styled.div`
         height: 3rem;
         border-right: 1px solid ${props => props.theme.colors.gray.light};
         &#navMobilePhone {
-            background: green;
+            background: ${props => props.theme.colors.primary.main};
         }
     }
 `

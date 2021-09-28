@@ -148,7 +148,7 @@ const Navbar = ({isOpen, toggle, logo}) => {
   //   console.info('foo')
   // },[servicesBtnState])
   const toggleDropdown = (navItem, e) => {
-    console.info('toggleDropdown=>')
+    // console.info('toggleDropdown=>')
     let btnID = `dropdownBtn_${navItem.title.toLowerCase()}`
     let btn = document.getElementById(btnID)
     // let dropdownID = `dropdownMenu_${navItem.title.toLowerCase()}`
@@ -168,8 +168,8 @@ const Navbar = ({isOpen, toggle, logo}) => {
       setServicesBtnState(false)
     }
     
-    console.info({btnID, btn})
-    console.info(servicesBtnState)
+    // console.info({btnID, btn})
+    // console.info(servicesBtnState)
   }
 
   return (

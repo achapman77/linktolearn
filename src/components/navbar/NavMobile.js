@@ -107,7 +107,7 @@ const NavMobileContainer = styled.aside`
     top: 0;
     left: 0;
     transition: 0.3s ease-in-out;
-    top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+    top: ${({ isOpen }) => (isOpen ? "0" : "-155%")};
     /* border: 1px solid red; */
 
 `
@@ -193,6 +193,7 @@ const BtnWrap = styled.div`
 
 const Rudder = styled.div`
     display: flex;
+    max-height: fit-content;
     margin-top: auto;
     padding-right: 1rem;
     background: ${props => props.theme.colors.gray.dark};

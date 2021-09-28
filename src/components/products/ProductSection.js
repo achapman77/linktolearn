@@ -57,6 +57,7 @@ export default ServicesSection
 
 const StyledSection = styled(Section)`
     min-height: fit-content;
+    padding-top: 0rem;
     /* background: ${props => props.theme.colors.secondary.dark}; */
 `
 const Header = styled(SectionHeader)`
