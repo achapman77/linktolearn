@@ -107,7 +107,7 @@ const NavMobileContainer = styled.aside`
     top: 0;
     left: 0;
     transition: 0.3s ease-in-out;
-    top: ${({ isOpen }) => (isOpen ? "0" : "-155%")};
+    top: ${({ isOpen }) => (isOpen ? "0" : "-110vh")};
     /* border: 1px solid red; */
 
 `

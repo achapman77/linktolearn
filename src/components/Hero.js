@@ -79,7 +79,7 @@ const HeroContainer = styled.div`
 
     .parallax-content {
         position: relative;
-        width: 100%;
+        width: 100vw;
         height: 85vh;
     }
     /* .parallax-content::after {
@@ -115,10 +115,11 @@ const HeroContainer = styled.div`
     } */
 
     .react-parallax-background-children {
-        width: 100%;
+        width: 100vw;
         height: auto;  
         img {
-            width: 100%;
+            /* width: 100%; */
+            width: -webkit-fill-available;
             height: auto;
         }
         &::after {
@@ -126,8 +127,10 @@ const HeroContainer = styled.div`
         position: absolute;
         top: 50%;
         left: 0;
-        width: 100%;
-        height: 100%;
+        /* width: 100%; */
+        width: -webkit-fill-available;
+        /* height: 100%; */
+        height: -webkit-fill-available;
         transform-origin: 0 100%;
         transform: translateZ(8px);
         pointer-events: none;
