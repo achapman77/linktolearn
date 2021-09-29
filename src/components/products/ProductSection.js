@@ -59,6 +59,9 @@ const StyledSection = styled(Section)`
     min-height: fit-content;
     padding-top: 0rem;
     /* background: ${props => props.theme.colors.secondary.dark}; */
+    ${props => props.theme.md`
+        p{text: align-left;}
+    `}
 `
 const Header = styled(SectionHeader)`
     p {

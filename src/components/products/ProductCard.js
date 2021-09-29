@@ -26,7 +26,7 @@ const Card = styled.div`
     /* max-width: 40rem; */
     margin: 0 auto;
     /* border: 1px solid gray; */
-    padding: 2rem;
+    padding: clamp(1rem, 5vw, 2rem);
     height: -webkit-fill-available;
     display: flex;
     flex-flow: column;
@@ -44,7 +44,7 @@ const Title = styled.h3`
 
 `
 const Description = styled.p`
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 
 `
 const StyledLink = styled(Link)`
