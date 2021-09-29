@@ -42,6 +42,10 @@ const NavMobile = ({isOpen, toggle}) => {
             isOpen={isOpen} 
             onClick={e => toggle(e)}
         >
+            <Rudder>
+                <QuickConnectBtns className="navMobile"/>
+                <SocialMedia variant="navMobile"/>
+            </Rudder>
             <Wrapper>
                 <Menu>
                     {menuData.map((v,i) =>{
@@ -81,16 +85,13 @@ const NavMobile = ({isOpen, toggle}) => {
                         }
                     })}
                 </Menu>
-                <BtnWrap>
+                {/* <BtnWrap>
                     <Button primary="true" round="true" to="/#contact">
                         Contact Us
                     </Button>
-                </BtnWrap>
+                </BtnWrap> */}
             </Wrapper>
-            <Rudder>
-                <QuickConnectBtns className="navMobile"/>
-                <SocialMedia variant="navMobile"/>
-            </Rudder>
+            
         </NavMobileContainer>
     )
 }
@@ -103,7 +104,7 @@ const NavMobileContainer = styled.aside`
     width: 100vw;
     height: 100vh;
     background: white;
-    display: grid;
+    /* display: grid; */
     top: 0;
     left: 0;
     transition: 0.3s ease-in-out;
@@ -124,7 +125,7 @@ const Menu = styled.ul`
     grid-template-rows: repeat(4, 80px); */
     text-align: center;
     margin-bottom: 4rem;
-    margin-top: 5rem;
+    margin-top: 0.5rem;
     list-style: none;
     
 
@@ -194,7 +195,7 @@ const BtnWrap = styled.div`
 const Rudder = styled.div`
     display: flex;
     height: 48px;
-    margin-top: auto;
+    margin-top: 80px;
     padding-right: 1rem;
     background: ${props => props.theme.colors.gray.dark};
     justify-content: space-between;
