@@ -27,10 +27,13 @@ const Card = styled.div`
     margin: 0 auto;
     /* border: 1px solid gray; */
     padding: clamp(1rem, 2vw, 2rem);
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
     /* display: flex;
     flex-flow: column; */
     position: relative;
+    ${props => props.theme.md`
+        padding-bottom: 3rem;
+    `}
     &:hover {
         a {
             border: 1px solid ${props => props.theme.colors.secondary.dark};
