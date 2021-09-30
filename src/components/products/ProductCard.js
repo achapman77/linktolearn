@@ -26,10 +26,10 @@ const Card = styled.div`
     /* max-width: 40rem; */
     margin: 0 auto;
     /* border: 1px solid gray; */
-    padding: clamp(1rem, 5vw, 2rem);
+    padding: clamp(1rem, 2vw, 2rem);
     height: -webkit-fill-available;
-    display: flex;
-    flex-flow: column;
+    /* display: flex;
+    flex-flow: column; */
     position: relative;
     &:hover {
         a {
@@ -44,7 +44,7 @@ const Title = styled.h3`
 
 `
 const Description = styled.p`
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 
 `
 const StyledLink = styled(Link)`
@@ -59,6 +59,9 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     position: absolute;
     bottom: 0;
+    ${props => props.theme.md`
+       position: relative;
+    `}
     
     svg {
         margin-left: 0.5rem;
