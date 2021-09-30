@@ -36,14 +36,7 @@ const StyledGatsbyImage = styled(GatsbyImage)`
 `
 
 const Card = styled.div`
-    width: clamp(260px, 15vw, 330px);
-    /* color: white; */
-    ${props => props.theme.lg`
-        flex-basis: 35vw;
-    `}
-    ${props => props.theme.sm`
-        flex-basis: 65vw;
-    `}
+    
     .gatsby-image-wrapper {
         filter: grayscale(1) brightness(1);
         transition: 0.5s cubic-bezier(0.075,0.82,0.165,1);

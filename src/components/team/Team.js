@@ -66,9 +66,17 @@ const StyledSection = styled(Section)`
 `
 
 const StyledContainer = styled(Container)`
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    display: grid;
+    gap: clamp(1rem, 5vw, 2rem);
+    margin: 0 clamp(1rem, 5vw, 2rem);
     align-items: baseline;
+    grid-template-columns: repeat(4, 1fr);
+    ${props => props.theme.lg`
+        grid-template-columns: repeat(2, 1fr);
+    `}
+    ${props => props.theme.sm`
+        grid-template-columns: 1fr;
+        max-width: 25rem;
+    `}
     
 `
