@@ -92,9 +92,9 @@ const Card = styled.a`
 const StyledGatsbyImage = styled(GatsbyImage)`
     filter: grayscale(1);
     img { 
-        max-height: 200px;
+        height: 200px;
         ${props => props.theme.md`
-            max-height: 100px;
+            height: 100px;
         `}
         /* ${props => props.theme.sm`
             // max-height: 80px;

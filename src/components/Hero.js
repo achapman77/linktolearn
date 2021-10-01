@@ -368,6 +368,7 @@ const HeroNav = styled.nav`
         padding: 0.85rem;
         letter-spacing: 1px;
         background: rgba(0,0,0,0.35);
+        min-height: 5rem;
         &:hover {
             background: ${props => props.theme.colors.gray.dark};
             color: ${props => props.theme.colors.primary.main};

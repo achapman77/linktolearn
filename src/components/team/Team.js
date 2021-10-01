@@ -77,6 +77,7 @@ const StyledContainer = styled(Container)`
     ${props => props.theme.sm`
         grid-template-columns: 1fr;
         max-width: 25rem;
+        gap: 3rem;
     `}
     
 `
