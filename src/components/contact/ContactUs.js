@@ -92,6 +92,9 @@ const StyledSection = styled(Section)`
 const StyledContainer = styled(Container)`
     flex-flow: wrap-reverse;
     gap: 2rem;
+    /* ${props => props.theme.xs`
+        gap: 1rem;
+    `} */
 `
 
 

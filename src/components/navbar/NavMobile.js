@@ -165,10 +165,11 @@ const NavItem = styled.li`
         padding: 0;
     }
     &.dropdownBtn.active {
-      svg {transform: rotate(-180deg);}
+      svg {transform: rotateX(-180deg);}
       .dropdownMenu {
         display: flex;
         opacity: 1;
+        transform: translateY(0px);
       }
     }
     &:hover .pageLink, &:hover button {
@@ -205,9 +206,10 @@ const Rudder = styled.div`
 const DropdownMenu = styled.div`
     display: flex;
     flex-flow: column;
-    display: none;
     opacity: 0;
-    transition: 500s all;
+    transform: translateY(-30px);
+    display: none;
+    transition: 500ms all;
     a {
         font-size: clamp(0.75rem, 4vw, 1.25rem);
         padding: 1rem clamp(1rem, 10vw, 4rem);

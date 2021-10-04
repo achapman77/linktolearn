@@ -6,6 +6,7 @@ import Aos from 'aos'
 import "aos/dist/aos.css"
 
 //components'
+import {AiOutlinePhone } from 'react-icons/ai'
 import { Button } from '../buttons/Button'
 import loadable from "@loadable/component"
 const SocialMedia = loadable( () => import("../buttons/SocialMedia"))
@@ -42,7 +43,7 @@ const ContactInfo = ({data}) => {
                             <p>{contactInfo.phone}</p>
                         </a>
                         <a className="mobileBtn" href={`tel:${contactInfo.phone}`} title={contactInfo.phone} rel="noreferrer">
-                            <Button as="button" primary="true" round="true">Click to Call Us</Button>
+                            <Button as="button" primary="" round="true"><AiOutlinePhone/>Click to Call</Button>
                         </a>
                     </Row>
                 }
@@ -108,6 +109,13 @@ const Container = styled.div`
         min-width: 85vw;
         width: clamp(250px, 20vw, 20vw);
     `}
+    ${props => props.theme.xs`
+        margin:0;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        min-width: 100vw;
+        box-shadow: none;
+    `}
 `
 const Title = styled.h3`
  margin-bottom: 1.25rem;
@@ -137,6 +145,9 @@ const Row = styled.li`
         }
         &.mobileBtn {
             display:none;
+            svg {
+                font-size: 1.5rem;
+            }
             ${props => props.theme.xs`
                 display:block;
             `}

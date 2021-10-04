@@ -155,7 +155,7 @@ const ContactForm = ({content}) => {
                                 <option value="4">BEAST Human Performance Analytics</option>
                             </Field>
                             <AiOutlineQuestionCircle/>
-                            <label htmlFor="quick_help_select">I Would Like to Learn More About:</label>
+                            <label htmlFor="quick_help_select">I Would Like to Learn About:</label>
                         </FloatingLabel>
 
                         <FloatingLabel>
@@ -192,6 +192,16 @@ const StyledForm = styled(Form)`
         margin: 1rem 1rem;
         min-width: 85vw;
         padding: 1rem;
+    `}
+    ${props => props.theme.xs`
+        margin:0;
+        padding: 1rem 0.5rem;
+        min-width: 100vw;
+        border-radius: 0;
+        button {
+            margin-left: 0.5rem;
+            width: -webkit-fill-available;
+        }
     `}
 
 `

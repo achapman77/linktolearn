@@ -81,7 +81,7 @@ const SocialMediaWrapper = styled.div`
     align-items: center;
     gap: 0.5rem;
     &.contactInfo {
-        gap: 1.25rem;
+        gap: 0.5rem;
     }
     &.navTopper {
         margin-left: auto;
@@ -101,9 +101,11 @@ const SocialIcon = styled.a`
 
     &.footer {
         color: black;
+        font-size: 2rem;
     }
 
     &.navTopper {
+        font-size: 2rem;
         svg {font-size: 2rem;}
         /* &:hover svg{
            color: ${props => props.theme.colors.primary.main}; 

@@ -334,10 +334,13 @@ const NavItem = styled.li`
       }
     }
     &.dropdownBtn.active {
-      svg {transform: rotate(-180deg);}
+      svg {transform: rotateX(-180deg);}
       .dropdownMenu {
         display: flex;
         opacity: 1;
+        transform: translateY(4px);
+        pointer-events: all;
+        visibility: visible;
       }
     }
     &:hover {
@@ -358,18 +361,21 @@ const NavItem = styled.li`
 // `
 
 const DropdownMenu = styled.div`
-  /* display: flex; */
+  display: flex;
   flex-flow: column;
   border-top: 1px solid ${props => props.theme.colors.gray.light};
   position: absolute;
   top: 76px;
-  left: --1px;
+  left: -1px;
   background: white;
   width: max-content;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   display: none;
+  visibility: collapse;
   opacity: 0;
-  transition: 500s all;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: 500ms all;
   a {
     padding: 1rem;
     padding-right: 3rem;
