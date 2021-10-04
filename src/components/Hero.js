@@ -46,7 +46,7 @@ const Hero = () => {
                     </Background>
                     <div className="hero__title">
                         <p>Welcome to Link to Learn</p>
-                        <h1>We provide support & technology for more effective emergency medical training.</h1>
+                        <h1>The ultimate immersive learning experience for emergency medical training.</h1>
                         <HeroNav>
                                 {
                                     heroBtns.map( (v,i) => {
