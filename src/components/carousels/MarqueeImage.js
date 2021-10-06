@@ -34,7 +34,8 @@ const MarqueeImage = ({data, options, className}) => {
             pauseOnHover={true}
             speed={options?.speed ? options.speed : 30}
             direction={options?.direction ? options.direction : 'left'}
-            gradientWidth={viewWidth < 400 ? 0 : viewWidth < 600 ? 50 : 150}
+            // gradientWidth={viewWidth < 400 ? 0 : viewWidth < 600 ? 50 : 150}
+            gradientWidth={0}
             className={className}
         >
             {

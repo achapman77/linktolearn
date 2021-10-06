@@ -44,14 +44,24 @@ const Hero = () => {
                     <Background>
                         <img src={BackgroundImg} alt="Background" />
                     </Background>
-                    <div className="hero__title">
+                    <div className="hero__title"
+                    
+                    >
                         <p>Welcome to Link to Learn</p>
                         <h1>The ultimate immersive learning experience for emergency medical training.</h1>
                         <HeroNav>
                                 {
                                     heroBtns.map( (v,i) => {
                                         return (
-                                            <Link key={i} to={v.link}>{v.label}</Link>    
+                                            <Link key={i} to={v.link}
+                                                data-aos="flip-left"
+                                                data-aos-delay="150"
+                                                data-aos-duration="1000"
+                                                data-aos-easing="ease-out-cubic"
+                                                // data-aos-anchor-placement="top-top"
+                                            >
+                                                {v.label}
+                                            </Link>    
                                         )
                                     })
                                 }
@@ -302,7 +312,7 @@ const HeroContainer = styled.div`
         img {
             height: 100vh !important;
             width: auto !important;
-            transform: translateX(-270px);
+            transform: translateX(-155px);
         }
         .hero__title {
             padding: 1rem;

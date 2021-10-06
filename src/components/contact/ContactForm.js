@@ -146,7 +146,7 @@ const ContactForm = ({content}) => {
                             <span className="errorMessage"><ErrorMessage name="phone"/></span>
                         </FloatingLabel>
                         
-                        <FloatingLabel>
+                        {/* <FloatingLabel>
                             <Field className={floatSelect ? 'active' : ''} as="select" id="quick_help_select" name="quick_help_select" defaultValue="" onChange={handleSelectClick}>
                                 <option value="" aria-label="blank"></option>
                                 <option value="1">Denver Cadaver Lab Capabilities & Services</option>
@@ -156,12 +156,12 @@ const ContactForm = ({content}) => {
                             </Field>
                             <AiOutlineQuestionCircle/>
                             <label htmlFor="quick_help_select">I Would Like to Learn About:</label>
-                        </FloatingLabel>
+                        </FloatingLabel> */}
 
                         <FloatingLabel>
                             <Field id="message" name="message" as="textarea" placeholder=" "></Field>
                             <RiMessage2Line/>
-                            <label htmlFor="message">Your Message</label>
+                            <label htmlFor="message">Message</label>
                             <span className="errorMessage"><ErrorMessage name="message"/></span>
                         </FloatingLabel>
 
@@ -183,7 +183,9 @@ const StyledForm = styled(Form)`
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 5rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
     ${props => props.theme.lg`
         margin: 0;
         min-width: 70vw;
@@ -209,6 +211,7 @@ const StyledForm = styled(Form)`
 const FormTitle = styled.div`
     max-width: 700px;
     margin-bottom: 2rem;
+    h4 {color: white};
 `
 
 const ContactFormButton = styled(Button)`

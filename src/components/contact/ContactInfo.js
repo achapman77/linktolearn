@@ -34,9 +34,9 @@ const ContactInfo = ({data}) => {
                 </Row> */}
                 {contactInfo.phone &&
                     <Row
-                        data-aos="zoom-in-right"
-                        data-aos-delay="250"
-                        data-aos-duration="1000"
+                        // data-aos="zoom-in-right"
+                        // data-aos-delay="250"
+                        // data-aos-duration="1000"
                     >
                         <a className="notMobileBtn"href={`tel:${contactInfo.phone}`} title="Click to Call" rel="noreferrer">
                             <Label>Call:</Label>
@@ -49,9 +49,9 @@ const ContactInfo = ({data}) => {
                 }
                 {contactInfo.fax && 
                     <Row
-                        data-aos="zoom-in-right"
-                        data-aos-delay="350"
-                        data-aos-duration="1000"
+                        // data-aos="zoom-in-right"
+                        // data-aos-delay="350"
+                        // data-aos-duration="1000"
                     >
                         <Label>Fax:</Label>
                         <p>{contactInfo.fax}</p>
@@ -60,9 +60,9 @@ const ContactInfo = ({data}) => {
                 { bizAddress.street &&
                     <Row 
                         title="Click to View on Google Maps"
-                        data-aos="zoom-in-right"
-                        data-aos-delay="450"
-                        data-aos-duration="1000"
+                        // data-aos="zoom-in-right"
+                        // data-aos-delay="450"
+                        // data-aos-duration="1000"
                     >
                         <a href={bizAddress.map_link} target="_blank" rel="noreferrer">
                             <Label>Address:</Label>
@@ -75,7 +75,11 @@ const ContactInfo = ({data}) => {
                 {socialMedia.length && 
                     <Row>
                         <Label>Follow Us:</Label>
-                        <SocialMedia variant="contactInfo" animate={true} delay={450}/>
+                        <SocialMedia 
+                            variant="contactInfo" 
+                            // animate={true} 
+                            // delay={450}
+                        />
                     </Row>
                 }
                 
@@ -98,8 +102,10 @@ const Container = styled.div`
     padding: 2rem;
     border-radius: 10px;
     /* margin: 0 2rem; */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px; */
     /* width: fit-content; */
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
     ${props => props.theme.lg`
         min-width: 70vw;
         margin-bottom: 2rem;
@@ -118,8 +124,9 @@ const Container = styled.div`
     `}
 `
 const Title = styled.h3`
- margin-bottom: 1.25rem;
- font-size: clamp(1rem, 2vw, 2.25rem);
+    margin-bottom: 1.25rem;
+    font-size: clamp(1rem, 2vw, 2.25rem);
+    color:white;
 `
 const List = styled.ul`
     list-style: none;
@@ -130,10 +137,12 @@ const List = styled.ul`
 const Row = styled.li`
     font-size: 1.25rem;
     padding-bottom: 1.5rem;   
-    color: ${props => props.theme.colors.gray.dark};
+    /* color: ${props => props.theme.colors.gray.dark}; */
+    color: white;
     a {
         text-decoration: none;
-        color: ${props => props.theme.colors.gray.dark};
+        /* color: ${props => props.theme.colors.gray.dark}; */
+        color: white;
         &:hover p {
             color: ${props => props.theme.colors.primary.main};
         }

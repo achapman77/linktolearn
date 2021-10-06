@@ -1,6 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
+
+//animation
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 //components
 import { Section, SectionHeader, Container } from '../layout/Section'
@@ -38,6 +42,10 @@ const TeamSection = () => {
     const teamMembers = data.team_members.frontmatter.team_members
     // console.info(teamMembers)
 
+    useEffect( () => {
+        Aos.init({})
+    }, [])
+
     return (
         <StyledSection id="team">
             <SectionHeader>
@@ -49,7 +57,7 @@ const TeamSection = () => {
                     teamMembers.map( (v,i) => {
                         // console.info(v)
                         return (
-                            <ProfileCard data={v} key={i} />
+                            <ProfileCard data={v} key={i} index={i} />
                         )
                     })
                 }

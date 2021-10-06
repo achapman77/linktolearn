@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
 //components
 import { Section, SectionHeader, Container } from '../layout/Section'
 import PartnerCard from './PartnerCard'
+
+//animation
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 const PartnersSection = () => {
     const data = useStaticQuery(graphql`
@@ -35,6 +39,9 @@ const PartnersSection = () => {
     // console.info({partners})
     const categoryArr = [...new Set(partners.map( ({category}) => category))].sort()
     // console.info({partners, categoryArr})
+    useEffect( () => {
+        Aos.init({})
+    }, [])
     return (
         <StyledSection id="partners">
             <SectionHeader>
@@ -44,7 +51,13 @@ const PartnersSection = () => {
             <StyledContainer>
                 {categoryArr.map( (v,i) => {
                     return (
-                        <CategoryWContainer key={i}>
+                        <CategoryWContainer 
+                            key={i}
+                            data-aos="fade-right"
+                            data-aos-delay={150 + i*150}
+                            data-aos-duration="1000"
+                            data-aos-easing="ease-out-cubic"
+                        >
                             <Label className={`color_${i}`}>
                                 <div>{v.split("_")[1]}</div>
                             </Label>

@@ -15,8 +15,10 @@ export const FloatingLabel = styled.div`
         height:auto;
         background-color: transparent;
         border:none;
-        border-bottom:1px solid ${props => props.theme.colors.gray.dark};
-        color: ${props => props.theme.colors.gray.dark};
+        /* border-bottom:1px solid ${props => props.theme.colors.gray.dark}; */
+        border-bottom:1px solid white;
+        /* color: ${props => props.theme.colors.gray.dark}; */
+        color: white;
         margin-bottom: 5px;
         
         &:focus{
@@ -42,25 +44,34 @@ export const FloatingLabel = styled.div`
             top:-18px;
             font-size:14px;
             color:${props => props.theme.colors.primary.main};
+            /* color: white; */
         }
         &:not(:focus) ~ label {
             color:${props => props.theme.colors.gray.main};
+            color: white;
         }
     }
 
     select {
+        color: ${props => props.theme.colors.gray.dark};
+         &:not(:focus) {
+             color: white;
+         }
         &:focus ~ label, &.active ~ label {
             top:-18px;
             font-size:14px;
             color:${props => props.theme.colors.primary.main};
+            /* color: white; */
         }
         &:not(:focus) ~ label {
-            color:${props => props.theme.colors.gray.main};
+            /* color:${props => props.theme.colors.gray.main}; */
+            color: white;
         }
     }
 
     label {
-        color:${props => props.theme.colors.gray.main}; 
+        /* color:${props => props.theme.colors.gray.main};  */
+        color: white;
         font-weight:normal;
         position:absolute;
         pointer-events:none;
@@ -80,7 +91,8 @@ export const FloatingLabel = styled.div`
         pointer-events:none;
         left:5px;
         top: 5px;  
-        color:${props => props.theme.colors.gray.main};
+        /* color:${props => props.theme.colors.gray.main}; */
+        color: white;
         font-size: clamp(1rem, 5vw, 1.5rem);
     }
 

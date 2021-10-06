@@ -1,12 +1,23 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
 import {AiOutlineArrowRight} from 'react-icons/ai'
 
-const ProductCard = ({data}) => {
+//animation
+import Aos from 'aos'
+import "aos/dist/aos.css"
+
+const ProductCard = ({data, index}) => {
     // console.info({data})
+    useEffect( () => {
+        Aos.init({})
+    }, [])
     return (
-        <Card>
+        <Card
+        data-aos={index === 0 || index === 2 ? 'fade-right' : 'fade-left'}
+        data-aos-delay="150"
+        data-aos-duration="1000"
+        >
             <Title>{data.title}</Title>
             <Description>{data.description}</Description>
             <StyledLink

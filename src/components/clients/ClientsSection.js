@@ -51,6 +51,7 @@ const StyledSection = styled(Section)`
     padding-left: 0;
     padding-right: 0;
     min-height: auto;
+    background: darkgray;
 `
 const StyledContainer = styled(Container)`
     padding: 0;

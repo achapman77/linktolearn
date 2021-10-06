@@ -24,6 +24,8 @@ const IndexPage = () => (
     <Seo title="Home" />
     <Hero />
     <ProductSection />
+    <ClientsSection />
+    <PartnersSection />
     {/* <Trips heading="Our Favourite Destinations"/> */}
     {/* <Testimonials/> */}
     {/* <Stats/> */}
@@ -33,8 +35,8 @@ const IndexPage = () => (
     {/* <TestimonialCarousel/> */}
     {/* <TestimonialMarqueeSlider/> */}
     <TeamSection />
-    <PartnersSection />
-    <ClientsSection />
+    
+    
     <ContactUS/>
   </Layout>
 )

@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
+import { StaticImage } from "gatsby-plugin-image"
 
 //components
-import { Section, Container } from '../layout/Section'
-import ContactSectionHeader from './ContactSectionHeader'
+import { Section, SectionHeader, Container } from '../layout/Section'
+// import ContactSectionHeader from './ContactSectionHeader'
 
 import loadable from "@loadable/component"
 const ContactInfo = loadable( () => import("./ContactInfo"))
@@ -71,14 +72,33 @@ const ContactUs = () => {
 
     return (
         <StyledSection id="contact">
-                <ContactSectionHeader content={content}/>
+            <StaticImage
+                style={{
+                    gridArea:"1/1", 
+                    filter:"grayscale(1) brightness(0.3) contrast(1.5)"
+                }}
+                layout="fullWidth"
+                src="../../assets/images/contact-background.jpg"
+            />
+            <div
+                style={{
+                    gridArea:"1/1",
+                    position: "relative",
+                    placeItems:"center",
+                    display: "grid",
+                }}
+            >
+                <StyledSectionHeader>
+                    <h2>{content.header}</h2>
+                    <p>{content.sub_header}</p>
+                </StyledSectionHeader>
             <StyledContainer>
-                
                 <ContactInfo data={data}/>
-               
-                    
-                    <ContactForm content={content}/>
+                <ContactForm content={content}/>
             </StyledContainer>
+            </div>
+                {/* <ContactSectionHeader content={content}/> */}
+                
         </StyledSection>
         
     )
@@ -88,7 +108,16 @@ export default ContactUs
 
 const StyledSection = styled(Section)`
     padding: 0;
+    display: grid;
 `
+
+const StyledStaticImage = styled(StaticImage)`
+    filter: grayscale(1);
+`
+const StyledSectionHeader = styled(SectionHeader)`
+    h2, p {color: white;}
+`
+
 const StyledContainer = styled(Container)`
     flex-flow: wrap-reverse;
     gap: 2rem;

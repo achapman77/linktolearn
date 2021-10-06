@@ -1,6 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
+
+//animation
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 //components
 import { Section, SectionHeader, Container } from '../layout/Section'
@@ -36,16 +40,28 @@ const ServicesSection = () => {
     const sectionSubTitle = data.products.frontmatter.section_subtitle
     const products = data.products.frontmatter.products
     // console.info({products})
+    useEffect( () => {
+        Aos.init({})
+    }, [])
+
     return (
         <StyledSection id="services">
-            <Header>
+            <Header 
+                // data-aos="fade-right"
+                // data-aos-delay="150"
+                // data-aos-duration="1000"
+            >
                 <h2>{sectionTitle}</h2>
                 <p>{sectionSubTitle}</p>
             </Header>
             <StyledContainer>
                 {products.map( (v,i) => {
                     return (
-                        <ProductCard data={v} key={i}/>
+                        <ProductCard 
+                            data={v} 
+                            key={i}
+                            index={i}
+                        />
                     )
                 })}
             </StyledContainer>

@@ -1,15 +1,29 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 //icons
 import { AiFillLinkedin } from 'react-icons/ai'
 
-const ProfileCard = ({data}) => {
+//animation
+import Aos from 'aos'
+import "aos/dist/aos.css"
+
+const ProfileCard = ({data, index}) => {
     // console.info({data})
     const image = getImage(data.headshot)
+
+    useEffect( () => {
+        Aos.init({})
+    }, [])
+
     return (
-        <Card>
+        <Card
+            data-aos="fade-up"
+            data-aos-delay={150 + index*150}
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+        >
             <StyledGatsbyImage image={image} alt={`${data.first_name} ${data.last_name}`} />
             <Wrapper>
                 <div>
