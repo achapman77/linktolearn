@@ -115,7 +115,7 @@ faq:
     blog_title: ""
     video_link: ""
     video_title: ""
-    select_category: AR/VR Immersive Learning
+    select_category: REAL-X Immersive Training
     question: What is REAL-X?
     answer: Realistic Enhanced Augmented Learning EXperience (REAL-X) is an
       augmented reality classroom system complete with 3D anatomical models,

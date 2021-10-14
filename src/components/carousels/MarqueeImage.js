@@ -63,6 +63,7 @@ const MarqueeImage = ({data, options, className}) => {
             }
         </Marquee>
     )
+    
 }
 
 export default MarqueeImage
@@ -71,7 +72,7 @@ export default MarqueeImage
 const Card = styled.a`
     margin: 0 clamp(0.5rem, 8vw, 13rem);
     position: relative;
-    padding: 1rem;
+    padding: 1rem 2.25rem;
     .info {opacity:0;}
     &:hover {
         .info {opacity:1;}
