@@ -21,7 +21,7 @@ const Footer = ({logo}) => {
                         <LogoContainer to="/" onClick={toggleHome}>
                             <img src={logo.img} alt={logo.altText} width={logo.width} height={logo.height}/>
                         </LogoContainer>
-                        <p>An Immersive Learning Ecosystem for Emergency Medical Professionals</p>
+                        <p>An Immersive Training Ecosystem for Emergency Medical Professionals</p>
                     </span>
                     
                     

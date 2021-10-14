@@ -8,7 +8,7 @@ import { Button } from '../buttons/Button'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 //icons
-import { AiOutlineMail, AiOutlinePhone, AiOutlineQuestionCircle  } from 'react-icons/ai'
+import { AiOutlineMail, AiOutlinePhone  } from 'react-icons/ai'
 import { RiMessage2Line  } from 'react-icons/ri'
 import { IoPersonOutline  } from 'react-icons/io5'
 
@@ -17,19 +17,19 @@ import Aos from 'aos'
 import "aos/dist/aos.css"
 
 const ContactForm = ({content}) => {
-    const [floatSelect, setFloatSelect] = useState(false)
+    // const [floatSelect, setFloatSelect] = useState(false)
     const [previousValue, setPreviousValue] = useState("")
 
-    const handleSelectClick = (e) => {
-        e.preventDefault()
-        // console.log(e.target.value)
-        let val = e.target.value
-        if (val === "") {
-            setFloatSelect(false)
-        } else {
-            setFloatSelect(true)
-        }
-    }
+    // const handleSelectClick = (e) => {
+    //     e.preventDefault()
+    //     // console.log(e.target.value)
+    //     let val = e.target.value
+    //     if (val === "") {
+    //         setFloatSelect(false)
+    //     } else {
+    //         setFloatSelect(true)
+    //     }
+    // }
 
     const normalizePhoneInput = (e) => {
         setPreviousValue(document.getElementById("contact_phone").value)
@@ -208,11 +208,11 @@ const StyledForm = styled(Form)`
 
 `
 
-const FormTitle = styled.div`
-    max-width: 700px;
-    margin-bottom: 2rem;
-    h4 {color: white};
-`
+// const FormTitle = styled.div`
+//     max-width: 700px;
+//     margin-bottom: 2rem;
+//     h4 {color: white};
+// `
 
 const ContactFormButton = styled(Button)`
     width: clamp(160px, 25vw, 260px);

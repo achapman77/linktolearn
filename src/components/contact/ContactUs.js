@@ -74,7 +74,7 @@ const ContactUs = () => {
         <StyledSection id="contact">
             <StaticImage
                 layout="fullWidth"
-                src="../../assets/images/contact-background.jpg"
+                src="../../assets/images/contact-background.png"
                 alt="Contact Background"
             />
             <div
@@ -114,9 +114,9 @@ const StyledSection = styled(Section)`
     }
 `
 
-const StyledStaticImage = styled(StaticImage)`
+// const StyledStaticImage = styled(StaticImage)`
     
-`
+// `
 const StyledSectionHeader = styled(SectionHeader)`
     h2, p {color: white;}
 `

@@ -6,7 +6,7 @@ module.exports = {
     author: `Steep Line Design`,
     siteUrl: `http://localhost:8000`,
     keywords: `emergency medical training, tactical combat casualty care,`,
-    image: `src/assets/images/travel-1.jpg`
+    image: `src/assets/images/hero-background.png`
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,
@@ -87,13 +87,13 @@ module.exports = {
         path: `${__dirname}/content/images/uploads`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `videos`,
-        path: `${__dirname}/src/assets/videos`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `videos`,
+    //     path: `${__dirname}/src/assets/videos`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

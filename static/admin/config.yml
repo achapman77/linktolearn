@@ -175,7 +175,7 @@ collections:
             name: faq
             widget: list
             fields: 
-              - {label: "Select FAQ Category", name: "select_category", widget: "select", options: ["BioSkills Labs", "AR/VR Immersive Learning", "Human Performance Metrics", "Scenario Authoring"]}
+              - {label: "Select FAQ Category", name: "select_category", widget: "select", options: ["BioSkills Labs", "REAL-X Immersive Training", "Human Performance Metrics", "Scenario Authoring"]}
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "text"}
               - {label: "Link to Blog Article", name: "blog_link", widget: "string", default: "", required: false}

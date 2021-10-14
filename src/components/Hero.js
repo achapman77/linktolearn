@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 // import { Parallax, Background } from 'react-parallax'
 import { AiOutlineArrowDown } from 'react-icons/ai'
-import BackgroundImg from '../assets/images/hero-background.jpg'
+import BackgroundImg from '../assets/images/hero-background.png'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import LazyHero from 'react-lazy-hero';
@@ -35,16 +35,16 @@ const Hero = () => {
         let yOffset = -0.19
         // Handler to call on window resize
         function handleResize() {
-            console.info('handleResize=>')
-            console.info(window.innerWidth)
-            console.info(window.innerHeight)
+            // console.info('handleResize=>')
+            // console.info(window.innerWidth)
+            // console.info(window.innerHeight)
             setParallaxY(window.innerHeight * yOffset)
         }
         // Add event listener
         window.addEventListener("resize", handleResize);
         // Call handler right away so state gets updated with initial window size
         handleResize();
-        console.info({parallaxY})
+        // console.info({parallaxY})
         // Remove event listener on cleanup
         // return () => window.removeEventListener("resize", handleResize);
     },[parallaxY])

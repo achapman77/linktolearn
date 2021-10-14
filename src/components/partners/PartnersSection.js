@@ -67,9 +67,8 @@ const PartnersSection = () => {
                                         return (
                                                 <PartnerCard key={i2} data={v2} />
                                         ) 
-                                    }                                     
+                                    }                                  
                                 })}
-
                             </PartnerContainer>
                         </CategoryWContainer>
                     )

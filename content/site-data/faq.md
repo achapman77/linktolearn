@@ -126,7 +126,7 @@ faq:
     blog_title: ""
     video_link: ""
     video_title: ""
-    select_category: AR/VR Immersive Learning
+    select_category: REAL-X Immersive Training
     question: Where can I purchase a REAL_X License?
     answer: REAL-X is still in development at this time but will be available for
       initial customer beta testing soon!
