@@ -88,6 +88,12 @@ collections:
             widget: list
             fields: 
               - {label: "Message", name: "message", widget: "string", pattern: ['^.{10,40}$', "Must be min 10 - max 40 characters"]}
+      - label: "Hero"
+        name: "hero"
+        file: content/site-data/hero.md
+        fields:
+          - {label: "Sub Title", name: "sub_title", widget: "string"}
+          - {label: "Main Title", name: "main_title", widget: "string"}
       - label: "Products"
         name: "products"
         file: content/site-data/products.md

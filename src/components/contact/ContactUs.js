@@ -73,12 +73,9 @@ const ContactUs = () => {
     return (
         <StyledSection id="contact">
             <StaticImage
-                style={{
-                    gridArea:"1/1", 
-                    filter:"grayscale(1) brightness(0.3) contrast(1.5)"
-                }}
                 layout="fullWidth"
                 src="../../assets/images/contact-background.jpg"
+                alt="Contact Background"
             />
             <div
                 style={{
@@ -109,10 +106,16 @@ export default ContactUs
 const StyledSection = styled(Section)`
     padding: 0;
     display: grid;
+    .gatsby-image-wrapper {
+        width: 100%;
+        height: 100%;
+        filter: grayscale(1) brightness(0.3) contrast(1.5);
+        grid-area: 1/1;
+    }
 `
 
 const StyledStaticImage = styled(StaticImage)`
-    filter: grayscale(1);
+    
 `
 const StyledSectionHeader = styled(SectionHeader)`
     h2, p {color: white;}

@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const FloatingLabel = styled.div`
     position:relative; 
-    margin:1.5rem 0;
+    margin:0.75rem 0;
     min-height: 62px;
 
     input, select, textarea {
@@ -100,6 +100,9 @@ export const FloatingLabel = styled.div`
         color: ${props => props.theme.colors.error.dark};
         margin-top: 5px;
         font-size: 0.8rem;
+        position: absolute;
+        top: -22px;
+        right: 0;
     }
 `
 

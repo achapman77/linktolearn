@@ -97,7 +97,7 @@ const ContactForm = ({content}) => {
                             errors.name = 'Name Required'
                         }
                         if(!values.email) {
-                            errors.email = 'Required'
+                            errors.email = 'Email Required'
                         } else if ( !emailRegex.test(values.email)) {
                             errors.email = 'Invalid Email Address'
                         }
@@ -122,9 +122,9 @@ const ContactForm = ({content}) => {
                         data-aos-duration="1000"
                         aria-label="Send Us a Contact Request"
                     >
-                        <FormTitle>
+                        {/* <FormTitle>
                             <h4>{content.form_title}</h4>
-                        </FormTitle>
+                        </FormTitle> */}
                         <FloatingLabel>
                             <Field id="name" name="name" placeholder=" " data-lpignore="true"></Field>
                             <IoPersonOutline/>

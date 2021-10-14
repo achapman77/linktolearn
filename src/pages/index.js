@@ -3,21 +3,17 @@ import loadable from "@loadable/component"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Hero from "../components/Hero"
-
-// import Trips from "../components/Trips"
-// import Testimonials from "../components/Testimonials"
-// import Stats from "../components/Stats"
-// import Email from "../components/Email"
-import ContactUS from "../components/contact/ContactUs"
-import TeamSection from "../components/team/Team"
 import ProductSection from "../components/products/ProductSection"
+// import ClientsSection from "../components/clients/ClientsSection"
 import PartnersSection from "../components/partners/PartnersSection"
-import ClientsSection from "../components/clients/ClientsSection"
+// import TeamSection from "../components/team/Team"
+// import ContactUS from "../components/contact/ContactUs"
+
 
 //loadable components
-const TestimonialMarqueeFast = loadable( () => import("../components/testimonials/TestimonialMarqueeFast"))
-const TestimonialCarousel = loadable( () => import("../components/testimonials/TestimonialCarousel"))
-// const TestimonialMarqueeSlider = loadable( () => import("../components/testimonials/TestimonialMarqueeSlider"))
+const ClientsSection = loadable( () => import("../components/clients/ClientsSection"))
+const TeamSection = loadable( () => import("../components/team/Team"))
+const ContactUS = loadable( () => import("../components/contact/ContactUs"))
 
 const IndexPage = () => (
   <Layout>
@@ -26,17 +22,7 @@ const IndexPage = () => (
     <ProductSection />
     <ClientsSection />
     <PartnersSection />
-    {/* <Trips heading="Our Favourite Destinations"/> */}
-    {/* <Testimonials/> */}
-    {/* <Stats/> */}
-    {/* <Email/> */}
-    
-    {/* <TestimonialMarqueeFast/> */}
-    {/* <TestimonialCarousel/> */}
-    {/* <TestimonialMarqueeSlider/> */}
     <TeamSection />
-    
-    
     <ContactUS/>
   </Layout>
 )
