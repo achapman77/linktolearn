@@ -28,6 +28,11 @@ export const SectionHeader = styled.div`
         max-width:50rem;
         /* max-width: 80vw; */
     }
+    hr {
+        background: ${props => props.theme.colors.primary.main};
+        width: 45vw;
+        height: 0.25em;
+    }
 `
 export const Container = styled.div`
     width: -webkit-fill-available;

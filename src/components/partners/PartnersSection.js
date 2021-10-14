@@ -83,7 +83,7 @@ const PartnersSection = () => {
 export default PartnersSection
 
 const StyledSection = styled(Section)`
-    
+    background: ${props => props.theme.colors.gray.light};
 `
 const StyledContainer = styled(Container)`
     display: block;
@@ -95,7 +95,7 @@ const StyledContainer = styled(Container)`
 const CategoryWContainer = styled.div`
     display: grid;
     grid-template-columns: 250px 1fr;
-    gap: 1rem;
+    /* gap: 1rem; */
     margin-bottom: 2rem;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     

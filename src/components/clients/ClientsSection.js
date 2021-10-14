@@ -35,8 +35,12 @@ const ClientsSection = () => {
     return (
         <StyledSection id="clients">
             <SectionHeader>
+                
                 <h2>{sectionTitle}</h2>
+              
                 <p>{sectionSubTitle}</p>
+                  
+                
             </SectionHeader>
             <StyledContainer>
                 <MarqueeImage data={clients} options={{speed: 100}} className="clientMarquee" />
@@ -51,7 +55,8 @@ const StyledSection = styled(Section)`
     padding-left: 0;
     padding-right: 0;
     min-height: auto;
-    background: darkgray;
+    /* background: ${props => props.theme.colors.primary.main}; */
+    /* background: darkgray; */
 `
 const StyledContainer = styled(Container)`
     padding: 0;

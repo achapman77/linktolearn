@@ -165,7 +165,7 @@ const ContactForm = ({content}) => {
                             <span className="errorMessage"><ErrorMessage name="message"/></span>
                         </FloatingLabel>
 
-                        <ContactFormButton as="button" type="submit" primary="true" round="true">Send It</ContactFormButton>
+                        <ContactFormButton as="button" type="submit" primary="true" round="true">Send</ContactFormButton>
                     </StyledForm>
                 )}
                 </Formik>

@@ -82,9 +82,9 @@ const StyledLink = styled(Link)`
     }
     &:hover {
         background: ${props => props.theme.colors.secondary.dark};
-        color: white;
+        color: white !important;
         svg {
-            color: white;
+            color: white !important;
         }
         /* border: 1px solid ${props => props.theme.colors.primary.main}; */
     }

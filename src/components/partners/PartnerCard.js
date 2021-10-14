@@ -26,9 +26,10 @@ export default PartnerCard
 const Card = styled.li`
     text-decoration: none;
     color: ${props => props.theme.colors.gray.dark};
-    padding: 1rem 0;
+    padding: 1rem;
     border-top: 1px solid ${props => props.theme.colors.gray.light};
     position: relative;
+    background:white;
     a {display: none;}
     &:hover {
         a {display: block;}
