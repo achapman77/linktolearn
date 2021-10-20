@@ -32,8 +32,8 @@ const ContactForm = ({content}) => {
     // }
 
     const normalizePhoneInput = (e) => {
-        setPreviousValue(document.getElementById("contact_phone").value)
-        const value = document.getElementById("contact_phone").value
+        setPreviousValue(document.getElementById("phone").value)
+        const value = document.getElementById("phone").value
         
 
         if (!value) return value;
@@ -94,10 +94,10 @@ const ContactForm = ({content}) => {
                         const errors = {};
                         // console.info(values)
                         if(!values.name) {
-                            errors.name = 'Name Required'
+                            errors.name = 'Please Enter Your Name'
                         }
                         if(!values.email) {
-                            errors.email = 'Email Required'
+                            errors.email = 'Please Enter Your Email'
                         } else if ( !emailRegex.test(values.email)) {
                             errors.email = 'Invalid Email Address'
                         }
@@ -140,9 +140,9 @@ const ContactForm = ({content}) => {
                         </FloatingLabel>
                         
                         <FloatingLabel>
-                            <Field id="contact_phone" name="contact_phone" placeholder=" " value={previousValue} data-lpignore="true"></Field>
+                            <Field id="phone" name="phone" placeholder=" " value={previousValue} data-lpignore="true"></Field>
                             <AiOutlinePhone/>
-                            <label htmlFor="contact_phone">Phone</label>
+                            <label htmlFor="phone">Phone</label>
                             <span className="errorMessage"><ErrorMessage name="phone"/></span>
                         </FloatingLabel>
                         
@@ -159,10 +159,10 @@ const ContactForm = ({content}) => {
                         </FloatingLabel> */}
 
                         <FloatingLabel>
-                            <Field id="message" name="message" as="textarea" placeholder=" "></Field>
+                            <Field id="description" name="description" as="textarea" placeholder=" "></Field>
                             <RiMessage2Line/>
-                            <label htmlFor="message">Message</label>
-                            <span className="errorMessage"><ErrorMessage name="message"/></span>
+                            <label htmlFor="description">Message</label>
+                            <span className="errorMessage"><ErrorMessage name="description"/></span>
                         </FloatingLabel>
 
                         <ContactFormButton as="button" type="submit" primary="true" round="true">Send</ContactFormButton>
