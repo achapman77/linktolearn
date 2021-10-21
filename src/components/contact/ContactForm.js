@@ -121,7 +121,7 @@ const ContactForm = ({content}) => {
                 {() => (
                     <StyledForm 
                         //Also change name in onSubmit -> body: encode({ "form-name": "contact-L2L", ...values }) above
-                        name="contact-L2L" 
+                        name="L2L-website-contact-form" 
                         data-netlify={true} 
                         data-netlify-honeypot="bot-field"
                         data-aos="fade-left"
