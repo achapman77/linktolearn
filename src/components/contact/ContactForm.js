@@ -10,7 +10,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 //icons
 import { AiOutlineMail, AiOutlinePhone  } from 'react-icons/ai'
 import { RiMessage2Line  } from 'react-icons/ri'
-import { IoPersonOutline  } from 'react-icons/io5'
+import { IoPersonOutline, IoThumbsUpOutline  } from 'react-icons/io5'
+
 
 //animation
 import Aos from 'aos'
@@ -78,11 +79,17 @@ const ContactForm = ({content}) => {
                             body: encode({ "form-name": "contact-L2L", ...values })
                             })
                             .then(() => {
-                                alert('Thank you for contacting Link to Learn');
+                                const element = document.getElementById("thankYou");	
+                                element.style.opacity = "1";
+                                element.style.height = "calc(100%)";
                                 actions.resetForm()
+                                setTimeout(function(){
+                                    element.style.opacity = "0";
+                                    element.style.height = "calc(100% - 300px)";
+                                }, 2500)
                             })
                             .catch(() => {
-                                alert('Error');
+                                alert('Something went wrong, please refresh page.');
                             })
                             .finally(() => actions.setSubmitting(false))
                         }
@@ -166,6 +173,16 @@ const ContactForm = ({content}) => {
                         </FloatingLabel>
 
                         <ContactFormButton as="button" type="submit" primary="true" round="true">Send</ContactFormButton>
+                        <ThankYou id="thankYou">
+                            <IoThumbsUpOutline/>
+                            <div className="content">
+                                <h3>Thank You!</h3>
+                                <p>Your message has been sent.</p>
+                                <p>Our team will get back to you shortly.</p>
+                               
+                            </div>
+                            
+                        </ThankYou>
                     </StyledForm>
                 )}
                 </Formik>
@@ -173,8 +190,35 @@ const ContactForm = ({content}) => {
 }
 
 export default ContactForm
+const ThankYou = styled.div`
+    position: absolute;
+    background: #151515;
+    color: white;
+    width: -webkit-fill-available;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    //transition
+    opacity: 0;
+    height: calc(100% - 300px);
+    transition: 250ms all ease-in-out;
+    h3 { color: white;}
+    svg {
+        font-size: 4.5rem;
+        margin-right: 1rem;  
+    }
+    .content {
+        display: grid;
+        gap: 0.5rem;
+    }
 
+`
 const StyledForm = styled(Form)`
+    position: relative;
     display: flex;
     flex-flow: column;
     width: clamp(500px, 90vw, 600px);
@@ -199,6 +243,8 @@ const StyledForm = styled(Form)`
         margin:0;
         padding: 1rem 0.5rem;
         min-width: 100vw;
+        width: 100vw;
+        border: none;
         border-radius: 0;
         button {
             margin-left: 0.5rem;

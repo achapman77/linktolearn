@@ -120,6 +120,8 @@ const Container = styled.div`
         margin-bottom: 1rem;
         padding: 1rem;
         min-width: 100vw;
+        width: 100vw;
+        border: none;
         box-shadow: none;
     `}
 `
