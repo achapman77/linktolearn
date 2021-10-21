@@ -97,7 +97,7 @@ const ContactForm = ({content}) => {
                     validate={values => {
                         const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
                         // const phoneRegex = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i;
-                        const phoneRegex = /^\([0-9]{3}\)\s[0-9]{3}\s-\s[0-9]{4}$/i;
+                        const phoneRegex = /^\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}$/i;
                         const errors = {};
                         // console.info(values)
                         if(!values.name) {
