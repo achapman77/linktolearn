@@ -13,9 +13,6 @@ import { RiMessage2Line  } from 'react-icons/ri'
 import { IoPersonOutline, IoThumbsUpOutline  } from 'react-icons/io5'
 
 
-//animation
-import Aos from 'aos'
-import "aos/dist/aos.css"
 
 const ContactForm = ({content}) => {
     // const [floatSelect, setFloatSelect] = useState(false)
@@ -59,9 +56,7 @@ const ContactForm = ({content}) => {
             .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
             .join("&");
     }
-    useEffect( () => {
-        Aos.init({disable: 'tablet'})
-    }, [])
+
 
     const formName = "L2L_webContact"
     return (

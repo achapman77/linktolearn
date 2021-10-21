@@ -6,10 +6,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Section, SectionHeader, Container } from '../layout/Section'
 import PartnerCard from './PartnerCard'
 
-//animation
-import Aos from 'aos'
-import "aos/dist/aos.css"
-
 const PartnersSection = () => {
     const data = useStaticQuery(graphql`
         query {
@@ -39,9 +35,7 @@ const PartnersSection = () => {
     // console.info({partners})
     const categoryArr = [...new Set(partners.map( ({category}) => category))].sort()
     // console.info({partners, categoryArr})
-    useEffect( () => {
-        Aos.init({})
-    }, [])
+
     return (
         <StyledSection id="partners">
             <SectionHeader>

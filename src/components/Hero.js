@@ -208,7 +208,18 @@ const HeroContainer = styled.div`
     `}
     //xs: '480px',
     ${props => props.theme.xs`
-        
+        .hero__title {
+            padding: 2rem 1rem 3rem 1rem;
+            
+        }
+        // p, h1 {
+        //     width: -webkit-fill-available;
+        //     max-width: -webkit-fill-available;
+        //     text-align: center;
+        // }
+        // nav {
+        //     margin: 0 auto;
+        // }
         
     `}
     //xxs: '360px',
@@ -245,5 +256,16 @@ const HeroNav = styled.nav`
     ${props => props.theme.sm`
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    `}
+
+    //xs: 'px',
+    ${props => props.theme.xxs`
+        grid-template-columns: 1fr;
+        width: -webkit-fill-available;
+        a {
+            min-height: fit-content;
+            justify-content: center; 
+            font-size: 0.75em;
+        }
     `}
 `

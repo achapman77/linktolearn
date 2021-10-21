@@ -2,10 +2,6 @@ import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
-//animation
-import Aos from 'aos'
-import "aos/dist/aos.css"
-
 //components
 import { Section, SectionHeader, Container } from '../layout/Section'
 import loadable from "@loadable/component"
@@ -41,10 +37,6 @@ const TeamSection = () => {
     const sectionSubTitle = data.team_members.frontmatter.section_subtitle
     const teamMembers = data.team_members.frontmatter.team_members
     // console.info(teamMembers)
-
-    useEffect( () => {
-        Aos.init({})
-    }, [])
 
     return (
         <StyledSection id="team">

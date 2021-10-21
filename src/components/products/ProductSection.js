@@ -2,15 +2,9 @@ import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
-//animation
-import Aos from 'aos'
-import "aos/dist/aos.css"
-
 //components
 import { Section, SectionHeader, Container } from '../layout/Section'
 import ProductCard from './ProductCard'
-
-
 
 
 const ServicesSection = () => {
@@ -39,10 +33,6 @@ const ServicesSection = () => {
     const sectionTitle = data.products.frontmatter.section_title
     const sectionSubTitle = data.products.frontmatter.section_subtitle
     const products = data.products.frontmatter.products
-    // console.info({products})
-    useEffect( () => {
-        Aos.init({})
-    }, [])
 
     return (
         <StyledSection id="services">

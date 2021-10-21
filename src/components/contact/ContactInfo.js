@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
 
-//animation
-import Aos from 'aos'
-import "aos/dist/aos.css"
+// //animation
+// import Aos from 'aos'
+// import "aos/dist/aos.css"
 
 //components'
 import {AiOutlinePhone } from 'react-icons/ai'
@@ -16,9 +16,9 @@ const ContactInfo = ({data}) => {
     const bizAddress = contactInfo.business_address
     const socialMedia = data.social_media.frontmatter.social_media
     const content = data.content.frontmatter.contact_section_content
-    useEffect( () => {
-        Aos.init({disable: 'tablet'})
-    }, [])
+    // useEffect( () => {
+    //     Aos.init({disable: 'mobile'})
+    // }, [])
     return (
         <Container
             data-aos="fade-right"
