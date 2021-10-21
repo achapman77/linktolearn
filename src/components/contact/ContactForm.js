@@ -60,7 +60,7 @@ const ContactForm = ({content}) => {
             .join("&");
     }
     useEffect( () => {
-        Aos.init({})
+        Aos.init({disable: 'tablet'})
     }, [])
 
     const formName = "L2L_webContact"

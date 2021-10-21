@@ -17,7 +17,7 @@ const ContactInfo = ({data}) => {
     const socialMedia = data.social_media.frontmatter.social_media
     const content = data.content.frontmatter.contact_section_content
     useEffect( () => {
-        Aos.init({})
+        Aos.init({disable: 'tablet'})
     }, [])
     return (
         <Container
