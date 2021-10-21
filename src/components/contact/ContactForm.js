@@ -50,7 +50,7 @@ const ContactForm = ({content}) => {
                 setPreviousValue(`(${currentValue.slice(0, 3)}) ${currentValue.slice(3)}`)
                 return
             } 
-            setPreviousValue(`(${currentValue.slice(0, 3)}) ${currentValue.slice(3, 6)} - ${currentValue.slice(6, 10)}`)
+            setPreviousValue(`(${currentValue.slice(0, 3)}) ${currentValue.slice(3, 6)}-${currentValue.slice(6, 10)}`)
         }
     };
 
