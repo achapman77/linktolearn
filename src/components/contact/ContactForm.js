@@ -62,6 +62,8 @@ const ContactForm = ({content}) => {
     useEffect( () => {
         Aos.init({})
     }, [])
+    
+    const formName = "L2L_webContact"
     return (
         <Formik
                     initialValues={{
@@ -72,11 +74,11 @@ const ContactForm = ({content}) => {
                     }}
                     onSubmit={
                         (values, actions,e) => {
-                            console.info({e, actions})
+                            // console.info({e, actions})
                             fetch("/", {
                             method: "POST",
                             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                            body: encode({ "form-name": "contact-L2L", ...values })
+                            body: encode({ "form-name": formName, ...values })
                             })
                             .then(() => {
                                 const element = document.getElementById("thankYou");	
@@ -120,8 +122,7 @@ const ContactForm = ({content}) => {
                 >
                 {() => (
                     <StyledForm 
-                        //Also change name in onSubmit -> body: encode({ "form-name": "contact-L2L", ...values }) above
-                        name="L2L_webContact" 
+                        name={formName} //IMPORTANT! Also change name in onSubmit -> body: encode({ "form-name": "contact-L2L", ...values }) above
                         data-netlify={true} 
                         data-netlify-honeypot="bot-field"
                         data-aos="fade-left"
