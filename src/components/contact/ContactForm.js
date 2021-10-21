@@ -62,7 +62,7 @@ const ContactForm = ({content}) => {
     useEffect( () => {
         Aos.init({})
     }, [])
-    
+
     const formName = "L2L_webContact"
     return (
         <Formik
@@ -85,6 +85,7 @@ const ContactForm = ({content}) => {
                                 element.style.opacity = "1";
                                 element.style.height = "calc(100%)";
                                 actions.resetForm()
+                                setPreviousValue('')
                                 setTimeout(function(){
                                     element.style.opacity = "0";
                                     element.style.height = "calc(100% - 300px)";
@@ -102,14 +103,14 @@ const ContactForm = ({content}) => {
                         const phoneRegex = /^\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}$/i;
                         const errors = {};
                         // console.info(values)
-                        if(!values.name) {
-                            errors.name = 'Please Enter Your Name'
-                        }
-                        if(!values.email) {
-                            errors.email = 'Please Enter Your Email'
-                        } else if ( !emailRegex.test(values.email)) {
-                            errors.email = 'Invalid Email Address'
-                        }
+                        // if(!values.name) {
+                        //     errors.name = 'Please Enter Your Name'
+                        // }
+                        // if(!values.email) {
+                        //     errors.email = 'Please Enter Your Email'
+                        // } else if ( !emailRegex.test(values.email)) {
+                        //     errors.email = 'Invalid Email Address'
+                        // }
                         normalizePhoneInput()
                         if(!phoneRegex.test(values.phone) && values.phone !=="") {
                             errors.phone = 'Invalid Phone Number'
@@ -167,10 +168,10 @@ const ContactForm = ({content}) => {
                         </FloatingLabel> */}
 
                         <FloatingLabel>
-                            <Field id="description" name="description" as="textarea" placeholder=" "></Field>
+                            <Field id="message" name="message" as="textarea" placeholder=" "></Field>
                             <RiMessage2Line/>
-                            <label htmlFor="description">Message</label>
-                            <span className="errorMessage"><ErrorMessage name="description"/></span>
+                            <label htmlFor="message">Message</label>
+                            <span className="errorMessage"><ErrorMessage name="message"/></span>
                         </FloatingLabel>
 
                         <ContactFormButton as="button" type="submit" primary="true" round="true">Send</ContactFormButton>
@@ -205,8 +206,8 @@ const ThankYou = styled.div`
     pointer-events: none;
     //transition
     opacity: 0;
-    height: calc(100% - 300px);
-    transition: 250ms all ease-in-out;
+    height: calc(100% - 100px);
+    transition: 150ms all ease-in-out;
     h3 { color: white;}
     svg {
         font-size: 4.5rem;
