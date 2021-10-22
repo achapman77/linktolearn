@@ -68,7 +68,7 @@ const Container = styled.div`
     justify-content: space-between;
     display: grid;
     grid-template-columns: 25rem 1fr 25rem;
-    z-index: 5;
+    z-index: 110;
     ${props => props.theme.xxl`
         grid-template-columns: 22rem 1fr 22rem;
     `}

@@ -33,6 +33,12 @@ export const SectionHeader = styled.div`
         width: 45vw;
         height: 0.25em;
     }
+  
+    
+    ${props => props.theme.xs`
+       p{text-align: left;}
+    `}
+
 `
 export const Container = styled.div`
     width: -webkit-fill-available;

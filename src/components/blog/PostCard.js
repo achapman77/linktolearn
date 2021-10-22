@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "gatsby"
 import styled from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Button } from '../buttons/Button'

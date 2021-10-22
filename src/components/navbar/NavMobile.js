@@ -6,7 +6,7 @@ import { menuData } from './MenuData'
 
 //components
 import { Link } from 'gatsby'
-import { Button } from "../buttons/Button"
+
 import loadable from "@loadable/component"
 import { GoChevronDown } from 'react-icons/go'
 const SocialMedia = loadable( () => import("../buttons/SocialMedia"))
@@ -188,10 +188,6 @@ const NavLink = styled(Link)`
 
 `
 
-const BtnWrap = styled.div`
-    display: flex;
-    justify-content: center;
-`
 
 const Rudder = styled.div`
     display: flex;

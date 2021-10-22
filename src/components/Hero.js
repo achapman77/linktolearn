@@ -257,6 +257,13 @@ const HeroNav = styled.nav`
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     `}
+    
+    ${props => props.theme.xs`
+       
+        a { 
+            font-size: 0.75em;
+        }
+    `}
 
     //xs: 'px',
     ${props => props.theme.xxs`

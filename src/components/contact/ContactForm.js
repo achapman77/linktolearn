@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 import { FloatingLabel } from '../form/FloatingLabel'
@@ -98,14 +98,14 @@ const ContactForm = ({content}) => {
                         const phoneRegex = /^\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}$/i;
                         const errors = {};
                         // console.info(values)
-                        // if(!values.name) {
-                        //     errors.name = 'Please Enter Your Name'
-                        // }
-                        // if(!values.email) {
-                        //     errors.email = 'Please Enter Your Email'
-                        // } else if ( !emailRegex.test(values.email)) {
-                        //     errors.email = 'Invalid Email Address'
-                        // }
+                        if(!values.name) {
+                            errors.name = 'Please Enter Your Name'
+                        }
+                        if(!values.email) {
+                            errors.email = 'Please Enter Your Email'
+                        } else if ( !emailRegex.test(values.email)) {
+                            errors.email = 'Invalid Email Address'
+                        }
                         normalizePhoneInput()
                         if(!phoneRegex.test(values.phone) && values.phone !=="") {
                             errors.phone = 'Invalid Phone Number'

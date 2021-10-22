@@ -149,8 +149,8 @@ const Navbar = ({isOpen, toggle, logo}) => {
   // },[servicesBtnState])
   const toggleDropdown = (navItem, e) => {
     // console.info('toggleDropdown=>')
-    let btnID = `dropdownBtn_${navItem.title.toLowerCase()}`
-    let btn = document.getElementById(btnID)
+    // let btnID = `dropdownBtn_${navItem.title.toLowerCase()}`
+    // let btn = document.getElementById(btnID)
     // let dropdownID = `dropdownMenu_${navItem.title.toLowerCase()}`
     // let dropdown = document.getElementById(dropdownID)
     
@@ -210,7 +210,7 @@ const Navbar = ({isOpen, toggle, logo}) => {
                       {
                         v.subItems.map( (v2, i2) => {
                           return (
-                            <Link to={v2.link} key={i2}>{v2.title}</Link>
+                            <Link to={v2.link} key={i2} className={servicesBtnState ? '' : 'collapsed'}>{v2.title}</Link>
                           )
                         })
                       }
@@ -241,7 +241,7 @@ export default Navbar
 
 
 const Nav = styled.nav`
-  background: ${ ({ navbar, isOpen }) => (navbar || isOpen ? "white" : "transparent")};
+  background: ${ ({ navbar, isOpen }) => (navbar || isOpen ? "rgba(255,255,255,1)" : "rgba(255,255,255,0)")};
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -249,12 +249,17 @@ const Nav = styled.nav`
   z-index: 100;
   position: sticky;
   top:0;
+  transition: background-color 250ms ease-in-out;
   
 
-  &.active {
-    background: white;
+  &.active, &:hover {
+    transition: background-color 250ms ease-in-out;
+    background-color: rgba(255,255,255,1);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    /* background: white; */
+    li {
+      transition: background-color 350ms ease-in-out;
+      background-color: rgba(255,255,255,1);
+    }
   }
 `
 const NavMenu = styled.ul`
@@ -308,7 +313,6 @@ const NavItem = styled.li`
         justify-content: center;
         height: 100%;
         min-width: 150px;
-        /* width: clamp(80px, 5vw, 5vw); */
         text-decoration: none;
         padding: 0 1rem;
         cursor: pointer;
@@ -340,14 +344,19 @@ const NavItem = styled.li`
         opacity: 1;
         transform: translateY(4px);
         pointer-events: all;
-        visibility: visible;
+        background: rgba(255,255,255,1);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        border-top: 1px solid ${props => props.theme.colors.gray.light};
+        a {
+          opacity: 1;
+        }
       }
     }
     &:hover {
           border-right: 1px solid rgba(0,0,0, 0.25);
           border-left: 1px solid rgba(0,0,0, 0.25);
           /* border-bottom: 4px solid ${props => props.theme.colors.secondary.dark}; */
-          background: rgba(0,0,0, 0.05);
+          background-color: rgb(237, 237, 237) !important;
         }
     svg {
           font-size: 1.5rem;
@@ -363,20 +372,23 @@ const NavItem = styled.li`
 const DropdownMenu = styled.div`
   display: flex;
   flex-flow: column;
-  border-top: 1px solid ${props => props.theme.colors.gray.light};
+  border-top: 1px solid transparent;
   position: absolute;
   top: 76px;
   left: -1px;
-  background: white;
+  background: rgba(255,255,255,0);
   width: max-content;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  display: none;
-  visibility: collapse;
+  box-shadow: rgba(50, 50, 93, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0) 0px 3px 7px -3px;
+  /* display: none; */
+  /* visibility: collapse; */
   opacity: 0;
-  transform: translateY(-4px);
+  transform: translateY(-45px);
+  z-index: -1;
   pointer-events: none;
-  transition: 500ms all;
+  transition: all 200ms ease-in-out;
   a {
+    opacity: 0;
+    transition: all 100ms ease-in-out;
     padding: 1rem;
     padding-right: 3rem;
     text-decoration: none;
@@ -396,4 +408,5 @@ const DropdownMenu = styled.div`
   }
 `
 const NavLink = styled(Link)`
+  
 `
