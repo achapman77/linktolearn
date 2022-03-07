@@ -19,23 +19,6 @@ team_members:
     headshot: ../images/uploads/johnchapman-1000x990.jpg
     profile_url: https://www.linkedin.com/in/john-chapman-us/
     position_subTitle: Force Reconnaissance Marine
-  - description: Lauren brings over 20 years of medical experience to our team. She
-      began her career as a clinical provider in neurosurgery and completed her
-      trauma nursing internship @ Johns Hopkins. After losing her father, who
-      was an Air Force Veteran, to brain cancer she knew her passion for
-      research had a higher purpose. As a Certified Tissue Banking Specialist
-      and trained Anatomist, with a special interest in neuropathology, Lauren
-      has performed hundreds of recoveries for researchers across the country,
-      including DoD’s blast related TBI brain study. Provides input to strategic
-      and operational planning. Responsible for quality improvement initiatives,
-      and execution of strategies to ensure that end user needs are met in a
-      cost-effective manner.
-    profile_url: https://www.linkedin.com/in/lauren-lipchak-36ab6765/
-    position_title: Vice President
-    first_name: Lauren
-    last_name: Lipchak
-    headshot: ../images/uploads/laurenlipchack-web.jpg
-    position_subTitle: Certified Tissue Bank Specialist
   - first_name: Sam
     last_name: Peterson
     position_title: Chief Operations Officer
