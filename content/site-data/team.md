@@ -6,7 +6,7 @@ section_subtitle: We are team of medical, engineering, and former military
 team_members:
   - first_name: John
     last_name: Chapman
-    position_title: President
+    position_title: CEO
     description: John has deployed to 7 operational theaters in support of national
       strategic objectives. Having lost friends and colleagues in the line of
       duty, John has an intimate knowledge of the impact limited access to
@@ -46,4 +46,19 @@ team_members:
     headshot: ../images/uploads/adamchapman-web.jpg
     profile_url: https://www.linkedin.com/in/adamachapman/
     position_subTitle: ""
+  - position_subTitle: Force Reconnaissance Marine
+    description: Rich has deployed to multiple operational theatres in support of
+      national strategic objectives. As a force reconnaissance team member and
+      instructor, Rich gained personal experience with the educational gaps that
+      exist from current tactical combat critical care training and its use in
+      high-pressure situations. Rich brings an extensive amount of multi-level
+      leadership and project development experience to the organization. Rich’s
+      tactical experience and business leadership expertise provide a unique
+      inside perspective to project development for future Link to Learn
+      endeavors.
+    position_title: Project Manager
+    first_name: Rich
+    last_name: Peoples
+    profile_url: https://www.linkedin.com/in/rich-peoples-270b14222/
+    headshot: ../images/uploads/richardpeoples.jpg
 ---
