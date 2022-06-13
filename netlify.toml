@@ -4,3 +4,9 @@ publish = "public/"
 
 [[plugins]]
 package = "@netlify/plugin-gatsby"
+
+[[redirects]]
+from = "/*"
+to = "https://www.simwerx.com/"
+status = 301
+force = true
